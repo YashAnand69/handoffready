@@ -1,0 +1,66 @@
+{
+  "kind": "synthetic-development-metadata-quote-regression",
+  "output": {
+    "proposals": [
+      {
+        "requirement_id": "image-r",
+        "candidates": [
+          {
+            "file_id": "image-f",
+            "reason": "Filename/metadata suggestion; no visual inspection. The file 'logo.png' is of type 'png', satisfying the requirement for a PNG logo."
+          }
+        ],
+        "coverage": "The file 'logo.png' is a PNG image."
+      }
+    ],
+    "model": {
+      "model": "google/gemma-4-E2B-it",
+      "source_revision": "3e22461f65e89153144f8adb70e3b8c2cc9845a7",
+      "conversion_source_revisions": {
+        "PRIMARY": "3e22461f65e89153144f8adb70e3b8c2cc9845a7",
+        "ASSISTANT": "2d874ef7d29f9a30599a1e4b3c1cbc9595f005df",
+        "QAT_Q4_0": "ebc7e1a211354561464cb82ed6d886792138dcb6",
+        "QAT_Q4_0_UNQUANTIZED": "6befbaca7398925921802abd1f277b495b78b738"
+      },
+      "artifact_repository": "ggml-org/gemma-4-E2B-it-GGUF",
+      "artifact_revision": "b4243c156154b6dca9324415f8c7ccc098b4aed1",
+      "artifact": "gemma-4-E2B-it-Q4_0.gguf",
+      "quantization": "Q4_0",
+      "model_sha256": "8e30dff3ac4c8434c49a7036fa15564bdbb6044e42bf04550bf1a096ad7e6a52",
+      "model_bytes": 2841481184,
+      "license": "Apache-2.0",
+      "runtime_repository": "ggml-org/llama.cpp",
+      "runtime_tag": "b11583",
+      "runtime_commit": "98801578818b26d833a1fe244870d64b0c34bb46",
+      "runtime_server_sha256": "330ef197918263288c4017f164154bd11406b6e86d1357b5f83625bb85c10b1e",
+      "runtime_build": "source-build",
+      "runtime_archive_sha256": null,
+      "runtime_source_sha256": "a4e86435bd4983030d3cf85a3475e2e9aea6794d94f047f1a3993333a8734fbf",
+      "runtime_build_flags": [
+        "Release",
+        "GGML_METAL=ON",
+        "LLAMA_BUILD_TESTS=OFF",
+        "LLAMA_BUILD_EXAMPLES=OFF"
+      ],
+      "platform": "macOS-arm64",
+      "alias": "handoffready-gemma4-e2b",
+      "context_tokens": 8192,
+      "model_url": "https://huggingface.co/ggml-org/gemma-4-E2B-it-GGUF/resolve/b4243c156154b6dca9324415f8c7ccc098b4aed1/gemma-4-E2B-it-Q4_0.gguf",
+      "runtime_url": "https://github.com/ggml-org/llama.cpp/releases/download/b11583/llama-b11583-bin-macos-arm64.tar.gz",
+      "chat_template_sha256": "603a42db292c25278e9b23d94c7abbe77453f13e26a053c43c5c2f900b4136f7",
+      "runtime_build_info": "b0-unknown",
+      "prompt_version": "handoffready-v7",
+      "temperature": 0,
+      "seed": 20261013,
+      "input_tokens": 750,
+      "output_tokens": 123,
+      "elapsed_seconds": 1.414,
+      "input_sha256": "4a5c3a8629cac60e054b392cf0b26a0b6594f20dc1e2416e23c639e7297eaa76",
+      "output_sha256": "c75f9ee3a07c369c14a695e380a20de18f98cd29aa902326fde43fde3e1cadb7",
+      "vision_used": false,
+      "rejected_associations": [],
+      "unrelated_association_count": 0,
+      "supporting_association_count": 1
+    }
+  }
+}

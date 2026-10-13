@@ -1,0 +1,15 @@
+.venv/
+node_modules/
+frontend/dist/
+.data/
+.model/
+.runtime/
+__pycache__/
+.pytest_cache/
+*.pyc
+*.log
+*.tsbuildinfo
+.env
+artifacts/private/
+
+.ruff_cache/

@@ -1,0 +1,20 @@
+[
+  {
+    "name": "react",
+    "version": "19.3.0",
+    "license": "MIT",
+    "role": "compiled frontend runtime"
+  },
+  {
+    "name": "react-dom",
+    "version": "19.3.0",
+    "license": "MIT",
+    "role": "compiled frontend runtime"
+  },
+  {
+    "name": "scheduler",
+    "version": "0.28.0",
+    "license": "MIT",
+    "role": "compiled frontend runtime"
+  }
+]

@@ -1,0 +1,80 @@
+[
+  {
+    "task": "extract",
+    "response": {
+      "choices": [
+        {
+          "finish_reason": "stop",
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\n  \"requirements\": [\n    {\n      \"title\": \"Deliver one transparent PNG logo\",\n      \"quote\": \"Deliver one transparent PNG logo\",\n      \"checks\": [\n        {\n          \"kind\": \"presence\",\n          \"types\": [\n            \"png\"\n          ]\n        },\n        {\n          \"kind\": \"png_nonopaque_pixels\",\n          \"value\": 1\n        }\n      ]\n    },\n    {\n      \"title\": \"Deliver one SVG logo\",\n      \"quote\": \"and one SVG logo\",\n      \"checks\": [\n        {\n          \"kind\": \"presence\",\n          \"types\": [\n            \"svg\"\n          ]\n        }\n      ]\n    },\n    {\n      \"title\": \"Deliver exactly three distinct PNG images at 1080 by 1080 pixels\",\n      \"quote\": \"Deliver exactly three distinct PNG images at 1080 by 1080 pixels\",\n      \"checks\": [\n        {\n          \"kind\": \"count\",\n          \"value\": 3\n        },\n        {\n          \"kind\": \"image_dimensions\",\n          \"width_px\": 1080,\n          \"height_px\": 1080\n        },\n        {\n          \"kind\": \"png_nonopaque_pixels\",\n          \"distinct_bytes\": true\n        }\n      ]\n    },\n    {\n      \"title\": \"Include written instructions for changing contact details\",\n      \"quote\": \"Include written instructions for changing contact details\",\n      \"checks\": [\n        {\n          \"kind\": \"literal_text\",\n          \"needle\": \"written instructions for changing contact details\"\n        }\n      ]\n    },\n    {\n      \"title\": \"Include written instructions for replacing the homepage banner\",\n      \"quote\": \"replacing the homepage banner\",\n      \"checks\": [\n        {\n          \"kind\": \"literal_text\",\n          \"needle\": \"replacing the homepage banner\"\n        }\n      ]\n    },\n    {\n      \"title\": \"Include written instructions for renewing the domain\",\n      \"quote\": \"renewing the domain\",\n      \"checks\": [\n        {\n          \"kind\": \"literal_text\",\n          \"needle\": \"renewing the domain\"\n        }\n      ]\n    }\n  ]\n}"
+          }
+        }
+      ],
+      "created": 1791902148,
+      "model": "handoffready-gemma4-e2b",
+      "system_fingerprint": "b0-unknown",
+      "object": "chat.completion",
+      "usage": {
+        "completion_tokens": 541,
+        "prompt_tokens": 831,
+        "total_tokens": 1372,
+        "prompt_tokens_details": {
+          "cached_tokens": 741
+        }
+      },
+      "id": "chatcmpl-0mdqOakhquiVJAbIL2gQKxijp8KHonvn",
+      "timings": {
+        "cache_n": 741,
+        "prompt_n": 90,
+        "prompt_ms": 383.803,
+        "prompt_per_token_ms": 4.264477777777778,
+        "prompt_per_second": 234.4953009747188,
+        "predicted_n": 541,
+        "predicted_ms": 4881.848,
+        "predicted_per_token_ms": 9.04045925925926,
+        "predicted_per_second": 110.61384950944807
+      }
+    }
+  },
+  {
+    "task": "match",
+    "response": {
+      "choices": [
+        {
+          "finish_reason": "stop",
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "{\n  \"proposals\": [\n    {\n      \"requirement_id\": \"r-contact\",\n      \"candidates\": [\n        {\n          \"file_id\": \"f-01\",\n          \"reason\": \"The file '01-guide.txt' contains instructions on how to edit the telephone number and email address, which relates to changing contact details.\"\n        }\n      ],\n      \"coverage\": \"f-01\"\n    },\n    {\n      \"requirement_id\": \"r-banner\",\n      \"candidates\": [\n        {\n          \"file_id\": \"f-02\",\n          \"reason\": \"The file '02-guide.txt' provides instructions on how to select and upload a replacement for the large cover picture at the top, which corresponds to replacing the homepage banner.\"\n        }\n      ],\n      \"coverage\": \"f-02\"\n    },\n    {\n      \"requirement_id\": \"r-domain\",\n      \"candidates\": [\n        {\n          \"file_id\": \"f-03\",\n          \"reason\": \"The file '03-guide.txt' contains instructions on how to extend domain registration before it expires, which relates to renewing the domain.\"\n        }\n      ],\n      \"coverage\": \"f-03\"\n    },\n    {\n      \"requirement_id\": \"r-missing\",\n      \"candidates\": [],\"coverage\": \"No file was found that provides instructions for testing an accessible keyboard website navigation.\"\n    }\n  ]\n}"
+          }
+        }
+      ],
+      "created": 1791902152,
+      "model": "handoffready-gemma4-e2b",
+      "system_fingerprint": "b0-unknown",
+      "object": "chat.completion",
+      "usage": {
+        "completion_tokens": 347,
+        "prompt_tokens": 832,
+        "total_tokens": 1179,
+        "prompt_tokens_details": {
+          "cached_tokens": 395
+        }
+      },
+      "id": "chatcmpl-IKb28gZmB583ZkiTWqIOkLYwrYHKIBr7",
+      "timings": {
+        "cache_n": 395,
+        "prompt_n": 437,
+        "prompt_ms": 161.137,
+        "prompt_per_token_ms": 0.3687345537757437,
+        "prompt_per_second": 2711.978006292782,
+        "predicted_n": 347,
+        "predicted_ms": 3079.573,
+        "predicted_per_token_ms": 8.9005,
+        "predicted_per_second": 112.35323858210214
+      }
+    }
+  }
+]

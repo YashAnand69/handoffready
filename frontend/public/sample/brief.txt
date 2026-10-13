@@ -1,0 +1,3 @@
+Deliver a transparent PNG logo and an SVG logo.
+Deliver exactly three distinct 1080 × 1080 PNG launch images.
+Provide a guide explaining how to update the website contact email.
