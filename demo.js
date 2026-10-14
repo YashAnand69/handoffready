@@ -4,6 +4,7 @@ const status = document.querySelector('#playback-status');
 const buttons = Array.from(document.querySelectorAll('button[data-time]'));
 buttons.forEach(button => button.addEventListener('click', () => {
   const seek = () => {
+    video.scrollIntoView({ block: 'start', behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
     video.currentTime = Math.min(Number(button.dataset.time), Math.max(0, video.duration - .1));
     video.play().catch(() => { status.textContent = 'Step selected. Press Play to continue.'; });
   };
