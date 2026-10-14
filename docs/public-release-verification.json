@@ -1,0 +1,28 @@
+{
+  "verified_at_utc": "2026-10-14T08:43:55.487157+00:00",
+  "public_source": "https://github.com/YashAnand69/handoffready",
+  "app_commit": "b0d87f0730eb6a10b3ad3be4316e023152057e65",
+  "initial_remote_ci": {
+    "url": "https://github.com/YashAnand69/handoffready/actions/runs/38462789325",
+    "conclusion": "success",
+    "backend_tests": 137,
+    "interface_tests": 31,
+    "real_model_in_ci": false
+  },
+  "public_demo": "https://yashanand69.github.io/handoffready/",
+  "video_sha256": "08aa4b54636b4d4120303dcba12dd1d280ba69225e909c880c95593950caeccb",
+  "public_video_verified": "Anonymous HTTP200 video/mp4 bytes match recorded digest",
+  "browser_playback": {
+    "duration_seconds": 135,
+    "video_width": 1000,
+    "video_height": 1200,
+    "chapter_seek_seconds": 51,
+    "playing": true,
+    "error": null
+  },
+  "dev_draft_id": 6228689,
+  "dev_published": false,
+  "ai_drafting_disclosure": "Fully Autonomous; human product direction explained separately",
+  "contest_agreement": "not accepted; user confirmation pending",
+  "customer_trial": "not performed"
+}

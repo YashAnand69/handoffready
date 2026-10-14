@@ -1,6 +1,6 @@
 {
   "created_at_utc": "2026-10-13T19:08:58.017833+00:00",
-  "scope": "Final local release checks on this Mac; tests use declared model doubles; real inference receipts are separate. Not remote CI or customer validation.",
+  "scope": "Final local release checks on this Mac; tests use declared model doubles; real inference receipts are separate. Not remote CI or customer validation. Local executable paths are redacted to their basename for publication.",
   "checks": [
     {
       "check": "backend",
@@ -51,7 +51,7 @@
     {
       "check": "python-correctness",
       "command": [
-        "/Users/yashanand/.local/bin/uv",
+        "uv",
         "tool",
         "run",
         "ruff",

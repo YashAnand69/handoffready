@@ -1,0 +1,108 @@
+{
+  "title": "HandoffReady · actual local workflow",
+  "recording_type": "captured_screens_walkthrough",
+  "width": 1000,
+  "height": 1200,
+  "fps": 24,
+  "captured_app_commit": "b0d87f0730eb6a10b3ad3be4316e023152057e65",
+  "approval_actor": "Agent-operated synthetic demonstration. Not customer or human trial evidence.",
+  "capture_note": "Actual browser screens captured across an edited workflow; holds are editing durations, not measured inference latency.",
+  "created_at_utc": "2026-10-14T07:28:28.105826+00:00",
+  "slides": [
+    {
+      "image": "frames/01-home.png",
+      "duration_seconds": 6,
+      "caption": "A private delivery desk for web and design freelancers. This packet is synthetic."
+    },
+    {
+      "image": "frames/02-brief.png",
+      "duration_seconds": 7,
+      "caption": "Start with the agreed brief: a transparent logo, three distinct launch images and useful contact-email instructions."
+    },
+    {
+      "image": "frames/03-local-inference.png",
+      "duration_seconds": 4,
+      "caption": "Actual local Gemma inference proposes a checklist. The recording uses captured screens, not canned responses."
+    },
+    {
+      "image": "frames/04-checklist.png",
+      "duration_seconds": 8,
+      "caption": "Review exact source quotations, formats and quantities before explicitly confirming the checklist."
+    },
+    {
+      "image": "frames/05-files.png",
+      "duration_seconds": 6,
+      "caption": "Inspect real file bytes. Supported checks establish narrow facts, not aesthetic quality."
+    },
+    {
+      "image": "frames/06-duplicate.png",
+      "duration_seconds": 8,
+      "caption": "Three launch filenames contain only two distinct byte sequences. Renaming cannot create a third design."
+    },
+    {
+      "image": "frames/07-matching.png",
+      "duration_seconds": 4,
+      "caption": "Gemma runs locally again to propose associations. It never selects files or approves delivery automatically."
+    },
+    {
+      "image": "frames/08-suggestions.png",
+      "duration_seconds": 8,
+      "caption": "Suggestions remain unverified. Select and inspect the actual files before making an assessment."
+    },
+    {
+      "image": "frames/09-failure-preserved.png",
+      "duration_seconds": 9,
+      "caption": "Safeguard test: even a satisfied assessment cannot erase the opaque PNG’s failed transparency check."
+    },
+    {
+      "image": "frames/10-count-failure.png",
+      "duration_seconds": 8,
+      "caption": "The actual byte count fails: two distinct files, not the three requested. Dimensions can pass independently."
+    },
+    {
+      "image": "frames/11-guide-review.png",
+      "duration_seconds": 10,
+      "caption": "The guide contains only a welcome note. Operator review marks needs work; the manual check stays unknown."
+    },
+    {
+      "image": "frames/12-handoff-gaps.png",
+      "duration_seconds": 7,
+      "caption": "The client manifest keeps failed and unresolved work visible. Raw source and private notes stay out."
+    },
+    {
+      "image": "frames/13-saved-export.png",
+      "duration_seconds": 6,
+      "caption": "Save and download an immutable JSON snapshot. Original delivery files must be sent separately."
+    },
+    {
+      "image": "frames/14-replacement.png",
+      "duration_seconds": 7,
+      "caption": "Replace the opaque logo with actual transparent PNG bytes. A filename change alone would not fix it."
+    },
+    {
+      "image": "frames/15-stale-reviews.png",
+      "duration_seconds": 8,
+      "caption": "Changing the packet makes previous assessments stale. Explicitly review the current files again."
+    },
+    {
+      "image": "frames/16-corrected-checks.png",
+      "duration_seconds": 8,
+      "caption": "The new PNG passes the narrow alpha check after a fresh review. Final appearance still needs judgment."
+    },
+    {
+      "image": "frames/17-corrected-preview.png",
+      "duration_seconds": 7,
+      "caption": "The corrected logo passes; the duplicate launch image and incomplete guide still need work."
+    },
+    {
+      "image": "frames/18-immutable-history.png",
+      "duration_seconds": 6,
+      "caption": "Earlier exports stay unchanged. A second download matched the original snapshot byte-for-byte."
+    },
+    {
+      "image": "frames/19-final-snapshots.png",
+      "duration_seconds": 8,
+      "caption": "Both snapshots remain available with their version context. Local AI assists; review controls the handoff."
+    }
+  ]
+}

@@ -1,0 +1,202 @@
+{
+  "kind": "actual-browser-operated-synthetic-demo",
+  "recorded_at_utc": "2026-10-14T07:32:30.638878+00:00",
+  "captured_app_commit": "b0d87f0730eb6a10b3ad3be4316e023152057e65",
+  "recording_type": "edited actual screenshot walkthrough, not a continuous screen recording",
+  "approval_actor": "Agent-operated synthetic demonstration; not human/customer trial evidence.",
+  "jobs": [
+    {
+      "kind": "extract",
+      "state": "succeeded",
+      "created_at": "2026-10-13T20:23:53.315507+00:00",
+      "model": {
+        "alias": "handoffready-gemma4-e2b",
+        "elapsed_seconds": 4.11,
+        "input_sha256": "d80e99d1d0daa0e736b322abf029b7d55b754d104b030dbe42d676bc04865f33",
+        "input_tokens": 1382,
+        "output_sha256": "f07ae82e5fcc8814e2a670bcdfee0bc852970be39037af5a50b7f7fa504bba04",
+        "output_tokens": 408,
+        "prompt_version": "handoffready-v10",
+        "runtime_commit": "98801578818b26d833a1fe244870d64b0c34bb46",
+        "source_revision": "3e22461f65e89153144f8adb70e3b8c2cc9845a7",
+        "vision_used": false
+      }
+    },
+    {
+      "kind": "match",
+      "state": "succeeded",
+      "created_at": "2026-10-13T20:25:14.300966+00:00",
+      "model": {
+        "alias": "handoffready-gemma4-e2b",
+        "elapsed_seconds": 9.213,
+        "input_sha256": "4745249c349a621ee4ca7c84e47dd44da7ddd941999d607963f92ac3ad194cae",
+        "input_tokens": 2280,
+        "output_sha256": "1b1c4161f4615bfcf6b580d9e15cb4a06e11dbc95ac624f6ea0ec182da60721f",
+        "output_tokens": 954,
+        "prompt_version": "handoffready-v10",
+        "runtime_commit": "98801578818b26d833a1fe244870d64b0c34bb46",
+        "source_revision": "3e22461f65e89153144f8adb70e3b8c2cc9845a7",
+        "vision_used": false
+      }
+    }
+  ],
+  "before": [
+    {
+      "title": "Deliver a transparent PNG logo and an SVG logo.",
+      "disposition": "satisfied",
+      "checks": [
+        {
+          "kind": "presence",
+          "status": "pass",
+          "actual": 1,
+          "expected": 1
+        },
+        {
+          "kind": "presence",
+          "status": "pass",
+          "actual": 1,
+          "expected": 1
+        },
+        {
+          "kind": "png_nonopaque_pixels",
+          "status": "fail",
+          "actual": [
+            false
+          ],
+          "expected": null
+        }
+      ]
+    },
+    {
+      "title": "Deliver exactly three distinct 1080 \u00d7 1080 PNG launch images.",
+      "disposition": "needs_work",
+      "checks": [
+        {
+          "kind": "count",
+          "status": "fail",
+          "actual": 2,
+          "expected": 3
+        },
+        {
+          "kind": "image_dimensions",
+          "status": "pass",
+          "actual": [
+            [
+              1080,
+              1080
+            ],
+            [
+              1080,
+              1080
+            ],
+            [
+              1080,
+              1080
+            ]
+          ],
+          "expected": [
+            1080,
+            1080
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Provide a guide explaining how to update the website contact email.",
+      "disposition": "needs_work",
+      "checks": [
+        {
+          "kind": "manual",
+          "status": "unknown",
+          "actual": null,
+          "expected": null
+        }
+      ]
+    }
+  ],
+  "after": [
+    {
+      "title": "Deliver a transparent PNG logo and an SVG logo.",
+      "disposition": "satisfied",
+      "checks": [
+        {
+          "kind": "presence",
+          "status": "pass",
+          "actual": 1,
+          "expected": 1
+        },
+        {
+          "kind": "presence",
+          "status": "pass",
+          "actual": 1,
+          "expected": 1
+        },
+        {
+          "kind": "png_nonopaque_pixels",
+          "status": "pass",
+          "actual": [
+            true
+          ],
+          "expected": null
+        }
+      ]
+    },
+    {
+      "title": "Deliver exactly three distinct 1080 \u00d7 1080 PNG launch images.",
+      "disposition": "needs_work",
+      "checks": [
+        {
+          "kind": "count",
+          "status": "fail",
+          "actual": 2,
+          "expected": 3
+        },
+        {
+          "kind": "image_dimensions",
+          "status": "pass",
+          "actual": [
+            [
+              1080,
+              1080
+            ],
+            [
+              1080,
+              1080
+            ],
+            [
+              1080,
+              1080
+            ]
+          ],
+          "expected": [
+            1080,
+            1080
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Provide a guide explaining how to update the website contact email.",
+      "disposition": "needs_work",
+      "checks": [
+        {
+          "kind": "manual",
+          "status": "unknown",
+          "actual": null,
+          "expected": null
+        }
+      ]
+    }
+  ],
+  "old_export_unchanged": true,
+  "private_note_markers_absent": true,
+  "new_model_mistake": "Actual matching treated a welcome-only guide as supporting contact-email instructions. Demo review retained needs_work. Also described duplicate launch candidate as distinct; byte-count check fails.",
+  "customer_validation": "not performed",
+  "recorded_guide_candidates": [
+    {
+      "file_id": "95488b3c788f49cf9ae3f4e2dcc6e31b",
+      "reason": "The file 'contact-guide.md' is a markdown file containing text that serves as a guide, specifically mentioning 'Welcome to your new website.' which aligns with providing a guide.",
+      "quote": "# Client guide"
+    }
+  ]
+}

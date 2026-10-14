@@ -2,7 +2,11 @@
 
 A local delivery desk for web and design freelancers: turn an agreed brief into a reviewed checklist, inspect the files you intend to deliver, review evidence, and prepare a clear client manifest.
 
-**Tested full-stack local release.** Real Gemma inference, the supported file workflow and client exports work on the tested Mac. A genuine first-user trial and public submission remain pending. Read [stage reviews](docs/STAGE-REVIEWS.md) and [model evidence](docs/MODEL-EVIDENCE.md) for verified status. Synthetic examples are not customer results.
+**Tested full-stack local release.** Real Gemma inference, the supported file workflow and client exports work on the tested Mac. A genuine first-user trial and the DEV contest entry remain pending. Read [stage reviews](docs/STAGE-REVIEWS.md) and [model evidence](docs/MODEL-EVIDENCE.md) for verified status. Synthetic examples are not customer results.
+
+## Watch the actual local workflow
+
+[Recorded walkthrough with chapters and transcript](https://yashanand69.github.io/handoffready/). The 135-second video shows actual app captures and real local Gemma jobs with an original imperfect packet. It is edited and agent-operated, not a customer trial or continuous recording. The public page does not run a hosted AI service.
 
 ## What it does
 
@@ -65,7 +69,8 @@ Limits include 30 files, 50 MiB per packet, 10 MiB per file, 10 PDF pages, 10 mi
 - [Full-stack release and run guide](docs/FULL-STACK-RELEASE.md)
 - [Stage reviews](docs/STAGE-REVIEWS.md)
 - [Final rules and judging review](docs/FINAL-RULES-REVIEW.md), [correctness review](docs/FINAL-CORRECTNESS-REVIEW.md), and [usability review](docs/FINAL-USABILITY-REVIEW.md)
-- [Final local verification receipt](docs/final-release-checks.json)
+- [Final local verification receipt](docs/final-release-checks.json) and [successful first remote run](https://github.com/YashAnand69/handoffready/actions/runs/38462789325)
+- [Recorded browser workflow evidence](docs/browser-demo-verification.json)
 - [Unpublished DEV submission draft](docs/DEV-SUBMISSION-DRAFT.md)
 - [Model provenance and measured evidence](docs/MODEL-EVIDENCE.md)
 - [First-user trial guide](docs/USER-TRIAL.md)

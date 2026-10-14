@@ -23,11 +23,11 @@ If the service has stopped, double-click `Start HandoffReady.command`, or run `.
 
 ## Supported release boundary
 
-This release is for one local user on the tested Mac. It intentionally has no cloud account, payment flow, shared team tenancy, client messaging or hosted arbitrary model inference. Those were excluded from the approved plan.40 inspector tests, 43 model boundary tests, 46 API tests, 4 mixed-format check tests and 4 independent final-review tests total 137 Python tests; 31 interface tests also pass. Model unit tests use declared protocol stubs; real-model integration evidence is separate. GitHub CI has not yet run because no repository was published.
+This release is for one local user on the tested Mac. It intentionally has no cloud account, payment flow, shared team tenancy, client messaging or hosted arbitrary model inference. Those were excluded from the approved plan.40 inspector tests, 43 model boundary tests, 46 API tests, 4 mixed-format check tests and 4 independent final-review tests total 137 Python tests; 31 interface tests also pass. Model unit tests use declared protocol stubs; real-model integration evidence is separate. The first public GitHub Actions run for b0d87f0 passed; see the public verification section below.
 
 The AI proposes associations, not contractual acceptance. Independent evaluations found real mistakes, and their first results remain available. Format guards and repaired regressions improve known failures; they do not establish general semantic correctness, content quality or prompt-injection immunity. Review titles/checks/notes before sharing; client projection omits raw private fields but cannot automatically redact private meaning copied into an approved title.
 
-The user deferred the first-user trial until the tested demo was ready. It remains the next product validation step. Public demo/video, repository publication and the DEV contest entry remain release/submission tasks; no user agreement or result is fabricated.
+The user deferred the first-user trial until the tested demo was ready. It remains the next product validation step. Repository publication is complete. Public video verification and the DEV contest entry remain submission tasks; no user agreement or result is fabricated.
 
 ## Final independent audit — 14 October 2026
 
@@ -36,3 +36,7 @@ Separate rules, correctness and usability agents reviewed the integrated release
 The post-audit real-model workflow receipt `workflow-verification-release-reviewed.json` records successful extraction and matching plus seven file/review/export/restart stages with no model injection. Browser checks reopened a reviewed synthetic packet, saved unchanged source and verified three confirmed current reviews survived. Home/Files were inspected at 320px and Review at 390px without horizontal document overflow. Actual keyboard step changes focus the new heading. The temporary viewport was restored. Physical mobile file pickers, assistive technology and a customer trial remain untested.
 
 Original-file integrity is reconciled before project API operations, and missing or changed bytes block evidence and stale prior decisions. Setup now creates its required local credential on ordinary installation. Per-file rename drafts survive unrelated uploads and saving another file. Client snapshots show when they were saved and that they are immutable; the handoff explicitly instructs users to send originals separately. See the three FINAL-*-REVIEW reports for findings and boundaries.
+
+## Public verification
+
+Code: https://github.com/YashAnand69/handoffready. Verified first remote CI run: https://github.com/YashAnand69/handoffready/actions/runs/38462789325. CI runs declared model doubles; actual local inference is evidenced separately. The recorded walkthrough uses actual app captures, original synthetic files and agent-operated decisions. It is not a continuous screen recording, customer validation or a live cloud deployment. All five judging criteria and the remaining entrant/publication requirements are mapped in FINAL-RULES-REVIEW.md and SUBMISSION-CHECKLIST.md.

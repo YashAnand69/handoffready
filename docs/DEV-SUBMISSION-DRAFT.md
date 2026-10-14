@@ -30,19 +30,21 @@ I have not measured customer time savings, willingness to pay or recurring use. 
 
 ## Demo
 
-**Add the verified public demo/video link here before submitting.**
+[Watch the recorded local walkthrough](https://yashanand69.github.io/handoffready/) · [Download the MP4](https://yashanand69.github.io/handoffready/walkthrough.mp4)
 
-The sample uses original synthetic files and actual local inference. Its opaque logo, duplicate launch artwork and incomplete guide give the review something meaningful to catch.
+The local sample uses original synthetic files and supports actual local inference. Its opaque logo, duplicate launch artwork and incomplete guide give the review something meaningful to catch. The recording labels its captured screens and shows actual local inference.
 
-The planned recording follows one handoff: review the model's quoted checklist, inspect the imperfect packet, compare the welcome-only guide with useful maintenance instructions, replace the opaque logo, review again and download the manifest. An earlier exported snapshot stays unchanged after later corrections.
+The two-minute-fifteen-second video follows a real local workflow: Gemma proposes a quoted checklist and file associations; the operator inspects the imperfect packet, preserves failed checks, marks the welcome-only guide as needing work, replaces the opaque logo, reviews again and downloads the manifest. The earlier export stays unchanged after correction.
 
-**Recording note:** verify these steps on the final build and describe what the recording actually shows. Label replayed output if any is used. A local address cannot substitute for the required public video or deployed link. Remove this note before publication.
+It is an edited walkthrough assembled from actual app captures, not a continuous screen recording. The sample and agent-operated confirmations are synthetic; they are not customer or human-user trial evidence. Captions, a transcript and chapter navigation accompany the silent video.
+
+The captured application revision is `b0d87f0730eb6a10b3ad3be4316e023152057e65`. The published repository also includes the subsequent demo tooling and evidence records. The watch page is a recording, not a hosted inference endpoint.
 
 ## Code
 
-**Add the fresh public repository link here before submitting.**
+[Source code and verification evidence](https://github.com/YashAnand69/handoffready)
 
-The project began on 13 October 2026 during the Week 2 window, in a fresh repository. Application code and interface are original with AI assistance. The application uses licensed open-source foundations; model weights/runtime have their own notices and are not bundled into the source archive.
+The project began on 13 October 2026 during the Week 2 window, in a fresh repository. The demonstrated app checkpoint is commit `b0d87f0`; the public repository preserves that revision and subsequent demo preparation. Application code and interface are original with AI assistance. The application uses licensed open-source foundations; model weights/runtime have their own notices and are not bundled into the source archive.
 
 ## How I Built It
 
@@ -64,11 +66,15 @@ The first real model calls failed strict schema or source-evidence validation. L
 
 An exact quote proves that words exist, not that they meet the requirement. Repairs included tighter source/type grammar, model relevance classification and a deterministic guard against inspected formats conflicting with approved checks. The guard can suppress TXT-for-PDF when the required format is approved; it cannot decide whether a correctly typed document is useful. Suppressed suggestions retain diagnostics.
 
+The recorded app demo exposed another wrong association: Gemma treated the welcome-only guide as supporting contact-email instructions. The operator marked it as needing work. The exact saved candidate and the two successful local model jobs are preserved in [`browser-demo-verification.json`](https://github.com/YashAnand69/handoffready/blob/main/docs/browser-demo-verification.json).
+
 The original failures remain in the repository. Once a case informed a repair, its rerun became a development regression, not a fresh held-out success. Semantic associations and checklist completeness still need human review; prompt-injection robustness is unproved. The app labels model interpretation as unverified.
 
 ### What I actually verified
 
 At the final local checkpoint, **137 Python tests and 31 interface tests passed**, along with strict TypeScript/production build, formatting and focused Python correctness checks (`F,E9`). npm audit reported zero known findings at that check. `docs/final-release-checks.json` records the actual outputs. Model unit tests use declared protocol stubs; actual inference is recorded separately.
+
+The [first remote GitHub Actions run](https://github.com/YashAnand69/handoffready/actions/runs/38462789325) also passed the 137 backend tests, 31 interface tests, build, formatting and focused correctness checks. CI uses declared model doubles, not downloaded-model inference.
 
 A separate real HTTP walkthrough recorded successful v10 extraction and matching, actual file inspection, exports, replacement, stale review and restart persistence. Browser checks exercised the sample workflow and downloaded output. Receipts and original failures are documented in `docs/MODEL-EVIDENCE.md` and the workflow records.
 
@@ -76,7 +82,7 @@ Final browser checks also confirmed that saving an unchanged source preserves th
 
 Exports omit raw source/private-note fields. Approved titles, check descriptions and client notes are deliberately shared and must be previewed for confidential content. Field separation cannot automatically remove private meaning copied into a title.
 
-On the tested Apple M5 Pro with 24 GiB RAM, tuned v10 development calls took about five to six seconds. These are observations on small synthetic inputs, not service guarantees or an accuracy statistic. Process RSS also omits some GPU/system allocation.
+On the tested Apple M5 Pro with 24 GiB RAM, tuned v10 development calls took about five to six seconds. These are observations on small synthetic inputs, not service guarantees or an accuracy statistic. The RSS observations do not measure every GPU/system allocation.
 
 ## Why Does Open Innovation Matter?
 
@@ -90,10 +96,10 @@ Open foundations made it practical to focus on the delivery problem. React and R
 
 **Best Use of Gemma.** Gemma runs locally and performs the central requirement extraction and evidence association tasks. The adapter verifies source evidence and keeps every suggestion subject to review. Real inference receipts record the model revision, quantization, digest, runtime and prompt version.
 
-**Editorial category note:** GitHub Actions is prepared but has not run remotely. Claim another partner category only after meaningful use is verified and the current rules support it. Remove this note before publication.
+The project uses GitHub Actions for automated verification; it does not claim GitHub Copilot coding assistance. The named partner submission category here is Gemma.
 
 ## Current limits
 
-The tested model installation is for Apple Silicon macOS and one local user/process. The release supports pasted English briefs and bounded PNG/JPEG, safe SVG metadata, readable native PDFs, text and Markdown. OCR, Office/PSD/ZIP import and automatic visual quality judgments are outside its scope. A parser result and correct file type are not proof of useful content.
+The tested model installation is for Apple Silicon macOS and one local user/process. The release supports pasted English briefs and bounded PNG/JPEG, safe SVG metadata, readable native PDFs, text and Markdown. OCR, Office/PSD/ZIP import and automatic visual quality judgments are outside its scope. A parser result and correct file type are not proof of useful content. Local application storage is not encrypted by the app; privacy also depends on the device and what the reviewer chooses to share.
 
 The next product test is a genuine freelancer trial: can they review a delivery without assistance, what do they correct, and would they use it again? Until that happens, HandoffReady is a tested local demonstration with a plausible customer, not a validated business.
