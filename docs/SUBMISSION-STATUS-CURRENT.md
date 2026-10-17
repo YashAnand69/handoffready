@@ -15,9 +15,9 @@
 
 ## Publication action
 
-The user requested submission on 17 October, superseding the earlier hold. The finished entry is prepared for **Overall and Best Use of Gemma**. Final action-time confirmation of the contest entry agreement was requested through the user-input tool; Publish has not been clicked while that confirmation is pending. The user previously confirmed Week 2 rules and eligibility; no independent eligibility certification is made.
+The user explicitly approved the final entry agreement and instructed publication. The existing draft was published on **17 October 2026 at 21:02:39 IST (15:32:39 UTC)** for **Overall and Best Use of Gemma**.
 
-The signed-in dashboard and rendered preview identify the existing article as unpublished. Its secret preview token is intentionally omitted from source. After publication, record the actual public URL, timestamp, article ID and final verification here. Do not treat a draft or local package as a submitted entry.
+**[Published entry](https://dev.to/yashanand69/handoffready-the-folder-looks-finished-does-it-fulfill-the-brief-3igh)**. The rendered public page shows the Week 2 Side Hustle Submission banner, required `devchallenge` / `hf26challenge` tags, the Gemma category, actual current cover and truthful AI disclosure. Publication used the existing draft editor (draft route 6228689); the resulting DOM reports article ID 4848856. No second article was created. The canonical URL has no draft token. Browser verification succeeded; independent automated HTTP/web retrieval was blocked by DEV bot protection, so anonymous HTTP access is not certified. Proof is saved locally at `outputs/current-demo/DEV-PUBLISHED-OCT17.png`; see `dev-publication-oct17.json`.
 
 ## Remaining evidence limits
 
@@ -34,7 +34,7 @@ The signed-in dashboard and rendered preview identify the existing article as un
 - [x] Model measurements distinguish extraction, approved-requirement association and customer outcomes.
 - [x] Existing draft 6228689 is the single intended Week 2 entry.
 - [x] User explicitly requested submission on 17 October.
-- [ ] Final action-time confirmation received and Publish clicked.
-- [ ] Resulting public article and challenge tags/media verified after publication.
+- [x] Final action-time confirmation received and Publish clicked.
+- [x] Resulting public article, challenge association, tags and media links verified in the browser after publication.
 
 Official [Week 2 page](https://dev.to/challenges/hacktoberfest-week2-2026-10-12): deadline **18 October 2026 at 23:59 PDT / 19 October 2026 at 12:29 IST**. Writing is weighted most heavily; no numerical judging weights are published. A genuine trial is a valuable optional addition, not a validity requirement. No win or defect-free guarantee is made.

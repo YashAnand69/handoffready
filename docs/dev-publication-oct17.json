@@ -1,0 +1,22 @@
+{
+  "verified_at_utc": "2026-10-17T15:34:13.636735+00:00",
+  "status": "published_browser_verified",
+  "former_draft_editor_route_id": 6228689,
+  "resulting_article_dom_id": "4848856",
+  "public_url": "https://dev.to/yashanand69/handoffready-the-folder-looks-finished-does-it-fulfill-the-brief-3igh",
+  "published_at_utc": "2026-10-17T15:32:39Z",
+  "published_at_ist": "2026-10-17T21:02:39+05:30",
+  "user_action_time_confirmation_received": true,
+  "existing_draft_published_no_second_entry_created": true,
+  "browser_verified": [
+    "canonical public URL without preview token",
+    "Posted on 17 Oct",
+    "Week 2 Side Hustle Submission banner",
+    "devchallenge and hf26challenge tags",
+    "Overall and Best Use of Gemma text",
+    "current cover, demo/explorer/export/source/CI links",
+    "truthful AI assistance disclosure"
+  ],
+  "anonymous_automated_retrieval": "DEV returned HTTP 403 Forbidden Bots; web retrieval also unavailable. No anonymous access claim.",
+  "screenshot": "outputs/current-demo/DEV-PUBLISHED-OCT17.png"
+}

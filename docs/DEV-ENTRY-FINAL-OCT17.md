@@ -7,7 +7,7 @@ Copy only between ARTICLE START and ARTICLE END. Before publishing, the parent m
 <!-- ARTICLE START -->
 ---
 title: "HandoffReady: the folder looks finished. Does it fulfill the brief?"
-published: false
+published: true
 tags: devchallenge, hf26challenge, ai, opensource
 ---
 

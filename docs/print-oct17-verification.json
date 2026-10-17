@@ -1,25 +1,49 @@
 {
-  "created_at_utc": "2026-10-17T10:50:37.044000+00:00",
-  "kind": "optional-html-print-renderer-readiness",
-  "state": "blocked_before_authoring",
+  "verified_at_utc": "2026-10-17T15:33:51.216413+00:00",
+  "kind": "optional-html-print-renderer-check",
+  "state": "rendered_and_visually_reviewed",
   "source": "outputs/current-demo/records/after.html",
   "source_sha256": "c489911e92a4584e82acb4055c4e5214aad80f3433f24f361347d2af1e02bcf4",
-  "attempt": "Import WeasyPrint from isolated .runtime/pdf-tools using existing project Python",
-  "exit_code": 1,
-  "blocker": "WeasyPrint native dependency missing: cannot load library libgobject-2.0-0; macOS dynamic loader and ctypes.find_library could not locate it.",
-  "planned_paper_sizes": [
-    "A4",
-    "Letter"
+  "renderer": "WeasyPrint 70, isolated dependencies",
+  "outputs": [
+    {
+      "paper": "a4",
+      "path": "outputs/print-oct17/handoffready-client-record-a4.pdf",
+      "sha256": "f8b3a654c7ece1045126eb619a5685d6c40a6566456653548518e6aaaa2b57fd",
+      "pages": 4,
+      "page_size_points": [
+        595.28,
+        841.89
+      ],
+      "text_present_on_each_page": [
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "paper": "letter",
+      "path": "outputs/print-oct17/handoffready-client-record-letter.pdf",
+      "sha256": "da340ae120f97eb790c756989aae2b2950352e8b8d3356fbc7f3ffb47d0bc3e5",
+      "pages": 4,
+      "page_size_points": [
+        612.0,
+        792.0
+      ],
+      "text_present_on_each_page": [
+        true,
+        true,
+        true,
+        true
+      ]
+    }
   ],
-  "pdfs_created": 0,
-  "artifact_start_marker_run": false,
-  "reason_marker_not_run": "Native renderer import failed during read-only dependency check before any PDF authoring command.",
-  "actions_taken": [
-    "No OS package installation attempted",
-    "No app source, immutable HTML, archive or release changed"
-  ],
+  "review": "All eight pages rendered to PNG; both all-page contact sheets visually inspected. No visible clipped or overlapping text. Pagination is not optimized: A4 final page contains only closing checksum caveat; Letter splits a supporting-file list across pages.",
   "limitations": [
-    "A4/Letter renderer output remains unverified",
-    "No native-browser or physical print certification"
-  ]
+    "Not native-browser printing or a physical-printer test",
+    "No application dynamic PDF export feature added",
+    "No app source, immutable HTML or released archive modified"
+  ],
+  "initial_blocker_resolved": "Missing native renderer libraries supplied through isolated runtime dependencies; no OS-wide package install."
 }
