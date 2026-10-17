@@ -19,6 +19,10 @@ The user explicitly approved the final entry agreement and instructed publicatio
 
 **[Published entry](https://dev.to/yashanand69/handoffready-the-folder-looks-finished-does-it-fulfill-the-brief-3igh)**. The rendered public page shows the Week 2 Side Hustle Submission banner, required `devchallenge` / `hf26challenge` tags, the Gemma category, actual current cover and truthful AI disclosure. Publication used the existing draft editor (draft route 6228689); the resulting DOM reports article ID 4848856. No second article was created. The canonical URL has no draft token. Browser verification succeeded; independent automated HTTP/web retrieval was blocked by DEV bot protection, so anonymous HTTP access is not certified. Proof is saved locally at `outputs/current-demo/DEV-PUBLISHED-OCT17.png`; see `dev-publication-oct17.json`.
 
+## Freelancer recruitment
+
+A volunteer request for 1–3 web/design freelancers was [published in r/alphaandbetausers](https://www.reddit.com/r/alphaandbetausers/comments/1x8de9u/webdesign_freelancers_looking_for_13_volunteers/) on 17 October. Its visible community description explicitly invites early-user recruitment. No separate restrictive community rules appeared on the community/composer view inspected. The post offers recorded-prototype feedback and local hands-on testing as distinct routes, discloses AI assistance and requests no private client data. Initial public post view showed no responses. Recruitment is not a completed trial or endorsement. No DEV comment or r/webdevelopment post was submitted: DEV prohibits AI-generated comments, and r/webdevelopment lists no-AI-generated-content guidance.
+
 ## Remaining evidence limits
 
 - Genuine freelancer trial, willingness to pay, revenue and measured savings: not established. The prepared trial guide is not feedback.

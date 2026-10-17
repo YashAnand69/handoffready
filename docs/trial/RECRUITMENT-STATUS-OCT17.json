@@ -1,0 +1,21 @@
+{
+  "verified_at_utc": "2026-10-17T15:44:20.724267+00:00",
+  "status": "recruitment_post_published_awaiting_volunteers",
+  "url": "https://www.reddit.com/r/alphaandbetausers/comments/1x8de9u/webdesign_freelancers_looking_for_13_volunteers/",
+  "community": "r/alphaandbetausers",
+  "post_id": "1x8de9u",
+  "target": "1\u20133 practising web/design freelancers",
+  "incentive": "unpaid volunteer; no purchases or favourable review requested",
+  "routes": [
+    "10-minute recorded prototype review",
+    "20-minute local hands-on trial"
+  ],
+  "initial_responses": 0,
+  "completed_trials": 0,
+  "feedback_received": 0,
+  "ai_assistance_disclosed": true,
+  "no_private_contact_or_client_data_requested": true,
+  "reuse_permission": "Separate explicit permission for an exact excerpt before adding participant feedback to DEV",
+  "screenshot": "outputs/feedback/RECRUITMENT-POSTED-OCT17.png",
+  "verification": "Browser showed Posted confirmation, listing, resulting permalink, full body and no-responses banner. No independent tester has yet been recruited."
+}
