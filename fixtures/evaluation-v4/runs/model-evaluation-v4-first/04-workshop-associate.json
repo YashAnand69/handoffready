@@ -1,0 +1,180 @@
+{
+  "after_guards": {
+    "candidate_denominator": 1,
+    "correct_no_support": 1,
+    "correct_support_pairs": 1,
+    "failed_no_support": 0,
+    "failure": false,
+    "fully_correct_supported_requirements": 1,
+    "missed_support_pairs": 0,
+    "no_support_requirement_denominator": 1,
+    "predicted_pair_denominator": 1,
+    "support_pair_denominator": 1,
+    "supported_requirement_denominator": 1,
+    "text_quote_denominator": 0,
+    "unrelated_candidates": 0,
+    "valid_text_quotes": 0,
+    "wrong_no_support": 0,
+    "wrong_support_pairs": 0
+  },
+  "before_guards": {
+    "candidate_denominator": 2,
+    "correct_no_support": 1,
+    "correct_support_pairs": 1,
+    "failed_no_support": 0,
+    "failure": false,
+    "fully_correct_supported_requirements": 1,
+    "missed_support_pairs": 0,
+    "no_support_requirement_denominator": 1,
+    "predicted_pair_denominator": 1,
+    "support_pair_denominator": 1,
+    "supported_requirement_denominator": 1,
+    "text_quote_denominator": 1,
+    "unrelated_candidates": 1,
+    "valid_text_quotes": 1,
+    "wrong_no_support": 0,
+    "wrong_support_pairs": 0
+  },
+  "capture": {
+    "completion": {
+      "choices": [
+        {
+          "content": "{\n  \"proposals\": [\n    {\n      \"requirement_id\": \"r1\",\n      \"candidates\": [\n        {\n          \"relation\": \"supports\",\n          \"file_id\": \"f1\",\n          \"reason\": \"The file 'reed-poster.png' is a PNG image with dimensions 160 by 90, matching the requirement for a 160 by 90 PNG workshop poster.\",\n          \"evidence_unit_id\": null\n        }\n      ],\n      \"coverage\": \"The file 'reed-poster.png' is a 160 by 90 PNG image, satisfying the requirement for a workshop poster.\"\n    },\n    {\n      \"requirement_id\": \"r2\",\n      \"candidates\": [\n        {\n          \"relation\": \"unrelated\",\n          \"file_id\": \"f2\",\n          \"reason\": \"The file 'play-button-proof.txt' contains text stating, 'We plan to test playback next week. This note is not a live player.', which does not provide evidence of testing the Play button starting audio on a live workshop page.\",\n          \"evidence_unit_id\": \"ev1_e6fe14f528b20a3c33788c99\"\n        }\n      ],\n      \"coverage\": \"No evidence found to verify that the Play button starts audio on the live workshop page.\"\n    }\n  ]\n}",
+          "finish_reason": "stop",
+          "index": 0
+        }
+      ],
+      "usage": {
+        "completion_tokens": 331,
+        "prompt_tokens": 1206,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "total_tokens": 1537
+      }
+    },
+    "completion_response_count": 1,
+    "elapsed_seconds": 3.3266528750536963,
+    "model_metadata": {
+      "association_guard_version": "approved-format-union-v1",
+      "elapsed_seconds": 3.326,
+      "input_sha256": "650115886aa41de07ffca0a053c0c4fb5e652063e49a40a45d3bce7279696af6",
+      "input_tokens": 1206,
+      "model": "google/gemma-4-E2B-it",
+      "output_sha256": "8a1b1f338584e68c6227151983af04cdea490bd979849149e4bda74bc44f9955",
+      "output_tokens": 331,
+      "prompt_version": "handoffready-v11",
+      "seed": 20261013,
+      "source_catalog_version": "source-occurrence-v1",
+      "supporting_association_count": 1,
+      "temperature": 0,
+      "typed_rejection_count": 0,
+      "unrelated_association_count": 1,
+      "vision_used": false
+    },
+    "stage": "associate",
+    "structured_call_count": 1,
+    "structured_pre_guard": {
+      "proposals": [
+        {
+          "candidates": [
+            {
+              "file_id": "f1",
+              "reason": "The file 'reed-poster.png' is a PNG image with dimensions 160 by 90, matching the requirement for a 160 by 90 PNG workshop poster.",
+              "relation": "supports"
+            }
+          ],
+          "coverage": "The file 'reed-poster.png' is a 160 by 90 PNG image, satisfying the requirement for a workshop poster.",
+          "requirement_id": "r1"
+        },
+        {
+          "candidates": [
+            {
+              "evidence_unit_id": "ev1_e6fe14f528b20a3c33788c99",
+              "file_id": "f2",
+              "reason": "The file 'play-button-proof.txt' contains text stating, 'We plan to test playback next week. This note is not a live player.', which does not provide evidence of testing the Play button starting audio on a live workshop page.",
+              "relation": "unrelated"
+            }
+          ],
+          "coverage": "No evidence found to verify that the Play button starts audio on the live workshop page.",
+          "requirement_id": "r2"
+        }
+      ]
+    },
+    "synthetic_data_only": true
+  },
+  "failure": null,
+  "guarded_predictions": [
+    {
+      "candidate_count": 1,
+      "candidates": [
+        {
+          "file_id": "f1",
+          "quote": null,
+          "quote_valid": null,
+          "reason": "Filename/metadata suggestion; no visual inspection. The file 'reed-poster.png' is a PNG image with dimensions 160 by 90, matching the requirement for a 160 by 90 PNG workshop poster."
+        }
+      ],
+      "coverage": "The file 'reed-poster.png' is a 160 by 90 PNG image, satisfying the requirement for a workshop poster.",
+      "file_ids": [
+        "f1"
+      ],
+      "requirement_id": "r1",
+      "unrelated_candidate_count": 0
+    },
+    {
+      "candidate_count": 0,
+      "candidates": [],
+      "coverage": "No evidence found to verify that the Play button starts audio on the live workshop page.",
+      "file_ids": [],
+      "requirement_id": "r2",
+      "unrelated_candidate_count": 0
+    }
+  ],
+  "latency_seconds": 3.3267112089088187,
+  "raw_predictions": [
+    {
+      "candidate_count": 1,
+      "candidates": [
+        {
+          "file_id": "f1",
+          "quote_valid": null,
+          "reason": "The file 'reed-poster.png' is a PNG image with dimensions 160 by 90, matching the requirement for a 160 by 90 PNG workshop poster.",
+          "relation": "supports"
+        }
+      ],
+      "coverage": "The file 'reed-poster.png' is a 160 by 90 PNG image, satisfying the requirement for a workshop poster.",
+      "file_ids": [
+        "f1"
+      ],
+      "requirement_id": "r1",
+      "unrelated_candidate_count": 0
+    },
+    {
+      "candidate_count": 1,
+      "candidates": [
+        {
+          "evidence_unit_id": "ev1_e6fe14f528b20a3c33788c99",
+          "file_id": "f2",
+          "quote": "We plan to test playback next week.",
+          "quote_valid": true,
+          "reason": "The file 'play-button-proof.txt' contains text stating, 'We plan to test playback next week. This note is not a live player.', which does not provide evidence of testing the Play button starting audio on a live workshop page.",
+          "relation": "unrelated",
+          "source_span": {
+            "catalog_version": "source-occurrence-v1",
+            "end_cp": 35,
+            "evidence_unit_id": "ev1_e6fe14f528b20a3c33788c99",
+            "quote": "We plan to test playback next week.",
+            "source_text_sha256": "c00e5b80c4c9a642c81249303c7aef6dc32af59f01ee217b032ccb73efd3f7e4",
+            "source_unit_id": "f2",
+            "start_cp": 0
+          }
+        }
+      ],
+      "coverage": "No evidence found to verify that the Play button starts audio on the live workshop page.",
+      "file_ids": [],
+      "requirement_id": "r2",
+      "unrelated_candidate_count": 1
+    }
+  ]
+}

@@ -1,0 +1,264 @@
+{
+  "synthetic": true,
+  "operator": "AI agent through actual UI",
+  "project_id": "929d942fbb8642798ad239101510fe92",
+  "revision": 19,
+  "jobs": [
+    {
+      "id": "890593d5c8d749c6a4ca0e0fd0281137",
+      "kind": "extract",
+      "state": "succeeded",
+      "stage": "completed",
+      "created_at": "2026-10-17T10:30:00.752351+00:00",
+      "completed_at": "2026-10-17T10:30:05.324813+00:00"
+    },
+    {
+      "id": "c7de855a62334cdcbe013cbe08336344",
+      "kind": "match",
+      "state": "succeeded",
+      "stage": "completed",
+      "created_at": "2026-10-17T10:30:43.903705+00:00",
+      "completed_at": "2026-10-17T10:30:54.241966+00:00"
+    }
+  ],
+  "records": [
+    {
+      "id": "77632518e261438f8c3d409f0adb97eb",
+      "json_file_sha256": "4def4cc3164b26d8b84c58c82cd874ab8f2f985948d5389e873e2991f338e97d"
+    },
+    {
+      "id": "298cd2a165fb48809483b2229c41c6ab",
+      "json_file_sha256": "7cdb9a8b7f02f4d176ef6f2cae8ce3a5d6424f7f8633237d41e9e97d0508b183"
+    }
+  ],
+  "remaining_attention": 2,
+  "remaining_failed_checks": 1,
+  "captured_matches_before_replacement": [
+    {
+      "input_hash": "abe0df8949fa53b685631796fe0ea53b50730b640d252c5c95b200bd9674c769",
+      "proposals": [
+        {
+          "candidates": [
+            {
+              "file_id": "65e01cc5544c48caa18447a86d752a17",
+              "quote": null,
+              "reason": "Filename/metadata suggestion; no visual inspection. The file 'logo-opaque.png' is a PNG file, but its metadata indicates it is not opaque (nonopaque_pixels: false), which might conflict with the requirement for a transparent PNG logo. However, it is a PNG file."
+            },
+            {
+              "file_id": "991838e2d17545078d100565b6a36a87",
+              "quote": null,
+              "reason": "Filename/metadata suggestion; no visual inspection. The file 'logo.svg' is an SVG file, satisfying the requirement for an SVG logo."
+            }
+          ],
+          "coverage": "The requirement asks for a transparent PNG logo and an SVG logo. File 'logo-opaque.png' is a PNG, and file 'logo.svg' is an SVG. The transparency of 'logo-opaque.png' is questionable based on metadata, but it is present.",
+          "id": "88d50ed55ecc41409aaa605ab13aeab6",
+          "model": {
+            "alias": "handoffready-gemma4-e2b",
+            "artifact": "gemma-4-E2B-it-Q4_0.gguf",
+            "artifact_repository": "ggml-org/gemma-4-E2B-it-GGUF",
+            "artifact_revision": "b4243c156154b6dca9324415f8c7ccc098b4aed1",
+            "association_guard_version": "approved-format-union-v1",
+            "chat_template_sha256": "603a42db292c25278e9b23d94c7abbe77453f13e26a053c43c5c2f900b4136f7",
+            "context_tokens": 8192,
+            "conversion_source_revisions": {
+              "ASSISTANT": "2d874ef7d29f9a30599a1e4b3c1cbc9595f005df",
+              "PRIMARY": "3e22461f65e89153144f8adb70e3b8c2cc9845a7",
+              "QAT_Q4_0": "ebc7e1a211354561464cb82ed6d886792138dcb6",
+              "QAT_Q4_0_UNQUANTIZED": "6befbaca7398925921802abd1f277b495b78b738"
+            },
+            "elapsed_seconds": 10.332,
+            "input_sha256": "46742c0308efb3836993b087329f0af914081e34838ba059a9d91eb29c66bf85",
+            "input_tokens": 2491,
+            "license": "Apache-2.0",
+            "model": "google/gemma-4-E2B-it",
+            "model_bytes": 2841481184,
+            "model_sha256": "8e30dff3ac4c8434c49a7036fa15564bdbb6044e42bf04550bf1a096ad7e6a52",
+            "model_url": "https://huggingface.co/ggml-org/gemma-4-E2B-it-GGUF/resolve/b4243c156154b6dca9324415f8c7ccc098b4aed1/gemma-4-E2B-it-Q4_0.gguf",
+            "output_sha256": "7645dbd943d12cf1a021ac3eac967438c08df837045f3ebb16cddb3cccc26082",
+            "output_tokens": 1071,
+            "platform": "macOS-arm64",
+            "prompt_version": "handoffready-v11",
+            "quantization": "Q4_0",
+            "rejected_associations": [],
+            "runtime_archive_sha256": null,
+            "runtime_build": "source-build",
+            "runtime_build_flags": [
+              "Release",
+              "GGML_METAL=ON",
+              "LLAMA_BUILD_TESTS=OFF",
+              "LLAMA_BUILD_EXAMPLES=OFF"
+            ],
+            "runtime_build_info": "b0-unknown",
+            "runtime_commit": "98801578818b26d833a1fe244870d64b0c34bb46",
+            "runtime_repository": "ggml-org/llama.cpp",
+            "runtime_server_sha256": "330ef197918263288c4017f164154bd11406b6e86d1357b5f83625bb85c10b1e",
+            "runtime_source_sha256": "a4e86435bd4983030d3cf85a3475e2e9aea6794d94f047f1a3993333a8734fbf",
+            "runtime_tag": "b11583",
+            "runtime_url": "https://github.com/ggml-org/llama.cpp/releases/download/b11583/llama-b11583-bin-macos-arm64.tar.gz",
+            "seed": 20261013,
+            "source_catalog_version": "source-occurrence-v1",
+            "source_revision": "3e22461f65e89153144f8adb70e3b8c2cc9845a7",
+            "supporting_association_count": 6,
+            "temperature": 0,
+            "typed_rejected_associations": [],
+            "typed_rejection_count": 0,
+            "unrelated_association_count": 0,
+            "vision_used": false
+          },
+          "requirement_id": "61e1fa155fc8453da96345d06d1f0f84"
+        },
+        {
+          "candidates": [
+            {
+              "file_id": "410687d7fde541628be3311951d706f7",
+              "quote": null,
+              "reason": "Filename/metadata suggestion; no visual inspection. The file 'launch-01.png' is a PNG image with dimensions 1080x1080, satisfying the requirement for one of the three distinct 1080x1080 PNG launch images."
+            },
+            {
+              "file_id": "a3017ff95391483f9050345b0ea8e29f",
+              "quote": null,
+              "reason": "Filename/metadata suggestion; no visual inspection. The file 'launch-02.png' is a PNG image with dimensions 1080x1080, satisfying the requirement for a second distinct 1080x1080 PNG launch image."
+            },
+            {
+              "file_id": "79badfb1d6ce40c2a4f982a41182b42d",
+              "quote": null,
+              "reason": "Filename/metadata suggestion; no visual inspection. The file 'launch-03-duplicate.png' is a PNG image with dimensions 1080x1080, satisfying the requirement for the third distinct 1080x1080 PNG launch image."
+            }
+          ],
+          "coverage": "The requirement asks for exactly three distinct 1080x1080 PNG launch images. Files 'launch-01.png', 'launch-02.png', and 'launch-03-duplicate.png' are all PNGs with dimensions 1080x1080. Assuming they are distinct based on their filenames/IDs, this requirement is supported.",
+          "id": "1d6bca32a9c7476d8ae0401221a08c48",
+          "model": {
+            "alias": "handoffready-gemma4-e2b",
+            "artifact": "gemma-4-E2B-it-Q4_0.gguf",
+            "artifact_repository": "ggml-org/gemma-4-E2B-it-GGUF",
+            "artifact_revision": "b4243c156154b6dca9324415f8c7ccc098b4aed1",
+            "association_guard_version": "approved-format-union-v1",
+            "chat_template_sha256": "603a42db292c25278e9b23d94c7abbe77453f13e26a053c43c5c2f900b4136f7",
+            "context_tokens": 8192,
+            "conversion_source_revisions": {
+              "ASSISTANT": "2d874ef7d29f9a30599a1e4b3c1cbc9595f005df",
+              "PRIMARY": "3e22461f65e89153144f8adb70e3b8c2cc9845a7",
+              "QAT_Q4_0": "ebc7e1a211354561464cb82ed6d886792138dcb6",
+              "QAT_Q4_0_UNQUANTIZED": "6befbaca7398925921802abd1f277b495b78b738"
+            },
+            "elapsed_seconds": 10.332,
+            "input_sha256": "46742c0308efb3836993b087329f0af914081e34838ba059a9d91eb29c66bf85",
+            "input_tokens": 2491,
+            "license": "Apache-2.0",
+            "model": "google/gemma-4-E2B-it",
+            "model_bytes": 2841481184,
+            "model_sha256": "8e30dff3ac4c8434c49a7036fa15564bdbb6044e42bf04550bf1a096ad7e6a52",
+            "model_url": "https://huggingface.co/ggml-org/gemma-4-E2B-it-GGUF/resolve/b4243c156154b6dca9324415f8c7ccc098b4aed1/gemma-4-E2B-it-Q4_0.gguf",
+            "output_sha256": "7645dbd943d12cf1a021ac3eac967438c08df837045f3ebb16cddb3cccc26082",
+            "output_tokens": 1071,
+            "platform": "macOS-arm64",
+            "prompt_version": "handoffready-v11",
+            "quantization": "Q4_0",
+            "rejected_associations": [],
+            "runtime_archive_sha256": null,
+            "runtime_build": "source-build",
+            "runtime_build_flags": [
+              "Release",
+              "GGML_METAL=ON",
+              "LLAMA_BUILD_TESTS=OFF",
+              "LLAMA_BUILD_EXAMPLES=OFF"
+            ],
+            "runtime_build_info": "b0-unknown",
+            "runtime_commit": "98801578818b26d833a1fe244870d64b0c34bb46",
+            "runtime_repository": "ggml-org/llama.cpp",
+            "runtime_server_sha256": "330ef197918263288c4017f164154bd11406b6e86d1357b5f83625bb85c10b1e",
+            "runtime_source_sha256": "a4e86435bd4983030d3cf85a3475e2e9aea6794d94f047f1a3993333a8734fbf",
+            "runtime_tag": "b11583",
+            "runtime_url": "https://github.com/ggml-org/llama.cpp/releases/download/b11583/llama-b11583-bin-macos-arm64.tar.gz",
+            "seed": 20261013,
+            "source_catalog_version": "source-occurrence-v1",
+            "source_revision": "3e22461f65e89153144f8adb70e3b8c2cc9845a7",
+            "supporting_association_count": 6,
+            "temperature": 0,
+            "typed_rejected_associations": [],
+            "typed_rejection_count": 0,
+            "unrelated_association_count": 0,
+            "vision_used": false
+          },
+          "requirement_id": "7d2e6e174393495584a7f8db88c20514"
+        },
+        {
+          "candidates": [
+            {
+              "file_id": "2d55c20cdf9b49f38bf6ab2641e4c1a8",
+              "quote": "# Client guide",
+              "reason": "The file 'contact-guide.md' contains text that appears to be a guide, specifically mentioning 'Client guide' and 'Welcome to your new website.', which relates to providing instructions or a guide.",
+              "source_span": {
+                "catalog_version": "source-occurrence-v1",
+                "end_cp": 14,
+                "evidence_unit_id": "ev1_f65110adb06a70964bd2f6bc",
+                "quote": "# Client guide",
+                "source_text_sha256": "fe1355c17ce466c81528571159696b914da38450adc7484d0ff34b848816d748",
+                "source_unit_id": "2d55c20cdf9b49f38bf6ab2641e4c1a8",
+                "start_cp": 0
+              }
+            }
+          ],
+          "coverage": "The requirement asks for a guide explaining how to update the website contact email. The file 'contact-guide.md' contains text that suggests it is a guide, supporting the manual instruction check.",
+          "id": "6ce98c3344fb4adaa6602cc2d02f3e5d",
+          "model": {
+            "alias": "handoffready-gemma4-e2b",
+            "artifact": "gemma-4-E2B-it-Q4_0.gguf",
+            "artifact_repository": "ggml-org/gemma-4-E2B-it-GGUF",
+            "artifact_revision": "b4243c156154b6dca9324415f8c7ccc098b4aed1",
+            "association_guard_version": "approved-format-union-v1",
+            "chat_template_sha256": "603a42db292c25278e9b23d94c7abbe77453f13e26a053c43c5c2f900b4136f7",
+            "context_tokens": 8192,
+            "conversion_source_revisions": {
+              "ASSISTANT": "2d874ef7d29f9a30599a1e4b3c1cbc9595f005df",
+              "PRIMARY": "3e22461f65e89153144f8adb70e3b8c2cc9845a7",
+              "QAT_Q4_0": "ebc7e1a211354561464cb82ed6d886792138dcb6",
+              "QAT_Q4_0_UNQUANTIZED": "6befbaca7398925921802abd1f277b495b78b738"
+            },
+            "elapsed_seconds": 10.332,
+            "input_sha256": "46742c0308efb3836993b087329f0af914081e34838ba059a9d91eb29c66bf85",
+            "input_tokens": 2491,
+            "license": "Apache-2.0",
+            "model": "google/gemma-4-E2B-it",
+            "model_bytes": 2841481184,
+            "model_sha256": "8e30dff3ac4c8434c49a7036fa15564bdbb6044e42bf04550bf1a096ad7e6a52",
+            "model_url": "https://huggingface.co/ggml-org/gemma-4-E2B-it-GGUF/resolve/b4243c156154b6dca9324415f8c7ccc098b4aed1/gemma-4-E2B-it-Q4_0.gguf",
+            "output_sha256": "7645dbd943d12cf1a021ac3eac967438c08df837045f3ebb16cddb3cccc26082",
+            "output_tokens": 1071,
+            "platform": "macOS-arm64",
+            "prompt_version": "handoffready-v11",
+            "quantization": "Q4_0",
+            "rejected_associations": [],
+            "runtime_archive_sha256": null,
+            "runtime_build": "source-build",
+            "runtime_build_flags": [
+              "Release",
+              "GGML_METAL=ON",
+              "LLAMA_BUILD_TESTS=OFF",
+              "LLAMA_BUILD_EXAMPLES=OFF"
+            ],
+            "runtime_build_info": "b0-unknown",
+            "runtime_commit": "98801578818b26d833a1fe244870d64b0c34bb46",
+            "runtime_repository": "ggml-org/llama.cpp",
+            "runtime_server_sha256": "330ef197918263288c4017f164154bd11406b6e86d1357b5f83625bb85c10b1e",
+            "runtime_source_sha256": "a4e86435bd4983030d3cf85a3475e2e9aea6794d94f047f1a3993333a8734fbf",
+            "runtime_tag": "b11583",
+            "runtime_url": "https://github.com/ggml-org/llama.cpp/releases/download/b11583/llama-b11583-bin-macos-arm64.tar.gz",
+            "seed": 20261013,
+            "source_catalog_version": "source-occurrence-v1",
+            "source_revision": "3e22461f65e89153144f8adb70e3b8c2cc9845a7",
+            "supporting_association_count": 6,
+            "temperature": 0,
+            "typed_rejected_associations": [],
+            "typed_rejection_count": 0,
+            "unrelated_association_count": 0,
+            "vision_used": false
+          },
+          "requirement_id": "9a17874bc72d4eb792f022328e0c59a4"
+        }
+      ],
+      "recorded_at": "2026-10-17T10:32:41.317800+00:00"
+    }
+  ],
+  "source_scope": "Only agent-operated synthetic demonstration; no credentials, private client data or private decision notes included."
+}

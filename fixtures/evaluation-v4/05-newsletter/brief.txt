@@ -1,0 +1,4 @@
+Synthetic brief: Rowan neighborhood newsletter
+Supply at least two distinct plain text or Markdown caption files.
+Include plain text welcome copy containing the exact phrase Welcome, neighbors!.
+You may also send a JPEG editor portrait; it is optional.

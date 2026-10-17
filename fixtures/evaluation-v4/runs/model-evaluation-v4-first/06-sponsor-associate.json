@@ -1,0 +1,180 @@
+{
+  "after_guards": {
+    "candidate_denominator": 1,
+    "correct_no_support": 1,
+    "correct_support_pairs": 1,
+    "failed_no_support": 0,
+    "failure": false,
+    "fully_correct_supported_requirements": 1,
+    "missed_support_pairs": 0,
+    "no_support_requirement_denominator": 1,
+    "predicted_pair_denominator": 1,
+    "support_pair_denominator": 1,
+    "supported_requirement_denominator": 1,
+    "text_quote_denominator": 0,
+    "unrelated_candidates": 0,
+    "valid_text_quotes": 0,
+    "wrong_no_support": 0,
+    "wrong_support_pairs": 0
+  },
+  "before_guards": {
+    "candidate_denominator": 2,
+    "correct_no_support": 1,
+    "correct_support_pairs": 1,
+    "failed_no_support": 0,
+    "failure": false,
+    "fully_correct_supported_requirements": 1,
+    "missed_support_pairs": 0,
+    "no_support_requirement_denominator": 1,
+    "predicted_pair_denominator": 1,
+    "support_pair_denominator": 1,
+    "supported_requirement_denominator": 1,
+    "text_quote_denominator": 1,
+    "unrelated_candidates": 1,
+    "valid_text_quotes": 1,
+    "wrong_no_support": 0,
+    "wrong_support_pairs": 0
+  },
+  "capture": {
+    "completion": {
+      "choices": [
+        {
+          "content": "{\n  \"proposals\": [\n    {\n      \"requirement_id\": \"r1\",\n      \"candidates\": [\n        {\n          \"relation\": \"unrelated\",\n          \"file_id\": \"f1\",\n          \"reason\": \"The requirement asks for a one-page PDF sponsor report, but the available file f1 is a text document, not a PDF.\",\n          \"evidence_unit_id\": \"ev1_54a0aae194384bb0e0a57d85\"\n        }\n      ],\n      \"coverage\": \"No evidence found for a one-page PDF sponsor report.\"\n    },\n    {\n      \"requirement_id\": \"r2\",\n      \"candidates\": [\n        {\n          \"relation\": \"supports\",\n          \"file_id\": \"f2\",\n          \"reason\": \"The requirement asks for a sponsor badge in PNG format, and file f2 is a png file.\",\n          \"evidence_unit_id\": null\n        }\n      ],\n      \"coverage\": \"The file f2 is a png file, supporting the requirement for a sponsor badge in PNG format.\"\n    }\n  ]\n}",
+          "finish_reason": "stop",
+          "index": 0
+        }
+      ],
+      "usage": {
+        "completion_tokens": 271,
+        "prompt_tokens": 1105,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "total_tokens": 1376
+      }
+    },
+    "completion_response_count": 1,
+    "elapsed_seconds": 2.7522077079629526,
+    "model_metadata": {
+      "association_guard_version": "approved-format-union-v1",
+      "elapsed_seconds": 2.752,
+      "input_sha256": "d12a41fd7ceb86e39fb52b10d64a1806b5b5136b296c6bec0a4529c6bb9a0b58",
+      "input_tokens": 1105,
+      "model": "google/gemma-4-E2B-it",
+      "output_sha256": "e2eb9603ff8e062c1a6597cce2d61a6027842ad2d51eeeff6593a07fb50395c5",
+      "output_tokens": 271,
+      "prompt_version": "handoffready-v11",
+      "seed": 20261013,
+      "source_catalog_version": "source-occurrence-v1",
+      "supporting_association_count": 1,
+      "temperature": 0,
+      "typed_rejection_count": 0,
+      "unrelated_association_count": 1,
+      "vision_used": false
+    },
+    "stage": "associate",
+    "structured_call_count": 1,
+    "structured_pre_guard": {
+      "proposals": [
+        {
+          "candidates": [
+            {
+              "evidence_unit_id": "ev1_54a0aae194384bb0e0a57d85",
+              "file_id": "f1",
+              "reason": "The requirement asks for a one-page PDF sponsor report, but the available file f1 is a text document, not a PDF.",
+              "relation": "unrelated"
+            }
+          ],
+          "coverage": "No evidence found for a one-page PDF sponsor report.",
+          "requirement_id": "r1"
+        },
+        {
+          "candidates": [
+            {
+              "file_id": "f2",
+              "reason": "The requirement asks for a sponsor badge in PNG format, and file f2 is a png file.",
+              "relation": "supports"
+            }
+          ],
+          "coverage": "The file f2 is a png file, supporting the requirement for a sponsor badge in PNG format.",
+          "requirement_id": "r2"
+        }
+      ]
+    },
+    "synthetic_data_only": true
+  },
+  "failure": null,
+  "guarded_predictions": [
+    {
+      "candidate_count": 0,
+      "candidates": [],
+      "coverage": "No evidence found for a one-page PDF sponsor report.",
+      "file_ids": [],
+      "requirement_id": "r1",
+      "unrelated_candidate_count": 0
+    },
+    {
+      "candidate_count": 1,
+      "candidates": [
+        {
+          "file_id": "f2",
+          "quote": null,
+          "quote_valid": null,
+          "reason": "Filename/metadata suggestion; no visual inspection. The requirement asks for a sponsor badge in PNG format, and file f2 is a png file."
+        }
+      ],
+      "coverage": "The file f2 is a png file, supporting the requirement for a sponsor badge in PNG format.",
+      "file_ids": [
+        "f2"
+      ],
+      "requirement_id": "r2",
+      "unrelated_candidate_count": 0
+    }
+  ],
+  "latency_seconds": 2.752261249930598,
+  "raw_predictions": [
+    {
+      "candidate_count": 1,
+      "candidates": [
+        {
+          "evidence_unit_id": "ev1_54a0aae194384bb0e0a57d85",
+          "file_id": "f1",
+          "quote": "Sponsor report: three sessions supported and forty attendees welcomed.",
+          "quote_valid": true,
+          "reason": "The requirement asks for a one-page PDF sponsor report, but the available file f1 is a text document, not a PDF.",
+          "relation": "unrelated",
+          "source_span": {
+            "catalog_version": "source-occurrence-v1",
+            "end_cp": 70,
+            "evidence_unit_id": "ev1_54a0aae194384bb0e0a57d85",
+            "quote": "Sponsor report: three sessions supported and forty attendees welcomed.",
+            "source_text_sha256": "2e4e2a8d2e50f34e507fc91ed11978a8821ddf910f720838b4333ef3e63db169",
+            "source_unit_id": "f1",
+            "start_cp": 0
+          }
+        }
+      ],
+      "coverage": "No evidence found for a one-page PDF sponsor report.",
+      "file_ids": [],
+      "requirement_id": "r1",
+      "unrelated_candidate_count": 1
+    },
+    {
+      "candidate_count": 1,
+      "candidates": [
+        {
+          "file_id": "f2",
+          "quote_valid": null,
+          "reason": "The requirement asks for a sponsor badge in PNG format, and file f2 is a png file.",
+          "relation": "supports"
+        }
+      ],
+      "coverage": "The file f2 is a png file, supporting the requirement for a sponsor badge in PNG format.",
+      "file_ids": [
+        "f2"
+      ],
+      "requirement_id": "r2",
+      "unrelated_candidate_count": 0
+    }
+  ]
+}

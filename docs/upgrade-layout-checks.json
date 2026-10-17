@@ -1,0 +1,117 @@
+{
+  "scope": "Browser reflow measurements; no physical-device or accessibility certification",
+  "results": [
+    {
+      "assetReferences": [
+        "replay.css",
+        "replay.js"
+      ],
+      "documentWidth": 320,
+      "overflow": false,
+      "screen": "recorded-explorer",
+      "width": 320
+    },
+    {
+      "assetReferences": [
+        "replay.css",
+        "replay.js"
+      ],
+      "documentWidth": 390,
+      "overflow": false,
+      "screen": "recorded-explorer",
+      "width": 390
+    },
+    {
+      "assetReferences": [
+        "replay.css",
+        "replay.js"
+      ],
+      "documentWidth": 768,
+      "overflow": false,
+      "screen": "recorded-explorer",
+      "width": 768
+    },
+    {
+      "assetReferences": [
+        "replay.css",
+        "replay.js"
+      ],
+      "documentWidth": 1440,
+      "overflow": false,
+      "screen": "recorded-explorer",
+      "width": 1440
+    },
+    {
+      "documentWidth": 320,
+      "overflow": false,
+      "screen": "home",
+      "width": 320
+    },
+    {
+      "documentWidth": 390,
+      "overflow": false,
+      "screen": "home",
+      "width": 390
+    },
+    {
+      "documentWidth": 768,
+      "overflow": false,
+      "screen": "home",
+      "width": 768
+    },
+    {
+      "documentWidth": 1440,
+      "overflow": false,
+      "screen": "home",
+      "width": 1440
+    },
+    {
+      "documentWidth": 320,
+      "overflow": false,
+      "screen": "review",
+      "width": 320
+    },
+    {
+      "documentWidth": 390,
+      "overflow": false,
+      "screen": "review",
+      "width": 390
+    },
+    {
+      "documentWidth": 768,
+      "overflow": false,
+      "screen": "review",
+      "width": 768
+    },
+    {
+      "documentWidth": 1440,
+      "overflow": false,
+      "screen": "review",
+      "width": 1440
+    },
+    {
+      "documentWidth": 320,
+      "overflow": false,
+      "screen": "handoff",
+      "width": 320
+    },
+    {
+      "documentWidth": 390,
+      "overflow": false,
+      "screen": "handoff",
+      "width": 390
+    },
+    {
+      "documentWidth": 768,
+      "overflow": false,
+      "screen": "handoff",
+      "width": 768
+    },
+    {
+      "documentWidth": 1440,
+      "overflow": false,
+      "screen": "handoff",
+      "width": 1440
+    }
+  ]
+}

@@ -1,0 +1,269 @@
+{
+  "after_guards": {
+    "attribute_denominator": 5,
+    "correct_attribute_checks": 3,
+    "covered_mandatory": 3,
+    "covered_optional": 0,
+    "covered_requirements": 3,
+    "exact_attribute_requirement_denominator": 3,
+    "exact_attributes": 2,
+    "extra_attribute_checks": 0,
+    "key_mandatory": 3,
+    "key_optional": 0,
+    "key_requirements": 3,
+    "missed_mandatory": 0,
+    "missed_optional_classification": 0,
+    "missing_attribute_checks": 2,
+    "predicted_requirements": 3,
+    "quote_denominator": 3,
+    "unmatched_predictions": 0,
+    "valid_quotes": 3,
+    "wrong_format_classification": 0,
+    "wrong_obligation_classification": 0
+  },
+  "before_guards": {
+    "attribute_denominator": 5,
+    "correct_attribute_checks": 3,
+    "covered_mandatory": 3,
+    "covered_optional": 0,
+    "covered_requirements": 3,
+    "exact_attribute_requirement_denominator": 3,
+    "exact_attributes": 2,
+    "extra_attribute_checks": 0,
+    "key_mandatory": 3,
+    "key_optional": 0,
+    "key_requirements": 3,
+    "missed_mandatory": 0,
+    "missed_optional_classification": 0,
+    "missing_attribute_checks": 2,
+    "predicted_requirements": 3,
+    "quote_denominator": 3,
+    "unmatched_predictions": 0,
+    "valid_quotes": 3,
+    "wrong_format_classification": 0,
+    "wrong_obligation_classification": 0
+  },
+  "capture": {
+    "completion": {
+      "choices": [
+        {
+          "content": "{\n  \"requirements\": [\n    {\n      \"obligation\": \"required\",\n      \"title\": \"Deliver a JPEG event poster.\",\n      \"evidence_unit_id\": \"ev1_9dbd145caaef69a6c956c2da\",\n      \"checks\": [\n        {\n          \"kind\": \"presence\",\n          \"types\": [\n            \"jpeg\"\n          ]\n        }\n      ]\n    },\n    {\n      \"obligation\": \"required\",\n      \"title\": \"Include a one-page PDF guide explaining event seating accessibility.\",\n      \"evidence_unit_id\": \"ev1_9b699e2a07b9699fbe6d464c\",\n      \"checks\": [\n        {\n          \"kind\": \"presence\",\n          \"types\": [\n            \"pdf\"\n          ]\n        }\n      ]\n    },\n    {\n      \"obligation\": \"required\",\n      \"title\": \"Verify that the live booking form can be completed using only a keyboard.\",\n      \"evidence_unit_id\": \"ev1_83f936af60f62a3a2651ab74\",\n      \"checks\": [\n        {\n          \"kind\": \"manual\",\n          \"instruction\": \"Review steps for verifying that the live booking form can be completed using only a keyboard.\"\n        }\n      ]\n    }\n  ]\n}",
+          "finish_reason": "stop",
+          "index": 0
+        }
+      ],
+      "usage": {
+        "completion_tokens": 336,
+        "prompt_tokens": 1618,
+        "prompt_tokens_details": {
+          "cached_tokens": 919
+        },
+        "total_tokens": 1954
+      }
+    },
+    "completion_response_count": 1,
+    "elapsed_seconds": 3.254024999914691,
+    "model_metadata": {
+      "elapsed_seconds": 3.253,
+      "excluded_suggestion_count": 0,
+      "input_sha256": "67ea844fabf6d7364d79815b3ae61fe76ca0da4f6d7253473be4acda0b4739d1",
+      "input_tokens": 1618,
+      "model": "google/gemma-4-E2B-it",
+      "output_sha256": "4bd815eb259c328a78d642532d7100c86d4e047e3ae37b93ee1f73097ffab272",
+      "output_tokens": 336,
+      "prompt_version": "handoffready-v11",
+      "required_suggestion_count": 3,
+      "seed": 20261013,
+      "source_catalog_version": "source-occurrence-v1",
+      "temperature": 0,
+      "vision_used": false
+    },
+    "stage": "extract",
+    "structured_call_count": 1,
+    "structured_pre_guard": {
+      "requirements": [
+        {
+          "checks": [
+            {
+              "kind": "presence",
+              "types": [
+                "jpeg"
+              ]
+            }
+          ],
+          "evidence_unit_id": "ev1_9dbd145caaef69a6c956c2da",
+          "obligation": "required",
+          "title": "Deliver a JPEG event poster."
+        },
+        {
+          "checks": [
+            {
+              "kind": "presence",
+              "types": [
+                "pdf"
+              ]
+            }
+          ],
+          "evidence_unit_id": "ev1_9b699e2a07b9699fbe6d464c",
+          "obligation": "required",
+          "title": "Include a one-page PDF guide explaining event seating accessibility."
+        },
+        {
+          "checks": [
+            {
+              "instruction": "Review steps for verifying that the live booking form can be completed using only a keyboard.",
+              "kind": "manual"
+            }
+          ],
+          "evidence_unit_id": "ev1_83f936af60f62a3a2651ab74",
+          "obligation": "required",
+          "title": "Verify that the live booking form can be completed using only a keyboard."
+        }
+      ]
+    },
+    "synthetic_data_only": true
+  },
+  "failure": null,
+  "guarded_predictions": [
+    {
+      "checks": [
+        {
+          "kind": "presence",
+          "types": [
+            "jpeg"
+          ]
+        }
+      ],
+      "obligation": "required",
+      "quote": "Deliver a JPEG event poster.",
+      "quote_valid": true,
+      "source_span": {
+        "catalog_version": "source-occurrence-v1",
+        "end_cp": 66,
+        "evidence_unit_id": "ev1_9dbd145caaef69a6c956c2da",
+        "quote": "Deliver a JPEG event poster.",
+        "source_text_sha256": "95dd09aaf619b822986e3702c0aa92b0e6e29f2cd6dfee4d83997517dfc8562e",
+        "source_unit_id": "brief-v1",
+        "start_cp": 38
+      },
+      "title": "Deliver a JPEG event poster."
+    },
+    {
+      "checks": [
+        {
+          "kind": "presence",
+          "types": [
+            "pdf"
+          ]
+        }
+      ],
+      "obligation": "required",
+      "quote": "Include a one-page PDF guide explaining event seating accessibility.",
+      "quote_valid": true,
+      "source_span": {
+        "catalog_version": "source-occurrence-v1",
+        "end_cp": 135,
+        "evidence_unit_id": "ev1_9b699e2a07b9699fbe6d464c",
+        "quote": "Include a one-page PDF guide explaining event seating accessibility.",
+        "source_text_sha256": "95dd09aaf619b822986e3702c0aa92b0e6e29f2cd6dfee4d83997517dfc8562e",
+        "source_unit_id": "brief-v1",
+        "start_cp": 67
+      },
+      "title": "Include a one-page PDF guide explaining event seating accessibility."
+    },
+    {
+      "checks": [
+        {
+          "instruction": "Review steps for verifying that the live booking form can be completed using only a keyboard.",
+          "kind": "manual"
+        }
+      ],
+      "obligation": "required",
+      "quote": "Verify that the live booking form can be completed using only a keyboard.",
+      "quote_valid": true,
+      "source_span": {
+        "catalog_version": "source-occurrence-v1",
+        "end_cp": 209,
+        "evidence_unit_id": "ev1_83f936af60f62a3a2651ab74",
+        "quote": "Verify that the live booking form can be completed using only a keyboard.",
+        "source_text_sha256": "95dd09aaf619b822986e3702c0aa92b0e6e29f2cd6dfee4d83997517dfc8562e",
+        "source_unit_id": "brief-v1",
+        "start_cp": 136
+      },
+      "title": "Verify that the live booking form can be completed using only a keyboard."
+    }
+  ],
+  "latency_seconds": 3.25439679203555,
+  "raw_predictions": [
+    {
+      "checks": [
+        {
+          "kind": "presence",
+          "types": [
+            "jpeg"
+          ]
+        }
+      ],
+      "evidence_unit_id": "ev1_9dbd145caaef69a6c956c2da",
+      "obligation": "required",
+      "quote": "Deliver a JPEG event poster.",
+      "quote_valid": true,
+      "source_span": {
+        "catalog_version": "source-occurrence-v1",
+        "end_cp": 66,
+        "evidence_unit_id": "ev1_9dbd145caaef69a6c956c2da",
+        "quote": "Deliver a JPEG event poster.",
+        "source_text_sha256": "95dd09aaf619b822986e3702c0aa92b0e6e29f2cd6dfee4d83997517dfc8562e",
+        "source_unit_id": "brief-v1",
+        "start_cp": 38
+      },
+      "title": "Deliver a JPEG event poster."
+    },
+    {
+      "checks": [
+        {
+          "kind": "presence",
+          "types": [
+            "pdf"
+          ]
+        }
+      ],
+      "evidence_unit_id": "ev1_9b699e2a07b9699fbe6d464c",
+      "obligation": "required",
+      "quote": "Include a one-page PDF guide explaining event seating accessibility.",
+      "quote_valid": true,
+      "source_span": {
+        "catalog_version": "source-occurrence-v1",
+        "end_cp": 135,
+        "evidence_unit_id": "ev1_9b699e2a07b9699fbe6d464c",
+        "quote": "Include a one-page PDF guide explaining event seating accessibility.",
+        "source_text_sha256": "95dd09aaf619b822986e3702c0aa92b0e6e29f2cd6dfee4d83997517dfc8562e",
+        "source_unit_id": "brief-v1",
+        "start_cp": 67
+      },
+      "title": "Include a one-page PDF guide explaining event seating accessibility."
+    },
+    {
+      "checks": [
+        {
+          "instruction": "Review steps for verifying that the live booking form can be completed using only a keyboard.",
+          "kind": "manual"
+        }
+      ],
+      "evidence_unit_id": "ev1_83f936af60f62a3a2651ab74",
+      "obligation": "required",
+      "quote": "Verify that the live booking form can be completed using only a keyboard.",
+      "quote_valid": true,
+      "source_span": {
+        "catalog_version": "source-occurrence-v1",
+        "end_cp": 209,
+        "evidence_unit_id": "ev1_83f936af60f62a3a2651ab74",
+        "quote": "Verify that the live booking form can be completed using only a keyboard.",
+        "source_text_sha256": "95dd09aaf619b822986e3702c0aa92b0e6e29f2cd6dfee4d83997517dfc8562e",
+        "source_unit_id": "brief-v1",
+        "start_cp": 136
+      },
+      "title": "Verify that the live booking form can be completed using only a keyboard."
+    }
+  ]
+}

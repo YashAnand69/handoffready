@@ -1,0 +1,147 @@
+{
+  "approved_requirements": [
+    {
+      "checks": [
+        {
+          "kind": "presence",
+          "types": [
+            "pdf"
+          ]
+        },
+        {
+          "comparison": "exact",
+          "kind": "pdf_pages",
+          "value": 1
+        }
+      ],
+      "human_note": "Agent-authored synthetic answer key; treated as fixed approved input only for evaluation.",
+      "id": "r1",
+      "origin": "human_added",
+      "quote": "Deliver a one-page PDF sponsor report.",
+      "source_id": "brief-v1",
+      "source_span": {
+        "end_cp": 82,
+        "quote": "Deliver a one-page PDF sponsor report.",
+        "source_text_sha256": "35f5db0b95d9108e77b36ff4c01a0e37c8c5769ada721d97ccf766c1d874ce2b",
+        "source_unit_id": "brief-v1",
+        "start_cp": 44
+      },
+      "title": "Sponsor report"
+    },
+    {
+      "checks": [
+        {
+          "kind": "presence",
+          "types": [
+            "png"
+          ]
+        }
+      ],
+      "human_note": "Agent-authored synthetic answer key; treated as fixed approved input only for evaluation.",
+      "id": "r2",
+      "origin": "human_added",
+      "quote": "Deliver the sponsor badge in PNG format.",
+      "source_id": "brief-v1",
+      "source_span": {
+        "end_cp": 123,
+        "quote": "Deliver the sponsor badge in PNG format.",
+        "source_text_sha256": "35f5db0b95d9108e77b36ff4c01a0e37c8c5769ada721d97ccf766c1d874ce2b",
+        "source_unit_id": "brief-v1",
+        "start_cp": 83
+      },
+      "title": "Sponsor badge"
+    }
+  ],
+  "extraction": [
+    {
+      "checks": [
+        {
+          "kind": "presence",
+          "types": [
+            "pdf"
+          ]
+        },
+        {
+          "comparison": "exact",
+          "kind": "pdf_pages",
+          "value": 1
+        }
+      ],
+      "id": "r1",
+      "optional": false,
+      "quote": "Deliver a one-page PDF sponsor report.",
+      "source_span": {
+        "end_cp": 82,
+        "quote": "Deliver a one-page PDF sponsor report.",
+        "source_text_sha256": "35f5db0b95d9108e77b36ff4c01a0e37c8c5769ada721d97ccf766c1d874ce2b",
+        "source_unit_id": "brief-v1",
+        "start_cp": 44
+      },
+      "support_names": [],
+      "title": "Sponsor report"
+    },
+    {
+      "checks": [
+        {
+          "kind": "presence",
+          "types": [
+            "png"
+          ]
+        }
+      ],
+      "id": "r2",
+      "optional": false,
+      "quote": "Deliver the sponsor badge in PNG format.",
+      "source_span": {
+        "end_cp": 123,
+        "quote": "Deliver the sponsor badge in PNG format.",
+        "source_text_sha256": "35f5db0b95d9108e77b36ff4c01a0e37c8c5769ada721d97ccf766c1d874ce2b",
+        "source_unit_id": "brief-v1",
+        "start_cp": 83
+      },
+      "support_names": [
+        "vale-badge.png"
+      ],
+      "title": "Sponsor badge"
+    }
+  ],
+  "files": {
+    "sponsor-report-final.txt": "f1",
+    "vale-badge.png": "f2"
+  },
+  "source_catalog": [
+    {
+      "catalog_version": "source-occurrence-v1",
+      "end_cp": 43,
+      "evidence_unit_id": "ev1_b96fa215013a94ce557f609b",
+      "quote": "Synthetic brief: Vale community sponsorship",
+      "source_text_sha256": "35f5db0b95d9108e77b36ff4c01a0e37c8c5769ada721d97ccf766c1d874ce2b",
+      "source_unit_id": "brief-v1",
+      "start_cp": 0
+    },
+    {
+      "catalog_version": "source-occurrence-v1",
+      "end_cp": 82,
+      "evidence_unit_id": "ev1_a8e89c68b4b7c4ac855dda29",
+      "quote": "Deliver a one-page PDF sponsor report.",
+      "source_text_sha256": "35f5db0b95d9108e77b36ff4c01a0e37c8c5769ada721d97ccf766c1d874ce2b",
+      "source_unit_id": "brief-v1",
+      "start_cp": 44
+    },
+    {
+      "catalog_version": "source-occurrence-v1",
+      "end_cp": 123,
+      "evidence_unit_id": "ev1_4c4ff06dbe379a6652f9ad23",
+      "quote": "Deliver the sponsor badge in PNG format.",
+      "source_text_sha256": "35f5db0b95d9108e77b36ff4c01a0e37c8c5769ada721d97ccf766c1d874ce2b",
+      "source_unit_id": "brief-v1",
+      "start_cp": 83
+    }
+  ],
+  "support": {
+    "r1": [],
+    "r2": [
+      "f2"
+    ]
+  }
+}

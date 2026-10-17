@@ -1,0 +1,43 @@
+{
+  "dataset_sha256": "2718aab4fe4a75398bd499c64e53ea568a04d8f71d848ddad0e95b3229e2d910",
+  "original_preflight_sha256": "5c734ee7ca9a3eb5ffba690c45f32ee4ad8f7c70a4de67b884c2ac7578b0e505",
+  "original_scoring_sha256": "152a208cac161c7501ac0cc99791212dfd16f747f531e91903e79160799ab062",
+  "previous_freeze_sha256": "6838d46fbbb19a75fd64b58625255c9e7441fd921c869d211d583b5b7e786e03",
+  "previous_scoring_sha256": "38f13dd3282defdec3326b3dd0ec14a49b10efb6a4c614c68427f80cecfb1808",
+  "scoring": {
+    "association": "exact requirement/file pairs marked supports only; retain raw unrelated candidates and count separately; post-guard accepted candidates have no relation field",
+    "attribute_normalization": "ignore null fields and manual instruction wording; sort types; each keyed check must occur; extra checks reported separately",
+    "baseline": "token overlap, score >= 0.20, typed eligibility; all ties retained",
+    "extraction": "validated source span; >=80% overlap with one atomic keyed obligation; one-to-one coverage requires correct required/optional classification and requested format union; quantitative attributes scored separately; manual wording ignored",
+    "failure_policy": "exceptions, timeout, truncation, parse/schema failures are failures, never correct abstentions",
+    "manual": "no files can prove live behavior",
+    "quote_overlap_threshold": 0.8,
+    "revision_reason": "Pre-inference reviewer correction: unrelated candidates are explicit negative judgments, not positive associations; prior freezes/preflights retained",
+    "stop_words": [
+      "a",
+      "an",
+      "and",
+      "as",
+      "be",
+      "deliver",
+      "file",
+      "final",
+      "for",
+      "in",
+      "is",
+      "must",
+      "of",
+      "or",
+      "please",
+      "provide",
+      "the",
+      "to",
+      "with"
+    ],
+    "threshold": 0.2,
+    "version": "synthetic-scoring-v4.2"
+  },
+  "scoring_sha256": "aaaff0ef921a7cffa919054c0ed44112a73ff86a9e4bc1df410afb9e5714b439",
+  "stage": "pre-inference reviewer correction; no model predictions collected",
+  "version": "synthetic-scoring-v4.2"
+}

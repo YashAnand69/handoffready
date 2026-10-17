@@ -1,0 +1,200 @@
+{
+  "after_guards": {
+    "candidate_denominator": 2,
+    "correct_no_support": 0,
+    "correct_support_pairs": 2,
+    "failed_no_support": 0,
+    "failure": false,
+    "fully_correct_supported_requirements": 2,
+    "missed_support_pairs": 0,
+    "no_support_requirement_denominator": 0,
+    "predicted_pair_denominator": 2,
+    "support_pair_denominator": 2,
+    "supported_requirement_denominator": 2,
+    "text_quote_denominator": 1,
+    "unrelated_candidates": 0,
+    "valid_text_quotes": 1,
+    "wrong_no_support": 0,
+    "wrong_support_pairs": 0
+  },
+  "before_guards": {
+    "candidate_denominator": 2,
+    "correct_no_support": 0,
+    "correct_support_pairs": 2,
+    "failed_no_support": 0,
+    "failure": false,
+    "fully_correct_supported_requirements": 2,
+    "missed_support_pairs": 0,
+    "no_support_requirement_denominator": 0,
+    "predicted_pair_denominator": 2,
+    "support_pair_denominator": 2,
+    "supported_requirement_denominator": 2,
+    "text_quote_denominator": 1,
+    "unrelated_candidates": 0,
+    "valid_text_quotes": 1,
+    "wrong_no_support": 0,
+    "wrong_support_pairs": 0
+  },
+  "capture": {
+    "completion": {
+      "choices": [
+        {
+          "content": "{\n  \"proposals\": [\n    {\n      \"requirement_id\": \"r1\",\n      \"candidates\": [\n        {\n          \"relation\": \"supports\",\n          \"file_id\": \"f1\",\n          \"reason\": \"The file 'juniper-symbol.svg' is an SVG file, satisfying the requirement to deliver the bakery symbol in SVG format.\",\"evidence_unit_id\": null\n        }\n      ],\n      \"coverage\": \"The requirement for the bakery symbol in SVG format is supported by the file 'juniper-symbol.svg'.\"\n    },\n    {\n      \"requirement_id\": \"r2\",\n      \"candidates\": [\n        {\n          \"relation\": \"supports\",\n          \"file_id\": \"f2\",\n          \"reason\": \"The file 'background-notes.md' is in Markdown format and contains usage notes regarding symbol backgrounds, which addresses the requirement for Markdown usage notes explaining safe symbol backgrounds.\", \"evidence_unit_id\": \"ev1_0c35cd0d354eb19206858333\"\n        }\n      ],\n      \"coverage\": \"The requirement for Markdown usage notes explaining safe symbol backgrounds is supported by the file 'background-notes.md'.\"\n    }\n  ]\n}",
+          "finish_reason": "stop",
+          "index": 0
+        }
+      ],
+      "usage": {
+        "completion_tokens": 294,
+        "prompt_tokens": 1233,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "total_tokens": 1527
+      }
+    },
+    "completion_response_count": 1,
+    "elapsed_seconds": 3.0304852079134434,
+    "model_metadata": {
+      "association_guard_version": "approved-format-union-v1",
+      "elapsed_seconds": 3.029,
+      "input_sha256": "cda419a90e752e6637f60e2c6927cc5569b62defda3de1e6d3666a5866e55db0",
+      "input_tokens": 1233,
+      "model": "google/gemma-4-E2B-it",
+      "output_sha256": "075f9f25a871e349bcaf7bcec3fd68aac0e13d6733c8217c5440b0442b79d0b8",
+      "output_tokens": 294,
+      "prompt_version": "handoffready-v11",
+      "seed": 20261013,
+      "source_catalog_version": "source-occurrence-v1",
+      "supporting_association_count": 2,
+      "temperature": 0,
+      "typed_rejection_count": 0,
+      "unrelated_association_count": 0,
+      "vision_used": false
+    },
+    "stage": "associate",
+    "structured_call_count": 1,
+    "structured_pre_guard": {
+      "proposals": [
+        {
+          "candidates": [
+            {
+              "file_id": "f1",
+              "reason": "The file 'juniper-symbol.svg' is an SVG file, satisfying the requirement to deliver the bakery symbol in SVG format.",
+              "relation": "supports"
+            }
+          ],
+          "coverage": "The requirement for the bakery symbol in SVG format is supported by the file 'juniper-symbol.svg'.",
+          "requirement_id": "r1"
+        },
+        {
+          "candidates": [
+            {
+              "evidence_unit_id": "ev1_0c35cd0d354eb19206858333",
+              "file_id": "f2",
+              "reason": "The file 'background-notes.md' is in Markdown format and contains usage notes regarding symbol backgrounds, which addresses the requirement for Markdown usage notes explaining safe symbol backgrounds.",
+              "relation": "supports"
+            }
+          ],
+          "coverage": "The requirement for Markdown usage notes explaining safe symbol backgrounds is supported by the file 'background-notes.md'.",
+          "requirement_id": "r2"
+        }
+      ]
+    },
+    "synthetic_data_only": true
+  },
+  "failure": null,
+  "guarded_predictions": [
+    {
+      "candidate_count": 1,
+      "candidates": [
+        {
+          "file_id": "f1",
+          "quote": null,
+          "quote_valid": null,
+          "reason": "Filename/metadata suggestion; no visual inspection. The file 'juniper-symbol.svg' is an SVG file, satisfying the requirement to deliver the bakery symbol in SVG format."
+        }
+      ],
+      "coverage": "The requirement for the bakery symbol in SVG format is supported by the file 'juniper-symbol.svg'.",
+      "file_ids": [
+        "f1"
+      ],
+      "requirement_id": "r1",
+      "unrelated_candidate_count": 0
+    },
+    {
+      "candidate_count": 1,
+      "candidates": [
+        {
+          "file_id": "f2",
+          "quote": "# Symbol placement",
+          "quote_valid": true,
+          "reason": "The file 'background-notes.md' is in Markdown format and contains usage notes regarding symbol backgrounds, which addresses the requirement for Markdown usage notes explaining safe symbol backgrounds.",
+          "source_span": {
+            "catalog_version": "source-occurrence-v1",
+            "end_cp": 18,
+            "evidence_unit_id": "ev1_0c35cd0d354eb19206858333",
+            "quote": "# Symbol placement",
+            "source_text_sha256": "50594455ff7192ef87e545ab173f99eae9c2c4c78cd4a4a308ad2cfb1a845225",
+            "source_unit_id": "f2",
+            "start_cp": 0
+          }
+        }
+      ],
+      "coverage": "The requirement for Markdown usage notes explaining safe symbol backgrounds is supported by the file 'background-notes.md'.",
+      "file_ids": [
+        "f2"
+      ],
+      "requirement_id": "r2",
+      "unrelated_candidate_count": 0
+    }
+  ],
+  "latency_seconds": 3.0305601248983294,
+  "raw_predictions": [
+    {
+      "candidate_count": 1,
+      "candidates": [
+        {
+          "file_id": "f1",
+          "quote_valid": null,
+          "reason": "The file 'juniper-symbol.svg' is an SVG file, satisfying the requirement to deliver the bakery symbol in SVG format.",
+          "relation": "supports"
+        }
+      ],
+      "coverage": "The requirement for the bakery symbol in SVG format is supported by the file 'juniper-symbol.svg'.",
+      "file_ids": [
+        "f1"
+      ],
+      "requirement_id": "r1",
+      "unrelated_candidate_count": 0
+    },
+    {
+      "candidate_count": 1,
+      "candidates": [
+        {
+          "evidence_unit_id": "ev1_0c35cd0d354eb19206858333",
+          "file_id": "f2",
+          "quote": "# Symbol placement",
+          "quote_valid": true,
+          "reason": "The file 'background-notes.md' is in Markdown format and contains usage notes regarding symbol backgrounds, which addresses the requirement for Markdown usage notes explaining safe symbol backgrounds.",
+          "relation": "supports",
+          "source_span": {
+            "catalog_version": "source-occurrence-v1",
+            "end_cp": 18,
+            "evidence_unit_id": "ev1_0c35cd0d354eb19206858333",
+            "quote": "# Symbol placement",
+            "source_text_sha256": "50594455ff7192ef87e545ab173f99eae9c2c4c78cd4a4a308ad2cfb1a845225",
+            "source_unit_id": "f2",
+            "start_cp": 0
+          }
+        }
+      ],
+      "coverage": "The requirement for Markdown usage notes explaining safe symbol backgrounds is supported by the file 'background-notes.md'.",
+      "file_ids": [
+        "f2"
+      ],
+      "requirement_id": "r2",
+      "unrelated_candidate_count": 0
+    }
+  ]
+}

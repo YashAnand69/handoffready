@@ -1,0 +1,74 @@
+{
+  "recording_type": "captured_screens_walkthrough",
+  "title": "HandoffReady — current local delivery review, 17 October 2026",
+  "width": 1920,
+  "height": 1200,
+  "fps": 24,
+  "captured_date": "2026-10-17",
+  "continuous_recording": false,
+  "synthetic_packet": true,
+  "agent_operated": true,
+  "model_run_evidence": "docs/browser-workflow-oct17.json",
+  "slides": [
+    {
+      "image": "captures/01-dashboard.png",
+      "phase": "Start with the delivery",
+      "caption": "Check outgoing files against the brief before sending them to a client. This packet and operator actions are synthetic.",
+      "duration_seconds": 6
+    },
+    {
+      "image": "captures/02-brief.png",
+      "phase": "Read the agreed scope",
+      "caption": "Three promises: logo formats, three distinct launch images, and a guide to updating the website contact email.",
+      "duration_seconds": 8
+    },
+    {
+      "image": "captures/03-checklist.png",
+      "phase": "Confirm Gemma’s suggestions",
+      "caption": "Gemma proposes the checklist. Review every source quote, required format and quantity before confirming.",
+      "duration_seconds": 10
+    },
+    {
+      "image": "captures/04-files.png",
+      "phase": "Inspect the actual packet",
+      "caption": "The duplicate filter finds two files with identical bytes. Different filenames do not make distinct artwork.",
+      "duration_seconds": 8
+    },
+    {
+      "image": "captures/05-findings.png",
+      "phase": "Keep the failure visible",
+      "caption": "The selected PNG fails the narrow transparency check. Recording an assessment cannot erase that finding.",
+      "duration_seconds": 10
+    },
+    {
+      "image": "captures/06-review.png",
+      "phase": "Reject the wrong association",
+      "caption": "Gemma linked a welcome-only guide. The operator inspects its text and records Needs work: the promised instructions are missing.",
+      "duration_seconds": 12
+    },
+    {
+      "image": "captures/07-client-record.png",
+      "phase": "Save the first record",
+      "caption": "Save a snapshot of this delivery. Shared requirement titles and client notes still need a confidentiality review.",
+      "duration_seconds": 5
+    },
+    {
+      "image": "captures/08-stale.png",
+      "phase": "A replacement needs fresh review",
+      "caption": "Replacing a file makes all three earlier reviews stale. Recheck the evidence before confirming a new delivery.",
+      "duration_seconds": 10
+    },
+    {
+      "image": "captures/09-corrected.png",
+      "phase": "Preserve the remaining work",
+      "caption": "After fresh review, two items still need attention and one technical check still fails. The new draft retains those gaps.",
+      "duration_seconds": 11
+    },
+    {
+      "image": "captures/10-exported-record.png",
+      "phase": "Give the client a clear record",
+      "caption": "The exported record retains outstanding work. Send the original files alongside it; this is not a claim of client acceptance.",
+      "duration_seconds": 10
+    }
+  ]
+}

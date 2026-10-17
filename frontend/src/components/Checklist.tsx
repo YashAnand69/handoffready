@@ -1,3 +1,4 @@
+import SourceEvidence from "./SourceEvidence";
 import { checkIssue } from "../presentation";
 import { useState } from "react";
 import type { Project, Requirement, CheckSpec } from "../types";
@@ -7,16 +8,25 @@ export default function Checklist({
   ready,
   extract,
   save,
+  onDirty,
 }: {
   project: Project;
   disabled: boolean;
   ready: boolean;
   extract: () => void;
   save: (rows: Requirement[], approve: boolean) => void;
+  onDirty?: () => void;
 }) {
   const [rows, setRows] = useState(project.baseline.requirements),
     [confirmed, setConfirmed] = useState(false);
+  const hasInvalidDraft = rows.some(
+    (r) =>
+      !r.title.trim() ||
+      (r.origin === "human_added" && !r.human_note.trim()) ||
+      r.checks.some((c) => !!checkIssue(c)),
+  );
   const update = (id: string, patch: Partial<Requirement>) => {
+    onDirty?.();
     setRows(rows.map((r) => (r.id === id ? { ...r, ...patch } : r)));
     setConfirmed(false);
   };
@@ -78,6 +88,7 @@ export default function Checklist({
               className="quiet"
               disabled={disabled}
               onClick={() => {
+                onDirty?.();
                 setRows(rows.filter((x) => x.id !== r.id));
                 setConfirmed(false);
               }}
@@ -92,19 +103,47 @@ export default function Checklist({
               value={r.title}
               disabled={disabled}
               maxLength={160}
+              aria-invalid={!r.title.trim()}
+              aria-describedby={
+                !r.title.trim() ? `title-error-${r.id}` : undefined
+              }
               onChange={(e) => update(r.id, { title: e.target.value })}
             />
           </label>
-          {r.quote && <blockquote>{r.quote}</blockquote>}
+          {!r.title.trim() && (
+            <p className="check-error" id={`title-error-${r.id}`} role="status">
+              Give this requirement a name before saving the checklist.
+            </p>
+          )}
+          {r.quote && (
+            <SourceEvidence
+              quote={r.quote}
+              span={r.source_span}
+              text={project.brief?.text}
+              label="Saved brief source"
+              unitId={r.evidence_unit_id}
+            />
+          )}
           <label>
             Your clarification{r.origin === "human_added" ? " (required)" : ""}
             <input
               value={r.human_note || ""}
               disabled={disabled}
               maxLength={2000}
+              aria-invalid={r.origin === "human_added" && !r.human_note.trim()}
+              aria-describedby={
+                r.origin === "human_added" && !r.human_note.trim()
+                  ? `note-error-${r.id}`
+                  : undefined
+              }
               onChange={(e) => update(r.id, { human_note: e.target.value })}
             />
           </label>
+          {r.origin === "human_added" && !r.human_note.trim() && (
+            <p className="check-error" id={`note-error-${r.id}`} role="status">
+              Explain why you added this requirement before saving.
+            </p>
+          )}
           {r.checks.map((c, i) => (
             <div key={i} className="check-group">
               <CheckEditor
@@ -150,6 +189,7 @@ export default function Checklist({
       <button
         disabled={disabled || rows.length >= 20}
         onClick={() => {
+          onDirty?.();
           setRows([
             ...rows,
             {
@@ -185,11 +225,7 @@ export default function Checklist({
         </label>
         <div className="actions">
           <button
-            disabled={
-              disabled ||
-              !rows.length ||
-              rows.some((r) => r.checks.some((c) => !!checkIssue(c)))
-            }
+            disabled={disabled || !rows.length || hasInvalidDraft}
             onClick={() => save(rows, false)}
           >
             Save draft
@@ -281,6 +317,11 @@ function CheckEditor({
       {["presence", "count"].includes(c.kind) && (
         <fieldset className="format-picks">
           <legend>Allowed formats</legend>
+          <p className="fine">
+            {c.kind === "presence"
+              ? "Any one of these formats satisfies this check. If you need both PNG and SVG, add a separate presence check for each."
+              : "Count selected files across all checked formats together. Use separate checks for separate quantities."}
+          </p>
           {["png", "jpeg", "svg", "pdf", "text", "markdown"].map((t) => (
             <label className="checkbox" key={t}>
               <input

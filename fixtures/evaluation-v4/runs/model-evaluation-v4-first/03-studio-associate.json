@@ -1,0 +1,200 @@
+{
+  "after_guards": {
+    "candidate_denominator": 2,
+    "correct_no_support": 0,
+    "correct_support_pairs": 2,
+    "failed_no_support": 0,
+    "failure": false,
+    "fully_correct_supported_requirements": 2,
+    "missed_support_pairs": 0,
+    "no_support_requirement_denominator": 0,
+    "predicted_pair_denominator": 2,
+    "support_pair_denominator": 2,
+    "supported_requirement_denominator": 2,
+    "text_quote_denominator": 1,
+    "unrelated_candidates": 0,
+    "valid_text_quotes": 1,
+    "wrong_no_support": 0,
+    "wrong_support_pairs": 0
+  },
+  "before_guards": {
+    "candidate_denominator": 2,
+    "correct_no_support": 0,
+    "correct_support_pairs": 2,
+    "failed_no_support": 0,
+    "failure": false,
+    "fully_correct_supported_requirements": 2,
+    "missed_support_pairs": 0,
+    "no_support_requirement_denominator": 0,
+    "predicted_pair_denominator": 2,
+    "support_pair_denominator": 2,
+    "supported_requirement_denominator": 2,
+    "text_quote_denominator": 1,
+    "unrelated_candidates": 0,
+    "valid_text_quotes": 1,
+    "wrong_no_support": 0,
+    "wrong_support_pairs": 0
+  },
+  "capture": {
+    "completion": {
+      "choices": [
+        {
+          "content": "{\n  \"proposals\": [\n    {\n      \"requirement_id\": \"r1\",\n      \"candidates\": [\n        {\n          \"relation\": \"supports\",\n          \"file_id\": \"f1\",\n          \"reason\": \"The requirement asks for an SVG studio mark, and file f1 is an inspected SVG file named 'pebble-mark.svg'.\",\n          \"evidence_unit_id\": null\n        }\n      ],\n      \"coverage\": \"Supports the requirement for an SVG studio mark.\"\n    },\n    {\n      \"requirement_id\": \"r2\",\n      \"candidates\": [\n        {\n          \"relation\": \"supports\",\n          \"file_id\": \"f2\",\n          \"reason\": \"The requirement asks for a two-page PDF guide covering mark spacing and color use. File f2 is an inspected PDF named 'identity-notes.pdf' which has 2 pages.\",\n          \"evidence_unit_id\": \"ev1_a022df96857c673136f83b9d\"\n        }\n      ],\n      \"coverage\": \"Supports the requirement for a two-page PDF guide.\"\n    }\n  ]\n}",
+          "finish_reason": "stop",
+          "index": 0
+        }
+      ],
+      "usage": {
+        "completion_tokens": 278,
+        "prompt_tokens": 1552,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "total_tokens": 1830
+      }
+    },
+    "completion_response_count": 1,
+    "elapsed_seconds": 2.9719768749782816,
+    "model_metadata": {
+      "association_guard_version": "approved-format-union-v1",
+      "elapsed_seconds": 2.971,
+      "input_sha256": "49041ec2996786a0c26d3be2813a12fa87bb5fc90ec58716b39990d8a771f7d5",
+      "input_tokens": 1552,
+      "model": "google/gemma-4-E2B-it",
+      "output_sha256": "15eefc6ddcf822f97585939842c6ca0e31b681f49a6f9bf03f4060fc79ddbf1e",
+      "output_tokens": 278,
+      "prompt_version": "handoffready-v11",
+      "seed": 20261013,
+      "source_catalog_version": "source-occurrence-v1",
+      "supporting_association_count": 2,
+      "temperature": 0,
+      "typed_rejection_count": 0,
+      "unrelated_association_count": 0,
+      "vision_used": false
+    },
+    "stage": "associate",
+    "structured_call_count": 1,
+    "structured_pre_guard": {
+      "proposals": [
+        {
+          "candidates": [
+            {
+              "file_id": "f1",
+              "reason": "The requirement asks for an SVG studio mark, and file f1 is an inspected SVG file named 'pebble-mark.svg'.",
+              "relation": "supports"
+            }
+          ],
+          "coverage": "Supports the requirement for an SVG studio mark.",
+          "requirement_id": "r1"
+        },
+        {
+          "candidates": [
+            {
+              "evidence_unit_id": "ev1_a022df96857c673136f83b9d",
+              "file_id": "f2",
+              "reason": "The requirement asks for a two-page PDF guide covering mark spacing and color use. File f2 is an inspected PDF named 'identity-notes.pdf' which has 2 pages.",
+              "relation": "supports"
+            }
+          ],
+          "coverage": "Supports the requirement for a two-page PDF guide.",
+          "requirement_id": "r2"
+        }
+      ]
+    },
+    "synthetic_data_only": true
+  },
+  "failure": null,
+  "guarded_predictions": [
+    {
+      "candidate_count": 1,
+      "candidates": [
+        {
+          "file_id": "f1",
+          "quote": null,
+          "quote_valid": null,
+          "reason": "Filename/metadata suggestion; no visual inspection. The requirement asks for an SVG studio mark, and file f1 is an inspected SVG file named 'pebble-mark.svg'."
+        }
+      ],
+      "coverage": "Supports the requirement for an SVG studio mark.",
+      "file_ids": [
+        "f1"
+      ],
+      "requirement_id": "r1",
+      "unrelated_candidate_count": 0
+    },
+    {
+      "candidate_count": 1,
+      "candidates": [
+        {
+          "file_id": "f2",
+          "quote": "Leave clear room around the symbol.",
+          "quote_valid": true,
+          "reason": "The requirement asks for a two-page PDF guide covering mark spacing and color use. File f2 is an inspected PDF named 'identity-notes.pdf' which has 2 pages.",
+          "source_span": {
+            "catalog_version": "source-occurrence-v1",
+            "end_cp": 35,
+            "evidence_unit_id": "ev1_a022df96857c673136f83b9d",
+            "quote": "Leave clear room around the symbol.",
+            "source_text_sha256": "cdd3e518a3473f014a77ed56b563aac60dd0c35274f6edea1daee1409b9d548e",
+            "source_unit_id": "f2",
+            "start_cp": 0
+          }
+        }
+      ],
+      "coverage": "Supports the requirement for a two-page PDF guide.",
+      "file_ids": [
+        "f2"
+      ],
+      "requirement_id": "r2",
+      "unrelated_candidate_count": 0
+    }
+  ],
+  "latency_seconds": 2.9720514999935403,
+  "raw_predictions": [
+    {
+      "candidate_count": 1,
+      "candidates": [
+        {
+          "file_id": "f1",
+          "quote_valid": null,
+          "reason": "The requirement asks for an SVG studio mark, and file f1 is an inspected SVG file named 'pebble-mark.svg'.",
+          "relation": "supports"
+        }
+      ],
+      "coverage": "Supports the requirement for an SVG studio mark.",
+      "file_ids": [
+        "f1"
+      ],
+      "requirement_id": "r1",
+      "unrelated_candidate_count": 0
+    },
+    {
+      "candidate_count": 1,
+      "candidates": [
+        {
+          "evidence_unit_id": "ev1_a022df96857c673136f83b9d",
+          "file_id": "f2",
+          "quote": "Leave clear room around the symbol.",
+          "quote_valid": true,
+          "reason": "The requirement asks for a two-page PDF guide covering mark spacing and color use. File f2 is an inspected PDF named 'identity-notes.pdf' which has 2 pages.",
+          "relation": "supports",
+          "source_span": {
+            "catalog_version": "source-occurrence-v1",
+            "end_cp": 35,
+            "evidence_unit_id": "ev1_a022df96857c673136f83b9d",
+            "quote": "Leave clear room around the symbol.",
+            "source_text_sha256": "cdd3e518a3473f014a77ed56b563aac60dd0c35274f6edea1daee1409b9d548e",
+            "source_unit_id": "f2",
+            "start_cp": 0
+          }
+        }
+      ],
+      "coverage": "Supports the requirement for a two-page PDF guide.",
+      "file_ids": [
+        "f2"
+      ],
+      "requirement_id": "r2",
+      "unrelated_candidate_count": 0
+    }
+  ]
+}

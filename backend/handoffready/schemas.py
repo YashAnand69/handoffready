@@ -48,6 +48,8 @@ class CheckSpec(Payload):
 
 class SourceSpan(Payload):
     source_unit_id: str = Field(min_length=1, max_length=100)
+    evidence_unit_id: str | None = Field(default=None, min_length=1, max_length=100)
+    catalog_version: str | None = Field(default=None, min_length=1, max_length=100)
     source_text_sha256: str = Field(min_length=64, max_length=64, pattern="^[0-9a-f]{64}$")
     start_cp: int = Field(ge=0, le=20000)
     end_cp: int = Field(ge=1, le=20000)
@@ -99,6 +101,7 @@ class DecisionInput(Payload):
     human_disposition: Literal["unresolved", "satisfied", "needs_work", "not_applicable"]
     internal_decision_note: str = Field(default="", max_length=2000)
     client_usage_note: str = Field(default="", max_length=2000)
+    client_exception_note: str = Field(default="", max_length=2000)
     input_hash: str = Field(min_length=64, max_length=64, pattern="^[0-9a-f]{64}$")
 
     @model_validator(mode="after")
@@ -111,6 +114,18 @@ class DecisionInput(Payload):
 class ExportInput(Payload):
     acknowledge_unresolved: bool
     input_hash: str = Field(min_length=64, max_length=64, pattern="^[0-9a-f]{64}$")
+    preview_revision: int | None = Field(default=None, ge=1)
+
+
+class SelectionPreviewInput(Payload):
+    file_ids: list[str] = Field(max_length=30)
+    input_hash: str = Field(min_length=64, max_length=64, pattern="^[0-9a-f]{64}$")
+
+    @model_validator(mode="after")
+    def valid_ids(self):
+        if len(set(self.file_ids)) != len(self.file_ids) or any(not 1 <= len(value) <= 100 for value in self.file_ids):
+            raise ValueError("Choose unique bounded file IDs")
+        return self
 
 
 class EmptyInput(Payload):

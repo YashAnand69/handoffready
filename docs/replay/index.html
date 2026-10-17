@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Explore five recorded checkpoints from an actual local HandoffReady run, with explicit review, retained findings and immutable delivery records."
+    />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; connect-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'"
+    />
+    <title>HandoffReady — a recorded delivery walkthrough</title>
+    <link rel="stylesheet" href="replay.css" />
+    <script src="replay.js" defer></script>
+  </head>
+  <body>
+    <a class="skip" href="#checkpoint-title">Skip to recorded checkpoint</a>
+    <header class="masthead">
+      <a class="brand" href="https://github.com/YashAnand69/handoffready"
+        >HandoffReady<span>DELIVERY DESK</span></a
+      ><span class="label">Recorded checkpoints</span>
+    </header>
+    <div class="disclosure">
+      <strong>Recorded local runs.</strong> Gemma is not running in this
+      browser. Synthetic packet; original review actions were agent-operated.
+    </div>
+    <main>
+      <section class="intro">
+        <p class="eyebrow">A FINISH YOU CAN INSPECT</p>
+        <h1>Follow the finding.<br />See the correction.</h1>
+        <p class="lead">
+          For freelancers checking the files they promised a client. Explore the agreed scope, review findings and the delivery record
+          created after a replacement. Earlier records stay unchanged.
+        </p>
+        <p>
+          These controls navigate actual recorded states. They do not upload
+          files, change reviews, or run inference. Saved records are checked against their recorded file hashes before their findings are shown.
+        </p>
+      </section>
+      <p id="load-status" role="status">Opening the recorded evidence…</p>
+      <div id="walkthrough" hidden>
+        <div class="workflow-grid">
+          <aside class="navigation">
+            <p class="eyebrow">FIVE CHECKPOINTS</p>
+            <nav id="stage-navigation" aria-label="Recorded checkpoints"></nav>
+            <p class="fine">
+              Use Tab to reach a checkpoint and Enter or Space to open it.
+            </p>
+          </aside>
+          <article
+            id="checkpoint"
+            class="checkpoint"
+            aria-labelledby="checkpoint-title"
+          >
+            <p id="checkpoint-number" class="eyebrow"></p>
+            <h2 id="checkpoint-title" tabindex="-1"></h2>
+            <p id="checkpoint-summary" class="lead"></p>
+            <ul id="checkpoint-facts" class="facts"></ul>
+            <div id="checkpoint-findings" class="findings"></div>
+            <figure id="capture" hidden>
+              <img id="capture-image" alt="" />
+              <figcaption>
+                Actual local application capture from this recorded synthetic
+                session.
+              </figcaption>
+            </figure>
+            <div class="stage-controls">
+              <button id="previous" type="button">Previous checkpoint</button
+              ><button id="next" type="button">Next checkpoint</button>
+            </div>
+          </article>
+        </div>
+        <section class="records" aria-labelledby="records-title">
+          <div class="section-heading">
+            <p class="eyebrow">ONE DELIVERY, TWO RECORDS</p>
+            <h2 id="records-title">A correction creates a new record.</h2>
+            <p id="comparison-summary"></p>
+          </div>
+          <div
+            class="record-controls"
+            role="group"
+            aria-label="Choose a recorded snapshot"
+          >
+            <button id="before" type="button" aria-pressed="true">
+              Earlier record</button
+            ><button id="after" type="button" aria-pressed="false">
+              After correction
+            </button>
+          </div>
+          <article
+            id="record-detail"
+            class="record-detail"
+            aria-live="polite"
+          ></article>
+          <p id="immutable-note" class="notice"></p>
+          <p id="originals-notice" class="notice"></p>
+          <p class="fine">
+            Downloads are exact recorded artifacts from a synthetic
+            demonstration. The HTML delivery record is readable and printable;
+            JSON and Markdown provide the same recorded projection.
+          </p>
+        </section>
+        <details class="provenance">
+          <summary>Inspect the recording identity and source hashes</summary>
+          <dl id="identity"></dl>
+          <div id="module-hashes"></div>
+          <p class="fine">
+            The base commit identifies the starting revision. Listed module
+            hashes identify the uncommitted local upgrade used for this
+            recording; they are not a fabricated new Git commit.
+          </p>
+        </details>
+      </div>
+      <section class="boundary">
+        <h2>What this demonstration establishes</h2>
+        <p>
+          An actual local workflow and recorded outcomes. Suggestions remain
+          proposals, technical checks establish narrow file facts, and an
+          explicit review records the assessment. It does not establish general
+          model accuracy, client acceptance, paid customer demand or time
+          savings.
+        </p>
+        <p>
+          <a href="https://github.com/YashAnand69/handoffready"
+            >Inspect the source and run the full app locally</a
+          >
+          ·
+          <a href="https://yashanand69.github.io/handoffready/"
+            >Watch the earlier recorded video</a
+          >
+        </p>
+      </section>
+      <noscript
+        ><p class="notice">
+          This checkpoint navigator needs JavaScript.
+          <a href="records/before.html"
+            >Read the earlier synthetic delivery record</a
+          >, <a href="records/after.html">read the record after correction</a>,
+          or
+          <a href="https://yashanand69.github.io/handoffready/"
+            >watch the captioned video</a
+          >.
+        </p></noscript
+      >
+    </main>
+    <footer>
+      Original synthetic materials · AI coding assistance disclosed · No
+      tracking or external fonts
+    </footer>
+  </body>
+</html>

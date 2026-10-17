@@ -1,0 +1,199 @@
+{
+  "created_at_utc": "2026-10-17T10:30:43.856427+00:00",
+  "scope": "Local release verification on this Mac. Scripted synthetic tests are not human/customer validation. Parent separately verifies browser workflow and model inference.",
+  "runtime": {
+    "python": "3.12.13",
+    "node": "24.19.0",
+    "platform": "macOS-27.0.1-arm64-arm-64bit"
+  },
+  "repository_head": "f1ee8226934244ef81a117444098e59743110a0f",
+  "working_tree": "Contains existing uncommitted application and documentation changes; tests run against working files, not only repository HEAD.",
+  "source_manifest_scope": "backend, scripts, tests, frontend/src, frontend/public, selected build/dependency configuration; excludes private runtime/model data, dependencies, outputs and documentation.",
+  "source_manifest_captured": "After successful tests and checks. Parent confirmed no concurrent application changes during this verification.",
+  "source_manifest_sha256": "02309fde4e8f85a5239e1dc2951a7907b410f460e4689b3790a87a69561a8b96",
+  "source_manifest": {
+    "AGENTS.md": "b728678a3b7c8f1245900c31de1d1cfe352cfb8b2b4eee8b62344da3e0dcbf1d",
+    "backend/handoffready/__init__.py": "85b4c96ab59d9d7dcb886cb35ad2d03956a3778943ce535fee1e651b2f9c5218",
+    "backend/handoffready/api.py": "d50e86faf0a8db7c64952e63cc4e36073b1702b8399e38c02a34c26ac350ca20",
+    "backend/handoffready/checks.py": "136b0af91ab9ecd18df7eee9d78f16d508434276f9b8c54dff3017a2392c73b9",
+    "backend/handoffready/evidence.py": "12b141f123b259f641b655ef5ac3099a80768bfda440910365531e7b927c0963",
+    "backend/handoffready/exports.py": "4c3a0413e798fdcfa004743a6159d42364bbf7c0c36cefaf435db9795acd13de",
+    "backend/handoffready/inspect.py": "643be1430e7a28eb49ed308131115d10140444bb60bce07ad095a4f2a01d7191",
+    "backend/handoffready/model.py": "f0ea34b95590209df6e130872b60226c2794ce6a87d736ade1a25d32aba5239f",
+    "backend/handoffready/parser_worker.py": "bff137376f21912d5136bd6507d7f84a8e30724397a12dbda6f8fbcbb7684b43",
+    "backend/handoffready/policy.py": "b3641785391fbe5a2a5663dcbdeb5e8d9a07519c8c8b3d63c75575c059f3b7b9",
+    "backend/handoffready/schemas.py": "d3bcfbf05a155d5bbab4e2a692d6ccbe7da052e96d240bb86fe7a40c7a6bc5d7",
+    "backend/handoffready/store.py": "4a645f4858ef19f9880c04afc7afdb563cbfe6edfa96cd389daecb6fb31cb547",
+    "backend/handoffready/summary.py": "648db11aaae6e00cf0c126ea68bc5ddfb3117c895998658a7f79a51b5d02a4df",
+    "frontend/index.html": "b9d86228750271912e5ccd516a9fb4c51da60da4f74e934bce13e391b5bc0ddd",
+    "frontend/package-lock.json": "65067aa7550741fdb337730f5db2c1cb881379769cb51da424ab1637e5fab145",
+    "frontend/package.json": "c9a7689ca5d185b104d02e9cec0542ebfb947ff1a9e13a3e122e0ad1e2317b01",
+    "frontend/public/quick-start.html": "f85774f782c080943eea1ea240ad7c3ba4135b8d1a6e97720678a3f011c825de",
+    "frontend/public/sample/README.md": "41dcd693bf83ab5f7412dd55873790511cffddc1031f0270d628e54409096e02",
+    "frontend/public/sample/brief.txt": "de382856fc7b9c554aedca92fb2ffe2386fb6e7b82dba2e8bdba8644738aa6c1",
+    "frontend/public/sample/contact-guide.md": "fe1355c17ce466c81528571159696b914da38450adc7484d0ff34b848816d748",
+    "frontend/public/sample/launch-01.png": "0f7057019dbf463e4b4bfb2d26e68ffdff00e454e4ae01858408d85948e8408e",
+    "frontend/public/sample/launch-02.png": "59a2864f7729887ae6a8f0ecbe1a72a99fddb8801fe63f2237422873a90feb09",
+    "frontend/public/sample/launch-03-duplicate.png": "59a2864f7729887ae6a8f0ecbe1a72a99fddb8801fe63f2237422873a90feb09",
+    "frontend/public/sample/logo-opaque.png": "9ce2ba0bf291937a23a0d8da9490359891979b5ff08a41c68d1d1272a75bb3f9",
+    "frontend/public/sample/logo-transparent.png": "b2eaac64fa22c65fb6296f09e7d5f24bfd151d5dee13a08eb9fa961fa09b625f",
+    "frontend/public/sample/logo.svg": "20b8ea08955cda08e2ad041aa58f3242537d8f56e5b621f6a9638fcdcc765be5",
+    "frontend/public/setup.html": "040ba87361a50cc51d98bd76305bc770dba2aa5a782d19dca45192155779e491",
+    "frontend/src/App.test.tsx": "6619e352c2c5c038518207df822d883b82493fa5a8e8c829fa8742d18c0dac47",
+    "frontend/src/App.tsx": "54c5ca2bcf19fcd75be1eca6463429cee4bc05e7126a5e5a1d6d5a63a06b9734",
+    "frontend/src/AppExperience.test.tsx": "5afe121d781214a418f2895aca2cf9a1f3739223e62c2dd35681385ee1a08b7f",
+    "frontend/src/ChecklistExperience.test.tsx": "ed99a302b15204f3d889efd5ede65ec49de76a2ed6f194e8cd705c33f2283e71",
+    "frontend/src/FileExperience.test.tsx": "f28e9b958a9aaabde9d8acdf0204b9573634cfd6fbd95655831771e701bec839",
+    "frontend/src/FinalAudit.test.tsx": "ef2b0e76210657511a294396a1471cd7b17577797832e55efd44aef00227de10",
+    "frontend/src/ReviewAudit.test.tsx": "29bc86419cdd9bfd9174c69463c81758569e3c197c8baddeb428f1c251dc242c",
+    "frontend/src/ReviewExperience.test.tsx": "39a683646c458b475ddbbe68370e45f5c78cd8eaad564e50010aef8ab0e23047",
+    "frontend/src/UpgradeAudit.test.tsx": "91c795f8d827df650d9ebfccded1309c159bca65e91d4b3215ef889ace41eec7",
+    "frontend/src/api.ts": "e350c63540f5d26a1f3e315844bbbc47c18d5f02487095e0b1675f04f25ba249",
+    "frontend/src/components/AttentionOverview.tsx": "6d3b030740bb117fddb3084aefd0c7326617b3e0ed4a90f879392326e465f408",
+    "frontend/src/components/AuditHistory.tsx": "0b684b34ee6714ea332485ed3a864e1bd38d0d9519c493e9abd9408a35d121ad",
+    "frontend/src/components/Brief.tsx": "317d8f12df1f7c2da5eb05576fc47957029078cebea40ee9abe59325d60ccde5",
+    "frontend/src/components/Checklist.tsx": "43d5153ca53057e8b02f5fd16262fb2de2ec192051905c893721b42583913467",
+    "frontend/src/components/EvidenceGraphic.tsx": "fbe7af03da8844c96e7e150601201c00dc5c77b35322fd517a1bea5da6849e03",
+    "frontend/src/components/Files.tsx": "f98a88f5cac70aa5f62da632c273aae3d7b3d6d62f029e10fa956ba31c4dbf44",
+    "frontend/src/components/FirstRunGuide.tsx": "b4929913b384c863fe899a014232d935ed22a83939e21a1b070b3ffd893db600",
+    "frontend/src/components/Handoff.tsx": "69dc78f8370ecbc27bbae9cad0d41ddc4972b9ad080cb8f495320a96a8a46b71",
+    "frontend/src/components/Review.tsx": "5943cbb50e3873068d31861df5bd3e79a2fe40058d4e8cacd4f42871e89fcc8b",
+    "frontend/src/components/SourceEvidence.tsx": "278fe639f63569f699c3779fc81a2a55f74d40d0eca4f9f5b7a554188f1f724e",
+    "frontend/src/main.tsx": "575c9833bc5993d6a7b8db0587b8ecc202809448fd71842c5a4331bec6ee7977",
+    "frontend/src/presentation.ts": "a0089defaeb4d61547c0c84e27e2e144646f63a9aeb924875f25da86fb75853d",
+    "frontend/src/style.css": "d7df1d7ff4b2a0e148b16c65feedf6d87c89655f9e190315a0e5c1ebb7ae082a",
+    "frontend/src/types.ts": "01260723f10c0871122fc3c5fabcba9ccc440fb11983f4a599f35af058b14034",
+    "frontend/src/useEntranceMotion.ts": "05cfef63a5ca1e53e7a030f201ef68562301a8790a903b004969db571bf1887a",
+    "frontend/src/workflow.ts": "b8e74e07c5d6448fa04ba3c4a0d08a247de7da77a3291dc3218e03e75a92aece",
+    "frontend/tsconfig.json": "c844e08b628a9049051060c9b0a8a59b4d9618faeef7c27fa25f3e07d1559afe",
+    "frontend/vite.config.ts": "08214658fabe7d2f8bf59a2c7f5ad63307b4ae9543d8756981043d6e6d529043",
+    "requirements-backend.lock": "2593f6ad792814ab5d9800be80e5df9b9c8602919eb0b6d970c2acc72774360a",
+    "requirements-backend.txt": "80f28ba2cba2625793eb6ad05d609c2c9b376f48eeb60db3d1e2561d301273e1",
+    "scripts/assemble_current_demo.py": "e2eea76f25b136eeac514e4d2f366abf20623aae2c6d9fca3978df0697eff471",
+    "scripts/assemble_demo.py": "a6f43e8c2a4bf27a5a15bf0835ebb3d3ead7b0c907f7a17d77523529de2914e6",
+    "scripts/benchmark_model.py": "7a3a6eb27b6e08a0b8ba3267c3522de55dbff0b74619f1865f5a4ccec4274d6a",
+    "scripts/create_fixtures.py": "23a489c2bb32346ab60870b6756d7d65509348f4951682be36d72ba70532df28",
+    "scripts/evaluate_model.py": "26bf484f70332e937da937ed380787f8a97d758c1ad0d02021e9a86869213464",
+    "scripts/evaluate_model_v2.py": "26230fa7cea175c1f399760c955b438e96e7497ed4d97a150bdfaa50590f4a0a",
+    "scripts/evaluate_model_v3.py": "4eb6eaac23e494aefd5bfb64f42796a7fd18a86e6464740fa3329caaa527e4c2",
+    "scripts/evaluate_model_v4.py": "833c07b6cf85d8965ac04f9bf62322b00e03ff9b50602abb23dd74a2210c44cb",
+    "scripts/evaluate_v4_adapter.py": "c14b6197d40b9aa5a59ad8a8eaae8522714a7feadc570c8733bb9c7ceada9566",
+    "scripts/prepare_demo_page.py": "b6902ea29cd27c27a7e0a035053151b44c22eeae90376e1c20112e4793c2b502",
+    "scripts/prepare_model.py": "330f11785a8388d389ee3a28403728adff72fb37ddc379a2a1e7acad8cd4110d",
+    "scripts/prepare_upgrade_replay.py": "354fb15776762c84600818c756e9e6624d91f2ea6454ad37e10a2ee7fce43b28",
+    "scripts/run.py": "e834ff8cf5243fa78a69c33c717dc37d240b311855cebaf1dc17be4c6d25a7ef",
+    "scripts/start.py": "bcac8921047dd7a0040d8a1b54fa5392d792262b945ab87882e0b39d31e7fd89",
+    "scripts/test_evaluate_v4_adapter.py": "3a42a9b1a19dcf27693c657152c9294dcd676325537e24944a99184aa6b33225",
+    "scripts/verify_workflow.py": "f574b868aeef2bf2744783896a2073d5495d70fc09b115ce6e24e4b2c09a7bd0",
+    "tests/test_api.py": "a96cdcba86e02577dfe79eba08d2d86ec7567a3176255bf9a7fdc492933a793d",
+    "tests/test_checks.py": "3d63c3f7239e60b9b5b5994cf35bdf71930da09fd95424e73e720a3276e6f95d",
+    "tests/test_evidence.py": "fa695f09e60344d71edb9eece9b15d794db432b4452fd6cb04286475c961d8c2",
+    "tests/test_final_review.py": "db55da5b11bbb812301d1e6b8b5ed58f234c5bea69c3198802ab284dbe86aa57",
+    "tests/test_inspect.py": "4a0db0895ed7aa63dfdb3106625326fdec12d1d144ef94d4b042545e998f8292",
+    "tests/test_manifest_upgrade.py": "ac93c535b063b63b43513417c3062b7055f68a1996c07ae62855534cf5842336",
+    "tests/test_model.py": "a5454c4322c206881fffaae786406b375acf51930fedbc49a8318f67dca389b6",
+    "tests/test_project_overview.py": "f677c75a6bc8496828012044b0b4be79aaac6071c7430a815bf461345fd2a104",
+    "tests/test_replacement_recovery.py": "0ac618ceb4eb825757f7c0dcecf4f5b35025bb64c98c40b99e7f5bbfb7f4cf4f",
+    "tests/test_replay_upgrade.py": "c18e7fa405269882b18526f43294a0347eb6477db6ff302c79354fe24ad55771",
+    "tests/test_upgrade_integration.py": "f89c67d3a6c13c619dd1884794f524f3ea1c8b8ad91aa7fef156516e833344ac"
+  },
+  "checks": [
+    {
+      "name": "backend-tests",
+      "command": "PYTHONPATH=backend .venv/bin/python -m pytest tests scripts/test_evaluate_v4_adapter.py -q",
+      "exit_code": 0,
+      "result": "250 passed, 1 warning in 8.15s",
+      "warning": "Existing Starlette TestClient/httpx deprecation; not a test failure."
+    },
+    {
+      "name": "frontend-tests",
+      "command": "node24 node_modules/vitest/vitest.mjs run",
+      "cwd": "frontend",
+      "exit_code": 0,
+      "result": "8 test files passed; 74 tests passed"
+    },
+    {
+      "name": "typescript",
+      "command": "node24 node_modules/typescript/bin/tsc -b",
+      "cwd": "frontend",
+      "exit_code": 0,
+      "result": "No diagnostics"
+    },
+    {
+      "name": "production-build",
+      "command": "node24 node_modules/vite/bin/vite.js build",
+      "cwd": "frontend",
+      "exit_code": 0,
+      "result": "Vite 7.3.7; 43 modules transformed; built in 339ms",
+      "assets": {
+        "frontend/dist/assets/index-lYz1HB1U.css": {
+          "size_kb": 29.59,
+          "gzip_kb": 7.45
+        },
+        "frontend/dist/assets/index-CQ2_4ht5.js": {
+          "size_kb": 291.88,
+          "gzip_kb": 90.32
+        }
+      }
+    },
+    {
+      "name": "frontend-format",
+      "command": "node24 node_modules/prettier/bin/prettier.cjs --check src *.json vite.config.ts index.html",
+      "cwd": "frontend",
+      "exit_code": 0,
+      "result": "All matched files use Prettier code style"
+    },
+    {
+      "name": "python-correctness",
+      "command": "ruff check backend tests scripts --select F,E9",
+      "exit_code": 0,
+      "result": "All checks passed"
+    },
+    {
+      "name": "diff-whitespace",
+      "command": "git diff --check",
+      "exit_code": 0,
+      "result": "No diagnostics"
+    },
+    {
+      "name": "real-loopback-manual-workflow",
+      "command": ".venv/bin/python scripts/verify_workflow.py --output docs/workflow-verification-oct17-manual.json",
+      "exit_code": 0,
+      "result": "Passed 7 steps; no inference requested",
+      "receipt": "docs/workflow-verification-oct17-manual.json"
+    },
+    {
+      "name": "copied-source-manual-workflow",
+      "exit_code": 0,
+      "result": "Passed 7 steps from temporary copy of backend/scripts, using installed project dependencies and newly generated synthetic data. Temporary copy removed.",
+      "receipt": "docs/workflow-verification-oct17-copied-source.json"
+    },
+    {
+      "name": "actual-local-model-workflow",
+      "command": "HANDOFF_MODEL_PORT=18082 HANDOFF_MODEL_URL=http://127.0.0.1:18082 .venv/bin/python scripts/verify_workflow.py --with-model --output docs/workflow-verification-oct17-model.json",
+      "exit_code": 0,
+      "result": "7 manual stages passed, actual local extraction and association jobs succeeded. No model injection. Synthetic input; not accuracy evaluation or customer evidence.",
+      "receipt": "docs/workflow-verification-oct17-model.json",
+      "receipt_sha256": "1dda3a5f472836c813c4bdfe7dde586b4a25d5b3b61d41b635c85de223c6e6e6"
+    }
+  ],
+  "manual_code_review": {
+    "keyboard_and_labels": "Native input/select/textarea labels, buttons and summary controls; visible focus; heading focus after step transitions; skip link. No confirmed blocker found by static inspection.",
+    "motion": "Reduced-motion CSS fallback and entrance-motion preference checks present.",
+    "exports_print_css": "Auto paper size, 16mm/15mm margins, readable print sizes, full checksum text, wrapping and page-break hints present. Actual A4/Letter rendering not inspected by this agent."
+  },
+  "not_verified": [
+    "Real freelancer trial or willingness to pay",
+    "Fresh-machine dependency installation",
+    "Physical mobile device",
+    "Screen reader",
+    "Native A4/Letter print output",
+    "Remote CI or deployment",
+    "Fresh held-out model accuracy measurement; prior V4 evaluation is unchanged"
+  ],
+  "verifier_command_error": {
+    "name": "initial-format-invocation",
+    "exit_code": 2,
+    "reason": "Verifier initially named nonexistent tsconfig.app.json and tsconfig.node.json. No product formatting defect. Correct repository globs were rerun successfully."
+  }
+}

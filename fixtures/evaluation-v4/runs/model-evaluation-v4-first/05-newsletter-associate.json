@@ -1,0 +1,261 @@
+{
+  "after_guards": {
+    "candidate_denominator": 3,
+    "correct_no_support": 0,
+    "correct_support_pairs": 3,
+    "failed_no_support": 0,
+    "failure": false,
+    "fully_correct_supported_requirements": 2,
+    "missed_support_pairs": 0,
+    "no_support_requirement_denominator": 0,
+    "predicted_pair_denominator": 3,
+    "support_pair_denominator": 3,
+    "supported_requirement_denominator": 2,
+    "text_quote_denominator": 3,
+    "unrelated_candidates": 0,
+    "valid_text_quotes": 3,
+    "wrong_no_support": 0,
+    "wrong_support_pairs": 0
+  },
+  "before_guards": {
+    "candidate_denominator": 3,
+    "correct_no_support": 0,
+    "correct_support_pairs": 3,
+    "failed_no_support": 0,
+    "failure": false,
+    "fully_correct_supported_requirements": 2,
+    "missed_support_pairs": 0,
+    "no_support_requirement_denominator": 0,
+    "predicted_pair_denominator": 3,
+    "support_pair_denominator": 3,
+    "supported_requirement_denominator": 2,
+    "text_quote_denominator": 3,
+    "unrelated_candidates": 0,
+    "valid_text_quotes": 3,
+    "wrong_no_support": 0,
+    "wrong_support_pairs": 0
+  },
+  "capture": {
+    "completion": {
+      "choices": [
+        {
+          "content": "{\n  \"proposals\": [\n    {\n      \"requirement_id\": \"r1\",\n      \"candidates\": [\n        {\n          \"relation\": \"supports\",\n          \"file_id\": \"f1\",\n          \"reason\": \"f1 is a plain text file and satisfies the requirement for at least two distinct plain text or Markdown caption files.\",\n          \"evidence_unit_id\": \"ev1_d7c78cdc48b1eddcf3900e50\"\n        },\n        {\n          \"relation\": \"supports\",\n          \"file_id\": \"f2\",\n          \"reason\": \"f2 is a Markdown file and satisfies the requirement for at least two distinct plain text or Markdown caption files.\",\n          \"evidence_unit_id\": \"ev1_92ec06e711bf7449cc7b9acf\"\n        }\n      ],\n      \"coverage\": \"The requirement asks for at least two distinct plain text or Markdown caption files. Files f1 (text) and f2 (markdown) satisfy this.\"\n    },\n    {\n      \"requirement_id\": \"r2\",\n      \"candidates\": [\n        {\n          \"relation\": \"supports\",\n          \"file_id\": \"f3\",\n          \"reason\": \"f3 contains the exact phrase 'Welcome, neighbors!' as required by the welcome copy check.\",\n          \"evidence_unit_id\": \"ev1_23ac3c829d53df92de95f716\"\n        }\n      ],\n      \"coverage\": \"The requirement asks for plain text welcome copy containing the exact phrase 'Welcome, neighbors!'. File f3 contains this exact phrase.\"\n    }\n  ]\n}",
+          "finish_reason": "stop",
+          "index": 0
+        }
+      ],
+      "usage": {
+        "completion_tokens": 397,
+        "prompt_tokens": 1494,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "total_tokens": 1891
+      }
+    },
+    "completion_response_count": 1,
+    "elapsed_seconds": 3.9694618749199435,
+    "model_metadata": {
+      "association_guard_version": "approved-format-union-v1",
+      "elapsed_seconds": 3.969,
+      "input_sha256": "d22c66dec12314313a2ad79e725b4642e281ea79387154724bbc97332d2a7eb4",
+      "input_tokens": 1494,
+      "model": "google/gemma-4-E2B-it",
+      "output_sha256": "2c75e96158c9fb9db0427098b42866069a55f2dadc06e0e13748bc057d0e8d22",
+      "output_tokens": 397,
+      "prompt_version": "handoffready-v11",
+      "seed": 20261013,
+      "source_catalog_version": "source-occurrence-v1",
+      "supporting_association_count": 3,
+      "temperature": 0,
+      "typed_rejection_count": 0,
+      "unrelated_association_count": 0,
+      "vision_used": false
+    },
+    "stage": "associate",
+    "structured_call_count": 1,
+    "structured_pre_guard": {
+      "proposals": [
+        {
+          "candidates": [
+            {
+              "evidence_unit_id": "ev1_d7c78cdc48b1eddcf3900e50",
+              "file_id": "f1",
+              "reason": "f1 is a plain text file and satisfies the requirement for at least two distinct plain text or Markdown caption files.",
+              "relation": "supports"
+            },
+            {
+              "evidence_unit_id": "ev1_92ec06e711bf7449cc7b9acf",
+              "file_id": "f2",
+              "reason": "f2 is a Markdown file and satisfies the requirement for at least two distinct plain text or Markdown caption files.",
+              "relation": "supports"
+            }
+          ],
+          "coverage": "The requirement asks for at least two distinct plain text or Markdown caption files. Files f1 (text) and f2 (markdown) satisfy this.",
+          "requirement_id": "r1"
+        },
+        {
+          "candidates": [
+            {
+              "evidence_unit_id": "ev1_23ac3c829d53df92de95f716",
+              "file_id": "f3",
+              "reason": "f3 contains the exact phrase 'Welcome, neighbors!' as required by the welcome copy check.",
+              "relation": "supports"
+            }
+          ],
+          "coverage": "The requirement asks for plain text welcome copy containing the exact phrase 'Welcome, neighbors!'. File f3 contains this exact phrase.",
+          "requirement_id": "r2"
+        }
+      ]
+    },
+    "synthetic_data_only": true
+  },
+  "failure": null,
+  "guarded_predictions": [
+    {
+      "candidate_count": 2,
+      "candidates": [
+        {
+          "file_id": "f1",
+          "quote": "East garden volunteers planted herbs this Sunday.",
+          "quote_valid": true,
+          "reason": "f1 is a plain text file and satisfies the requirement for at least two distinct plain text or Markdown caption files.",
+          "source_span": {
+            "catalog_version": "source-occurrence-v1",
+            "end_cp": 49,
+            "evidence_unit_id": "ev1_d7c78cdc48b1eddcf3900e50",
+            "quote": "East garden volunteers planted herbs this Sunday.",
+            "source_text_sha256": "0d96f39d58f137749f507dd5eb086809ec21fe5e0bb694f3fbf5ef34cbf19c2a",
+            "source_unit_id": "f1",
+            "start_cp": 0
+          }
+        },
+        {
+          "file_id": "f2",
+          "quote": "# West garden",
+          "quote_valid": true,
+          "reason": "f2 is a Markdown file and satisfies the requirement for at least two distinct plain text or Markdown caption files.",
+          "source_span": {
+            "catalog_version": "source-occurrence-v1",
+            "end_cp": 13,
+            "evidence_unit_id": "ev1_92ec06e711bf7449cc7b9acf",
+            "quote": "# West garden",
+            "source_text_sha256": "3bf0feb1343b78f100e1f85dbe9fa77eee706027b4858761c213dc9171e8f340",
+            "source_unit_id": "f2",
+            "start_cp": 0
+          }
+        }
+      ],
+      "coverage": "The requirement asks for at least two distinct plain text or Markdown caption files. Files f1 (text) and f2 (markdown) satisfy this.",
+      "file_ids": [
+        "f1",
+        "f2"
+      ],
+      "requirement_id": "r1",
+      "unrelated_candidate_count": 0
+    },
+    {
+      "candidate_count": 1,
+      "candidates": [
+        {
+          "file_id": "f3",
+          "quote": "Welcome, neighbors!",
+          "quote_valid": true,
+          "reason": "f3 contains the exact phrase 'Welcome, neighbors!' as required by the welcome copy check.",
+          "source_span": {
+            "catalog_version": "source-occurrence-v1",
+            "end_cp": 19,
+            "evidence_unit_id": "ev1_23ac3c829d53df92de95f716",
+            "quote": "Welcome, neighbors!",
+            "source_text_sha256": "14763937d4c9da1a8a9418525c48dbe59f61d43aa651f5d000fd512029a3e548",
+            "source_unit_id": "f3",
+            "start_cp": 0
+          }
+        }
+      ],
+      "coverage": "The requirement asks for plain text welcome copy containing the exact phrase 'Welcome, neighbors!'. File f3 contains this exact phrase.",
+      "file_ids": [
+        "f3"
+      ],
+      "requirement_id": "r2",
+      "unrelated_candidate_count": 0
+    }
+  ],
+  "latency_seconds": 3.9695687500061467,
+  "raw_predictions": [
+    {
+      "candidate_count": 2,
+      "candidates": [
+        {
+          "evidence_unit_id": "ev1_d7c78cdc48b1eddcf3900e50",
+          "file_id": "f1",
+          "quote": "East garden volunteers planted herbs this Sunday.",
+          "quote_valid": true,
+          "reason": "f1 is a plain text file and satisfies the requirement for at least two distinct plain text or Markdown caption files.",
+          "relation": "supports",
+          "source_span": {
+            "catalog_version": "source-occurrence-v1",
+            "end_cp": 49,
+            "evidence_unit_id": "ev1_d7c78cdc48b1eddcf3900e50",
+            "quote": "East garden volunteers planted herbs this Sunday.",
+            "source_text_sha256": "0d96f39d58f137749f507dd5eb086809ec21fe5e0bb694f3fbf5ef34cbf19c2a",
+            "source_unit_id": "f1",
+            "start_cp": 0
+          }
+        },
+        {
+          "evidence_unit_id": "ev1_92ec06e711bf7449cc7b9acf",
+          "file_id": "f2",
+          "quote": "# West garden",
+          "quote_valid": true,
+          "reason": "f2 is a Markdown file and satisfies the requirement for at least two distinct plain text or Markdown caption files.",
+          "relation": "supports",
+          "source_span": {
+            "catalog_version": "source-occurrence-v1",
+            "end_cp": 13,
+            "evidence_unit_id": "ev1_92ec06e711bf7449cc7b9acf",
+            "quote": "# West garden",
+            "source_text_sha256": "3bf0feb1343b78f100e1f85dbe9fa77eee706027b4858761c213dc9171e8f340",
+            "source_unit_id": "f2",
+            "start_cp": 0
+          }
+        }
+      ],
+      "coverage": "The requirement asks for at least two distinct plain text or Markdown caption files. Files f1 (text) and f2 (markdown) satisfy this.",
+      "file_ids": [
+        "f1",
+        "f2"
+      ],
+      "requirement_id": "r1",
+      "unrelated_candidate_count": 0
+    },
+    {
+      "candidate_count": 1,
+      "candidates": [
+        {
+          "evidence_unit_id": "ev1_23ac3c829d53df92de95f716",
+          "file_id": "f3",
+          "quote": "Welcome, neighbors!",
+          "quote_valid": true,
+          "reason": "f3 contains the exact phrase 'Welcome, neighbors!' as required by the welcome copy check.",
+          "relation": "supports",
+          "source_span": {
+            "catalog_version": "source-occurrence-v1",
+            "end_cp": 19,
+            "evidence_unit_id": "ev1_23ac3c829d53df92de95f716",
+            "quote": "Welcome, neighbors!",
+            "source_text_sha256": "14763937d4c9da1a8a9418525c48dbe59f61d43aa651f5d000fd512029a3e548",
+            "source_unit_id": "f3",
+            "start_cp": 0
+          }
+        }
+      ],
+      "coverage": "The requirement asks for plain text welcome copy containing the exact phrase 'Welcome, neighbors!'. File f3 contains this exact phrase.",
+      "file_ids": [
+        "f3"
+      ],
+      "requirement_id": "r2",
+      "unrelated_candidate_count": 0
+    }
+  ]
+}

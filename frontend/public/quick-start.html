@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>HandoffReady · your first delivery review</title>
+    <style>
+      :root {
+        color-scheme: light;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background: #f7f5f0;
+        color: #263b32;
+        font:
+          16px/1.7 system-ui,
+          sans-serif;
+      }
+      main {
+        max-width: 860px;
+        margin: auto;
+        padding: 40px 24px;
+      }
+      h1,
+      h2 {
+        font-family: Georgia, serif;
+        line-height: 1.15;
+      }
+      h1 {
+        font-size: clamp(36px, 6vw, 58px);
+      }
+      h2 {
+        font-size: 28px;
+      }
+      a {
+        color: #315c45;
+        text-underline-offset: 4px;
+      }
+      a:focus-visible {
+        outline: 2px solid;
+        outline-offset: 4px;
+      }
+      section {
+        background: #fffefa;
+        border: 1px solid #dce2d4;
+        border-radius: 14px;
+        padding: 24px;
+        margin: 24px 0;
+      }
+      li {
+        padding: 7px 0;
+      }
+      small {
+        color: #526454;
+      }
+      .label {
+        letter-spacing: 0.14em;
+        font-size: 12px;
+      }
+      p {
+        max-width: 70ch;
+      }
+      table {
+        border-collapse: collapse;
+        width: 100%;
+        font-size: 14px;
+      }
+      td,
+      th {
+        text-align: left;
+        vertical-align: top;
+        border-bottom: 1px solid #dce2d4;
+        padding: 10px;
+        overflow-wrap: anywhere;
+      }
+      caption {
+        text-align: left;
+        font-weight: 600;
+        margin-bottom: 12px;
+      }
+      @media (max-width: 480px) {
+        section {
+          padding: 18px;
+        }
+        main {
+          padding: 24px 16px;
+        }
+      }
+      @media print {
+        body {
+          background: white;
+        }
+        section {
+          break-inside: auto;
+        }
+        h2 {
+          break-after: avoid;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <a href="/">← Open the delivery desk</a>
+      <p class="label">YOUR FIRST HANDOFF</p>
+      <h1>Know what you are sending.</h1>
+      <p>
+        HandoffReady helps a web or design freelancer compare an agreed brief
+        with outgoing files. It creates a review record, not a certificate or
+        client approval.
+      </p>
+      <section>
+        <h2>Explore before installing a model</h2>
+        <p>
+          If the app is already running, choose
+          <strong>Try the synthetic sample</strong>. No private files are
+          needed. The intentionally imperfect packet lets you inspect findings
+          and make decisions manually even when local AI is unavailable.
+        </p>
+        <p>
+          On another computer, this localhost address will not reach the host's
+          app. Use the source setup instructions on that computer, or try it
+          together on the host Mac.
+          <a href="/setup.html">Local setup and model requirements →</a>
+        </p>
+      </section>
+      <section>
+        <h2>One small delivery, five steps</h2>
+        <ol>
+          <li>
+            <strong>Brief:</strong> paste the promised deliverables. Use
+            non-confidential material for a first trial.
+          </li>
+          <li>
+            <strong>Checklist:</strong> create items manually or request Gemma
+            suggestions. Compare every item against the saved brief: quantities,
+            formats, exclusions and omissions. Confirm only after correcting it.
+          </li>
+          <li>
+            <strong>Files:</strong> add the actual delivery files. Inspect
+            properties and duplicate warnings. A failed replacement keeps the
+            existing original; a successful change makes affected reviews stale.
+          </li>
+          <li>
+            <strong>Review:</strong> choose evidence, preview checks, inspect
+            actual content and record your assessment. “Satisfied” does not
+            erase a failed technical check.
+          </li>
+          <li>
+            <strong>Handoff:</strong> inspect the client preview, including
+            unresolved work and public notes. Save a snapshot and download HTML,
+            Markdown or JSON. Send the original files alongside it.
+          </li>
+        </ol>
+        <p>
+          Changing the source, checklist or packet requires fresh review.
+          Earlier records remain unchanged. Private notes stay out of the client
+          export; requirement titles and designated client notes are shared.
+        </p>
+      </section>
+      <section>
+        <h2>Three kinds of evidence</h2>
+        <table>
+          <caption>
+            What to trust—and what still needs you
+          </caption>
+          <thead>
+            <tr>
+              <th>Source</th>
+              <th>What it establishes</th>
+              <th>Your next check</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Gemma suggestion</td>
+              <td>A proposed requirement or file association</td>
+              <td>
+                Verify the exact source, omitted promises and whether content
+                actually meets the requirement.
+              </td>
+            </tr>
+            <tr>
+              <td>File inspection</td>
+              <td>
+                A narrow property such as pixel dimensions or duplicate bytes
+              </td>
+              <td>
+                Inspect visual quality and meaning. Different bytes do not prove
+                distinct designs.
+              </td>
+            </tr>
+            <tr>
+              <td>Your assessment</td>
+              <td>Your recorded judgment of the current packet</td>
+              <td>
+                Resolve gaps, explain exceptions and review again after changes.
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <p>
+          A source quote proves provenance, not correctness. A missing
+          suggestion does not mean the brief has no requirement. There is no
+          calibrated model confidence score.
+        </p>
+      </section>
+      <section>
+        <h2>Where the desk stops</h2>
+        <p>
+          Supported files include PNG, JPEG, SVG metadata, readable PDF, text
+          and Markdown within documented limits. It does not run websites, test
+          links or forms, scan accessibility, deploy code, certify designs,
+          accept payment, send files or establish client acceptance. Scanned
+          PDFs and arbitrary archives are not supported.
+        </p>
+        <p>
+          In the frozen synthetic V4 evaluation, extraction covered 15 of 21
+          mandatory obligations. On separately supplied requirements, guards
+          retained 19 correct file associations and removed two wrong-format
+          associations from the same captured outputs. These small synthetic
+          results are not real-world accuracy or evidence that semantic mistakes
+          cannot occur.
+        </p>
+        <p>
+          The model runs locally after installation. Optional AI requires
+          model/runtime downloads and adequate hardware; manual review remains
+          available without it.
+        </p>
+      </section>
+      <section>
+        <h2>Help us improve the next delivery</h2>
+        <p>
+          Try a small non-confidential packet and note where you get stuck, what
+          you would normally do instead, and whether you would choose this tool
+          on your next project. A synthetic demo is not a customer trial. Do not
+          include client names, raw confidential files or credentials in shared
+          feedback.
+        </p>
+      </section>
+      <a href="/">Start a delivery review →</a>
+    </main>
+  </body>
+</html>

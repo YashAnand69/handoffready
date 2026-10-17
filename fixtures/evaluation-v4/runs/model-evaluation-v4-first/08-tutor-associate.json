@@ -1,0 +1,212 @@
+{
+  "after_guards": {
+    "candidate_denominator": 2,
+    "correct_no_support": 0,
+    "correct_support_pairs": 2,
+    "failed_no_support": 0,
+    "failure": false,
+    "fully_correct_supported_requirements": 2,
+    "missed_support_pairs": 0,
+    "no_support_requirement_denominator": 0,
+    "predicted_pair_denominator": 2,
+    "support_pair_denominator": 2,
+    "supported_requirement_denominator": 2,
+    "text_quote_denominator": 1,
+    "unrelated_candidates": 0,
+    "valid_text_quotes": 1,
+    "wrong_no_support": 0,
+    "wrong_support_pairs": 0
+  },
+  "before_guards": {
+    "candidate_denominator": 3,
+    "correct_no_support": 0,
+    "correct_support_pairs": 2,
+    "failed_no_support": 0,
+    "failure": false,
+    "fully_correct_supported_requirements": 1,
+    "missed_support_pairs": 0,
+    "no_support_requirement_denominator": 0,
+    "predicted_pair_denominator": 3,
+    "support_pair_denominator": 2,
+    "supported_requirement_denominator": 2,
+    "text_quote_denominator": 1,
+    "unrelated_candidates": 0,
+    "valid_text_quotes": 1,
+    "wrong_no_support": 0,
+    "wrong_support_pairs": 1
+  },
+  "capture": {
+    "completion": {
+      "choices": [
+        {
+          "content": "{\n  \"proposals\": [\n    {\n      \"requirement_id\": \"r1\",\n      \"candidates\": [\n        {\n          \"relation\": \"supports\",\n          \"file_id\": \"f1\",\n          \"reason\": \"The file 'moss-notes.txt' contains the exact phrase 'Session setup', satisfying the requirement for a plain text tutoring setup guide containing that phrase.\",\n          \"evidence_unit_id\": \"ev1_6215a6da00fd2e3da9064df3\"\n        }\n      ],\n      \"coverage\": \"The file 'moss-notes.txt' contains the required phrase 'Session setup'.\"\n    },\n    {\n      \"requirement_id\": \"r2\",\n      \"candidates\": [\n        {\n          \"relation\": \"supports\",\n          \"file_id\": \"f2\",\n          \"reason\": \"The file 'schedule.jpg' is a JPEG file, satisfying the requirement for a JPEG tutoring schedule.\",\n          \"evidence_unit_id\": null\n        },\n        {\n          \"relation\": \"supports\",\n          \"file_id\": \"f3\",\n          \"reason\": \"The file 'tutoring-schedule-final.png' is a PNG file, which is a supported image format, satisfying the requirement for a JPEG tutoring schedule (assuming JPEG is acceptable for a schedule image, or that PNG is an acceptable substitute if the requirement implies 'an image').\",\n          \"evidence_unit_id\": null\n        }\n      ],\n      \"coverage\": \"The file 'schedule.jpg' is a JPEG, and 'tutoring-schedule-final.png' is an image file.\"\n    }\n  ]\n}",
+          "finish_reason": "stop",
+          "index": 0
+        }
+      ],
+      "usage": {
+        "completion_tokens": 384,
+        "prompt_tokens": 1473,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "total_tokens": 1857
+      }
+    },
+    "completion_response_count": 1,
+    "elapsed_seconds": 3.8720430000685155,
+    "model_metadata": {
+      "association_guard_version": "approved-format-union-v1",
+      "elapsed_seconds": 3.871,
+      "input_sha256": "272b4d8b67cf1ecb9ad70aee1910a2f889c9d78e63d36191a50fa819aee574af",
+      "input_tokens": 1473,
+      "model": "google/gemma-4-E2B-it",
+      "output_sha256": "3a85b18c5f636163c7d373f7f22bd50ee0d876106987f71f35cf701006d5ea55",
+      "output_tokens": 384,
+      "prompt_version": "handoffready-v11",
+      "seed": 20261013,
+      "source_catalog_version": "source-occurrence-v1",
+      "supporting_association_count": 2,
+      "temperature": 0,
+      "typed_rejection_count": 1,
+      "unrelated_association_count": 0,
+      "vision_used": false
+    },
+    "stage": "associate",
+    "structured_call_count": 1,
+    "structured_pre_guard": {
+      "proposals": [
+        {
+          "candidates": [
+            {
+              "evidence_unit_id": "ev1_6215a6da00fd2e3da9064df3",
+              "file_id": "f1",
+              "reason": "The file 'moss-notes.txt' contains the exact phrase 'Session setup', satisfying the requirement for a plain text tutoring setup guide containing that phrase.",
+              "relation": "supports"
+            }
+          ],
+          "coverage": "The file 'moss-notes.txt' contains the required phrase 'Session setup'.",
+          "requirement_id": "r1"
+        },
+        {
+          "candidates": [
+            {
+              "file_id": "f2",
+              "reason": "The file 'schedule.jpg' is a JPEG file, satisfying the requirement for a JPEG tutoring schedule.",
+              "relation": "supports"
+            },
+            {
+              "file_id": "f3",
+              "reason": "The file 'tutoring-schedule-final.png' is a PNG file, which is a supported image format, satisfying the requirement for a JPEG tutoring schedule (assuming JPEG is acceptable for a schedule image, or that PNG is an acceptable substitute if the requirement implies 'an image').",
+              "relation": "supports"
+            }
+          ],
+          "coverage": "The file 'schedule.jpg' is a JPEG, and 'tutoring-schedule-final.png' is an image file.",
+          "requirement_id": "r2"
+        }
+      ]
+    },
+    "synthetic_data_only": true
+  },
+  "failure": null,
+  "guarded_predictions": [
+    {
+      "candidate_count": 1,
+      "candidates": [
+        {
+          "file_id": "f1",
+          "quote": "Session setup",
+          "quote_valid": true,
+          "reason": "The file 'moss-notes.txt' contains the exact phrase 'Session setup', satisfying the requirement for a plain text tutoring setup guide containing that phrase.",
+          "source_span": {
+            "catalog_version": "source-occurrence-v1",
+            "end_cp": 13,
+            "evidence_unit_id": "ev1_6215a6da00fd2e3da9064df3",
+            "quote": "Session setup",
+            "source_text_sha256": "56c29e425f9bae5b362c871812f84289e06e2806eaf03c93bf2080ad0c89982a",
+            "source_unit_id": "f1",
+            "start_cp": 0
+          }
+        }
+      ],
+      "coverage": "The file 'moss-notes.txt' contains the required phrase 'Session setup'.",
+      "file_ids": [
+        "f1"
+      ],
+      "requirement_id": "r1",
+      "unrelated_candidate_count": 0
+    },
+    {
+      "candidate_count": 1,
+      "candidates": [
+        {
+          "file_id": "f2",
+          "quote": null,
+          "quote_valid": null,
+          "reason": "Filename/metadata suggestion; no visual inspection. The file 'schedule.jpg' is a JPEG file, satisfying the requirement for a JPEG tutoring schedule."
+        }
+      ],
+      "coverage": "The file 'schedule.jpg' is a JPEG, and 'tutoring-schedule-final.png' is an image file.",
+      "file_ids": [
+        "f2"
+      ],
+      "requirement_id": "r2",
+      "unrelated_candidate_count": 0
+    }
+  ],
+  "latency_seconds": 3.8721358330221847,
+  "raw_predictions": [
+    {
+      "candidate_count": 1,
+      "candidates": [
+        {
+          "evidence_unit_id": "ev1_6215a6da00fd2e3da9064df3",
+          "file_id": "f1",
+          "quote": "Session setup",
+          "quote_valid": true,
+          "reason": "The file 'moss-notes.txt' contains the exact phrase 'Session setup', satisfying the requirement for a plain text tutoring setup guide containing that phrase.",
+          "relation": "supports",
+          "source_span": {
+            "catalog_version": "source-occurrence-v1",
+            "end_cp": 13,
+            "evidence_unit_id": "ev1_6215a6da00fd2e3da9064df3",
+            "quote": "Session setup",
+            "source_text_sha256": "56c29e425f9bae5b362c871812f84289e06e2806eaf03c93bf2080ad0c89982a",
+            "source_unit_id": "f1",
+            "start_cp": 0
+          }
+        }
+      ],
+      "coverage": "The file 'moss-notes.txt' contains the required phrase 'Session setup'.",
+      "file_ids": [
+        "f1"
+      ],
+      "requirement_id": "r1",
+      "unrelated_candidate_count": 0
+    },
+    {
+      "candidate_count": 2,
+      "candidates": [
+        {
+          "file_id": "f2",
+          "quote_valid": null,
+          "reason": "The file 'schedule.jpg' is a JPEG file, satisfying the requirement for a JPEG tutoring schedule.",
+          "relation": "supports"
+        },
+        {
+          "file_id": "f3",
+          "quote_valid": null,
+          "reason": "The file 'tutoring-schedule-final.png' is a PNG file, which is a supported image format, satisfying the requirement for a JPEG tutoring schedule (assuming JPEG is acceptable for a schedule image, or that PNG is an acceptable substitute if the requirement implies 'an image').",
+          "relation": "supports"
+        }
+      ],
+      "coverage": "The file 'schedule.jpg' is a JPEG, and 'tutoring-schedule-final.png' is an image file.",
+      "file_ids": [
+        "f2",
+        "f3"
+      ],
+      "requirement_id": "r2",
+      "unrelated_candidate_count": 0
+    }
+  ]
+}

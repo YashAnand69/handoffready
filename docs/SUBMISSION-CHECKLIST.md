@@ -1,5 +1,7 @@
 # Week 2 submission checklist
 
+> Historical 14 October preparation checklist. For current state, use [SUBMISSION-STATUS-CURRENT.md](SUBMISSION-STATUS-CURRENT.md). Read-only DEV dashboard verification on 17 October confirms article 6228689 is still a draft. The user previously confirmed Week 2 rules/eligibility and then withheld publication; old unchecked boxes below are not a current consent ledger. No new entry or publication is authorized.
+
 Rules/template rechecked 14 October 2026. This is a preparation record, not a submission or agreement. The source checkpoint is `b0d87f0730eb6a10b3ad3be4316e023152057e65`, created 14 October at 01:22 IST. Public source and the recorded video are available at https://github.com/YashAnand69/handoffready and https://yashanand69.github.io/handoffready/. DEV contest-entry agreement/publication remain pending.
 
 ## Official requirements and deadline

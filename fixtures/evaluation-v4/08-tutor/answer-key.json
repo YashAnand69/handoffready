@@ -1,0 +1,150 @@
+{
+  "approved_requirements": [
+    {
+      "checks": [
+        {
+          "kind": "presence",
+          "types": [
+            "text"
+          ]
+        },
+        {
+          "kind": "literal_text",
+          "needle": "Session setup"
+        }
+      ],
+      "human_note": "Agent-authored synthetic answer key; treated as fixed approved input only for evaluation.",
+      "id": "r1",
+      "origin": "human_added",
+      "quote": "Deliver a plain text tutoring setup guide containing the phrase Session setup.",
+      "source_id": "brief-v1",
+      "source_span": {
+        "end_cp": 117,
+        "quote": "Deliver a plain text tutoring setup guide containing the phrase Session setup.",
+        "source_text_sha256": "913ca8a6e23053025003f6280945875bdc96c0a71812fc555ceb251f9657379b",
+        "source_unit_id": "brief-v1",
+        "start_cp": 39
+      },
+      "title": "Tutoring guide"
+    },
+    {
+      "checks": [
+        {
+          "kind": "presence",
+          "types": [
+            "jpeg"
+          ]
+        }
+      ],
+      "human_note": "Agent-authored synthetic answer key; treated as fixed approved input only for evaluation.",
+      "id": "r2",
+      "origin": "human_added",
+      "quote": "Deliver a JPEG tutoring schedule.",
+      "source_id": "brief-v1",
+      "source_span": {
+        "end_cp": 151,
+        "quote": "Deliver a JPEG tutoring schedule.",
+        "source_text_sha256": "913ca8a6e23053025003f6280945875bdc96c0a71812fc555ceb251f9657379b",
+        "source_unit_id": "brief-v1",
+        "start_cp": 118
+      },
+      "title": "Tutoring schedule"
+    }
+  ],
+  "extraction": [
+    {
+      "checks": [
+        {
+          "kind": "presence",
+          "types": [
+            "text"
+          ]
+        },
+        {
+          "kind": "literal_text",
+          "needle": "Session setup"
+        }
+      ],
+      "id": "r1",
+      "optional": false,
+      "quote": "Deliver a plain text tutoring setup guide containing the phrase Session setup.",
+      "source_span": {
+        "end_cp": 117,
+        "quote": "Deliver a plain text tutoring setup guide containing the phrase Session setup.",
+        "source_text_sha256": "913ca8a6e23053025003f6280945875bdc96c0a71812fc555ceb251f9657379b",
+        "source_unit_id": "brief-v1",
+        "start_cp": 39
+      },
+      "support_names": [
+        "moss-notes.txt"
+      ],
+      "title": "Tutoring guide"
+    },
+    {
+      "checks": [
+        {
+          "kind": "presence",
+          "types": [
+            "jpeg"
+          ]
+        }
+      ],
+      "id": "r2",
+      "optional": false,
+      "quote": "Deliver a JPEG tutoring schedule.",
+      "source_span": {
+        "end_cp": 151,
+        "quote": "Deliver a JPEG tutoring schedule.",
+        "source_text_sha256": "913ca8a6e23053025003f6280945875bdc96c0a71812fc555ceb251f9657379b",
+        "source_unit_id": "brief-v1",
+        "start_cp": 118
+      },
+      "support_names": [
+        "schedule.jpg"
+      ],
+      "title": "Tutoring schedule"
+    }
+  ],
+  "files": {
+    "moss-notes.txt": "f1",
+    "schedule.jpg": "f2",
+    "tutoring-schedule-final.png": "f3"
+  },
+  "source_catalog": [
+    {
+      "catalog_version": "source-occurrence-v1",
+      "end_cp": 38,
+      "evidence_unit_id": "ev1_9680859dd7e6653e2f20b46e",
+      "quote": "Synthetic brief: Moss tutoring handoff",
+      "source_text_sha256": "913ca8a6e23053025003f6280945875bdc96c0a71812fc555ceb251f9657379b",
+      "source_unit_id": "brief-v1",
+      "start_cp": 0
+    },
+    {
+      "catalog_version": "source-occurrence-v1",
+      "end_cp": 117,
+      "evidence_unit_id": "ev1_0d8a5dc4c9813a56091ba6bb",
+      "quote": "Deliver a plain text tutoring setup guide containing the phrase Session setup.",
+      "source_text_sha256": "913ca8a6e23053025003f6280945875bdc96c0a71812fc555ceb251f9657379b",
+      "source_unit_id": "brief-v1",
+      "start_cp": 39
+    },
+    {
+      "catalog_version": "source-occurrence-v1",
+      "end_cp": 151,
+      "evidence_unit_id": "ev1_51410fd75563a344c7537588",
+      "quote": "Deliver a JPEG tutoring schedule.",
+      "source_text_sha256": "913ca8a6e23053025003f6280945875bdc96c0a71812fc555ceb251f9657379b",
+      "source_unit_id": "brief-v1",
+      "start_cp": 118
+    }
+  ],
+  "support": {
+    "r1": [
+      "f1"
+    ],
+    "r2": [
+      "f2"
+    ]
+  }
+}

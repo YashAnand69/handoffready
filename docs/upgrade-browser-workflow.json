@@ -1,0 +1,38 @@
+{
+  "synthetic": true,
+  "actor": "agent-operated",
+  "actual_inference_jobs": [
+    {
+      "kind": "extract",
+      "state": "succeeded",
+      "prompt_version": "handoffready-v11",
+      "seconds": 4.572
+    },
+    {
+      "kind": "match",
+      "state": "succeeded",
+      "prompt_version": "handoffready-v11",
+      "seconds": 9.773
+    }
+  ],
+  "before_failed_checks": 2,
+  "after_failed_checks": 1,
+  "replacement_stale_reviews": 3,
+  "old_record_unchanged": true,
+  "old_record_json_sha256": "4045b18b015ab10cfe4ee48bbab7acdd87fd5ae347dd0a25ce39604534083846",
+  "new_record_json_sha256": "d600388b4a06da3b0710391e09280e12e3ea8d0293dd50f07e9c7dc88426eee8",
+  "recorded_semantic_errors": [
+    {
+      "requirement_title": "Provide a guide explaining how to update the website contact email.",
+      "candidate_names": [
+        "contact-guide.md"
+      ],
+      "interpretations": [
+        {
+          "reason": "The file 'contact-guide.md' contains text that appears to be a guide, specifically mentioning '# Client guide' and 'Welcome to your new website.', which relates to providing a guide.",
+          "quote": "# Client guide"
+        }
+      ]
+    }
+  ]
+}

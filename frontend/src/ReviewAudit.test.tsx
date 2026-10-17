@@ -253,6 +253,7 @@ describe("Edit and privacy safeguards", () => {
       "Stale private source",
     );
     await openWorkspace();
+    fireEvent.click(screen.getByRole("button", { name: "01 Brief" }));
     expect(
       (screen.getByLabelText("Agreed brief") as HTMLTextAreaElement).value,
     ).toBe("Private agreed source.");
@@ -263,6 +264,7 @@ describe("Edit and privacy safeguards", () => {
       "Recovered private draft",
     );
     await openWorkspace();
+    fireEvent.click(screen.getByRole("button", { name: "01 Brief" }));
     fireEvent.click(
       screen.getByRole("button", { name: "Save brief & continue →" }),
     );
@@ -287,7 +289,7 @@ describe("Edit and privacy safeguards", () => {
           : project,
     );
     render(<App />);
-    await screen.findByText("Your first saved handoff will appear here.");
+    await screen.findByText("A clear desk. A fresh start.");
     fireEvent.change(screen.getByLabelText("Project name"), {
       target: { value: "One project" },
     });
@@ -344,6 +346,7 @@ describe("Refactored workflow edit boundaries", () => {
       return defaultApi(...args);
     });
     await openWorkspace();
+    fireEvent.click(screen.getByRole("button", { name: "01 Brief" }));
     fireEvent.change(screen.getByLabelText("Agreed brief"), {
       target: { value: "Saved draft" },
     });

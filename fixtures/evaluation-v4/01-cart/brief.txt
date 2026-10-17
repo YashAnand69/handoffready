@@ -1,0 +1,4 @@
+Synthetic brief: Cedar Cart coffee identity
+Send a 96 by 96 PNG avatar with some transparent pixels.
+Deliver the cart mark as SVG.
+A Markdown palette note is optional.

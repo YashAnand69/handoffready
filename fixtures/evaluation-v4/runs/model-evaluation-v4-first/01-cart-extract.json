@@ -1,0 +1,239 @@
+{
+  "after_guards": {
+    "attribute_denominator": 5,
+    "correct_attribute_checks": 4,
+    "covered_mandatory": 2,
+    "covered_optional": 0,
+    "covered_requirements": 2,
+    "exact_attribute_requirement_denominator": 3,
+    "exact_attributes": 2,
+    "extra_attribute_checks": 0,
+    "key_mandatory": 2,
+    "key_optional": 1,
+    "key_requirements": 3,
+    "missed_mandatory": 0,
+    "missed_optional_classification": 1,
+    "missing_attribute_checks": 1,
+    "predicted_requirements": 2,
+    "quote_denominator": 2,
+    "unmatched_predictions": 0,
+    "valid_quotes": 2,
+    "wrong_format_classification": 0,
+    "wrong_obligation_classification": 0
+  },
+  "before_guards": {
+    "attribute_denominator": 5,
+    "correct_attribute_checks": 4,
+    "covered_mandatory": 2,
+    "covered_optional": 0,
+    "covered_requirements": 2,
+    "exact_attribute_requirement_denominator": 3,
+    "exact_attributes": 2,
+    "extra_attribute_checks": 0,
+    "key_mandatory": 2,
+    "key_optional": 1,
+    "key_requirements": 3,
+    "missed_mandatory": 0,
+    "missed_optional_classification": 1,
+    "missing_attribute_checks": 1,
+    "predicted_requirements": 2,
+    "quote_denominator": 2,
+    "unmatched_predictions": 0,
+    "valid_quotes": 2,
+    "wrong_format_classification": 0,
+    "wrong_obligation_classification": 0
+  },
+  "capture": {
+    "completion": {
+      "choices": [
+        {
+          "content": "{\n  \"requirements\": [\n    {\n      \"obligation\": \"required\",\n      \"title\": \"Send a 96 by 96 PNG avatar with some transparent pixels.\",\n      \"evidence_unit_id\": \"ev1_c63ebd16e5a546bcf2c46e08\",\n      \"checks\": [\n        {\n          \"kind\": \"presence\",\n          \"types\": [\n            \"png\"\n          ]\n        },\n        {\n          \"kind\": \"image_dimensions\",\n          \"width_px\": 96,\n          \"height_px\": 96\n        },\n        {\n          \"kind\": \"png_nonopaque_pixels\"\n        }\n      ]\n    },\n    {\n      \"obligation\": \"required\",\n      \"title\": \"Deliver the cart mark as SVG.\",\n      \"evidence_unit_id\": \"ev1_c28ad0020507917064cda2f1\",\n      \"checks\": [\n        {\n          \"kind\": \"presence\",\n          \"types\": [\n            \"svg\"\n          ]\n        }\n      ]\n    }\n  ]\n}",
+          "finish_reason": "stop",
+          "index": 0
+        }
+      ],
+      "usage": {
+        "completion_tokens": 282,
+        "prompt_tokens": 1621,
+        "prompt_tokens_details": {
+          "cached_tokens": 919
+        },
+        "total_tokens": 1903
+      }
+    },
+    "completion_response_count": 1,
+    "elapsed_seconds": 2.7617539160419255,
+    "model_metadata": {
+      "elapsed_seconds": 2.76,
+      "excluded_suggestion_count": 0,
+      "input_sha256": "6fb9cf27c38f49e0a33d0cdf29b913b8d5ae6eab1787a4859f4f20f851a73d7b",
+      "input_tokens": 1621,
+      "model": "google/gemma-4-E2B-it",
+      "output_sha256": "3e18288aecad608ea2e2d3992b66d06313d6047f4836a36aef3dafb494221f86",
+      "output_tokens": 282,
+      "prompt_version": "handoffready-v11",
+      "required_suggestion_count": 2,
+      "seed": 20261013,
+      "source_catalog_version": "source-occurrence-v1",
+      "temperature": 0,
+      "vision_used": false
+    },
+    "stage": "extract",
+    "structured_call_count": 1,
+    "structured_pre_guard": {
+      "requirements": [
+        {
+          "checks": [
+            {
+              "kind": "presence",
+              "types": [
+                "png"
+              ]
+            },
+            {
+              "height_px": 96,
+              "kind": "image_dimensions",
+              "width_px": 96
+            },
+            {
+              "kind": "png_nonopaque_pixels"
+            }
+          ],
+          "evidence_unit_id": "ev1_c63ebd16e5a546bcf2c46e08",
+          "obligation": "required",
+          "title": "Send a 96 by 96 PNG avatar with some transparent pixels."
+        },
+        {
+          "checks": [
+            {
+              "kind": "presence",
+              "types": [
+                "svg"
+              ]
+            }
+          ],
+          "evidence_unit_id": "ev1_c28ad0020507917064cda2f1",
+          "obligation": "required",
+          "title": "Deliver the cart mark as SVG."
+        }
+      ]
+    },
+    "synthetic_data_only": true
+  },
+  "failure": null,
+  "guarded_predictions": [
+    {
+      "checks": [
+        {
+          "kind": "presence",
+          "types": [
+            "png"
+          ]
+        },
+        {
+          "height_px": 96,
+          "kind": "image_dimensions",
+          "width_px": 96
+        },
+        {
+          "kind": "png_nonopaque_pixels"
+        }
+      ],
+      "obligation": "required",
+      "quote": "Send a 96 by 96 PNG avatar with some transparent pixels.",
+      "quote_valid": true,
+      "source_span": {
+        "catalog_version": "source-occurrence-v1",
+        "end_cp": 100,
+        "evidence_unit_id": "ev1_c63ebd16e5a546bcf2c46e08",
+        "quote": "Send a 96 by 96 PNG avatar with some transparent pixels.",
+        "source_text_sha256": "3f893cd71cb8d18a397a82258b26cbc55dcbb837484656a915a131e178fbb751",
+        "source_unit_id": "brief-v1",
+        "start_cp": 44
+      },
+      "title": "Send a 96 by 96 PNG avatar with some transparent pixels."
+    },
+    {
+      "checks": [
+        {
+          "kind": "presence",
+          "types": [
+            "svg"
+          ]
+        }
+      ],
+      "obligation": "required",
+      "quote": "Deliver the cart mark as SVG.",
+      "quote_valid": true,
+      "source_span": {
+        "catalog_version": "source-occurrence-v1",
+        "end_cp": 130,
+        "evidence_unit_id": "ev1_c28ad0020507917064cda2f1",
+        "quote": "Deliver the cart mark as SVG.",
+        "source_text_sha256": "3f893cd71cb8d18a397a82258b26cbc55dcbb837484656a915a131e178fbb751",
+        "source_unit_id": "brief-v1",
+        "start_cp": 101
+      },
+      "title": "Deliver the cart mark as SVG."
+    }
+  ],
+  "latency_seconds": 2.7620398750295863,
+  "raw_predictions": [
+    {
+      "checks": [
+        {
+          "kind": "presence",
+          "types": [
+            "png"
+          ]
+        },
+        {
+          "height_px": 96,
+          "kind": "image_dimensions",
+          "width_px": 96
+        },
+        {
+          "kind": "png_nonopaque_pixels"
+        }
+      ],
+      "evidence_unit_id": "ev1_c63ebd16e5a546bcf2c46e08",
+      "obligation": "required",
+      "quote": "Send a 96 by 96 PNG avatar with some transparent pixels.",
+      "quote_valid": true,
+      "source_span": {
+        "catalog_version": "source-occurrence-v1",
+        "end_cp": 100,
+        "evidence_unit_id": "ev1_c63ebd16e5a546bcf2c46e08",
+        "quote": "Send a 96 by 96 PNG avatar with some transparent pixels.",
+        "source_text_sha256": "3f893cd71cb8d18a397a82258b26cbc55dcbb837484656a915a131e178fbb751",
+        "source_unit_id": "brief-v1",
+        "start_cp": 44
+      },
+      "title": "Send a 96 by 96 PNG avatar with some transparent pixels."
+    },
+    {
+      "checks": [
+        {
+          "kind": "presence",
+          "types": [
+            "svg"
+          ]
+        }
+      ],
+      "evidence_unit_id": "ev1_c28ad0020507917064cda2f1",
+      "obligation": "required",
+      "quote": "Deliver the cart mark as SVG.",
+      "quote_valid": true,
+      "source_span": {
+        "catalog_version": "source-occurrence-v1",
+        "end_cp": 130,
+        "evidence_unit_id": "ev1_c28ad0020507917064cda2f1",
+        "quote": "Deliver the cart mark as SVG.",
+        "source_text_sha256": "3f893cd71cb8d18a397a82258b26cbc55dcbb837484656a915a131e178fbb751",
+        "source_unit_id": "brief-v1",
+        "start_cp": 101
+      },
+      "title": "Deliver the cart mark as SVG."
+    }
+  ]
+}

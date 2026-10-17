@@ -72,6 +72,7 @@ class Store:
                 changed = self._reconcile_originals(project) or changed
                 if changed:
                     project["revision"] += 1
+                    project["updated_at"] = now()
                     db.execute("UPDATE projects SET body=? WHERE id=?", (canonical(project), row[0]))
             registered = {f["_path"] for row in db.execute("SELECT body FROM projects") for f in json.loads(row[0])["files"]}
             for path in self.files.iterdir():
@@ -161,6 +162,7 @@ class Store:
             callback(project, db)
             if canonical(project) != before:
                 project["revision"] += 1
+                project["updated_at"] = now()
                 db.execute("UPDATE projects SET body=? WHERE id=?", (canonical(project), project_id))
             return project
 

@@ -321,7 +321,7 @@ def test_all_export_formats_retain_safe_numeric_evidence(client):
     for format in ("md", "html"):
         exported = client.get(f'/api/v1/projects/{project["id"]}/exports/{result["export"]["id"]}/{format}').text
         assert "expected: 2" in exported
-        assert "actual: 1" in exported
+        assert "observed: 1" in exported
 
 
 def test_visual_preview_requires_token_current_inspected_image(client):
@@ -364,7 +364,7 @@ def test_handoff_preview_has_no_private_fields_or_mutation(client):
     assert current["exports"] == []
 
 
-def test_exact_unicode_spans_recomputed_not_trusted_and_history_private(client):
+def test_forged_unicode_spans_rejected_and_valid_history_private(client):
     project = create(client)
     text = "🐦 café intro. Provide a logo ✨."
     project = mutate(client, project, "put", "/brief", {"text": text})
@@ -372,6 +372,9 @@ def test_exact_unicode_spans_recomputed_not_trusted_and_history_private(client):
     row = {"id": "quoted", "title": "Logo", "origin": "model_suggested", "quote": quote, "source_id": project["brief"]["id"],
            "source_span": {"source_unit_id": "forged", "source_text_sha256": "0" * 64, "start_cp": 0, "end_cp": 1, "quote": "x"},
            "checks": [{"kind": "manual", "instruction": "Review logo."}]}
+    rejected = client.put(f'/api/v1/projects/{project["id"]}/baseline', headers={"If-Match": str(project["revision"])}, json={"requirements": [row]})
+    assert rejected.status_code == 422
+    row.pop("source_span")  # A unique legacy quote can be resolved on the server.
     project = mutate(client, project, "put", "/baseline", {"requirements": [row]})
     span = project["baseline"]["requirements"][0]["source_span"]
     assert span["start_cp"] == text.index(quote)

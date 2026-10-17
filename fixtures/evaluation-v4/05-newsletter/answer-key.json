@@ -1,0 +1,200 @@
+{
+  "approved_requirements": [
+    {
+      "checks": [
+        {
+          "comparison": "at_least",
+          "distinct_bytes": true,
+          "kind": "count",
+          "types": [
+            "text",
+            "markdown"
+          ],
+          "value": 2
+        }
+      ],
+      "human_note": "Agent-authored synthetic answer key; treated as fixed approved input only for evaluation.",
+      "id": "r1",
+      "origin": "human_added",
+      "quote": "Supply at least two distinct plain text or Markdown caption files.",
+      "source_id": "brief-v1",
+      "source_span": {
+        "end_cp": 113,
+        "quote": "Supply at least two distinct plain text or Markdown caption files.",
+        "source_text_sha256": "9a5ddf987f5e7083d517df65ad008f7ad55fe117afd3ee2cc89b602b81cf85dd",
+        "source_unit_id": "brief-v1",
+        "start_cp": 47
+      },
+      "title": "Newsletter captions"
+    },
+    {
+      "checks": [
+        {
+          "kind": "presence",
+          "types": [
+            "text"
+          ]
+        },
+        {
+          "kind": "literal_text",
+          "needle": "Welcome, neighbors!"
+        }
+      ],
+      "human_note": "Agent-authored synthetic answer key; treated as fixed approved input only for evaluation.",
+      "id": "r2",
+      "origin": "human_added",
+      "quote": "Include plain text welcome copy containing the exact phrase Welcome, neighbors!.",
+      "source_id": "brief-v1",
+      "source_span": {
+        "end_cp": 194,
+        "quote": "Include plain text welcome copy containing the exact phrase Welcome, neighbors!.",
+        "source_text_sha256": "9a5ddf987f5e7083d517df65ad008f7ad55fe117afd3ee2cc89b602b81cf85dd",
+        "source_unit_id": "brief-v1",
+        "start_cp": 114
+      },
+      "title": "Welcome copy"
+    }
+  ],
+  "extraction": [
+    {
+      "checks": [
+        {
+          "comparison": "at_least",
+          "distinct_bytes": true,
+          "kind": "count",
+          "types": [
+            "text",
+            "markdown"
+          ],
+          "value": 2
+        }
+      ],
+      "id": "r1",
+      "optional": false,
+      "quote": "Supply at least two distinct plain text or Markdown caption files.",
+      "source_span": {
+        "end_cp": 113,
+        "quote": "Supply at least two distinct plain text or Markdown caption files.",
+        "source_text_sha256": "9a5ddf987f5e7083d517df65ad008f7ad55fe117afd3ee2cc89b602b81cf85dd",
+        "source_unit_id": "brief-v1",
+        "start_cp": 47
+      },
+      "support_names": [
+        "caption-east.txt",
+        "caption-west.md"
+      ],
+      "title": "Newsletter captions"
+    },
+    {
+      "checks": [
+        {
+          "kind": "presence",
+          "types": [
+            "text"
+          ]
+        },
+        {
+          "kind": "literal_text",
+          "needle": "Welcome, neighbors!"
+        }
+      ],
+      "id": "r2",
+      "optional": false,
+      "quote": "Include plain text welcome copy containing the exact phrase Welcome, neighbors!.",
+      "source_span": {
+        "end_cp": 194,
+        "quote": "Include plain text welcome copy containing the exact phrase Welcome, neighbors!.",
+        "source_text_sha256": "9a5ddf987f5e7083d517df65ad008f7ad55fe117afd3ee2cc89b602b81cf85dd",
+        "source_unit_id": "brief-v1",
+        "start_cp": 114
+      },
+      "support_names": [
+        "welcome.txt"
+      ],
+      "title": "Welcome copy"
+    },
+    {
+      "checks": [
+        {
+          "kind": "presence",
+          "types": [
+            "jpeg"
+          ]
+        }
+      ],
+      "id": "r3",
+      "optional": true,
+      "quote": "You may also send a JPEG editor portrait; it is optional.",
+      "source_span": {
+        "end_cp": 252,
+        "quote": "You may also send a JPEG editor portrait; it is optional.",
+        "source_text_sha256": "9a5ddf987f5e7083d517df65ad008f7ad55fe117afd3ee2cc89b602b81cf85dd",
+        "source_unit_id": "brief-v1",
+        "start_cp": 195
+      },
+      "support_names": [],
+      "title": "Optional portrait"
+    }
+  ],
+  "files": {
+    "caption-east.txt": "f1",
+    "caption-west.md": "f2",
+    "welcome.txt": "f3"
+  },
+  "source_catalog": [
+    {
+      "catalog_version": "source-occurrence-v1",
+      "end_cp": 46,
+      "evidence_unit_id": "ev1_00ca51a22ef8733c7ccfbf74",
+      "quote": "Synthetic brief: Rowan neighborhood newsletter",
+      "source_text_sha256": "9a5ddf987f5e7083d517df65ad008f7ad55fe117afd3ee2cc89b602b81cf85dd",
+      "source_unit_id": "brief-v1",
+      "start_cp": 0
+    },
+    {
+      "catalog_version": "source-occurrence-v1",
+      "end_cp": 113,
+      "evidence_unit_id": "ev1_dbe21f82e783afe20d0f2851",
+      "quote": "Supply at least two distinct plain text or Markdown caption files.",
+      "source_text_sha256": "9a5ddf987f5e7083d517df65ad008f7ad55fe117afd3ee2cc89b602b81cf85dd",
+      "source_unit_id": "brief-v1",
+      "start_cp": 47
+    },
+    {
+      "catalog_version": "source-occurrence-v1",
+      "end_cp": 194,
+      "evidence_unit_id": "ev1_fb955ea02983dc39542f19ee",
+      "quote": "Include plain text welcome copy containing the exact phrase Welcome, neighbors!.",
+      "source_text_sha256": "9a5ddf987f5e7083d517df65ad008f7ad55fe117afd3ee2cc89b602b81cf85dd",
+      "source_unit_id": "brief-v1",
+      "start_cp": 114
+    },
+    {
+      "catalog_version": "source-occurrence-v1",
+      "end_cp": 236,
+      "evidence_unit_id": "ev1_c39d67b9882834854b33f633",
+      "quote": "You may also send a JPEG editor portrait;",
+      "source_text_sha256": "9a5ddf987f5e7083d517df65ad008f7ad55fe117afd3ee2cc89b602b81cf85dd",
+      "source_unit_id": "brief-v1",
+      "start_cp": 195
+    },
+    {
+      "catalog_version": "source-occurrence-v1",
+      "end_cp": 252,
+      "evidence_unit_id": "ev1_c43f0d4c4359374fe813db7b",
+      "quote": "it is optional.",
+      "source_text_sha256": "9a5ddf987f5e7083d517df65ad008f7ad55fe117afd3ee2cc89b602b81cf85dd",
+      "source_unit_id": "brief-v1",
+      "start_cp": 237
+    }
+  ],
+  "support": {
+    "r1": [
+      "f1",
+      "f2"
+    ],
+    "r2": [
+      "f3"
+    ]
+  }
+}

@@ -1,0 +1,224 @@
+{
+  "after_guards": {
+    "attribute_denominator": 4,
+    "correct_attribute_checks": 2,
+    "covered_mandatory": 1,
+    "covered_optional": 0,
+    "covered_requirements": 1,
+    "exact_attribute_requirement_denominator": 2,
+    "exact_attributes": 1,
+    "extra_attribute_checks": 0,
+    "key_mandatory": 2,
+    "key_optional": 0,
+    "key_requirements": 2,
+    "missed_mandatory": 1,
+    "missed_optional_classification": 0,
+    "missing_attribute_checks": 2,
+    "predicted_requirements": 2,
+    "quote_denominator": 2,
+    "unmatched_predictions": 0,
+    "valid_quotes": 2,
+    "wrong_format_classification": 1,
+    "wrong_obligation_classification": 0
+  },
+  "before_guards": {
+    "attribute_denominator": 4,
+    "correct_attribute_checks": 2,
+    "covered_mandatory": 1,
+    "covered_optional": 0,
+    "covered_requirements": 1,
+    "exact_attribute_requirement_denominator": 2,
+    "exact_attributes": 1,
+    "extra_attribute_checks": 0,
+    "key_mandatory": 2,
+    "key_optional": 0,
+    "key_requirements": 2,
+    "missed_mandatory": 1,
+    "missed_optional_classification": 0,
+    "missing_attribute_checks": 2,
+    "predicted_requirements": 2,
+    "quote_denominator": 2,
+    "unmatched_predictions": 0,
+    "valid_quotes": 2,
+    "wrong_format_classification": 1,
+    "wrong_obligation_classification": 0
+  },
+  "capture": {
+    "completion": {
+      "choices": [
+        {
+          "content": "{\n  \"requirements\": [\n    {\n      \"obligation\": \"required\",\n      \"title\": \"Deliver a 120 by 80 JPEG market flyer.\",\n      \"evidence_unit_id\": \"ev1_c745ecf49515b203efa55fec\",\n      \"checks\": [\n        {\n          \"kind\": \"presence\",\n          \"types\": [\n            \"jpeg\"\n          ]\n        },\n        {\n          \"kind\": \"image_dimensions\",\n          \"width_px\": 120,\n          \"height_px\": 80\n        }\n      ]\n    },\n    {\n      \"obligation\": \"required\",\n      \"title\": \"Include a plain text guide explaining where the flyer may be displayed.\",\n      \"evidence_unit_id\": \"ev1_df7cd2dbec5cc03ac7c232b5\",\n      \"checks\": [\n        {\n          \"kind\": \"manual\",\n          \"instruction\": \"Review steps for including a plain text guide explaining where the flyer may be displayed.\"\n        }\n      ]\n    }\n  ]\n}",
+          "finish_reason": "stop",
+          "index": 0
+        }
+      ],
+      "usage": {
+        "completion_tokens": 271,
+        "prompt_tokens": 1550,
+        "prompt_tokens_details": {
+          "cached_tokens": 919
+        },
+        "total_tokens": 1821
+      }
+    },
+    "completion_response_count": 1,
+    "elapsed_seconds": 2.660395583952777,
+    "model_metadata": {
+      "elapsed_seconds": 2.659,
+      "excluded_suggestion_count": 0,
+      "input_sha256": "2ef7dcd971fc5b3f5a20b7cfe484e2df391139177c088478f800626cca406c52",
+      "input_tokens": 1550,
+      "model": "google/gemma-4-E2B-it",
+      "output_sha256": "cd2e56824236ae514c56825149a5162ce03774d060fb0b9ce0eb1379e2c1535e",
+      "output_tokens": 271,
+      "prompt_version": "handoffready-v11",
+      "required_suggestion_count": 2,
+      "seed": 20261013,
+      "source_catalog_version": "source-occurrence-v1",
+      "temperature": 0,
+      "vision_used": false
+    },
+    "stage": "extract",
+    "structured_call_count": 1,
+    "structured_pre_guard": {
+      "requirements": [
+        {
+          "checks": [
+            {
+              "kind": "presence",
+              "types": [
+                "jpeg"
+              ]
+            },
+            {
+              "height_px": 80,
+              "kind": "image_dimensions",
+              "width_px": 120
+            }
+          ],
+          "evidence_unit_id": "ev1_c745ecf49515b203efa55fec",
+          "obligation": "required",
+          "title": "Deliver a 120 by 80 JPEG market flyer."
+        },
+        {
+          "checks": [
+            {
+              "instruction": "Review steps for including a plain text guide explaining where the flyer may be displayed.",
+              "kind": "manual"
+            }
+          ],
+          "evidence_unit_id": "ev1_df7cd2dbec5cc03ac7c232b5",
+          "obligation": "required",
+          "title": "Include a plain text guide explaining where the flyer may be displayed."
+        }
+      ]
+    },
+    "synthetic_data_only": true
+  },
+  "failure": null,
+  "guarded_predictions": [
+    {
+      "checks": [
+        {
+          "kind": "presence",
+          "types": [
+            "jpeg"
+          ]
+        },
+        {
+          "height_px": 80,
+          "kind": "image_dimensions",
+          "width_px": 120
+        }
+      ],
+      "obligation": "required",
+      "quote": "Deliver a 120 by 80 JPEG market flyer.",
+      "quote_valid": true,
+      "source_span": {
+        "catalog_version": "source-occurrence-v1",
+        "end_cp": 79,
+        "evidence_unit_id": "ev1_c745ecf49515b203efa55fec",
+        "quote": "Deliver a 120 by 80 JPEG market flyer.",
+        "source_text_sha256": "7993d0b592a8dc1055ca218ac72990194a2b219faa65976ff1aac26e66fd8766",
+        "source_unit_id": "brief-v1",
+        "start_cp": 41
+      },
+      "title": "Deliver a 120 by 80 JPEG market flyer."
+    },
+    {
+      "checks": [
+        {
+          "instruction": "Review steps for including a plain text guide explaining where the flyer may be displayed.",
+          "kind": "manual"
+        }
+      ],
+      "obligation": "required",
+      "quote": "Include a plain text guide explaining where the flyer may be displayed.",
+      "quote_valid": true,
+      "source_span": {
+        "catalog_version": "source-occurrence-v1",
+        "end_cp": 151,
+        "evidence_unit_id": "ev1_df7cd2dbec5cc03ac7c232b5",
+        "quote": "Include a plain text guide explaining where the flyer may be displayed.",
+        "source_text_sha256": "7993d0b592a8dc1055ca218ac72990194a2b219faa65976ff1aac26e66fd8766",
+        "source_unit_id": "brief-v1",
+        "start_cp": 80
+      },
+      "title": "Include a plain text guide explaining where the flyer may be displayed."
+    }
+  ],
+  "latency_seconds": 2.6606256250524893,
+  "raw_predictions": [
+    {
+      "checks": [
+        {
+          "kind": "presence",
+          "types": [
+            "jpeg"
+          ]
+        },
+        {
+          "height_px": 80,
+          "kind": "image_dimensions",
+          "width_px": 120
+        }
+      ],
+      "evidence_unit_id": "ev1_c745ecf49515b203efa55fec",
+      "obligation": "required",
+      "quote": "Deliver a 120 by 80 JPEG market flyer.",
+      "quote_valid": true,
+      "source_span": {
+        "catalog_version": "source-occurrence-v1",
+        "end_cp": 79,
+        "evidence_unit_id": "ev1_c745ecf49515b203efa55fec",
+        "quote": "Deliver a 120 by 80 JPEG market flyer.",
+        "source_text_sha256": "7993d0b592a8dc1055ca218ac72990194a2b219faa65976ff1aac26e66fd8766",
+        "source_unit_id": "brief-v1",
+        "start_cp": 41
+      },
+      "title": "Deliver a 120 by 80 JPEG market flyer."
+    },
+    {
+      "checks": [
+        {
+          "instruction": "Review steps for including a plain text guide explaining where the flyer may be displayed.",
+          "kind": "manual"
+        }
+      ],
+      "evidence_unit_id": "ev1_df7cd2dbec5cc03ac7c232b5",
+      "obligation": "required",
+      "quote": "Include a plain text guide explaining where the flyer may be displayed.",
+      "quote_valid": true,
+      "source_span": {
+        "catalog_version": "source-occurrence-v1",
+        "end_cp": 151,
+        "evidence_unit_id": "ev1_df7cd2dbec5cc03ac7c232b5",
+        "quote": "Include a plain text guide explaining where the flyer may be displayed.",
+        "source_text_sha256": "7993d0b592a8dc1055ca218ac72990194a2b219faa65976ff1aac26e66fd8766",
+        "source_unit_id": "brief-v1",
+        "start_cp": 80
+      },
+      "title": "Include a plain text guide explaining where the flyer may be displayed."
+    }
+  ]
+}

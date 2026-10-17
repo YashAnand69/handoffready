@@ -1,0 +1,5 @@
+Synthetic brief: Juniper bakery
+Internal scheduling note: discuss any future animation separately.
+Deliver the bakery symbol in SVG format.
+Provide Markdown usage notes explaining safe symbol backgrounds.
+Internal scheduling note: discuss any future animation separately.

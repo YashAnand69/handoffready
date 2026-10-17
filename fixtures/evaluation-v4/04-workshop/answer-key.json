@@ -1,0 +1,143 @@
+{
+  "approved_requirements": [
+    {
+      "checks": [
+        {
+          "kind": "presence",
+          "types": [
+            "png"
+          ]
+        },
+        {
+          "height_px": 90,
+          "kind": "image_dimensions",
+          "width_px": 160
+        }
+      ],
+      "human_note": "Agent-authored synthetic answer key; treated as fixed approved input only for evaluation.",
+      "id": "r1",
+      "origin": "human_added",
+      "quote": "Deliver a 160 by 90 PNG workshop poster.",
+      "source_id": "brief-v1",
+      "source_span": {
+        "end_cp": 77,
+        "quote": "Deliver a 160 by 90 PNG workshop poster.",
+        "source_text_sha256": "0a26eddc273c575daff9150df6198c3381c73a8b5fc570cba27937c2aa14ea32",
+        "source_unit_id": "brief-v1",
+        "start_cp": 37
+      },
+      "title": "Workshop poster"
+    },
+    {
+      "checks": [
+        {
+          "instruction": "Open the live workshop page and test the Play button.",
+          "kind": "manual"
+        }
+      ],
+      "human_note": "Agent-authored synthetic answer key; treated as fixed approved input only for evaluation.",
+      "id": "r2",
+      "origin": "human_added",
+      "quote": "At the live workshop page, verify that the Play button starts audio.",
+      "source_id": "brief-v1",
+      "source_span": {
+        "end_cp": 146,
+        "quote": "At the live workshop page, verify that the Play button starts audio.",
+        "source_text_sha256": "0a26eddc273c575daff9150df6198c3381c73a8b5fc570cba27937c2aa14ea32",
+        "source_unit_id": "brief-v1",
+        "start_cp": 78
+      },
+      "title": "Live player behavior"
+    }
+  ],
+  "extraction": [
+    {
+      "checks": [
+        {
+          "kind": "presence",
+          "types": [
+            "png"
+          ]
+        },
+        {
+          "height_px": 90,
+          "kind": "image_dimensions",
+          "width_px": 160
+        }
+      ],
+      "id": "r1",
+      "optional": false,
+      "quote": "Deliver a 160 by 90 PNG workshop poster.",
+      "source_span": {
+        "end_cp": 77,
+        "quote": "Deliver a 160 by 90 PNG workshop poster.",
+        "source_text_sha256": "0a26eddc273c575daff9150df6198c3381c73a8b5fc570cba27937c2aa14ea32",
+        "source_unit_id": "brief-v1",
+        "start_cp": 37
+      },
+      "support_names": [
+        "reed-poster.png"
+      ],
+      "title": "Workshop poster"
+    },
+    {
+      "checks": [
+        {
+          "instruction": "Open the live workshop page and test the Play button.",
+          "kind": "manual"
+        }
+      ],
+      "id": "r2",
+      "optional": false,
+      "quote": "At the live workshop page, verify that the Play button starts audio.",
+      "source_span": {
+        "end_cp": 146,
+        "quote": "At the live workshop page, verify that the Play button starts audio.",
+        "source_text_sha256": "0a26eddc273c575daff9150df6198c3381c73a8b5fc570cba27937c2aa14ea32",
+        "source_unit_id": "brief-v1",
+        "start_cp": 78
+      },
+      "support_names": [],
+      "title": "Live player behavior"
+    }
+  ],
+  "files": {
+    "play-button-proof.txt": "f2",
+    "reed-poster.png": "f1"
+  },
+  "source_catalog": [
+    {
+      "catalog_version": "source-occurrence-v1",
+      "end_cp": 36,
+      "evidence_unit_id": "ev1_51782d194a29d7ac29d90b74",
+      "quote": "Synthetic brief: Reed sound workshop",
+      "source_text_sha256": "0a26eddc273c575daff9150df6198c3381c73a8b5fc570cba27937c2aa14ea32",
+      "source_unit_id": "brief-v1",
+      "start_cp": 0
+    },
+    {
+      "catalog_version": "source-occurrence-v1",
+      "end_cp": 77,
+      "evidence_unit_id": "ev1_da6e4f739435f7a837fd3178",
+      "quote": "Deliver a 160 by 90 PNG workshop poster.",
+      "source_text_sha256": "0a26eddc273c575daff9150df6198c3381c73a8b5fc570cba27937c2aa14ea32",
+      "source_unit_id": "brief-v1",
+      "start_cp": 37
+    },
+    {
+      "catalog_version": "source-occurrence-v1",
+      "end_cp": 146,
+      "evidence_unit_id": "ev1_a2feb72970fcb2952558ef05",
+      "quote": "At the live workshop page, verify that the Play button starts audio.",
+      "source_text_sha256": "0a26eddc273c575daff9150df6198c3381c73a8b5fc570cba27937c2aa14ea32",
+      "source_unit_id": "brief-v1",
+      "start_cp": 78
+    }
+  ],
+  "support": {
+    "r1": [
+      "f1"
+    ],
+    "r2": []
+  }
+}

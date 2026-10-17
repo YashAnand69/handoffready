@@ -206,7 +206,7 @@ def test_generated_schema_cannot_mix_check_kind_fields():
     with pytest.raises(ValidationError):model.Candidate.model_validate({'relation':'supports','file_id':'f','reason':'Reason'})
 
 
-def test_match_schema_binds_quote_to_exact_file(monkeypatch):
+def test_match_schema_binds_occurrence_to_exact_file(monkeypatch):
     captured={}
     def generate(system,data,schema_type,**kwargs):
         captured.update(kwargs['schema_override'])
@@ -215,9 +215,9 @@ def test_match_schema_binds_quote_to_exact_file(monkeypatch):
     model.match({},[{'id':'r'}],[{'id':'text','inspection':'inspected','text':'Unique guide sentence.'},{'id':'image','inspection':'inspected','text':''}])
     variants=captured['$defs']['Candidate']['oneOf']
     assert variants[0]['properties']['file_id']['const']=='text'
-    assert variants[0]['properties']['quote']['enum']==['Unique guide sentence.']
+    assert variants[0]['properties']['evidence_unit_id']['enum']==[model.source_catalog('Unique guide sentence.','text')[0]['evidence_unit_id']]
     assert variants[1]['properties']['file_id']['const']=='image'
-    assert variants[1]['properties']['quote']=={'type':'null'}
+    assert variants[1]['properties']['evidence_unit_id']=={'type':'null'}
 
 
 def test_blocked_instruction_content_not_sent_to_model(monkeypatch):
@@ -264,3 +264,96 @@ def test_implicit_typed_checks_reject_incompatible_file(kind,expected,monkeypatc
     stub_output(monkeypatch, {'proposals':[{'requirement_id':'r','candidates':[{'relation':'supports','file_id':'text','reason':'Wrong format.','quote':'Actual text.'}],'coverage':'Wrong'}]})
     result=model.match({},[{'id':'r','checks':[{'kind':kind}]}],[{'id':'text','type':'text','inspection':'inspected','text':'Actual text.'}])
     assert result['model']['typed_rejected_associations'][0]['allowed_types']==[expected]
+
+
+def test_extract_repeated_sentence_preserves_selected_occurrence(monkeypatch):
+    text = "Deliver an SVG logo.\r\nDeliver an SVG logo."
+    units = model.source_catalog(text, "brief")
+    stub_output(monkeypatch, {"requirements": [{"obligation": "required", "title": "Logo", "evidence_unit_id": units[1]["evidence_unit_id"], "checks": [{"kind": "presence", "types": ["svg"]}]}]})
+    result = model.extract({"id": "brief", "text": text})
+    assert result["requirements"][0]["quote"] == "Deliver an SVG logo."
+    assert result["requirements"][0]["source_span"] == units[1]
+
+
+def test_extract_validates_excluded_evidence_too(monkeypatch):
+    stub_output(monkeypatch, {"requirements": [{"obligation": "excluded", "title": "Excluded", "evidence_unit_id": "invented", "checks": [{"kind": "manual", "instruction": "Excluded."}]}]})
+    with pytest.raises(model.ModelError, match="occurrence is invalid"):
+        model.extract({"id": "brief", "text": "Do not print stationery."})
+
+
+def test_extract_schema_has_all_repeated_occurrences(monkeypatch):
+    captured = {}
+    text = "Deliver PNG. Deliver PNG."
+    def generate(system, data, schema_type, **kwargs):
+        captured.update({"data": data, "schema": kwargs["schema_override"]})
+        return {"requirements": []}
+    monkeypatch.setattr(model, "_generate", generate)
+    model.extract({"id": "brief", "text": text})
+    options = captured["schema"]["$defs"]["SuggestedRequirement"]["properties"]["evidence_unit_id"]["enum"]
+    assert len(options) == len(set(options)) == 2
+    assert [unit["quote"] for unit in captured["data"]["source_units"]] == ["Deliver PNG.", "Deliver PNG."]
+    assert captured["data"]["brief"]["text"] == text
+
+
+def test_match_repeated_quote_resolves_exact_file_occurrence(monkeypatch):
+    text = "Change the email address. Change the email address."
+    unit = model.source_catalog(text, "file")[1]
+    stub_output(monkeypatch, {"proposals": [{"requirement_id": "r", "candidates": [{"relation": "supports", "file_id": "file", "reason": "Email instructions.", "evidence_unit_id": unit["evidence_unit_id"]}], "coverage": "Needs review."}]})
+    result = model.match({}, [{"id": "r"}], [{"id": "file", "inspection": "inspected", "text": text}])
+    candidate = result["proposals"][0]["candidates"][0]
+    assert candidate["quote"] == unit["quote"]
+    assert candidate["source_span"] == unit
+
+
+def test_match_rejects_occurrence_from_another_file(monkeypatch):
+    text = "Same source sentence."
+    unit = model.source_catalog(text, "file2")[0]
+    stub_output(monkeypatch, {"proposals": [{"requirement_id": "r", "candidates": [{"relation": "supports", "file_id": "file1", "reason": "Matches.", "evidence_unit_id": unit["evidence_unit_id"]}], "coverage": "Needs review."}]})
+    with pytest.raises(model.ModelError, match="occurrence is invalid"):
+        model.match({}, [{"id": "r"}], [{"id": "file1", "inspection": "inspected", "text": text}, {"id": "file2", "inspection": "inspected", "text": text}])
+
+
+def test_match_rejects_text_evidence_on_nontext_file(monkeypatch):
+    stub_output(monkeypatch, {"proposals": [{"requirement_id": "r", "candidates": [{"file_id": "image", "reason": "Filename.", "quote": "Fake text"}], "coverage": "Metadata only."}]})
+    with pytest.raises(model.ModelError, match="non-text"):
+        model.match({}, [{"id": "r"}], [{"id": "image", "inspection": "inspected", "text": ""}])
+
+
+def test_legacy_span_adapter_preserves_repeated_source(monkeypatch):
+    text = "Invoice. Invoice."
+    unit = model.source_catalog(text, "file")[1]
+    legacy_span = {key: value for key, value in unit.items() if key not in {"evidence_unit_id", "catalog_version"}}
+    stub_output(monkeypatch, {"proposals": [{"requirement_id": "r", "candidates": [{"file_id": "file", "reason": "Invoice.", "quote": "Invoice.", "source_span": legacy_span}], "coverage": "Needs review."}]})
+    result = model.match({}, [{"id": "r"}], [{"id": "file", "inspection": "inspected", "text": text}])
+    assert result["proposals"][0]["candidates"][0]["source_span"] == legacy_span
+
+
+def test_pre_guard_predictions_only_retained_when_explicitly_requested(monkeypatch):
+    import copy
+    output = {"proposals": [{"requirement_id": "r", "candidates": [{"relation": "supports", "file_id": "text", "reason": "Claims PDF.", "quote": "Text claims PDF."}], "coverage": "Incorrect claim."}]}
+    monkeypatch.setattr(model, "_generate", lambda *args, **kwargs: copy.deepcopy(output))
+    args = ({}, [{"id": "r", "checks": [{"kind": "presence", "types": ["pdf"]}]}], [{"id": "text", "type": "text", "inspection": "inspected", "text": "Text claims PDF."}])
+    normal = model.match(*args)
+    assert "pre_guard_predictions" not in normal["model"]
+    diagnostic = model.match(*args, capture_predictions=True)
+    assert diagnostic["proposals"][0]["candidates"] == []
+    assert diagnostic["model"]["pre_guard_predictions"] == output
+    assert "source_span" not in diagnostic["model"]["pre_guard_predictions"]["proposals"][0]["candidates"][0]
+
+
+def test_extraction_raw_classifications_preserved_for_synthetic_evaluation(monkeypatch):
+    text = "Do not print stationery."
+    unit = model.source_catalog(text, "brief")[0]
+    output = {"requirements": [{"obligation": "excluded", "title": "Stationery", "evidence_unit_id": unit["evidence_unit_id"], "checks": [{"kind": "manual", "instruction": "Excluded."}]}]}
+    stub_output(monkeypatch, output)
+    result = model.extract({"text": text}, capture_predictions=True)
+    assert result["requirements"] == []
+    raw = result["model"]["pre_guard_predictions"]["requirements"][0]
+    assert raw["obligation"] == "excluded"
+    assert raw["evidence_unit_id"] == unit["evidence_unit_id"]
+    assert "quote" not in raw
+
+
+def test_repeated_long_units_are_not_dropped():
+    text = "x" * 1000
+    assert model._source_quotes(text) == ["x" * 500, "x" * 500]

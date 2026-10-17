@@ -1,0 +1,19 @@
+{
+  "date": "2026-10-15",
+  "python_tests": 250,
+  "frontend_tests": 74,
+  "typescript": "passed",
+  "production_build": "passed; Node 24.19.0",
+  "frontend_format": "passed",
+  "ruff_F_E9": "passed",
+  "git_diff_check": "passed",
+  "warning": "Starlette TestClient httpx deprecation; tests passed",
+  "publication": "on hold",
+  "real_user_trial": "not performed",
+  "model_evaluation": "unchanged; prior V4 limitations retained",
+  "browser": [
+    "saved overview shows 2 of 3 items needing attention and 6 files",
+    "hash-checked explorer loads restored recorded JSON",
+    "after correction retains one failed check and two attention items"
+  ]
+}

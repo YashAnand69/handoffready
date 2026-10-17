@@ -1,0 +1,211 @@
+{
+  "approved_requirements": [
+    {
+      "checks": [
+        {
+          "kind": "presence",
+          "types": [
+            "jpeg"
+          ]
+        }
+      ],
+      "human_note": "Agent-authored synthetic answer key; treated as fixed approved input only for evaluation.",
+      "id": "r1",
+      "origin": "human_added",
+      "quote": "Deliver a JPEG event poster.",
+      "source_id": "brief-v1",
+      "source_span": {
+        "end_cp": 66,
+        "quote": "Deliver a JPEG event poster.",
+        "source_text_sha256": "95dd09aaf619b822986e3702c0aa92b0e6e29f2cd6dfee4d83997517dfc8562e",
+        "source_unit_id": "brief-v1",
+        "start_cp": 38
+      },
+      "title": "Event poster"
+    },
+    {
+      "checks": [
+        {
+          "kind": "presence",
+          "types": [
+            "pdf"
+          ]
+        },
+        {
+          "comparison": "exact",
+          "kind": "pdf_pages",
+          "value": 1
+        },
+        {
+          "instruction": "Assess seating accessibility guidance.",
+          "kind": "manual"
+        }
+      ],
+      "human_note": "Agent-authored synthetic answer key; treated as fixed approved input only for evaluation.",
+      "id": "r2",
+      "origin": "human_added",
+      "quote": "Include a one-page PDF guide explaining event seating accessibility.",
+      "source_id": "brief-v1",
+      "source_span": {
+        "end_cp": 135,
+        "quote": "Include a one-page PDF guide explaining event seating accessibility.",
+        "source_text_sha256": "95dd09aaf619b822986e3702c0aa92b0e6e29f2cd6dfee4d83997517dfc8562e",
+        "source_unit_id": "brief-v1",
+        "start_cp": 67
+      },
+      "title": "Event accessibility guide"
+    },
+    {
+      "checks": [
+        {
+          "instruction": "Open the live booking form and test keyboard completion.",
+          "kind": "manual"
+        }
+      ],
+      "human_note": "Agent-authored synthetic answer key; treated as fixed approved input only for evaluation.",
+      "id": "r3",
+      "origin": "human_added",
+      "quote": "Verify that the live booking form can be completed using only a keyboard.",
+      "source_id": "brief-v1",
+      "source_span": {
+        "end_cp": 209,
+        "quote": "Verify that the live booking form can be completed using only a keyboard.",
+        "source_text_sha256": "95dd09aaf619b822986e3702c0aa92b0e6e29f2cd6dfee4d83997517dfc8562e",
+        "source_unit_id": "brief-v1",
+        "start_cp": 136
+      },
+      "title": "Live keyboard booking"
+    }
+  ],
+  "extraction": [
+    {
+      "checks": [
+        {
+          "kind": "presence",
+          "types": [
+            "jpeg"
+          ]
+        }
+      ],
+      "id": "r1",
+      "optional": false,
+      "quote": "Deliver a JPEG event poster.",
+      "source_span": {
+        "end_cp": 66,
+        "quote": "Deliver a JPEG event poster.",
+        "source_text_sha256": "95dd09aaf619b822986e3702c0aa92b0e6e29f2cd6dfee4d83997517dfc8562e",
+        "source_unit_id": "brief-v1",
+        "start_cp": 38
+      },
+      "support_names": [
+        "willow-poster.jpg"
+      ],
+      "title": "Event poster"
+    },
+    {
+      "checks": [
+        {
+          "kind": "presence",
+          "types": [
+            "pdf"
+          ]
+        },
+        {
+          "comparison": "exact",
+          "kind": "pdf_pages",
+          "value": 1
+        },
+        {
+          "instruction": "Assess seating accessibility guidance.",
+          "kind": "manual"
+        }
+      ],
+      "id": "r2",
+      "optional": false,
+      "quote": "Include a one-page PDF guide explaining event seating accessibility.",
+      "source_span": {
+        "end_cp": 135,
+        "quote": "Include a one-page PDF guide explaining event seating accessibility.",
+        "source_text_sha256": "95dd09aaf619b822986e3702c0aa92b0e6e29f2cd6dfee4d83997517dfc8562e",
+        "source_unit_id": "brief-v1",
+        "start_cp": 67
+      },
+      "support_names": [
+        "arrival-notes.pdf"
+      ],
+      "title": "Event accessibility guide"
+    },
+    {
+      "checks": [
+        {
+          "instruction": "Open the live booking form and test keyboard completion.",
+          "kind": "manual"
+        }
+      ],
+      "id": "r3",
+      "optional": false,
+      "quote": "Verify that the live booking form can be completed using only a keyboard.",
+      "source_span": {
+        "end_cp": 209,
+        "quote": "Verify that the live booking form can be completed using only a keyboard.",
+        "source_text_sha256": "95dd09aaf619b822986e3702c0aa92b0e6e29f2cd6dfee4d83997517dfc8562e",
+        "source_unit_id": "brief-v1",
+        "start_cp": 136
+      },
+      "support_names": [],
+      "title": "Live keyboard booking"
+    }
+  ],
+  "files": {
+    "arrival-notes.pdf": "f2",
+    "keyboard-test.md": "f3",
+    "willow-poster.jpg": "f1"
+  },
+  "source_catalog": [
+    {
+      "catalog_version": "source-occurrence-v1",
+      "end_cp": 37,
+      "evidence_unit_id": "ev1_bcab3bab0fecdc6e6ddd943f",
+      "quote": "Synthetic brief: Willow reading event",
+      "source_text_sha256": "95dd09aaf619b822986e3702c0aa92b0e6e29f2cd6dfee4d83997517dfc8562e",
+      "source_unit_id": "brief-v1",
+      "start_cp": 0
+    },
+    {
+      "catalog_version": "source-occurrence-v1",
+      "end_cp": 66,
+      "evidence_unit_id": "ev1_9dbd145caaef69a6c956c2da",
+      "quote": "Deliver a JPEG event poster.",
+      "source_text_sha256": "95dd09aaf619b822986e3702c0aa92b0e6e29f2cd6dfee4d83997517dfc8562e",
+      "source_unit_id": "brief-v1",
+      "start_cp": 38
+    },
+    {
+      "catalog_version": "source-occurrence-v1",
+      "end_cp": 135,
+      "evidence_unit_id": "ev1_9b699e2a07b9699fbe6d464c",
+      "quote": "Include a one-page PDF guide explaining event seating accessibility.",
+      "source_text_sha256": "95dd09aaf619b822986e3702c0aa92b0e6e29f2cd6dfee4d83997517dfc8562e",
+      "source_unit_id": "brief-v1",
+      "start_cp": 67
+    },
+    {
+      "catalog_version": "source-occurrence-v1",
+      "end_cp": 209,
+      "evidence_unit_id": "ev1_83f936af60f62a3a2651ab74",
+      "quote": "Verify that the live booking form can be completed using only a keyboard.",
+      "source_text_sha256": "95dd09aaf619b822986e3702c0aa92b0e6e29f2cd6dfee4d83997517dfc8562e",
+      "source_unit_id": "brief-v1",
+      "start_cp": 136
+    }
+  ],
+  "support": {
+    "r1": [
+      "f1"
+    ],
+    "r2": [
+      "f2"
+    ],
+    "r3": []
+  }
+}

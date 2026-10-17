@@ -19,11 +19,13 @@ from fastapi.staticfiles import StaticFiles
 from starlette.middleware.cors import CORSMiddleware
 from starlette.exceptions import HTTPException
 
-from .checks import evaluate
+from .checks import evaluate, evaluate_selection
+from .evidence import validate_source_evidence
 from .exports import projection, render
+from .summary import build_summary
 from .policy import LIMITS
 from .schemas import (ApproveInput, BaselineInput, BriefInput, CreateProject, DecisionInput,
-                      EmptyInput, ExportInput, RenameInput, Requirement)
+                      EmptyInput, ExportInput, RenameInput, Requirement, SelectionPreviewInput)
 from .store import Store, StoreError, canonical, digest, input_hash, invalidate, now, uid
 
 PARSER_LOCK = threading.Lock()
@@ -106,6 +108,7 @@ def envelope(project):
         job.pop("_started", None)
     result["input_hash"] = input_hash(project)
     result["checks"] = result["check_results"] = evaluate(project)
+    result["attention_summary"] = build_summary(project, result["checks"])
     return result
 
 
@@ -121,10 +124,12 @@ def validate_requirements(requirements, brief):
             requirement["source_span"] = None
         else:
             quote = requirement["quote"]
-            if not brief or requirement["source_id"] != brief["id"] or not quote or brief["text"].count(quote) != 1:
-                raise StoreError("invalid_source_quote", "Each model suggestion must quote one exact, unique passage from the current brief.", 422)
-            start = brief["text"].index(quote)
-            requirement["source_span"] = {"source_unit_id": brief["id"], "source_text_sha256": brief["sha256"], "start_cp": start, "end_cp": start + len(quote), "quote": quote}
+            if not brief or requirement["source_id"] != brief["id"] or not quote:
+                raise StoreError("invalid_source_quote", "Model suggestions need exact evidence from the current brief.", 422)
+            try:
+                requirement["source_span"] = validate_source_evidence(brief["text"], brief["id"], quote, requirement.get("source_span"))
+            except ValueError as error:
+                raise StoreError("invalid_source_quote", "The source occurrence is invalid or ambiguous. Re-extract or correct it explicitly.", 422) from error
 
 
 def preserve_baseline(project, reason):
@@ -198,7 +203,8 @@ def create_app(data_dir=None, model_adapter=None, port=8877):
                     return message
                 request._receive = bounded_receive
             segments = path.split("/")
-            if request.method != "OPTIONS" and len(segments) >= 5 and segments[3] == "projects" and segments[4]:
+            status_only = request.method == "GET" and len(segments) == 6 and segments[1:4] == ["api", "v1", "projects"] and segments[5] == "job-status"
+            if not status_only and request.method != "OPTIONS" and len(segments) >= 5 and segments[3] == "projects" and segments[4]:
                 try:
                     await asyncio.to_thread(store.reconcile_originals, segments[4])
                 except StoreError as error:
@@ -243,7 +249,24 @@ def create_app(data_dir=None, model_adapter=None, port=8877):
 
     @app.get("/api/v1/projects")
     def projects():
-        return response([{key: project[key] for key in ("id", "name", "revision", "created_at")} for project in store.list()])
+        # Saved metadata only. Original bytes are revalidated when the project opens.
+        result = []
+        for project in store.list():
+            summary = build_summary(project)
+            result.append({
+                **{key: project[key] for key in ("id", "name", "revision", "created_at")},
+                "updated_at": project.get("updated_at"),
+                "saved_review": {
+                    "status": summary["status"],
+                    "baseline_approved": summary["baseline_approved"],
+                    "requirement_count": summary["requirement_count"],
+                    "attention_count": len(summary["attention_requirement_ids"]),
+                    "stale_review_count": summary["stale_review_count"],
+                    "file_count": len(project["files"]),
+                    "originals_verified": False,
+                },
+            })
+        return response(result)
 
     @app.post("/api/v1/projects")
     def create(payload: CreateProject):
@@ -284,7 +307,19 @@ def create_app(data_dir=None, model_adapter=None, port=8877):
             requirement.setdefault("source_id", None)
         def update(project, db):
             validate_requirements(requirements, project["brief"])
-            if canonical(requirements) == canonical(project["baseline"]["requirements"]):
+            # v0.1 persisted null optional check fields. Compare validated,
+            # transient records so an unchanged save does not migrate approved
+            # evidence, hashes, history or reviews just through serialization.
+            try:
+                existing = [Requirement.model_validate(row).model_dump(exclude_none=True)
+                            for row in project["baseline"]["requirements"]]
+                for row in existing:
+                    row.setdefault("quote", None)
+                    row.setdefault("source_id", None)
+                validate_requirements(existing, project["brief"])
+            except (ValueError, StoreError):
+                existing = None  # Valid submitted corrections may repair old invalid evidence.
+            if existing is not None and canonical(requirements) == canonical(existing):
                 return
             preserve_baseline(project, "checklist edited")
             preserve_proposals(project)
@@ -342,6 +377,16 @@ def create_app(data_dir=None, model_adapter=None, port=8877):
             for file in staged:
                 result = await asyncio.to_thread(inspect_bounded, store.files / file["_path"], file["name"], deadline)
                 file.update({key: result.get(key, default) for key, default in (("type", "unknown"), ("inspection", "blocked"), ("metadata", {}), ("text", ""), ("error", None))})
+            if replacement and staged[0]["inspection"] != "inspected":
+                # Failed candidates never replace usable evidence or invalidate its reviews.
+                # The existing exception cleanup removes only the staged candidate bytes.
+                reason = staged[0]["error"] or "The file could not be safely inspected."
+                raise StoreError(
+                    "replacement_not_inspected",
+                    f"Replacement was not saved. The existing file and saved reviews were kept. {reason} "
+                    "Correct the file or choose a supported export, then try replacing it again.",
+                    422,
+                )
             if sum(len(f["text"]) for f in active + staged) > LIMITS["packet_text_characters"]:
                 raise StoreError("packet_text_limit", "Extracted packet text exceeds 100,000 characters.", 413)
             def update(current, db):
@@ -406,6 +451,8 @@ def create_app(data_dir=None, model_adapter=None, port=8877):
         if current["revision"] != expected_revision:
             raise StoreError("revision_conflict", "Project changed. Refresh before renaming.")
         name = clean_name(payload.display_name)
+        if name == original["name"]:
+            return response(envelope(store.mutate(project_id, expected_revision, lambda project, db: None)))
         inspection = inspect_bounded(store.files / original["_path"], name, time.monotonic() + 120)
         def update(project, db):
             file = next((f for f in project["files"] if f["id"] == file_id), None)
@@ -434,6 +481,31 @@ def create_app(data_dir=None, model_adapter=None, port=8877):
             except OSError:
                 pass
         return response(envelope(updated))
+
+    @app.get("/api/v1/projects/{project_id}/job-status")
+    def job_status(project_id):
+        project = store.get(project_id)
+        return response({"revision": project["revision"], "jobs": [{key: job.get(key) for key in ("id", "kind", "state", "stage", "error")} for job in project["jobs"]]})
+
+    @app.post("/api/v1/projects/{project_id}/requirements/{requirement_id}/check-preview")
+    def check_preview(project_id, requirement_id, payload: SelectionPreviewInput, request: Request):
+        with store.lock:
+            project = store.get(project_id)
+            if revision(request) != project["revision"] or payload.input_hash != input_hash(project):
+                raise StoreError("stale_preview", "Inputs changed. Refresh before previewing this selection.")
+            if project["baseline"]["state"] != "approved":
+                raise StoreError("baseline_not_approved", "Confirm the checklist before previewing files.")
+            requirement = next((row for row in project["baseline"]["requirements"] if row["id"] == requirement_id), None)
+            if not requirement:
+                raise StoreError("requirement_not_found", "Requirement is not current.", 404)
+            files = {file["id"]: file for file in project["files"]}
+            if not set(payload.file_ids) <= files.keys():
+                raise StoreError("invalid_files", "Choose registered files from this packet.", 422)
+            ids = sorted(payload.file_ids)
+            return response({"preview": True, "project_id": project_id, "requirement_id": requirement_id,
+                             "source_revision": project["revision"], "input_hash": payload.input_hash,
+                             "file_ids": ids, "selection_hash": digest(ids),
+                             "checks": evaluate_selection(requirement, [files[file_id] for file_id in ids])})
 
     @app.put("/api/v1/projects/{project_id}/decisions/{requirement_id}")
     def decide(project_id, requirement_id, payload: DecisionInput, request: Request):
@@ -485,6 +557,9 @@ def create_app(data_dir=None, model_adapter=None, port=8877):
                 job = next(j for j in project["jobs"] if j["id"] == job_id)
                 if job["state"] != "running":
                     return
+                if store._reconcile_originals(project):
+                    job.update(state="superseded", stage="originals changed", error="Result discarded because original evidence changed.")
+                    return  # Commit blocked originals and stale decisions before reporting rejection.
                 current_snapshot = digest({"brief": project["brief"]["sha256"], "baseline_id": project["baseline"]["id"]}) if captured["kind"] == "extract" and project["brief"] else input_hash(project)
                 if current_snapshot != captured["_snapshot"]:
                     job.update(state="superseded", stage="inputs changed", error="Result discarded because inputs changed.")
@@ -516,13 +591,17 @@ def create_app(data_dir=None, model_adapter=None, port=8877):
                         for candidate in proposal.get("candidates", []):
                             file = files.get(candidate.get("file_id"))
                             quote = candidate.get("quote")
-                            if not file or file["inspection"] != "inspected" or (file["text"] and quote is None) or (quote is not None and (not quote or len(quote) > 500 or file["text"].count(quote) != 1)):
+                            if not file or file["inspection"] != "inspected" or (file["text"] and quote is None):
                                 raise StoreError("invalid_model_evidence", "Model returned invalid file evidence.", 422)
                             if not isinstance(candidate.get("reason"), str) or not candidate["reason"].strip() or len(candidate["reason"]) > 2000:
                                 raise StoreError("invalid_model_output", "Model returned invalid explanation.", 422)
-                            if quote:
-                                start = file["text"].index(quote)
-                                candidate["source_span"] = {"source_unit_id": file["id"], "source_text_sha256": hashlib.sha256(file["text"].encode()).hexdigest(), "start_cp": start, "end_cp": start + len(quote), "quote": quote}
+                            if file["text"]:
+                                try:
+                                    candidate["source_span"] = validate_source_evidence(file["text"], file["id"], quote, candidate.get("source_span"))
+                                except ValueError as error:
+                                    raise StoreError("invalid_model_evidence", "Model evidence has an invalid or ambiguous source occurrence.", 422) from error
+                            elif quote is not None or candidate.get("source_span") is not None:
+                                raise StoreError("invalid_model_evidence", "A non-text file cannot carry text evidence.", 422)
                         proposals.append({"id": uid(), "requirement_id": proposal["requirement_id"], "candidates": proposal["candidates"], "coverage": str(proposal.get("coverage", "model proposal"))[:2000], "model": result.get("model", {})})
                     if len({p["requirement_id"] for p in proposals}) != len(proposals):
                         raise StoreError("invalid_model_output", "Model returned duplicate requirement mappings.", 422)
@@ -593,6 +672,8 @@ def create_app(data_dir=None, model_adapter=None, port=8877):
         def update(project, db):
             if payload.input_hash != input_hash(project):
                 raise StoreError("stale_input", "Inputs changed. Preview the current packet before exporting.")
+            if payload.preview_revision is not None and payload.preview_revision != project["revision"]:
+                raise StoreError("stale_preview", "Reviews changed. Read and acknowledge the current preview before exporting.")
             if len(project["exports"]) >= 100:
                 raise StoreError("export_history_limit", "This project has reached its 100-export limit. Create a new project before making more snapshots.")
             value = projection(project, payload.acknowledge_unresolved)

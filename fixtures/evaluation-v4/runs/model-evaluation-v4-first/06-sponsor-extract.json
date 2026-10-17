@@ -1,0 +1,212 @@
+{
+  "after_guards": {
+    "attribute_denominator": 3,
+    "correct_attribute_checks": 1,
+    "covered_mandatory": 1,
+    "covered_optional": 0,
+    "covered_requirements": 1,
+    "exact_attribute_requirement_denominator": 2,
+    "exact_attributes": 1,
+    "extra_attribute_checks": 0,
+    "key_mandatory": 2,
+    "key_optional": 0,
+    "key_requirements": 2,
+    "missed_mandatory": 1,
+    "missed_optional_classification": 0,
+    "missing_attribute_checks": 2,
+    "predicted_requirements": 2,
+    "quote_denominator": 2,
+    "unmatched_predictions": 0,
+    "valid_quotes": 2,
+    "wrong_format_classification": 1,
+    "wrong_obligation_classification": 0
+  },
+  "before_guards": {
+    "attribute_denominator": 3,
+    "correct_attribute_checks": 1,
+    "covered_mandatory": 1,
+    "covered_optional": 0,
+    "covered_requirements": 1,
+    "exact_attribute_requirement_denominator": 2,
+    "exact_attributes": 1,
+    "extra_attribute_checks": 0,
+    "key_mandatory": 2,
+    "key_optional": 0,
+    "key_requirements": 2,
+    "missed_mandatory": 1,
+    "missed_optional_classification": 0,
+    "missing_attribute_checks": 2,
+    "predicted_requirements": 2,
+    "quote_denominator": 2,
+    "unmatched_predictions": 0,
+    "valid_quotes": 2,
+    "wrong_format_classification": 1,
+    "wrong_obligation_classification": 0
+  },
+  "capture": {
+    "completion": {
+      "choices": [
+        {
+          "content": "{\n  \"requirements\": [\n    {\n      \"obligation\": \"required\",\n      \"title\": \"Deliver a one-page PDF sponsor report.\",\n      \"evidence_unit_id\": \"ev1_a8e89c68b4b7c4ac855dda29\",\n      \"checks\": [\n        {\n          \"kind\": \"pdf_pages\",\n          \"comparison\": \"exact\",\n          \"value\": 1\n        }\n      ]\n    },\n    {\n      \"obligation\": \"required\",\n      \"title\": \"Deliver the sponsor badge in PNG format.\",\n      \"evidence_unit_id\": \"ev1_4c4ff06dbe379a6652f9ad23\",\n      \"checks\": [\n        {\n          \"kind\": \"presence\",\n          \"types\": [\n            \"png\"\n          ]\n        }\n      ]\n    }\n  ]\n}",
+          "finish_reason": "stop",
+          "index": 0
+        }
+      ],
+      "usage": {
+        "completion_tokens": 222,
+        "prompt_tokens": 1538,
+        "prompt_tokens_details": {
+          "cached_tokens": 919
+        },
+        "total_tokens": 1760
+      }
+    },
+    "completion_response_count": 1,
+    "elapsed_seconds": 2.2475318339420483,
+    "model_metadata": {
+      "elapsed_seconds": 2.246,
+      "excluded_suggestion_count": 0,
+      "input_sha256": "41da819300df03a22b00cfd99fe0228c96e50449f399e137e18a32d3cd79bef3",
+      "input_tokens": 1538,
+      "model": "google/gemma-4-E2B-it",
+      "output_sha256": "a09ed3664ff50ff7034350ade9750834f85b8ffc491ece7d3d58c7d1962bc892",
+      "output_tokens": 222,
+      "prompt_version": "handoffready-v11",
+      "required_suggestion_count": 2,
+      "seed": 20261013,
+      "source_catalog_version": "source-occurrence-v1",
+      "temperature": 0,
+      "vision_used": false
+    },
+    "stage": "extract",
+    "structured_call_count": 1,
+    "structured_pre_guard": {
+      "requirements": [
+        {
+          "checks": [
+            {
+              "comparison": "exact",
+              "kind": "pdf_pages",
+              "value": 1
+            }
+          ],
+          "evidence_unit_id": "ev1_a8e89c68b4b7c4ac855dda29",
+          "obligation": "required",
+          "title": "Deliver a one-page PDF sponsor report."
+        },
+        {
+          "checks": [
+            {
+              "kind": "presence",
+              "types": [
+                "png"
+              ]
+            }
+          ],
+          "evidence_unit_id": "ev1_4c4ff06dbe379a6652f9ad23",
+          "obligation": "required",
+          "title": "Deliver the sponsor badge in PNG format."
+        }
+      ]
+    },
+    "synthetic_data_only": true
+  },
+  "failure": null,
+  "guarded_predictions": [
+    {
+      "checks": [
+        {
+          "comparison": "exact",
+          "kind": "pdf_pages",
+          "value": 1
+        }
+      ],
+      "obligation": "required",
+      "quote": "Deliver a one-page PDF sponsor report.",
+      "quote_valid": true,
+      "source_span": {
+        "catalog_version": "source-occurrence-v1",
+        "end_cp": 82,
+        "evidence_unit_id": "ev1_a8e89c68b4b7c4ac855dda29",
+        "quote": "Deliver a one-page PDF sponsor report.",
+        "source_text_sha256": "35f5db0b95d9108e77b36ff4c01a0e37c8c5769ada721d97ccf766c1d874ce2b",
+        "source_unit_id": "brief-v1",
+        "start_cp": 44
+      },
+      "title": "Deliver a one-page PDF sponsor report."
+    },
+    {
+      "checks": [
+        {
+          "kind": "presence",
+          "types": [
+            "png"
+          ]
+        }
+      ],
+      "obligation": "required",
+      "quote": "Deliver the sponsor badge in PNG format.",
+      "quote_valid": true,
+      "source_span": {
+        "catalog_version": "source-occurrence-v1",
+        "end_cp": 123,
+        "evidence_unit_id": "ev1_4c4ff06dbe379a6652f9ad23",
+        "quote": "Deliver the sponsor badge in PNG format.",
+        "source_text_sha256": "35f5db0b95d9108e77b36ff4c01a0e37c8c5769ada721d97ccf766c1d874ce2b",
+        "source_unit_id": "brief-v1",
+        "start_cp": 83
+      },
+      "title": "Deliver the sponsor badge in PNG format."
+    }
+  ],
+  "latency_seconds": 2.2477150830673054,
+  "raw_predictions": [
+    {
+      "checks": [
+        {
+          "comparison": "exact",
+          "kind": "pdf_pages",
+          "value": 1
+        }
+      ],
+      "evidence_unit_id": "ev1_a8e89c68b4b7c4ac855dda29",
+      "obligation": "required",
+      "quote": "Deliver a one-page PDF sponsor report.",
+      "quote_valid": true,
+      "source_span": {
+        "catalog_version": "source-occurrence-v1",
+        "end_cp": 82,
+        "evidence_unit_id": "ev1_a8e89c68b4b7c4ac855dda29",
+        "quote": "Deliver a one-page PDF sponsor report.",
+        "source_text_sha256": "35f5db0b95d9108e77b36ff4c01a0e37c8c5769ada721d97ccf766c1d874ce2b",
+        "source_unit_id": "brief-v1",
+        "start_cp": 44
+      },
+      "title": "Deliver a one-page PDF sponsor report."
+    },
+    {
+      "checks": [
+        {
+          "kind": "presence",
+          "types": [
+            "png"
+          ]
+        }
+      ],
+      "evidence_unit_id": "ev1_4c4ff06dbe379a6652f9ad23",
+      "obligation": "required",
+      "quote": "Deliver the sponsor badge in PNG format.",
+      "quote_valid": true,
+      "source_span": {
+        "catalog_version": "source-occurrence-v1",
+        "end_cp": 123,
+        "evidence_unit_id": "ev1_4c4ff06dbe379a6652f9ad23",
+        "quote": "Deliver the sponsor badge in PNG format.",
+        "source_text_sha256": "35f5db0b95d9108e77b36ff4c01a0e37c8c5769ada721d97ccf766c1d874ce2b",
+        "source_unit_id": "brief-v1",
+        "start_cp": 83
+      },
+      "title": "Deliver the sponsor badge in PNG format."
+    }
+  ]
+}

@@ -1,0 +1,227 @@
+{
+  "after_guards": {
+    "attribute_denominator": 3,
+    "correct_attribute_checks": 2,
+    "covered_mandatory": 2,
+    "covered_optional": 0,
+    "covered_requirements": 2,
+    "exact_attribute_requirement_denominator": 2,
+    "exact_attributes": 1,
+    "extra_attribute_checks": 1,
+    "key_mandatory": 2,
+    "key_optional": 0,
+    "key_requirements": 2,
+    "missed_mandatory": 0,
+    "missed_optional_classification": 0,
+    "missing_attribute_checks": 1,
+    "predicted_requirements": 2,
+    "quote_denominator": 2,
+    "unmatched_predictions": 0,
+    "valid_quotes": 2,
+    "wrong_format_classification": 0,
+    "wrong_obligation_classification": 0
+  },
+  "before_guards": {
+    "attribute_denominator": 3,
+    "correct_attribute_checks": 2,
+    "covered_mandatory": 2,
+    "covered_optional": 0,
+    "covered_requirements": 2,
+    "exact_attribute_requirement_denominator": 2,
+    "exact_attributes": 1,
+    "extra_attribute_checks": 1,
+    "key_mandatory": 2,
+    "key_optional": 0,
+    "key_requirements": 2,
+    "missed_mandatory": 0,
+    "missed_optional_classification": 0,
+    "missing_attribute_checks": 1,
+    "predicted_requirements": 2,
+    "quote_denominator": 2,
+    "unmatched_predictions": 0,
+    "valid_quotes": 2,
+    "wrong_format_classification": 0,
+    "wrong_obligation_classification": 0
+  },
+  "capture": {
+    "completion": {
+      "choices": [
+        {
+          "content": "{\n  \"requirements\": [\n    {\n      \"obligation\": \"required\",\n      \"title\": \"Deliver a plain text tutoring setup guide containing the phrase Session setup.\",\n      \"evidence_unit_id\": \"ev1_0d8a5dc4c9813a56091ba6bb\",\n      \"checks\": [\n        {\n          \"kind\": \"presence\",\n          \"types\": [\n            \"text\"\n          ]\n        },\n        {\n          \"kind\": \"manual\",\n          \"instruction\": \"Review steps for changing a password.\"\n        }\n      ]\n    },\n    {\n      \"obligation\": \"required\",\n      \"title\": \"Deliver a JPEG tutoring schedule.\",\n      \"evidence_unit_id\": \"ev1_51410fd75563a344c7537588\",\n      \"checks\": [\n        {\n          \"kind\": \"presence\",\n          \"types\": [\n            \"jpeg\"\n          ]\n        }\n      ]\n    }\n  ]\n}",
+          "finish_reason": "stop",
+          "index": 0
+        }
+      ],
+      "usage": {
+        "completion_tokens": 250,
+        "prompt_tokens": 1550,
+        "prompt_tokens_details": {
+          "cached_tokens": 919
+        },
+        "total_tokens": 1800
+      }
+    },
+    "completion_response_count": 1,
+    "elapsed_seconds": 2.440353791927919,
+    "model_metadata": {
+      "elapsed_seconds": 2.439,
+      "excluded_suggestion_count": 0,
+      "input_sha256": "868772da78dda8fa3b21c0b6a10612e15c8ed9bdbb20d127fa627d980b7d8b6a",
+      "input_tokens": 1550,
+      "model": "google/gemma-4-E2B-it",
+      "output_sha256": "2505550766cf36ebb65115d2d860c5cf3d8dcc45f68b4abe99af9710b9463313",
+      "output_tokens": 250,
+      "prompt_version": "handoffready-v11",
+      "required_suggestion_count": 2,
+      "seed": 20261013,
+      "source_catalog_version": "source-occurrence-v1",
+      "temperature": 0,
+      "vision_used": false
+    },
+    "stage": "extract",
+    "structured_call_count": 1,
+    "structured_pre_guard": {
+      "requirements": [
+        {
+          "checks": [
+            {
+              "kind": "presence",
+              "types": [
+                "text"
+              ]
+            },
+            {
+              "instruction": "Review steps for changing a password.",
+              "kind": "manual"
+            }
+          ],
+          "evidence_unit_id": "ev1_0d8a5dc4c9813a56091ba6bb",
+          "obligation": "required",
+          "title": "Deliver a plain text tutoring setup guide containing the phrase Session setup."
+        },
+        {
+          "checks": [
+            {
+              "kind": "presence",
+              "types": [
+                "jpeg"
+              ]
+            }
+          ],
+          "evidence_unit_id": "ev1_51410fd75563a344c7537588",
+          "obligation": "required",
+          "title": "Deliver a JPEG tutoring schedule."
+        }
+      ]
+    },
+    "synthetic_data_only": true
+  },
+  "failure": null,
+  "guarded_predictions": [
+    {
+      "checks": [
+        {
+          "kind": "presence",
+          "types": [
+            "text"
+          ]
+        },
+        {
+          "instruction": "Review steps for changing a password.",
+          "kind": "manual"
+        }
+      ],
+      "obligation": "required",
+      "quote": "Deliver a plain text tutoring setup guide containing the phrase Session setup.",
+      "quote_valid": true,
+      "source_span": {
+        "catalog_version": "source-occurrence-v1",
+        "end_cp": 117,
+        "evidence_unit_id": "ev1_0d8a5dc4c9813a56091ba6bb",
+        "quote": "Deliver a plain text tutoring setup guide containing the phrase Session setup.",
+        "source_text_sha256": "913ca8a6e23053025003f6280945875bdc96c0a71812fc555ceb251f9657379b",
+        "source_unit_id": "brief-v1",
+        "start_cp": 39
+      },
+      "title": "Deliver a plain text tutoring setup guide containing the phrase Session setup."
+    },
+    {
+      "checks": [
+        {
+          "kind": "presence",
+          "types": [
+            "jpeg"
+          ]
+        }
+      ],
+      "obligation": "required",
+      "quote": "Deliver a JPEG tutoring schedule.",
+      "quote_valid": true,
+      "source_span": {
+        "catalog_version": "source-occurrence-v1",
+        "end_cp": 151,
+        "evidence_unit_id": "ev1_51410fd75563a344c7537588",
+        "quote": "Deliver a JPEG tutoring schedule.",
+        "source_text_sha256": "913ca8a6e23053025003f6280945875bdc96c0a71812fc555ceb251f9657379b",
+        "source_unit_id": "brief-v1",
+        "start_cp": 118
+      },
+      "title": "Deliver a JPEG tutoring schedule."
+    }
+  ],
+  "latency_seconds": 2.4406041250331327,
+  "raw_predictions": [
+    {
+      "checks": [
+        {
+          "kind": "presence",
+          "types": [
+            "text"
+          ]
+        },
+        {
+          "instruction": "Review steps for changing a password.",
+          "kind": "manual"
+        }
+      ],
+      "evidence_unit_id": "ev1_0d8a5dc4c9813a56091ba6bb",
+      "obligation": "required",
+      "quote": "Deliver a plain text tutoring setup guide containing the phrase Session setup.",
+      "quote_valid": true,
+      "source_span": {
+        "catalog_version": "source-occurrence-v1",
+        "end_cp": 117,
+        "evidence_unit_id": "ev1_0d8a5dc4c9813a56091ba6bb",
+        "quote": "Deliver a plain text tutoring setup guide containing the phrase Session setup.",
+        "source_text_sha256": "913ca8a6e23053025003f6280945875bdc96c0a71812fc555ceb251f9657379b",
+        "source_unit_id": "brief-v1",
+        "start_cp": 39
+      },
+      "title": "Deliver a plain text tutoring setup guide containing the phrase Session setup."
+    },
+    {
+      "checks": [
+        {
+          "kind": "presence",
+          "types": [
+            "jpeg"
+          ]
+        }
+      ],
+      "evidence_unit_id": "ev1_51410fd75563a344c7537588",
+      "obligation": "required",
+      "quote": "Deliver a JPEG tutoring schedule.",
+      "quote_valid": true,
+      "source_span": {
+        "catalog_version": "source-occurrence-v1",
+        "end_cp": 151,
+        "evidence_unit_id": "ev1_51410fd75563a344c7537588",
+        "quote": "Deliver a JPEG tutoring schedule.",
+        "source_text_sha256": "913ca8a6e23053025003f6280945875bdc96c0a71812fc555ceb251f9657379b",
+        "source_unit_id": "brief-v1",
+        "start_cp": 118
+      },
+      "title": "Deliver a JPEG tutoring schedule."
+    }
+  ]
+}

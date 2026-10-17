@@ -1,0 +1,42 @@
+{
+  "candidate": {
+    "adapter": "scripts/evaluate_v4_adapter.py",
+    "adapter_sha256": "c14b6197d40b9aa5a59ad8a8eaae8522714a7feadc570c8733bb9c7ceada9566",
+    "candidate_revision": "f1ee8226934244ef81a117444098e59743110a0f + source-digest-bound local upgrade",
+    "candidate_source_sha256": {
+      "backend/handoffready/__init__.py": "85b4c96ab59d9d7dcb886cb35ad2d03956a3778943ce535fee1e651b2f9c5218",
+      "backend/handoffready/api.py": "e1f9ebeb100aae28c7ac0487964aad1b83d10a73cf076348e4d3a5fcc0894396",
+      "backend/handoffready/checks.py": "136b0af91ab9ecd18df7eee9d78f16d508434276f9b8c54dff3017a2392c73b9",
+      "backend/handoffready/evidence.py": "12b141f123b259f641b655ef5ac3099a80768bfda440910365531e7b927c0963",
+      "backend/handoffready/exports.py": "f617ffbe14b6825c50389a1fd639b3e8cf62d76726eef867fedad27a7d88b2b7",
+      "backend/handoffready/inspect.py": "643be1430e7a28eb49ed308131115d10140444bb60bce07ad095a4f2a01d7191",
+      "backend/handoffready/model.py": "f0ea34b95590209df6e130872b60226c2794ce6a87d736ade1a25d32aba5239f",
+      "backend/handoffready/parser_worker.py": "bff137376f21912d5136bd6507d7f84a8e30724397a12dbda6f8fbcbb7684b43",
+      "backend/handoffready/policy.py": "b3641785391fbe5a2a5663dcbdeb5e8d9a07519c8c8b3d63c75575c059f3b7b9",
+      "backend/handoffready/schemas.py": "d3bcfbf05a155d5bbab4e2a692d6ccbe7da052e96d240bb86fe7a40c7a6bc5d7",
+      "backend/handoffready/store.py": "f34d24c487e1a277e0a92441699d62139bc8142bf41fa2f7ea24442a145913a9",
+      "backend/handoffready/summary.py": "648db11aaae6e00cf0c126ea68bc5ddfb3117c895998658a7f79a51b5d02a4df"
+    },
+    "generation_parameters": {
+      "loopback_only": true,
+      "max_input_tokens": 6000,
+      "max_output_tokens": 1500,
+      "model_port": 18082,
+      "seed": 20261013,
+      "temperature": 0
+    },
+    "model_id": "handoffready-gemma4-e2b",
+    "model_weights_sha256": "8e30dff3ac4c8434c49a7036fa15564bdbb6044e42bf04550bf1a096ad7e6a52",
+    "prompt_hash_scope": "entire adapter module (contains both prompts and generation configuration)",
+    "prompt_sha256": "f0ea34b95590209df6e130872b60226c2794ce6a87d736ade1a25d32aba5239f",
+    "prompt_version": "handoffready-v11",
+    "runtime_server_sha256": "330ef197918263288c4017f164154bd11406b6e86d1357b5f83625bb85c10b1e",
+    "runtime_tag": "b11583"
+  },
+  "dataset_sha256": "2718aab4fe4a75398bd499c64e53ea568a04d8f71d848ddad0e95b3229e2d910",
+  "evaluator_sha256": "833c07b6cf85d8965ac04f9bf62322b00e03ff9b50602abb23dd74a2210c44cb",
+  "inspector_sha256": "643be1430e7a28eb49ed308131115d10140444bb60bce07ad095a4f2a01d7191",
+  "original_scoring_sha256": "152a208cac161c7501ac0cc99791212dfd16f747f531e91903e79160799ab062",
+  "run_freeze_sha256": "187bddb4e84aa332295b787906b78240e9805abecc905199d6d8bd9acccffb6c",
+  "scoring_sha256": "aaaff0ef921a7cffa919054c0ed44112a73ff86a9e4bc1df410afb9e5714b439"
+}

@@ -1,0 +1,373 @@
+{
+  "schema_version": 2,
+  "id": "77632518e261438f8c3d409f0adb97eb",
+  "project_name": "Studio North · synthetic sample",
+  "created_at": "2026-10-17T10:32:25.926593+00:00",
+  "source_revision": 13,
+  "input_hash": "abe0df8949fa53b685631796fe0ea53b50730b640d252c5c95b200bd9674c769",
+  "baseline_hash": "32e074f7b69be71bf8de632f42a49dd380c61f7da8e672405bffa8f49b884c35",
+  "status": "draft_with_gaps",
+  "attention_summary": {
+    "contract_version": 1,
+    "source_revision": 13,
+    "input_hash": "abe0df8949fa53b685631796fe0ea53b50730b640d252c5c95b200bd9674c769",
+    "baseline_approved": true,
+    "status": "draft_with_gaps",
+    "requirement_count": 3,
+    "current_review_count": 3,
+    "stale_review_count": 0,
+    "unreviewed_count": 0,
+    "needs_work_count": 3,
+    "unresolved_count": 0,
+    "exception_count": 0,
+    "failed_check_count": 2,
+    "unknown_check_count": 0,
+    "manual_requirement_count": 1,
+    "failed_requirement_ids": [
+      "61e1fa155fc8453da96345d06d1f0f84",
+      "7d2e6e174393495584a7f8db88c20514"
+    ],
+    "unknown_requirement_ids": [],
+    "attention_requirement_ids": [
+      "61e1fa155fc8453da96345d06d1f0f84",
+      "7d2e6e174393495584a7f8db88c20514",
+      "9a17874bc72d4eb792f022328e0c59a4"
+    ],
+    "exception_requirement_ids": [],
+    "rows": [
+      {
+        "requirement_id": "61e1fa155fc8453da96345d06d1f0f84",
+        "review_currency": "current",
+        "human_disposition": "needs_work",
+        "applicable_attention": true,
+        "is_exception": false,
+        "reason_codes": [
+          "technical_failure",
+          "human_needs_work"
+        ],
+        "messages": [
+          "1 technical check(s) failed.",
+          "Human disposition: needs_work"
+        ],
+        "failed_check_count": 1,
+        "unknown_check_count": 0,
+        "has_manual_checks": false
+      },
+      {
+        "requirement_id": "7d2e6e174393495584a7f8db88c20514",
+        "review_currency": "current",
+        "human_disposition": "needs_work",
+        "applicable_attention": true,
+        "is_exception": false,
+        "reason_codes": [
+          "technical_failure",
+          "human_needs_work"
+        ],
+        "messages": [
+          "1 technical check(s) failed.",
+          "Human disposition: needs_work"
+        ],
+        "failed_check_count": 1,
+        "unknown_check_count": 0,
+        "has_manual_checks": false
+      },
+      {
+        "requirement_id": "9a17874bc72d4eb792f022328e0c59a4",
+        "review_currency": "current",
+        "human_disposition": "needs_work",
+        "applicable_attention": true,
+        "is_exception": false,
+        "reason_codes": [
+          "human_needs_work"
+        ],
+        "messages": [
+          "Human disposition: needs_work"
+        ],
+        "failed_check_count": 0,
+        "unknown_check_count": 0,
+        "has_manual_checks": true
+      }
+    ]
+  },
+  "requirements": [
+    {
+      "requirement_id": "61e1fa155fc8453da96345d06d1f0f84",
+      "review_currency": "current",
+      "human_disposition": "needs_work",
+      "applicable_attention": true,
+      "is_exception": false,
+      "reason_codes": [
+        "technical_failure",
+        "human_needs_work"
+      ],
+      "messages": [
+        "1 technical check(s) failed.",
+        "Human disposition: needs_work"
+      ],
+      "failed_check_count": 1,
+      "unknown_check_count": 0,
+      "has_manual_checks": false,
+      "id": "61e1fa155fc8453da96345d06d1f0f84",
+      "title": "Deliver a transparent PNG logo and an SVG logo.",
+      "origin": "model_suggested",
+      "review_state": "confirmed",
+      "client_usage_note": "Replace the opaque PNG logo with the agreed transparent export.",
+      "client_exception_note": "",
+      "checks": [
+        {
+          "requirement_id": "61e1fa155fc8453da96345d06d1f0f84",
+          "kind": "presence",
+          "status": "pass",
+          "reason": "Selected inspected files counted; distinct bytes do not prove distinct designs.",
+          "expected": 1,
+          "actual": 1
+        },
+        {
+          "requirement_id": "61e1fa155fc8453da96345d06d1f0f84",
+          "kind": "presence",
+          "status": "pass",
+          "reason": "Selected inspected files counted; distinct bytes do not prove distinct designs.",
+          "expected": 1,
+          "actual": 1
+        },
+        {
+          "requirement_id": "61e1fa155fc8453da96345d06d1f0f84",
+          "kind": "png_nonopaque_pixels",
+          "status": "fail",
+          "reason": "At least one nonopaque pixel per PNG; correct background removal still needs visual review.",
+          "actual": [
+            false
+          ]
+        }
+      ],
+      "files": [
+        {
+          "id": "65e01cc5544c48caa18447a86d752a17",
+          "name": "logo-opaque.png",
+          "type": "png",
+          "size": 683,
+          "sha256": "9ce2ba0bf291937a23a0d8da9490359891979b5ff08a41c68d1d1272a75bb3f9",
+          "inspection": "inspected"
+        },
+        {
+          "id": "991838e2d17545078d100565b6a36a87",
+          "name": "logo.svg",
+          "type": "svg",
+          "size": 230,
+          "sha256": "20b8ea08955cda08e2ad041aa58f3242537d8f56e5b621f6a9638fcdcc765be5",
+          "inspection": "inspected"
+        }
+      ],
+      "gaps": [
+        "1 technical check(s) failed.",
+        "Human disposition: needs_work"
+      ]
+    },
+    {
+      "requirement_id": "7d2e6e174393495584a7f8db88c20514",
+      "review_currency": "current",
+      "human_disposition": "needs_work",
+      "applicable_attention": true,
+      "is_exception": false,
+      "reason_codes": [
+        "technical_failure",
+        "human_needs_work"
+      ],
+      "messages": [
+        "1 technical check(s) failed.",
+        "Human disposition: needs_work"
+      ],
+      "failed_check_count": 1,
+      "unknown_check_count": 0,
+      "has_manual_checks": false,
+      "id": "7d2e6e174393495584a7f8db88c20514",
+      "title": "Deliver exactly three distinct 1080 × 1080 PNG launch images.",
+      "origin": "model_suggested",
+      "review_state": "confirmed",
+      "client_usage_note": "Provide a third distinct 1080 × 1080 launch image.",
+      "client_exception_note": "",
+      "checks": [
+        {
+          "requirement_id": "7d2e6e174393495584a7f8db88c20514",
+          "kind": "count",
+          "status": "fail",
+          "reason": "Selected inspected files counted; distinct bytes do not prove distinct designs.",
+          "expected": 3,
+          "actual": 2
+        },
+        {
+          "requirement_id": "7d2e6e174393495584a7f8db88c20514",
+          "kind": "image_dimensions",
+          "status": "pass",
+          "reason": "Encoded pixel dimensions checked for every selected file.",
+          "expected": [
+            1080,
+            1080
+          ],
+          "actual": [
+            [
+              1080,
+              1080
+            ],
+            [
+              1080,
+              1080
+            ],
+            [
+              1080,
+              1080
+            ]
+          ]
+        }
+      ],
+      "files": [
+        {
+          "id": "410687d7fde541628be3311951d706f7",
+          "name": "launch-01.png",
+          "type": "png",
+          "size": 6810,
+          "sha256": "0f7057019dbf463e4b4bfb2d26e68ffdff00e454e4ae01858408d85948e8408e",
+          "inspection": "inspected"
+        },
+        {
+          "id": "a3017ff95391483f9050345b0ea8e29f",
+          "name": "launch-02.png",
+          "type": "png",
+          "size": 6812,
+          "sha256": "59a2864f7729887ae6a8f0ecbe1a72a99fddb8801fe63f2237422873a90feb09",
+          "inspection": "inspected"
+        },
+        {
+          "id": "79badfb1d6ce40c2a4f982a41182b42d",
+          "name": "launch-03-duplicate.png",
+          "type": "png",
+          "size": 6812,
+          "sha256": "59a2864f7729887ae6a8f0ecbe1a72a99fddb8801fe63f2237422873a90feb09",
+          "inspection": "inspected"
+        }
+      ],
+      "gaps": [
+        "1 technical check(s) failed.",
+        "Human disposition: needs_work"
+      ]
+    },
+    {
+      "requirement_id": "9a17874bc72d4eb792f022328e0c59a4",
+      "review_currency": "current",
+      "human_disposition": "needs_work",
+      "applicable_attention": true,
+      "is_exception": false,
+      "reason_codes": [
+        "human_needs_work"
+      ],
+      "messages": [
+        "Human disposition: needs_work"
+      ],
+      "failed_check_count": 0,
+      "unknown_check_count": 0,
+      "has_manual_checks": true,
+      "id": "9a17874bc72d4eb792f022328e0c59a4",
+      "title": "Provide a guide explaining how to update the website contact email.",
+      "origin": "model_suggested",
+      "review_state": "confirmed",
+      "client_usage_note": "Add the promised contact-email update instructions.",
+      "client_exception_note": "",
+      "checks": [
+        {
+          "requirement_id": "9a17874bc72d4eb792f022328e0c59a4",
+          "kind": "manual",
+          "status": "unknown",
+          "reason": "Review steps for updating the website contact email."
+        }
+      ],
+      "files": [
+        {
+          "id": "2d55c20cdf9b49f38bf6ab2641e4c1a8",
+          "name": "contact-guide.md",
+          "type": "markdown",
+          "size": 45,
+          "sha256": "fe1355c17ce466c81528571159696b914da38450adc7484d0ff34b848816d748",
+          "inspection": "inspected"
+        }
+      ],
+      "gaps": [
+        "Human disposition: needs_work"
+      ]
+    }
+  ],
+  "gaps": [
+    {
+      "requirement_id": "61e1fa155fc8453da96345d06d1f0f84",
+      "message": "1 technical check(s) failed."
+    },
+    {
+      "requirement_id": "61e1fa155fc8453da96345d06d1f0f84",
+      "message": "Human disposition: needs_work"
+    },
+    {
+      "requirement_id": "7d2e6e174393495584a7f8db88c20514",
+      "message": "1 technical check(s) failed."
+    },
+    {
+      "requirement_id": "7d2e6e174393495584a7f8db88c20514",
+      "message": "Human disposition: needs_work"
+    },
+    {
+      "requirement_id": "9a17874bc72d4eb792f022328e0c59a4",
+      "message": "Human disposition: needs_work"
+    }
+  ],
+  "files": [
+    {
+      "id": "65e01cc5544c48caa18447a86d752a17",
+      "name": "logo-opaque.png",
+      "type": "png",
+      "size": 683,
+      "sha256": "9ce2ba0bf291937a23a0d8da9490359891979b5ff08a41c68d1d1272a75bb3f9",
+      "inspection": "inspected"
+    },
+    {
+      "id": "991838e2d17545078d100565b6a36a87",
+      "name": "logo.svg",
+      "type": "svg",
+      "size": 230,
+      "sha256": "20b8ea08955cda08e2ad041aa58f3242537d8f56e5b621f6a9638fcdcc765be5",
+      "inspection": "inspected"
+    },
+    {
+      "id": "410687d7fde541628be3311951d706f7",
+      "name": "launch-01.png",
+      "type": "png",
+      "size": 6810,
+      "sha256": "0f7057019dbf463e4b4bfb2d26e68ffdff00e454e4ae01858408d85948e8408e",
+      "inspection": "inspected"
+    },
+    {
+      "id": "a3017ff95391483f9050345b0ea8e29f",
+      "name": "launch-02.png",
+      "type": "png",
+      "size": 6812,
+      "sha256": "59a2864f7729887ae6a8f0ecbe1a72a99fddb8801fe63f2237422873a90feb09",
+      "inspection": "inspected"
+    },
+    {
+      "id": "79badfb1d6ce40c2a4f982a41182b42d",
+      "name": "launch-03-duplicate.png",
+      "type": "png",
+      "size": 6812,
+      "sha256": "59a2864f7729887ae6a8f0ecbe1a72a99fddb8801fe63f2237422873a90feb09",
+      "inspection": "inspected"
+    },
+    {
+      "id": "2d55c20cdf9b49f38bf6ab2641e4c1a8",
+      "name": "contact-guide.md",
+      "type": "markdown",
+      "size": 45,
+      "sha256": "fe1355c17ce466c81528571159696b914da38450adc7484d0ff34b848816d748",
+      "inspection": "inspected"
+    }
+  ],
+  "scope_notice": "Delivery evidence and human review only. This is not a certification, client acceptance, website execution test or aesthetic judgment.",
+  "originals_notice": "Send the original files alongside this record. This document identifies supporting files; it does not contain their original bytes.",
+  "snapshot_hash": "21cc050f6a4592470f6c6a011aa1218adb44257da0118abce560d61e95394ace"
+}

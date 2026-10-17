@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="600" viewBox="0 0 1120 600" role="img" aria-labelledby="title desc">
+  <title id="title">HandoffReady local architecture and decision boundaries</title>
+  <desc id="desc">A React interface sends brief and delivery inputs to a local FastAPI service. Bounded inspectors establish narrow facts. Gemma proposes requirements and file associations. The reviewer confirms scope and assessment. SQLite preserves current state and immutable client records. A separate recorded explorer replays captures and has no inference or upload service.</desc>
+  <defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#527462"/></marker></defs>
+  <rect width="1120" height="600" rx="24" fill="#f8f7f2"/>
+  <g font-family="system-ui, sans-serif" fill="#253b31">
+    <text x="40" y="49" font-size="25" font-weight="700">HandoffReady · local delivery review</text>
+    <text x="40" y="78" font-size="15">Model suggestions, inspected facts and reviewer decisions remain separate.</text>
+    <g fill="#fff" stroke="#cbd4ca" stroke-width="2">
+      <rect x="40" y="122" width="225" height="128" rx="14"/>
+      <rect x="345" y="122" width="285" height="128" rx="14"/>
+      <rect x="710" y="122" width="370" height="128" rx="14"/>
+      <rect x="345" y="314" width="285" height="136" rx="14"/>
+      <rect x="710" y="314" width="370" height="136" rx="14"/>
+    </g>
+    <g font-size="19" font-weight="700">
+      <text x="61" y="156">React review desk</text>
+      <text x="367" y="156">FastAPI · loopback service</text>
+      <text x="732" y="156">Bounded file inspection</text>
+      <text x="367" y="350">Gemma via llama.cpp</text>
+      <text x="732" y="350">SQLite + client records</text>
+    </g>
+    <g font-size="15">
+      <text x="61" y="188">Brief, scope, files, review</text>
+      <text x="61" y="213">Reviewer confirms decisions</text>
+      <text x="367" y="188">Revision and source binding</text>
+      <text x="367" y="213">Typed guards + shared summary</text>
+      <text x="732" y="188">Actual bytes → narrow technical facts</text>
+      <text x="732" y="213">No visual or semantic certification</text>
+      <text x="367" y="382">Requirements + evidence proposals</text>
+      <text x="367" y="410">Exact occurrences; no approval</text>
+      <text x="732" y="382">Current state + immutable snapshots</text>
+      <text x="732" y="410">JSON / Markdown / HTML; originals separate</text>
+    </g>
+    <g stroke="#527462" stroke-width="3" marker-end="url(#arrow)" fill="none">
+      <path d="M265 186H338"/><path d="M630 186H703"/>
+      <path d="M487 250V306"/><path d="M615 245L724 307"/>
+    </g>
+    <rect x="40" y="495" width="1040" height="68" rx="12" fill="#e9eee5"/>
+    <text x="61" y="523" font-size="17" font-weight="700">Separate recorded explorer</text>
+    <text x="61" y="547" font-size="15">Static captured checkpoints and records · no new uploads, backend, inference or saved review decisions</text>
+  </g>
+</svg>

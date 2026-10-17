@@ -1,0 +1,23 @@
+{
+  "adapter_sha256": "c14b6197d40b9aa5a59ad8a8eaae8522714a7feadc570c8733bb9c7ceada9566",
+  "checks": {
+    "candidate_frozen": false,
+    "failed_call_no_abstention_credit": true,
+    "four_synthetic_regressions_pass": true,
+    "original_files_reinspected": 27,
+    "postguard_relationless_acceptance_retained": true,
+    "raw_missing_relation_no_positive_credit": true,
+    "raw_supports_only_positive_pairs": true,
+    "raw_unrelated_records_retained_and_counted": true,
+    "script_compilation": true,
+    "unrelated_true_support_counts_missed": true
+  },
+  "correction": "Raw candidates marked unrelated previously entered file_ids; now explicit supports only enter positive pairs. All raw candidates remain diagnostics. Existing fixture, freezes and preflights preserved.",
+  "dataset_sha256": "2718aab4fe4a75398bd499c64e53ea568a04d8f71d848ddad0e95b3229e2d910",
+  "effective_scoring_sha256": "aaaff0ef921a7cffa919054c0ed44112a73ff86a9e4bc1df410afb9e5714b439",
+  "evaluator_sha256": "833c07b6cf85d8965ac04f9bf62322b00e03ff9b50602abb23dd74a2210c44cb",
+  "previous_freeze_sha256": "6838d46fbbb19a75fd64b58625255c9e7441fd921c869d211d583b5b7e786e03",
+  "previous_scoring_sha256": "38f13dd3282defdec3326b3dd0ec14a49b10efb6a4c614c68427f80cecfb1808",
+  "regression_script_sha256": "3a42a9b1a19dcf27693c657152c9294dcd676325537e24944a99184aa6b33225",
+  "stage": "pre-inference reviewer correction; no real model predictions"
+}

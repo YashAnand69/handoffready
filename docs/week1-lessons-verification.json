@@ -1,0 +1,36 @@
+{
+  "date": "2026-10-17",
+  "scope": "Documentation and read-only research; application code unchanged; no tests rerun",
+  "read_only_dev_dashboard": {
+    "article_id": 6228689,
+    "visible_status": "Draft",
+    "publication_hold": true
+  },
+  "checks": {
+    "local_markdown_targets": "passed",
+    "git_diff_check": "passed"
+  },
+  "sources": {
+    "README.md": "2009c136da4412551b648fe29c3228c141c49ee8cf868718a469aadea869b5f5",
+    "CONTRIBUTING.md": "7142b421ad8c029871141247992dc82c6d64b8fb4a20991ce26387d465826960",
+    "docs/README.md": "029c98e4919b3cc4b674435e9f4676d68616d4650122b91707576b8c9a4ecfa1",
+    "docs/SUBMISSION-CHECKLIST.md": "384529f5eea264fa9f7f5df7d90d33c46a1ce7c55afeb9b1ca77ba8f13896ac0",
+    "docs/DEV-ENTRY-UPGRADE-DRAFT.md": "08ed7bf209c1c4bfcad736989273789ee5963a18560f9866f6205c895491d8fe",
+    "docs/SUBMISSION-STATUS-CURRENT.md": "12d18fc697d5f433d02be5c11cf1b21d19b691a96120c7d846ef0b500c6aedb2",
+    "docs/WEEK1-POSTMORTEM-AND-WEEK2-RESPONSE.md": "cb67ad3bf5fcaef5f448318724be800f1bb76daf0d88bca4ffac52b9f6c973f1",
+    "docs/WEEK1-WINNERS-BREADTH.md": "77df93178d373cbebccf809332691d43cd699c679011d0b0a486877660644909"
+  },
+  "previous_archive": "15 October ZIP unchanged; predates this documentation review",
+  "last_application_checks": {
+    "receipt": "docs/final-upgrade-verification.json",
+    "date": "2026-10-15",
+    "python_tests": 250,
+    "frontend_tests": 74
+  },
+  "outstanding": [
+    "genuine freelancer trial",
+    "current UI video",
+    "source/media/publication synchronization",
+    "physical device/screen reader/native print checks"
+  ]
+}

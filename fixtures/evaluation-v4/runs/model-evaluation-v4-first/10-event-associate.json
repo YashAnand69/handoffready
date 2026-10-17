@@ -1,0 +1,246 @@
+{
+  "after_guards": {
+    "candidate_denominator": 2,
+    "correct_no_support": 1,
+    "correct_support_pairs": 2,
+    "failed_no_support": 0,
+    "failure": false,
+    "fully_correct_supported_requirements": 2,
+    "missed_support_pairs": 0,
+    "no_support_requirement_denominator": 1,
+    "predicted_pair_denominator": 2,
+    "support_pair_denominator": 2,
+    "supported_requirement_denominator": 2,
+    "text_quote_denominator": 1,
+    "unrelated_candidates": 0,
+    "valid_text_quotes": 1,
+    "wrong_no_support": 0,
+    "wrong_support_pairs": 0
+  },
+  "before_guards": {
+    "candidate_denominator": 3,
+    "correct_no_support": 1,
+    "correct_support_pairs": 2,
+    "failed_no_support": 0,
+    "failure": false,
+    "fully_correct_supported_requirements": 2,
+    "missed_support_pairs": 0,
+    "no_support_requirement_denominator": 1,
+    "predicted_pair_denominator": 2,
+    "support_pair_denominator": 2,
+    "supported_requirement_denominator": 2,
+    "text_quote_denominator": 2,
+    "unrelated_candidates": 1,
+    "valid_text_quotes": 2,
+    "wrong_no_support": 0,
+    "wrong_support_pairs": 0
+  },
+  "capture": {
+    "completion": {
+      "choices": [
+        {
+          "content": "{\n  \"proposals\": [\n    {\n      \"requirement_id\": \"r1\",\n      \"candidates\": [\n        {\n          \"relation\": \"supports\",\n          \"file_id\": \"f1\",\n          \"reason\": \"The requirement asks for a JPEG event poster, and file f1 is a JPEG file.\",\n          \"evidence_unit_id\": null\n        }\n      ],\n      \"coverage\": \"Evidence found for the requirement.\"\n    },\n    {\n      \"requirement_id\": \"r2\",\n      \"candidates\": [\n        {\n          \"relation\": \"supports\",\n          \"file_id\": \"f2\",\n          \"reason\": \"The requirement asks for a one-page PDF guide explaining event seating accessibility. File f2 is a PDF with 2 pages, and it contains text related to seating accessibility.\",\n          \"evidence_unit_id\": \"ev1_be9a55fff9f6814616df9841\"\n        }\n      ],\n      \"coverage\": \"Evidence found for the requirement.\"\n    },\n    {\n      \"requirement_id\": \"r3\",\n      \"candidates\": [\n        {\n          \"relation\": \"unrelated\",\n          \"file_id\": \"f3\",\n          \"reason\": \"The requirement asks to verify live keyboard booking, but file f3 is a markdown file stating that no live booking session has been tested.\",\n          \"evidence_unit_id\": \"ev1_5e9e3a76a3bd0aadb6ac97c1\"\n        }\n      ],\n      \"coverage\": \"No evidence found for the requirement.\"\n    }\n  ]\n}",
+          "finish_reason": "stop",
+          "index": 0
+        }
+      ],
+      "usage": {
+        "completion_tokens": 386,
+        "prompt_tokens": 1570,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "total_tokens": 1956
+      }
+    },
+    "completion_response_count": 1,
+    "elapsed_seconds": 3.8953756249975413,
+    "model_metadata": {
+      "association_guard_version": "approved-format-union-v1",
+      "elapsed_seconds": 3.895,
+      "input_sha256": "93d7b2d984e03fb1f95fad41bb2198eb521039fb81c8efe91d682b7dd6cd6077",
+      "input_tokens": 1570,
+      "model": "google/gemma-4-E2B-it",
+      "output_sha256": "b21f4024a2f3d68aa6c95499a945ac1aef58f7005c8705d35754375400126567",
+      "output_tokens": 386,
+      "prompt_version": "handoffready-v11",
+      "seed": 20261013,
+      "source_catalog_version": "source-occurrence-v1",
+      "supporting_association_count": 2,
+      "temperature": 0,
+      "typed_rejection_count": 0,
+      "unrelated_association_count": 1,
+      "vision_used": false
+    },
+    "stage": "associate",
+    "structured_call_count": 1,
+    "structured_pre_guard": {
+      "proposals": [
+        {
+          "candidates": [
+            {
+              "file_id": "f1",
+              "reason": "The requirement asks for a JPEG event poster, and file f1 is a JPEG file.",
+              "relation": "supports"
+            }
+          ],
+          "coverage": "Evidence found for the requirement.",
+          "requirement_id": "r1"
+        },
+        {
+          "candidates": [
+            {
+              "evidence_unit_id": "ev1_be9a55fff9f6814616df9841",
+              "file_id": "f2",
+              "reason": "The requirement asks for a one-page PDF guide explaining event seating accessibility. File f2 is a PDF with 2 pages, and it contains text related to seating accessibility.",
+              "relation": "supports"
+            }
+          ],
+          "coverage": "Evidence found for the requirement.",
+          "requirement_id": "r2"
+        },
+        {
+          "candidates": [
+            {
+              "evidence_unit_id": "ev1_5e9e3a76a3bd0aadb6ac97c1",
+              "file_id": "f3",
+              "reason": "The requirement asks to verify live keyboard booking, but file f3 is a markdown file stating that no live booking session has been tested.",
+              "relation": "unrelated"
+            }
+          ],
+          "coverage": "No evidence found for the requirement.",
+          "requirement_id": "r3"
+        }
+      ]
+    },
+    "synthetic_data_only": true
+  },
+  "failure": null,
+  "guarded_predictions": [
+    {
+      "candidate_count": 1,
+      "candidates": [
+        {
+          "file_id": "f1",
+          "quote": null,
+          "quote_valid": null,
+          "reason": "Filename/metadata suggestion; no visual inspection. The requirement asks for a JPEG event poster, and file f1 is a JPEG file."
+        }
+      ],
+      "coverage": "Evidence found for the requirement.",
+      "file_ids": [
+        "f1"
+      ],
+      "requirement_id": "r1",
+      "unrelated_candidate_count": 0
+    },
+    {
+      "candidate_count": 1,
+      "candidates": [
+        {
+          "file_id": "f2",
+          "quote": "Keep an aisle clear beside the front row.",
+          "quote_valid": true,
+          "reason": "The requirement asks for a one-page PDF guide explaining event seating accessibility. File f2 is a PDF with 2 pages, and it contains text related to seating accessibility.",
+          "source_span": {
+            "catalog_version": "source-occurrence-v1",
+            "end_cp": 41,
+            "evidence_unit_id": "ev1_be9a55fff9f6814616df9841",
+            "quote": "Keep an aisle clear beside the front row.",
+            "source_text_sha256": "667280c578100aec46e8c1c53d262baa5a8bc86cad5439aef6f295806865bdbe",
+            "source_unit_id": "f2",
+            "start_cp": 0
+          }
+        }
+      ],
+      "coverage": "Evidence found for the requirement.",
+      "file_ids": [
+        "f2"
+      ],
+      "requirement_id": "r2",
+      "unrelated_candidate_count": 0
+    },
+    {
+      "candidate_count": 0,
+      "candidates": [],
+      "coverage": "No evidence found for the requirement.",
+      "file_ids": [],
+      "requirement_id": "r3",
+      "unrelated_candidate_count": 0
+    }
+  ],
+  "latency_seconds": 3.895464750006795,
+  "raw_predictions": [
+    {
+      "candidate_count": 1,
+      "candidates": [
+        {
+          "file_id": "f1",
+          "quote_valid": null,
+          "reason": "The requirement asks for a JPEG event poster, and file f1 is a JPEG file.",
+          "relation": "supports"
+        }
+      ],
+      "coverage": "Evidence found for the requirement.",
+      "file_ids": [
+        "f1"
+      ],
+      "requirement_id": "r1",
+      "unrelated_candidate_count": 0
+    },
+    {
+      "candidate_count": 1,
+      "candidates": [
+        {
+          "evidence_unit_id": "ev1_be9a55fff9f6814616df9841",
+          "file_id": "f2",
+          "quote": "Keep an aisle clear beside the front row.",
+          "quote_valid": true,
+          "reason": "The requirement asks for a one-page PDF guide explaining event seating accessibility. File f2 is a PDF with 2 pages, and it contains text related to seating accessibility.",
+          "relation": "supports",
+          "source_span": {
+            "catalog_version": "source-occurrence-v1",
+            "end_cp": 41,
+            "evidence_unit_id": "ev1_be9a55fff9f6814616df9841",
+            "quote": "Keep an aisle clear beside the front row.",
+            "source_text_sha256": "667280c578100aec46e8c1c53d262baa5a8bc86cad5439aef6f295806865bdbe",
+            "source_unit_id": "f2",
+            "start_cp": 0
+          }
+        }
+      ],
+      "coverage": "Evidence found for the requirement.",
+      "file_ids": [
+        "f2"
+      ],
+      "requirement_id": "r2",
+      "unrelated_candidate_count": 0
+    },
+    {
+      "candidate_count": 1,
+      "candidates": [
+        {
+          "evidence_unit_id": "ev1_5e9e3a76a3bd0aadb6ac97c1",
+          "file_id": "f3",
+          "quote": "# Proposed keyboard test",
+          "quote_valid": true,
+          "reason": "The requirement asks to verify live keyboard booking, but file f3 is a markdown file stating that no live booking session has been tested.",
+          "relation": "unrelated",
+          "source_span": {
+            "catalog_version": "source-occurrence-v1",
+            "end_cp": 24,
+            "evidence_unit_id": "ev1_5e9e3a76a3bd0aadb6ac97c1",
+            "quote": "# Proposed keyboard test",
+            "source_text_sha256": "201550bfa87d7889c4b49c647f865152cbbda5af12e2c78d8680b0606a83f5b7",
+            "source_unit_id": "f3",
+            "start_cp": 0
+          }
+        }
+      ],
+      "coverage": "No evidence found for the requirement.",
+      "file_ids": [],
+      "requirement_id": "r3",
+      "unrelated_candidate_count": 1
+    }
+  ]
+}

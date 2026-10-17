@@ -1,0 +1,212 @@
+{
+  "after_guards": {
+    "attribute_denominator": 4,
+    "correct_attribute_checks": 1,
+    "covered_mandatory": 1,
+    "covered_optional": 0,
+    "covered_requirements": 1,
+    "exact_attribute_requirement_denominator": 2,
+    "exact_attributes": 1,
+    "extra_attribute_checks": 0,
+    "key_mandatory": 2,
+    "key_optional": 0,
+    "key_requirements": 2,
+    "missed_mandatory": 1,
+    "missed_optional_classification": 0,
+    "missing_attribute_checks": 3,
+    "predicted_requirements": 2,
+    "quote_denominator": 2,
+    "unmatched_predictions": 0,
+    "valid_quotes": 2,
+    "wrong_format_classification": 1,
+    "wrong_obligation_classification": 0
+  },
+  "before_guards": {
+    "attribute_denominator": 4,
+    "correct_attribute_checks": 1,
+    "covered_mandatory": 1,
+    "covered_optional": 0,
+    "covered_requirements": 1,
+    "exact_attribute_requirement_denominator": 2,
+    "exact_attributes": 1,
+    "extra_attribute_checks": 0,
+    "key_mandatory": 2,
+    "key_optional": 0,
+    "key_requirements": 2,
+    "missed_mandatory": 1,
+    "missed_optional_classification": 0,
+    "missing_attribute_checks": 3,
+    "predicted_requirements": 2,
+    "quote_denominator": 2,
+    "unmatched_predictions": 0,
+    "valid_quotes": 2,
+    "wrong_format_classification": 1,
+    "wrong_obligation_classification": 0
+  },
+  "capture": {
+    "completion": {
+      "choices": [
+        {
+          "content": "{\n  \"requirements\": [\n    {\n      \"obligation\": \"required\",\n      \"title\": \"Deliver an SVG studio mark.\",\n      \"evidence_unit_id\": \"ev1_a9b5a61fbf538877ddcf11d8\",\n      \"checks\": [\n        {\n          \"kind\": \"presence\",\n          \"types\": [\n            \"svg\"\n          ]\n        }\n      ]\n    },\n    {\n      \"obligation\": \"required\",\n      \"title\": \"Provide a two-page PDF guide covering mark spacing and color use.\",\n      \"evidence_unit_id\": \"ev1_a22095f8c3ca8fc06350500c\",\n      \"checks\": [\n        {\n          \"kind\": \"pdf_pages\",\n          \"comparison\": \"exact\",\n          \"value\": 2\n        }\n      ]\n    }\n  ]\n}",
+          "finish_reason": "stop",
+          "index": 0
+        }
+      ],
+      "usage": {
+        "completion_tokens": 226,
+        "prompt_tokens": 1544,
+        "prompt_tokens_details": {
+          "cached_tokens": 919
+        },
+        "total_tokens": 1770
+      }
+    },
+    "completion_response_count": 1,
+    "elapsed_seconds": 2.222370332921855,
+    "model_metadata": {
+      "elapsed_seconds": 2.22,
+      "excluded_suggestion_count": 0,
+      "input_sha256": "b84c1a0de4774f84dae411a27e26f14195615f365f603718b41471b4176aab86",
+      "input_tokens": 1544,
+      "model": "google/gemma-4-E2B-it",
+      "output_sha256": "96e50eb90c54a05536055b4ba64e7b6f281e83c842e69f7886cdd77c7ee12737",
+      "output_tokens": 226,
+      "prompt_version": "handoffready-v11",
+      "required_suggestion_count": 2,
+      "seed": 20261013,
+      "source_catalog_version": "source-occurrence-v1",
+      "temperature": 0,
+      "vision_used": false
+    },
+    "stage": "extract",
+    "structured_call_count": 1,
+    "structured_pre_guard": {
+      "requirements": [
+        {
+          "checks": [
+            {
+              "kind": "presence",
+              "types": [
+                "svg"
+              ]
+            }
+          ],
+          "evidence_unit_id": "ev1_a9b5a61fbf538877ddcf11d8",
+          "obligation": "required",
+          "title": "Deliver an SVG studio mark."
+        },
+        {
+          "checks": [
+            {
+              "comparison": "exact",
+              "kind": "pdf_pages",
+              "value": 2
+            }
+          ],
+          "evidence_unit_id": "ev1_a22095f8c3ca8fc06350500c",
+          "obligation": "required",
+          "title": "Provide a two-page PDF guide covering mark spacing and color use."
+        }
+      ]
+    },
+    "synthetic_data_only": true
+  },
+  "failure": null,
+  "guarded_predictions": [
+    {
+      "checks": [
+        {
+          "kind": "presence",
+          "types": [
+            "svg"
+          ]
+        }
+      ],
+      "obligation": "required",
+      "quote": "Deliver an SVG studio mark.",
+      "quote_valid": true,
+      "source_span": {
+        "catalog_version": "source-occurrence-v1",
+        "end_cp": 66,
+        "evidence_unit_id": "ev1_a9b5a61fbf538877ddcf11d8",
+        "quote": "Deliver an SVG studio mark.",
+        "source_text_sha256": "d8ccd95bd2d906d028e612ce7a971b1d039fb89084ba2a7dd996c9af80d1bb7b",
+        "source_unit_id": "brief-v1",
+        "start_cp": 39
+      },
+      "title": "Deliver an SVG studio mark."
+    },
+    {
+      "checks": [
+        {
+          "comparison": "exact",
+          "kind": "pdf_pages",
+          "value": 2
+        }
+      ],
+      "obligation": "required",
+      "quote": "Provide a two-page PDF guide covering mark spacing and color use.",
+      "quote_valid": true,
+      "source_span": {
+        "catalog_version": "source-occurrence-v1",
+        "end_cp": 132,
+        "evidence_unit_id": "ev1_a22095f8c3ca8fc06350500c",
+        "quote": "Provide a two-page PDF guide covering mark spacing and color use.",
+        "source_text_sha256": "d8ccd95bd2d906d028e612ce7a971b1d039fb89084ba2a7dd996c9af80d1bb7b",
+        "source_unit_id": "brief-v1",
+        "start_cp": 67
+      },
+      "title": "Provide a two-page PDF guide covering mark spacing and color use."
+    }
+  ],
+  "latency_seconds": 2.222579083056189,
+  "raw_predictions": [
+    {
+      "checks": [
+        {
+          "kind": "presence",
+          "types": [
+            "svg"
+          ]
+        }
+      ],
+      "evidence_unit_id": "ev1_a9b5a61fbf538877ddcf11d8",
+      "obligation": "required",
+      "quote": "Deliver an SVG studio mark.",
+      "quote_valid": true,
+      "source_span": {
+        "catalog_version": "source-occurrence-v1",
+        "end_cp": 66,
+        "evidence_unit_id": "ev1_a9b5a61fbf538877ddcf11d8",
+        "quote": "Deliver an SVG studio mark.",
+        "source_text_sha256": "d8ccd95bd2d906d028e612ce7a971b1d039fb89084ba2a7dd996c9af80d1bb7b",
+        "source_unit_id": "brief-v1",
+        "start_cp": 39
+      },
+      "title": "Deliver an SVG studio mark."
+    },
+    {
+      "checks": [
+        {
+          "comparison": "exact",
+          "kind": "pdf_pages",
+          "value": 2
+        }
+      ],
+      "evidence_unit_id": "ev1_a22095f8c3ca8fc06350500c",
+      "obligation": "required",
+      "quote": "Provide a two-page PDF guide covering mark spacing and color use.",
+      "quote_valid": true,
+      "source_span": {
+        "catalog_version": "source-occurrence-v1",
+        "end_cp": 132,
+        "evidence_unit_id": "ev1_a22095f8c3ca8fc06350500c",
+        "quote": "Provide a two-page PDF guide covering mark spacing and color use.",
+        "source_text_sha256": "d8ccd95bd2d906d028e612ce7a971b1d039fb89084ba2a7dd996c9af80d1bb7b",
+        "source_unit_id": "brief-v1",
+        "start_cp": 67
+      },
+      "title": "Provide a two-page PDF guide covering mark spacing and color use."
+    }
+  ]
+}

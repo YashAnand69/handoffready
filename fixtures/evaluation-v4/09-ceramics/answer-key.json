@@ -1,0 +1,154 @@
+{
+  "approved_requirements": [
+    {
+      "checks": [
+        {
+          "comparison": "exact",
+          "distinct_bytes": true,
+          "kind": "count",
+          "types": [
+            "jpeg"
+          ],
+          "value": 2
+        }
+      ],
+      "human_note": "Agent-authored synthetic answer key; treated as fixed approved input only for evaluation.",
+      "id": "r1",
+      "origin": "human_added",
+      "quote": "Supply two distinct JPEG ceramics closeup images.",
+      "source_id": "brief-v1",
+      "source_span": {
+        "end_cp": 85,
+        "quote": "Supply two distinct JPEG ceramics closeup images.",
+        "source_text_sha256": "4270b5a4a4eb810da7417cbd6a62e7e70b4449a318419776c27c5a528af1c09e",
+        "source_unit_id": "brief-v1",
+        "start_cp": 36
+      },
+      "title": "Ceramics closeups"
+    },
+    {
+      "checks": [
+        {
+          "kind": "presence",
+          "types": [
+            "pdf"
+          ]
+        },
+        {
+          "instruction": "Assess the ceramics care advice.",
+          "kind": "manual"
+        }
+      ],
+      "human_note": "Agent-authored synthetic answer key; treated as fixed approved input only for evaluation.",
+      "id": "r2",
+      "origin": "human_added",
+      "quote": "Deliver a PDF care guide for the ceramics.",
+      "source_id": "brief-v1",
+      "source_span": {
+        "end_cp": 128,
+        "quote": "Deliver a PDF care guide for the ceramics.",
+        "source_text_sha256": "4270b5a4a4eb810da7417cbd6a62e7e70b4449a318419776c27c5a528af1c09e",
+        "source_unit_id": "brief-v1",
+        "start_cp": 86
+      },
+      "title": "Care guide"
+    }
+  ],
+  "extraction": [
+    {
+      "checks": [
+        {
+          "comparison": "exact",
+          "distinct_bytes": true,
+          "kind": "count",
+          "types": [
+            "jpeg"
+          ],
+          "value": 2
+        }
+      ],
+      "id": "r1",
+      "optional": false,
+      "quote": "Supply two distinct JPEG ceramics closeup images.",
+      "source_span": {
+        "end_cp": 85,
+        "quote": "Supply two distinct JPEG ceramics closeup images.",
+        "source_text_sha256": "4270b5a4a4eb810da7417cbd6a62e7e70b4449a318419776c27c5a528af1c09e",
+        "source_unit_id": "brief-v1",
+        "start_cp": 36
+      },
+      "support_names": [
+        "fern-closeup-a.jpg",
+        "fern-closeup-b.jpg"
+      ],
+      "title": "Ceramics closeups"
+    },
+    {
+      "checks": [
+        {
+          "kind": "presence",
+          "types": [
+            "pdf"
+          ]
+        },
+        {
+          "instruction": "Assess the ceramics care advice.",
+          "kind": "manual"
+        }
+      ],
+      "id": "r2",
+      "optional": false,
+      "quote": "Deliver a PDF care guide for the ceramics.",
+      "source_span": {
+        "end_cp": 128,
+        "quote": "Deliver a PDF care guide for the ceramics.",
+        "source_text_sha256": "4270b5a4a4eb810da7417cbd6a62e7e70b4449a318419776c27c5a528af1c09e",
+        "source_unit_id": "brief-v1",
+        "start_cp": 86
+      },
+      "support_names": [],
+      "title": "Care guide"
+    }
+  ],
+  "files": {
+    "care-guide-outline.md": "f3",
+    "fern-closeup-a.jpg": "f1",
+    "fern-closeup-b.jpg": "f2"
+  },
+  "source_catalog": [
+    {
+      "catalog_version": "source-occurrence-v1",
+      "end_cp": 35,
+      "evidence_unit_id": "ev1_1300288200f15bbd116f6400",
+      "quote": "Synthetic brief: Fern ceramics shop",
+      "source_text_sha256": "4270b5a4a4eb810da7417cbd6a62e7e70b4449a318419776c27c5a528af1c09e",
+      "source_unit_id": "brief-v1",
+      "start_cp": 0
+    },
+    {
+      "catalog_version": "source-occurrence-v1",
+      "end_cp": 85,
+      "evidence_unit_id": "ev1_5c972d203530734871dab4bc",
+      "quote": "Supply two distinct JPEG ceramics closeup images.",
+      "source_text_sha256": "4270b5a4a4eb810da7417cbd6a62e7e70b4449a318419776c27c5a528af1c09e",
+      "source_unit_id": "brief-v1",
+      "start_cp": 36
+    },
+    {
+      "catalog_version": "source-occurrence-v1",
+      "end_cp": 128,
+      "evidence_unit_id": "ev1_ea1870e13289c212e8bb703b",
+      "quote": "Deliver a PDF care guide for the ceramics.",
+      "source_text_sha256": "4270b5a4a4eb810da7417cbd6a62e7e70b4449a318419776c27c5a528af1c09e",
+      "source_unit_id": "brief-v1",
+      "start_cp": 86
+    }
+  ],
+  "support": {
+    "r1": [
+      "f1",
+      "f2"
+    ],
+    "r2": []
+  }
+}

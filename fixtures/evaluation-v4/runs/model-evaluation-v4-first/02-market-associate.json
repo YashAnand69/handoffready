@@ -1,0 +1,212 @@
+{
+  "after_guards": {
+    "candidate_denominator": 2,
+    "correct_no_support": 0,
+    "correct_support_pairs": 2,
+    "failed_no_support": 0,
+    "failure": false,
+    "fully_correct_supported_requirements": 2,
+    "missed_support_pairs": 0,
+    "no_support_requirement_denominator": 0,
+    "predicted_pair_denominator": 2,
+    "support_pair_denominator": 2,
+    "supported_requirement_denominator": 2,
+    "text_quote_denominator": 1,
+    "unrelated_candidates": 0,
+    "valid_text_quotes": 1,
+    "wrong_no_support": 0,
+    "wrong_support_pairs": 0
+  },
+  "before_guards": {
+    "candidate_denominator": 3,
+    "correct_no_support": 0,
+    "correct_support_pairs": 2,
+    "failed_no_support": 0,
+    "failure": false,
+    "fully_correct_supported_requirements": 1,
+    "missed_support_pairs": 0,
+    "no_support_requirement_denominator": 0,
+    "predicted_pair_denominator": 3,
+    "support_pair_denominator": 2,
+    "supported_requirement_denominator": 2,
+    "text_quote_denominator": 1,
+    "unrelated_candidates": 0,
+    "valid_text_quotes": 1,
+    "wrong_no_support": 0,
+    "wrong_support_pairs": 1
+  },
+  "capture": {
+    "completion": {
+      "choices": [
+        {
+          "content": "{\n  \"proposals\": [\n    {\n      \"requirement_id\": \"r1\",\n      \"candidates\": [\n        {\n          \"relation\": \"supports\",\n          \"file_id\": \"f1\",\n          \"reason\": \"The file f1 is a JPEG image with the required dimensions of 120 by 80 pixels.\",\n          \"evidence_unit_id\": null\n        },\n        {\n          \"relation\": \"supports\",\n          \"file_id\": \"f2\",\n          \"reason\": \"The file f2 is a PNG image with the required dimensions of 120 by 80 pixels.\",\n          \"evidence_unit_id\": null\n        }\n      ],\n      \"coverage\": \"Both f1 and f2 are image files with the specified dimensions (120x80). f1 is a JPEG and f2 is a PNG.\"\n    },\n    {\n      \"requirement_id\": \"r2\",\n      \"candidates\": [\n        {\n          \"relation\": \"supports\",\n          \"file_id\": \"f3\",\n          \"reason\": \"The file f3 is a plain text guide containing placement advice, which satisfies the requirement for a plain text guide explaining where the flyer may be displayed.\",\n          \"evidence_unit_id\": \"ev1_8440047f750228717dd71d39\"\n        }\n      ],\n      \"coverage\": \"File f3 contains text providing placement advice, fulfilling the requirement for a plain text guide.\"\n    }\n  ]\n}",
+          "finish_reason": "stop",
+          "index": 0
+        }
+      ],
+      "usage": {
+        "completion_tokens": 360,
+        "prompt_tokens": 1365,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "total_tokens": 1725
+      }
+    },
+    "completion_response_count": 1,
+    "elapsed_seconds": 3.6371788339456543,
+    "model_metadata": {
+      "association_guard_version": "approved-format-union-v1",
+      "elapsed_seconds": 3.637,
+      "input_sha256": "f5376cec701792d64e499f012a5fb01f156e2c5d96853c0fe0f3a2c66dc3cd14",
+      "input_tokens": 1365,
+      "model": "google/gemma-4-E2B-it",
+      "output_sha256": "80e1141ad5a21f08c130c6d99678837663a1921828ad6c30be7fe209cafc7334",
+      "output_tokens": 360,
+      "prompt_version": "handoffready-v11",
+      "seed": 20261013,
+      "source_catalog_version": "source-occurrence-v1",
+      "supporting_association_count": 2,
+      "temperature": 0,
+      "typed_rejection_count": 1,
+      "unrelated_association_count": 0,
+      "vision_used": false
+    },
+    "stage": "associate",
+    "structured_call_count": 1,
+    "structured_pre_guard": {
+      "proposals": [
+        {
+          "candidates": [
+            {
+              "file_id": "f1",
+              "reason": "The file f1 is a JPEG image with the required dimensions of 120 by 80 pixels.",
+              "relation": "supports"
+            },
+            {
+              "file_id": "f2",
+              "reason": "The file f2 is a PNG image with the required dimensions of 120 by 80 pixels.",
+              "relation": "supports"
+            }
+          ],
+          "coverage": "Both f1 and f2 are image files with the specified dimensions (120x80). f1 is a JPEG and f2 is a PNG.",
+          "requirement_id": "r1"
+        },
+        {
+          "candidates": [
+            {
+              "evidence_unit_id": "ev1_8440047f750228717dd71d39",
+              "file_id": "f3",
+              "reason": "The file f3 is a plain text guide containing placement advice, which satisfies the requirement for a plain text guide explaining where the flyer may be displayed.",
+              "relation": "supports"
+            }
+          ],
+          "coverage": "File f3 contains text providing placement advice, fulfilling the requirement for a plain text guide.",
+          "requirement_id": "r2"
+        }
+      ]
+    },
+    "synthetic_data_only": true
+  },
+  "failure": null,
+  "guarded_predictions": [
+    {
+      "candidate_count": 1,
+      "candidates": [
+        {
+          "file_id": "f1",
+          "quote": null,
+          "quote_valid": null,
+          "reason": "Filename/metadata suggestion; no visual inspection. The file f1 is a JPEG image with the required dimensions of 120 by 80 pixels."
+        }
+      ],
+      "coverage": "Both f1 and f2 are image files with the specified dimensions (120x80). f1 is a JPEG and f2 is a PNG.",
+      "file_ids": [
+        "f1"
+      ],
+      "requirement_id": "r1",
+      "unrelated_candidate_count": 0
+    },
+    {
+      "candidate_count": 1,
+      "candidates": [
+        {
+          "file_id": "f3",
+          "quote": "Place this announcement near the stall entrance and on the community board.",
+          "quote_valid": true,
+          "reason": "The file f3 is a plain text guide containing placement advice, which satisfies the requirement for a plain text guide explaining where the flyer may be displayed.",
+          "source_span": {
+            "catalog_version": "source-occurrence-v1",
+            "end_cp": 75,
+            "evidence_unit_id": "ev1_8440047f750228717dd71d39",
+            "quote": "Place this announcement near the stall entrance and on the community board.",
+            "source_text_sha256": "faa061ae0baa12af07eb065c29267e4a75bfe27889d3220120e50829fbee0a5a",
+            "source_unit_id": "f3",
+            "start_cp": 0
+          }
+        }
+      ],
+      "coverage": "File f3 contains text providing placement advice, fulfilling the requirement for a plain text guide.",
+      "file_ids": [
+        "f3"
+      ],
+      "requirement_id": "r2",
+      "unrelated_candidate_count": 0
+    }
+  ],
+  "latency_seconds": 3.6372548330109566,
+  "raw_predictions": [
+    {
+      "candidate_count": 2,
+      "candidates": [
+        {
+          "file_id": "f1",
+          "quote_valid": null,
+          "reason": "The file f1 is a JPEG image with the required dimensions of 120 by 80 pixels.",
+          "relation": "supports"
+        },
+        {
+          "file_id": "f2",
+          "quote_valid": null,
+          "reason": "The file f2 is a PNG image with the required dimensions of 120 by 80 pixels.",
+          "relation": "supports"
+        }
+      ],
+      "coverage": "Both f1 and f2 are image files with the specified dimensions (120x80). f1 is a JPEG and f2 is a PNG.",
+      "file_ids": [
+        "f1",
+        "f2"
+      ],
+      "requirement_id": "r1",
+      "unrelated_candidate_count": 0
+    },
+    {
+      "candidate_count": 1,
+      "candidates": [
+        {
+          "evidence_unit_id": "ev1_8440047f750228717dd71d39",
+          "file_id": "f3",
+          "quote": "Place this announcement near the stall entrance and on the community board.",
+          "quote_valid": true,
+          "reason": "The file f3 is a plain text guide containing placement advice, which satisfies the requirement for a plain text guide explaining where the flyer may be displayed.",
+          "relation": "supports",
+          "source_span": {
+            "catalog_version": "source-occurrence-v1",
+            "end_cp": 75,
+            "evidence_unit_id": "ev1_8440047f750228717dd71d39",
+            "quote": "Place this announcement near the stall entrance and on the community board.",
+            "source_text_sha256": "faa061ae0baa12af07eb065c29267e4a75bfe27889d3220120e50829fbee0a5a",
+            "source_unit_id": "f3",
+            "start_cp": 0
+          }
+        }
+      ],
+      "coverage": "File f3 contains text providing placement advice, fulfilling the requirement for a plain text guide.",
+      "file_ids": [
+        "f3"
+      ],
+      "requirement_id": "r2",
+      "unrelated_candidate_count": 0
+    }
+  ]
+}

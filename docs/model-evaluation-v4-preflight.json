@@ -1,0 +1,164 @@
+{
+  "authorship": "Codex-agent-authored synthetic dataset; not independent human or customer evidence",
+  "cases": [
+    {
+      "case_id": "01-cart",
+      "file_count": 3,
+      "inspection_types": [
+        "jpeg",
+        "png",
+        "svg"
+      ],
+      "inspections_passed": 3,
+      "key_extraction_count": 3,
+      "key_no_support_requirements": 0,
+      "key_support_pairs": 2,
+      "mandatory_count": 2,
+      "optional_count": 1
+    },
+    {
+      "case_id": "02-market",
+      "file_count": 3,
+      "inspection_types": [
+        "text",
+        "png",
+        "jpeg"
+      ],
+      "inspections_passed": 3,
+      "key_extraction_count": 2,
+      "key_no_support_requirements": 0,
+      "key_support_pairs": 2,
+      "mandatory_count": 2,
+      "optional_count": 0
+    },
+    {
+      "case_id": "03-studio",
+      "file_count": 3,
+      "inspection_types": [
+        "pdf",
+        "svg",
+        "text"
+      ],
+      "inspections_passed": 3,
+      "key_extraction_count": 2,
+      "key_no_support_requirements": 0,
+      "key_support_pairs": 2,
+      "mandatory_count": 2,
+      "optional_count": 0
+    },
+    {
+      "case_id": "04-workshop",
+      "file_count": 2,
+      "inspection_types": [
+        "text",
+        "png"
+      ],
+      "inspections_passed": 2,
+      "key_extraction_count": 2,
+      "key_no_support_requirements": 1,
+      "key_support_pairs": 1,
+      "mandatory_count": 2,
+      "optional_count": 0
+    },
+    {
+      "case_id": "05-newsletter",
+      "file_count": 3,
+      "inspection_types": [
+        "text",
+        "markdown",
+        "text"
+      ],
+      "inspections_passed": 3,
+      "key_extraction_count": 3,
+      "key_no_support_requirements": 0,
+      "key_support_pairs": 3,
+      "mandatory_count": 2,
+      "optional_count": 1
+    },
+    {
+      "case_id": "06-sponsor",
+      "file_count": 2,
+      "inspection_types": [
+        "text",
+        "png"
+      ],
+      "inspections_passed": 2,
+      "key_extraction_count": 2,
+      "key_no_support_requirements": 1,
+      "key_support_pairs": 1,
+      "mandatory_count": 2,
+      "optional_count": 0
+    },
+    {
+      "case_id": "07-bakery",
+      "file_count": 2,
+      "inspection_types": [
+        "markdown",
+        "svg"
+      ],
+      "inspections_passed": 2,
+      "key_extraction_count": 2,
+      "key_no_support_requirements": 0,
+      "key_support_pairs": 2,
+      "mandatory_count": 2,
+      "optional_count": 0
+    },
+    {
+      "case_id": "08-tutor",
+      "file_count": 3,
+      "inspection_types": [
+        "text",
+        "jpeg",
+        "png"
+      ],
+      "inspections_passed": 3,
+      "key_extraction_count": 2,
+      "key_no_support_requirements": 0,
+      "key_support_pairs": 2,
+      "mandatory_count": 2,
+      "optional_count": 0
+    },
+    {
+      "case_id": "09-ceramics",
+      "file_count": 3,
+      "inspection_types": [
+        "markdown",
+        "jpeg",
+        "jpeg"
+      ],
+      "inspections_passed": 3,
+      "key_extraction_count": 2,
+      "key_no_support_requirements": 1,
+      "key_support_pairs": 2,
+      "mandatory_count": 2,
+      "optional_count": 0
+    },
+    {
+      "case_id": "10-event",
+      "file_count": 3,
+      "inspection_types": [
+        "pdf",
+        "markdown",
+        "jpeg"
+      ],
+      "inspections_passed": 3,
+      "key_extraction_count": 3,
+      "key_no_support_requirements": 1,
+      "key_support_pairs": 2,
+      "mandatory_count": 3,
+      "optional_count": 0
+    }
+  ],
+  "dataset_sha256": "2718aab4fe4a75398bd499c64e53ea568a04d8f71d848ddad0e95b3229e2d910",
+  "scoring_sha256": "152a208cac161c7501ac0cc99791212dfd16f747f531e91903e79160799ab062",
+  "status": "prepared_only_no_model_predictions",
+  "totals": {
+    "file_count": 27,
+    "inspections_passed": 27,
+    "key_extraction_count": 23,
+    "key_no_support_requirements": 4,
+    "key_support_pairs": 19,
+    "mandatory_count": 21,
+    "optional_count": 2
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "adapter_sha256": "9a61a24597a138d379f5d0010d0bc8f257771dee20122483e4dd93088db0d286",
+  "checks": {
+    "all_23_keyed_extraction_items_perfect_key_coverage": true,
+    "ambiguous_quote_without_span_rejected": true,
+    "guard_failure_preserves_raw_capture": true,
+    "mandatory_as_optional_no_mandatory_credit": true,
+    "optional_as_required_no_mandatory_credit": true,
+    "original_27_files_reinspected": true,
+    "parser_schema_timeout_failures_not_correct_abstentions": true,
+    "repeated_text_with_valid_occurrence_span": true,
+    "same_one_stub_call_before_and_after_guards": true,
+    "script_compilation": true,
+    "transient_model_functions_restored": true,
+    "wrong_requested_format_no_mandatory_credit": true
+  },
+  "dataset_sha256": "2718aab4fe4a75398bd499c64e53ea568a04d8f71d848ddad0e95b3229e2d910",
+  "disclosure": "After fixture/key freeze, a broad symbol search accidentally displayed current model prompt lines during adapter work. No fixture changes or inference occurred. Original preflight and scoring freeze retained; revised scorer frozen before inference.",
+  "effective_scoring_sha256": "38f13dd3282defdec3326b3dd0ec14a49b10efb6a4c614c68427f80cecfb1808",
+  "evaluator_sha256": "116c48cb5bc9107e077b3cbe76ed29b89ac7cb0dbf0a851173a8d15f35005ac4",
+  "original_preflight_sha256": "5c734ee7ca9a3eb5ffba690c45f32ee4ad8f7c70a4de67b884c2ac7578b0e505",
+  "original_scoring_sha256": "152a208cac161c7501ac0cc99791212dfd16f747f531e91903e79160799ab062",
+  "stage": "pre-inference revision validation; no real model predictions"
+}

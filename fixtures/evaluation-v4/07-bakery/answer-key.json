@@ -1,0 +1,167 @@
+{
+  "approved_requirements": [
+    {
+      "checks": [
+        {
+          "kind": "presence",
+          "types": [
+            "svg"
+          ]
+        }
+      ],
+      "human_note": "Agent-authored synthetic answer key; treated as fixed approved input only for evaluation.",
+      "id": "r1",
+      "origin": "human_added",
+      "quote": "Deliver the bakery symbol in SVG format.",
+      "source_id": "brief-v1",
+      "source_span": {
+        "end_cp": 139,
+        "quote": "Deliver the bakery symbol in SVG format.",
+        "source_text_sha256": "588426e0c4610a1cc054c9e4bc7533764c9bde95b8f849b710425190fa9fe277",
+        "source_unit_id": "brief-v1",
+        "start_cp": 99
+      },
+      "title": "Bakery symbol"
+    },
+    {
+      "checks": [
+        {
+          "kind": "presence",
+          "types": [
+            "markdown"
+          ]
+        },
+        {
+          "instruction": "Assess symbol background guidance.",
+          "kind": "manual"
+        }
+      ],
+      "human_note": "Agent-authored synthetic answer key; treated as fixed approved input only for evaluation.",
+      "id": "r2",
+      "origin": "human_added",
+      "quote": "Provide Markdown usage notes explaining safe symbol backgrounds.",
+      "source_id": "brief-v1",
+      "source_span": {
+        "end_cp": 204,
+        "quote": "Provide Markdown usage notes explaining safe symbol backgrounds.",
+        "source_text_sha256": "588426e0c4610a1cc054c9e4bc7533764c9bde95b8f849b710425190fa9fe277",
+        "source_unit_id": "brief-v1",
+        "start_cp": 140
+      },
+      "title": "Bakery usage notes"
+    }
+  ],
+  "extraction": [
+    {
+      "checks": [
+        {
+          "kind": "presence",
+          "types": [
+            "svg"
+          ]
+        }
+      ],
+      "id": "r1",
+      "optional": false,
+      "quote": "Deliver the bakery symbol in SVG format.",
+      "source_span": {
+        "end_cp": 139,
+        "quote": "Deliver the bakery symbol in SVG format.",
+        "source_text_sha256": "588426e0c4610a1cc054c9e4bc7533764c9bde95b8f849b710425190fa9fe277",
+        "source_unit_id": "brief-v1",
+        "start_cp": 99
+      },
+      "support_names": [
+        "juniper-symbol.svg"
+      ],
+      "title": "Bakery symbol"
+    },
+    {
+      "checks": [
+        {
+          "kind": "presence",
+          "types": [
+            "markdown"
+          ]
+        },
+        {
+          "instruction": "Assess symbol background guidance.",
+          "kind": "manual"
+        }
+      ],
+      "id": "r2",
+      "optional": false,
+      "quote": "Provide Markdown usage notes explaining safe symbol backgrounds.",
+      "source_span": {
+        "end_cp": 204,
+        "quote": "Provide Markdown usage notes explaining safe symbol backgrounds.",
+        "source_text_sha256": "588426e0c4610a1cc054c9e4bc7533764c9bde95b8f849b710425190fa9fe277",
+        "source_unit_id": "brief-v1",
+        "start_cp": 140
+      },
+      "support_names": [
+        "background-notes.md"
+      ],
+      "title": "Bakery usage notes"
+    }
+  ],
+  "files": {
+    "background-notes.md": "f2",
+    "juniper-symbol.svg": "f1"
+  },
+  "source_catalog": [
+    {
+      "catalog_version": "source-occurrence-v1",
+      "end_cp": 31,
+      "evidence_unit_id": "ev1_e123e0f5916ff7b7f9a927b0",
+      "quote": "Synthetic brief: Juniper bakery",
+      "source_text_sha256": "588426e0c4610a1cc054c9e4bc7533764c9bde95b8f849b710425190fa9fe277",
+      "source_unit_id": "brief-v1",
+      "start_cp": 0
+    },
+    {
+      "catalog_version": "source-occurrence-v1",
+      "end_cp": 98,
+      "evidence_unit_id": "ev1_debdc66e0a708b603bd05fc8",
+      "quote": "Internal scheduling note: discuss any future animation separately.",
+      "source_text_sha256": "588426e0c4610a1cc054c9e4bc7533764c9bde95b8f849b710425190fa9fe277",
+      "source_unit_id": "brief-v1",
+      "start_cp": 32
+    },
+    {
+      "catalog_version": "source-occurrence-v1",
+      "end_cp": 139,
+      "evidence_unit_id": "ev1_a644e9899c6b0537e04f426b",
+      "quote": "Deliver the bakery symbol in SVG format.",
+      "source_text_sha256": "588426e0c4610a1cc054c9e4bc7533764c9bde95b8f849b710425190fa9fe277",
+      "source_unit_id": "brief-v1",
+      "start_cp": 99
+    },
+    {
+      "catalog_version": "source-occurrence-v1",
+      "end_cp": 204,
+      "evidence_unit_id": "ev1_d1ea1265f63715ef44506d39",
+      "quote": "Provide Markdown usage notes explaining safe symbol backgrounds.",
+      "source_text_sha256": "588426e0c4610a1cc054c9e4bc7533764c9bde95b8f849b710425190fa9fe277",
+      "source_unit_id": "brief-v1",
+      "start_cp": 140
+    },
+    {
+      "catalog_version": "source-occurrence-v1",
+      "end_cp": 271,
+      "evidence_unit_id": "ev1_4acc0bc86aaf8acfffd1afea",
+      "quote": "Internal scheduling note: discuss any future animation separately.",
+      "source_text_sha256": "588426e0c4610a1cc054c9e4bc7533764c9bde95b8f849b710425190fa9fe277",
+      "source_unit_id": "brief-v1",
+      "start_cp": 205
+    }
+  ],
+  "support": {
+    "r1": [
+      "f1"
+    ],
+    "r2": [
+      "f2"
+    ]
+  }
+}

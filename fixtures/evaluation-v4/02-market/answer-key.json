@@ -1,0 +1,160 @@
+{
+  "approved_requirements": [
+    {
+      "checks": [
+        {
+          "kind": "presence",
+          "types": [
+            "jpeg"
+          ]
+        },
+        {
+          "height_px": 80,
+          "kind": "image_dimensions",
+          "width_px": 120
+        }
+      ],
+      "human_note": "Agent-authored synthetic answer key; treated as fixed approved input only for evaluation.",
+      "id": "r1",
+      "origin": "human_added",
+      "quote": "Deliver a 120 by 80 JPEG market flyer.",
+      "source_id": "brief-v1",
+      "source_span": {
+        "end_cp": 79,
+        "quote": "Deliver a 120 by 80 JPEG market flyer.",
+        "source_text_sha256": "7993d0b592a8dc1055ca218ac72990194a2b219faa65976ff1aac26e66fd8766",
+        "source_unit_id": "brief-v1",
+        "start_cp": 41
+      },
+      "title": "Market flyer"
+    },
+    {
+      "checks": [
+        {
+          "kind": "presence",
+          "types": [
+            "text"
+          ]
+        },
+        {
+          "instruction": "Read the guide and assess its placement advice.",
+          "kind": "manual"
+        }
+      ],
+      "human_note": "Agent-authored synthetic answer key; treated as fixed approved input only for evaluation.",
+      "id": "r2",
+      "origin": "human_added",
+      "quote": "Include a plain text guide explaining where the flyer may be displayed.",
+      "source_id": "brief-v1",
+      "source_span": {
+        "end_cp": 151,
+        "quote": "Include a plain text guide explaining where the flyer may be displayed.",
+        "source_text_sha256": "7993d0b592a8dc1055ca218ac72990194a2b219faa65976ff1aac26e66fd8766",
+        "source_unit_id": "brief-v1",
+        "start_cp": 80
+      },
+      "title": "Market placement guide"
+    }
+  ],
+  "extraction": [
+    {
+      "checks": [
+        {
+          "kind": "presence",
+          "types": [
+            "jpeg"
+          ]
+        },
+        {
+          "height_px": 80,
+          "kind": "image_dimensions",
+          "width_px": 120
+        }
+      ],
+      "id": "r1",
+      "optional": false,
+      "quote": "Deliver a 120 by 80 JPEG market flyer.",
+      "source_span": {
+        "end_cp": 79,
+        "quote": "Deliver a 120 by 80 JPEG market flyer.",
+        "source_text_sha256": "7993d0b592a8dc1055ca218ac72990194a2b219faa65976ff1aac26e66fd8766",
+        "source_unit_id": "brief-v1",
+        "start_cp": 41
+      },
+      "support_names": [
+        "market-flyer.jpg"
+      ],
+      "title": "Market flyer"
+    },
+    {
+      "checks": [
+        {
+          "kind": "presence",
+          "types": [
+            "text"
+          ]
+        },
+        {
+          "instruction": "Read the guide and assess its placement advice.",
+          "kind": "manual"
+        }
+      ],
+      "id": "r2",
+      "optional": false,
+      "quote": "Include a plain text guide explaining where the flyer may be displayed.",
+      "source_span": {
+        "end_cp": 151,
+        "quote": "Include a plain text guide explaining where the flyer may be displayed.",
+        "source_text_sha256": "7993d0b592a8dc1055ca218ac72990194a2b219faa65976ff1aac26e66fd8766",
+        "source_unit_id": "brief-v1",
+        "start_cp": 80
+      },
+      "support_names": [
+        "distribution.txt"
+      ],
+      "title": "Market placement guide"
+    }
+  ],
+  "files": {
+    "distribution.txt": "f3",
+    "market-flyer-approved.png": "f2",
+    "market-flyer.jpg": "f1"
+  },
+  "source_catalog": [
+    {
+      "catalog_version": "source-occurrence-v1",
+      "end_cp": 40,
+      "evidence_unit_id": "ev1_125b5b76dca3cb04d7291356",
+      "quote": "Synthetic brief: Lantern Saturday market",
+      "source_text_sha256": "7993d0b592a8dc1055ca218ac72990194a2b219faa65976ff1aac26e66fd8766",
+      "source_unit_id": "brief-v1",
+      "start_cp": 0
+    },
+    {
+      "catalog_version": "source-occurrence-v1",
+      "end_cp": 79,
+      "evidence_unit_id": "ev1_c745ecf49515b203efa55fec",
+      "quote": "Deliver a 120 by 80 JPEG market flyer.",
+      "source_text_sha256": "7993d0b592a8dc1055ca218ac72990194a2b219faa65976ff1aac26e66fd8766",
+      "source_unit_id": "brief-v1",
+      "start_cp": 41
+    },
+    {
+      "catalog_version": "source-occurrence-v1",
+      "end_cp": 151,
+      "evidence_unit_id": "ev1_df7cd2dbec5cc03ac7c232b5",
+      "quote": "Include a plain text guide explaining where the flyer may be displayed.",
+      "source_text_sha256": "7993d0b592a8dc1055ca218ac72990194a2b219faa65976ff1aac26e66fd8766",
+      "source_unit_id": "brief-v1",
+      "start_cp": 80
+    }
+  ],
+  "support": {
+    "r1": [
+      "f1"
+    ],
+    "r2": [
+      "f3"
+    ]
+  }
+}

@@ -1,0 +1,215 @@
+{
+  "after_guards": {
+    "attribute_denominator": 3,
+    "correct_attribute_checks": 1,
+    "covered_mandatory": 2,
+    "covered_optional": 0,
+    "covered_requirements": 2,
+    "exact_attribute_requirement_denominator": 2,
+    "exact_attributes": 0,
+    "extra_attribute_checks": 1,
+    "key_mandatory": 2,
+    "key_optional": 0,
+    "key_requirements": 2,
+    "missed_mandatory": 0,
+    "missed_optional_classification": 0,
+    "missing_attribute_checks": 2,
+    "predicted_requirements": 2,
+    "quote_denominator": 2,
+    "unmatched_predictions": 0,
+    "valid_quotes": 2,
+    "wrong_format_classification": 0,
+    "wrong_obligation_classification": 0
+  },
+  "before_guards": {
+    "attribute_denominator": 3,
+    "correct_attribute_checks": 1,
+    "covered_mandatory": 2,
+    "covered_optional": 0,
+    "covered_requirements": 2,
+    "exact_attribute_requirement_denominator": 2,
+    "exact_attributes": 0,
+    "extra_attribute_checks": 1,
+    "key_mandatory": 2,
+    "key_optional": 0,
+    "key_requirements": 2,
+    "missed_mandatory": 0,
+    "missed_optional_classification": 0,
+    "missing_attribute_checks": 2,
+    "predicted_requirements": 2,
+    "quote_denominator": 2,
+    "unmatched_predictions": 0,
+    "valid_quotes": 2,
+    "wrong_format_classification": 0,
+    "wrong_obligation_classification": 0
+  },
+  "capture": {
+    "completion": {
+      "choices": [
+        {
+          "content": "{\n  \"requirements\": [\n    {\n      \"obligation\": \"required\",\n      \"title\": \"Supply two distinct JPEG ceramics closeup images.\",\n      \"evidence_unit_id\": \"ev1_5c972d203530734871dab4bc\",\n      \"checks\": [\n        {\n          \"kind\": \"presence\",\n          \"types\": [\n            \"jpeg\"\n          ]\n        }\n      ]\n    },\n    {\n      \"obligation\": \"required\",\n      \"title\": \"Deliver a PDF care guide for the ceramics.\",\n      \"evidence_unit_id\": \"ev1_ea1870e13289c212e8bb703b\",\n      \"checks\": [\n        {\n          \"kind\": \"presence\",\n          \"types\": [\n            \"pdf\"\n          ]\n        }\n      ]\n    }\n  ]\n}",
+          "finish_reason": "stop",
+          "index": 0
+        }
+      ],
+      "usage": {
+        "completion_tokens": 220,
+        "prompt_tokens": 1542,
+        "prompt_tokens_details": {
+          "cached_tokens": 919
+        },
+        "total_tokens": 1762
+      }
+    },
+    "completion_response_count": 1,
+    "elapsed_seconds": 2.2202459999825805,
+    "model_metadata": {
+      "elapsed_seconds": 2.219,
+      "excluded_suggestion_count": 0,
+      "input_sha256": "fc950c8867e8c6195deef49f427f6a0cc12006b43810b4c618505a47c5f70cac",
+      "input_tokens": 1542,
+      "model": "google/gemma-4-E2B-it",
+      "output_sha256": "08c80187a90fb8c03477b1f5c7192612810e2258fc4b346bf5d0b51321c05e03",
+      "output_tokens": 220,
+      "prompt_version": "handoffready-v11",
+      "required_suggestion_count": 2,
+      "seed": 20261013,
+      "source_catalog_version": "source-occurrence-v1",
+      "temperature": 0,
+      "vision_used": false
+    },
+    "stage": "extract",
+    "structured_call_count": 1,
+    "structured_pre_guard": {
+      "requirements": [
+        {
+          "checks": [
+            {
+              "kind": "presence",
+              "types": [
+                "jpeg"
+              ]
+            }
+          ],
+          "evidence_unit_id": "ev1_5c972d203530734871dab4bc",
+          "obligation": "required",
+          "title": "Supply two distinct JPEG ceramics closeup images."
+        },
+        {
+          "checks": [
+            {
+              "kind": "presence",
+              "types": [
+                "pdf"
+              ]
+            }
+          ],
+          "evidence_unit_id": "ev1_ea1870e13289c212e8bb703b",
+          "obligation": "required",
+          "title": "Deliver a PDF care guide for the ceramics."
+        }
+      ]
+    },
+    "synthetic_data_only": true
+  },
+  "failure": null,
+  "guarded_predictions": [
+    {
+      "checks": [
+        {
+          "kind": "presence",
+          "types": [
+            "jpeg"
+          ]
+        }
+      ],
+      "obligation": "required",
+      "quote": "Supply two distinct JPEG ceramics closeup images.",
+      "quote_valid": true,
+      "source_span": {
+        "catalog_version": "source-occurrence-v1",
+        "end_cp": 85,
+        "evidence_unit_id": "ev1_5c972d203530734871dab4bc",
+        "quote": "Supply two distinct JPEG ceramics closeup images.",
+        "source_text_sha256": "4270b5a4a4eb810da7417cbd6a62e7e70b4449a318419776c27c5a528af1c09e",
+        "source_unit_id": "brief-v1",
+        "start_cp": 36
+      },
+      "title": "Supply two distinct JPEG ceramics closeup images."
+    },
+    {
+      "checks": [
+        {
+          "kind": "presence",
+          "types": [
+            "pdf"
+          ]
+        }
+      ],
+      "obligation": "required",
+      "quote": "Deliver a PDF care guide for the ceramics.",
+      "quote_valid": true,
+      "source_span": {
+        "catalog_version": "source-occurrence-v1",
+        "end_cp": 128,
+        "evidence_unit_id": "ev1_ea1870e13289c212e8bb703b",
+        "quote": "Deliver a PDF care guide for the ceramics.",
+        "source_text_sha256": "4270b5a4a4eb810da7417cbd6a62e7e70b4449a318419776c27c5a528af1c09e",
+        "source_unit_id": "brief-v1",
+        "start_cp": 86
+      },
+      "title": "Deliver a PDF care guide for the ceramics."
+    }
+  ],
+  "latency_seconds": 2.220485500060022,
+  "raw_predictions": [
+    {
+      "checks": [
+        {
+          "kind": "presence",
+          "types": [
+            "jpeg"
+          ]
+        }
+      ],
+      "evidence_unit_id": "ev1_5c972d203530734871dab4bc",
+      "obligation": "required",
+      "quote": "Supply two distinct JPEG ceramics closeup images.",
+      "quote_valid": true,
+      "source_span": {
+        "catalog_version": "source-occurrence-v1",
+        "end_cp": 85,
+        "evidence_unit_id": "ev1_5c972d203530734871dab4bc",
+        "quote": "Supply two distinct JPEG ceramics closeup images.",
+        "source_text_sha256": "4270b5a4a4eb810da7417cbd6a62e7e70b4449a318419776c27c5a528af1c09e",
+        "source_unit_id": "brief-v1",
+        "start_cp": 36
+      },
+      "title": "Supply two distinct JPEG ceramics closeup images."
+    },
+    {
+      "checks": [
+        {
+          "kind": "presence",
+          "types": [
+            "pdf"
+          ]
+        }
+      ],
+      "evidence_unit_id": "ev1_ea1870e13289c212e8bb703b",
+      "obligation": "required",
+      "quote": "Deliver a PDF care guide for the ceramics.",
+      "quote_valid": true,
+      "source_span": {
+        "catalog_version": "source-occurrence-v1",
+        "end_cp": 128,
+        "evidence_unit_id": "ev1_ea1870e13289c212e8bb703b",
+        "quote": "Deliver a PDF care guide for the ceramics.",
+        "source_text_sha256": "4270b5a4a4eb810da7417cbd6a62e7e70b4449a318419776c27c5a528af1c09e",
+        "source_unit_id": "brief-v1",
+        "start_cp": 86
+      },
+      "title": "Deliver a PDF care guide for the ceramics."
+    }
+  ]
+}

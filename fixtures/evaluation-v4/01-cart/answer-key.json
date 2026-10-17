@@ -1,0 +1,189 @@
+{
+  "approved_requirements": [
+    {
+      "checks": [
+        {
+          "kind": "presence",
+          "types": [
+            "png"
+          ]
+        },
+        {
+          "height_px": 96,
+          "kind": "image_dimensions",
+          "width_px": 96
+        },
+        {
+          "kind": "png_nonopaque_pixels"
+        }
+      ],
+      "human_note": "Agent-authored synthetic answer key; treated as fixed approved input only for evaluation.",
+      "id": "r1",
+      "origin": "human_added",
+      "quote": "Send a 96 by 96 PNG avatar with some transparent pixels.",
+      "source_id": "brief-v1",
+      "source_span": {
+        "end_cp": 100,
+        "quote": "Send a 96 by 96 PNG avatar with some transparent pixels.",
+        "source_text_sha256": "3f893cd71cb8d18a397a82258b26cbc55dcbb837484656a915a131e178fbb751",
+        "source_unit_id": "brief-v1",
+        "start_cp": 44
+      },
+      "title": "Cedar avatar"
+    },
+    {
+      "checks": [
+        {
+          "kind": "presence",
+          "types": [
+            "svg"
+          ]
+        }
+      ],
+      "human_note": "Agent-authored synthetic answer key; treated as fixed approved input only for evaluation.",
+      "id": "r2",
+      "origin": "human_added",
+      "quote": "Deliver the cart mark as SVG.",
+      "source_id": "brief-v1",
+      "source_span": {
+        "end_cp": 130,
+        "quote": "Deliver the cart mark as SVG.",
+        "source_text_sha256": "3f893cd71cb8d18a397a82258b26cbc55dcbb837484656a915a131e178fbb751",
+        "source_unit_id": "brief-v1",
+        "start_cp": 101
+      },
+      "title": "Cedar mark"
+    }
+  ],
+  "extraction": [
+    {
+      "checks": [
+        {
+          "kind": "presence",
+          "types": [
+            "png"
+          ]
+        },
+        {
+          "height_px": 96,
+          "kind": "image_dimensions",
+          "width_px": 96
+        },
+        {
+          "kind": "png_nonopaque_pixels"
+        }
+      ],
+      "id": "r1",
+      "optional": false,
+      "quote": "Send a 96 by 96 PNG avatar with some transparent pixels.",
+      "source_span": {
+        "end_cp": 100,
+        "quote": "Send a 96 by 96 PNG avatar with some transparent pixels.",
+        "source_text_sha256": "3f893cd71cb8d18a397a82258b26cbc55dcbb837484656a915a131e178fbb751",
+        "source_unit_id": "brief-v1",
+        "start_cp": 44
+      },
+      "support_names": [
+        "cedar-avatar.png"
+      ],
+      "title": "Cedar avatar"
+    },
+    {
+      "checks": [
+        {
+          "kind": "presence",
+          "types": [
+            "svg"
+          ]
+        }
+      ],
+      "id": "r2",
+      "optional": false,
+      "quote": "Deliver the cart mark as SVG.",
+      "source_span": {
+        "end_cp": 130,
+        "quote": "Deliver the cart mark as SVG.",
+        "source_text_sha256": "3f893cd71cb8d18a397a82258b26cbc55dcbb837484656a915a131e178fbb751",
+        "source_unit_id": "brief-v1",
+        "start_cp": 101
+      },
+      "support_names": [
+        "cedar-mark.svg"
+      ],
+      "title": "Cedar mark"
+    },
+    {
+      "checks": [
+        {
+          "kind": "presence",
+          "types": [
+            "markdown"
+          ]
+        }
+      ],
+      "id": "r3",
+      "optional": true,
+      "quote": "A Markdown palette note is optional.",
+      "source_span": {
+        "end_cp": 167,
+        "quote": "A Markdown palette note is optional.",
+        "source_text_sha256": "3f893cd71cb8d18a397a82258b26cbc55dcbb837484656a915a131e178fbb751",
+        "source_unit_id": "brief-v1",
+        "start_cp": 131
+      },
+      "support_names": [],
+      "title": "Palette note"
+    }
+  ],
+  "files": {
+    "cedar-avatar-final.jpg": "f3",
+    "cedar-avatar.png": "f1",
+    "cedar-mark.svg": "f2"
+  },
+  "source_catalog": [
+    {
+      "catalog_version": "source-occurrence-v1",
+      "end_cp": 43,
+      "evidence_unit_id": "ev1_5d39a6a58172a75989cdc71c",
+      "quote": "Synthetic brief: Cedar Cart coffee identity",
+      "source_text_sha256": "3f893cd71cb8d18a397a82258b26cbc55dcbb837484656a915a131e178fbb751",
+      "source_unit_id": "brief-v1",
+      "start_cp": 0
+    },
+    {
+      "catalog_version": "source-occurrence-v1",
+      "end_cp": 100,
+      "evidence_unit_id": "ev1_c63ebd16e5a546bcf2c46e08",
+      "quote": "Send a 96 by 96 PNG avatar with some transparent pixels.",
+      "source_text_sha256": "3f893cd71cb8d18a397a82258b26cbc55dcbb837484656a915a131e178fbb751",
+      "source_unit_id": "brief-v1",
+      "start_cp": 44
+    },
+    {
+      "catalog_version": "source-occurrence-v1",
+      "end_cp": 130,
+      "evidence_unit_id": "ev1_c28ad0020507917064cda2f1",
+      "quote": "Deliver the cart mark as SVG.",
+      "source_text_sha256": "3f893cd71cb8d18a397a82258b26cbc55dcbb837484656a915a131e178fbb751",
+      "source_unit_id": "brief-v1",
+      "start_cp": 101
+    },
+    {
+      "catalog_version": "source-occurrence-v1",
+      "end_cp": 167,
+      "evidence_unit_id": "ev1_6b0cc74475d7cfcadbac3b47",
+      "quote": "A Markdown palette note is optional.",
+      "source_text_sha256": "3f893cd71cb8d18a397a82258b26cbc55dcbb837484656a915a131e178fbb751",
+      "source_unit_id": "brief-v1",
+      "start_cp": 131
+    }
+  ],
+  "support": {
+    "r1": [
+      "f1"
+    ],
+    "r2": [
+      "f2"
+    ]
+  }
+}

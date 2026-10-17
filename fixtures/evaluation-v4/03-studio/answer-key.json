@@ -1,0 +1,160 @@
+{
+  "approved_requirements": [
+    {
+      "checks": [
+        {
+          "kind": "presence",
+          "types": [
+            "svg"
+          ]
+        }
+      ],
+      "human_note": "Agent-authored synthetic answer key; treated as fixed approved input only for evaluation.",
+      "id": "r1",
+      "origin": "human_added",
+      "quote": "Deliver an SVG studio mark.",
+      "source_id": "brief-v1",
+      "source_span": {
+        "end_cp": 66,
+        "quote": "Deliver an SVG studio mark.",
+        "source_text_sha256": "d8ccd95bd2d906d028e612ce7a971b1d039fb89084ba2a7dd996c9af80d1bb7b",
+        "source_unit_id": "brief-v1",
+        "start_cp": 39
+      },
+      "title": "Studio mark"
+    },
+    {
+      "checks": [
+        {
+          "kind": "presence",
+          "types": [
+            "pdf"
+          ]
+        },
+        {
+          "comparison": "exact",
+          "kind": "pdf_pages",
+          "value": 2
+        },
+        {
+          "instruction": "Assess spacing and color guidance.",
+          "kind": "manual"
+        }
+      ],
+      "human_note": "Agent-authored synthetic answer key; treated as fixed approved input only for evaluation.",
+      "id": "r2",
+      "origin": "human_added",
+      "quote": "Provide a two-page PDF guide covering mark spacing and color use.",
+      "source_id": "brief-v1",
+      "source_span": {
+        "end_cp": 132,
+        "quote": "Provide a two-page PDF guide covering mark spacing and color use.",
+        "source_text_sha256": "d8ccd95bd2d906d028e612ce7a971b1d039fb89084ba2a7dd996c9af80d1bb7b",
+        "source_unit_id": "brief-v1",
+        "start_cp": 67
+      },
+      "title": "Studio guide"
+    }
+  ],
+  "extraction": [
+    {
+      "checks": [
+        {
+          "kind": "presence",
+          "types": [
+            "svg"
+          ]
+        }
+      ],
+      "id": "r1",
+      "optional": false,
+      "quote": "Deliver an SVG studio mark.",
+      "source_span": {
+        "end_cp": 66,
+        "quote": "Deliver an SVG studio mark.",
+        "source_text_sha256": "d8ccd95bd2d906d028e612ce7a971b1d039fb89084ba2a7dd996c9af80d1bb7b",
+        "source_unit_id": "brief-v1",
+        "start_cp": 39
+      },
+      "support_names": [
+        "pebble-mark.svg"
+      ],
+      "title": "Studio mark"
+    },
+    {
+      "checks": [
+        {
+          "kind": "presence",
+          "types": [
+            "pdf"
+          ]
+        },
+        {
+          "comparison": "exact",
+          "kind": "pdf_pages",
+          "value": 2
+        },
+        {
+          "instruction": "Assess spacing and color guidance.",
+          "kind": "manual"
+        }
+      ],
+      "id": "r2",
+      "optional": false,
+      "quote": "Provide a two-page PDF guide covering mark spacing and color use.",
+      "source_span": {
+        "end_cp": 132,
+        "quote": "Provide a two-page PDF guide covering mark spacing and color use.",
+        "source_text_sha256": "d8ccd95bd2d906d028e612ce7a971b1d039fb89084ba2a7dd996c9af80d1bb7b",
+        "source_unit_id": "brief-v1",
+        "start_cp": 67
+      },
+      "support_names": [
+        "identity-notes.pdf"
+      ],
+      "title": "Studio guide"
+    }
+  ],
+  "files": {
+    "identity-notes.pdf": "f2",
+    "pebble-mark.svg": "f1",
+    "studio-guide.txt": "f3"
+  },
+  "source_catalog": [
+    {
+      "catalog_version": "source-occurrence-v1",
+      "end_cp": 38,
+      "evidence_unit_id": "ev1_5ce85d449176fc9e019e5ae0",
+      "quote": "Synthetic brief: Pebble pottery studio",
+      "source_text_sha256": "d8ccd95bd2d906d028e612ce7a971b1d039fb89084ba2a7dd996c9af80d1bb7b",
+      "source_unit_id": "brief-v1",
+      "start_cp": 0
+    },
+    {
+      "catalog_version": "source-occurrence-v1",
+      "end_cp": 66,
+      "evidence_unit_id": "ev1_a9b5a61fbf538877ddcf11d8",
+      "quote": "Deliver an SVG studio mark.",
+      "source_text_sha256": "d8ccd95bd2d906d028e612ce7a971b1d039fb89084ba2a7dd996c9af80d1bb7b",
+      "source_unit_id": "brief-v1",
+      "start_cp": 39
+    },
+    {
+      "catalog_version": "source-occurrence-v1",
+      "end_cp": 132,
+      "evidence_unit_id": "ev1_a22095f8c3ca8fc06350500c",
+      "quote": "Provide a two-page PDF guide covering mark spacing and color use.",
+      "source_text_sha256": "d8ccd95bd2d906d028e612ce7a971b1d039fb89084ba2a7dd996c9af80d1bb7b",
+      "source_unit_id": "brief-v1",
+      "start_cp": 67
+    }
+  ],
+  "support": {
+    "r1": [
+      "f1"
+    ],
+    "r2": [
+      "f2"
+    ]
+  }
+}

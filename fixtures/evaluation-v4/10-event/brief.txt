@@ -1,0 +1,4 @@
+Synthetic brief: Willow reading event
+Deliver a JPEG event poster.
+Include a one-page PDF guide explaining event seating accessibility.
+Verify that the live booking form can be completed using only a keyboard.

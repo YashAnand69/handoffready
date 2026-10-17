@@ -1,0 +1,70 @@
+{
+  "verified_at": "2026-10-14T19:02:20.240152+00:00",
+  "title": "HandoffReady upgraded workflow · synthetic",
+  "recording_type": "captured_screens_walkthrough",
+  "disclosure": "Actual app captures · edited walkthrough · agent-operated synthetic demo",
+  "silent": true,
+  "manifest_sha256": "a8ef17299c4576451510c49ab045d24d1eb9fbdd7ef054b7426cc5a0a8f2536c",
+  "video": "HandoffReady-upgrade.mp4",
+  "video_sha256": "a79e862e09a86e58044a5cdf1c15ebfe751db9da9b16ee76cdb1ab8d79839c7d",
+  "bytes": 760844,
+  "poster": "HandoffReady-upgrade.poster.png",
+  "source_capture_bytes_preserved": true,
+  "captures": [
+    {
+      "image": "upgrade-review-final.jpg",
+      "sha256": "c8e2a2782c5f564d43de382b7b4e44c515b3f17835607e2d93daf57eedbda363",
+      "caption": "Inspect source evidence, actual files and your assessment in one local workspace.",
+      "frames": 288,
+      "duration_seconds": 12.0
+    },
+    {
+      "image": "upgrade-stale.jpg",
+      "sha256": "e7d0d0a25d037ff335534d2b6015a06ab9bb5449268c58166996aebe698f6659",
+      "caption": "Replacing the opaque PNG invalidated all three mapping reviews. Fresh review is required.",
+      "frames": 288,
+      "duration_seconds": 12.0
+    },
+    {
+      "image": "upgrade-handoff-current.jpg",
+      "sha256": "65052d818f3698b0dc5c33fad90018fc4adc2a4f6c4e883ea337b083891e1a47",
+      "caption": "The corrected PNG passes its narrow checks. Two other requirements still need attention.",
+      "frames": 336,
+      "duration_seconds": 14.0
+    },
+    {
+      "image": "upgrade-manifest.jpg",
+      "sha256": "9f02eb04352506987ec471c8c242c75bf73416cba33c9890d3dcffabe8c3be5f",
+      "caption": "The client record preserves unresolved work. Original delivery files must be sent separately.",
+      "frames": 336,
+      "duration_seconds": 14.0
+    },
+    {
+      "image": "upgrade-explorer.jpg",
+      "sha256": "7d6a2f946294c2f802a21f6b9c4d744bb4a5f8939e8e6e55465f8ca0f5c4530f",
+      "caption": "A recorded explorer preserves real before/after evidence. It runs no AI in the browser.",
+      "frames": 288,
+      "duration_seconds": 12.0
+    }
+  ],
+  "metadata": {
+    "ffmpeg_version": "7.1 built with Apple clang version 13.1.6 (clang-1316.0.21.2.5)",
+    "codec": "h264",
+    "pix_fmt": "yuv420p(progressive)",
+    "fps": 24.0,
+    "source_size": [
+      1440,
+      1080
+    ],
+    "size": [
+      1440,
+      1080
+    ],
+    "rotate": 0,
+    "duration": 64.0
+  },
+  "decoded_frames": 1536,
+  "duration_seconds": 64.0,
+  "expected_duration_seconds": 64.0,
+  "expected_frames": 1536
+}

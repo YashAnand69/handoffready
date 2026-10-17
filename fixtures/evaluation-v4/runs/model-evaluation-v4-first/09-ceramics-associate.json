@@ -1,0 +1,199 @@
+{
+  "after_guards": {
+    "candidate_denominator": 2,
+    "correct_no_support": 1,
+    "correct_support_pairs": 2,
+    "failed_no_support": 0,
+    "failure": false,
+    "fully_correct_supported_requirements": 1,
+    "missed_support_pairs": 0,
+    "no_support_requirement_denominator": 1,
+    "predicted_pair_denominator": 2,
+    "support_pair_denominator": 2,
+    "supported_requirement_denominator": 1,
+    "text_quote_denominator": 0,
+    "unrelated_candidates": 0,
+    "valid_text_quotes": 0,
+    "wrong_no_support": 0,
+    "wrong_support_pairs": 0
+  },
+  "before_guards": {
+    "candidate_denominator": 3,
+    "correct_no_support": 1,
+    "correct_support_pairs": 2,
+    "failed_no_support": 0,
+    "failure": false,
+    "fully_correct_supported_requirements": 1,
+    "missed_support_pairs": 0,
+    "no_support_requirement_denominator": 1,
+    "predicted_pair_denominator": 2,
+    "support_pair_denominator": 2,
+    "supported_requirement_denominator": 1,
+    "text_quote_denominator": 1,
+    "unrelated_candidates": 1,
+    "valid_text_quotes": 1,
+    "wrong_no_support": 0,
+    "wrong_support_pairs": 0
+  },
+  "capture": {
+    "completion": {
+      "choices": [
+        {
+          "content": "{\n  \"proposals\": [\n    {\n      \"requirement_id\": \"r1\",\n      \"candidates\": [\n        {\n          \"relation\": \"supports\",\n          \"file_id\": \"f1\",\n          \"reason\": \"The requirement asks for two distinct JPEG ceramics closeup images. File f1 is a JPEG image.\",\n          \"evidence_unit_id\": null\n        },\n        {\n          \"relation\": \"supports\",\n          \"file_id\": \"f2\",\n          \"reason\": \"The requirement asks for two distinct JPEG ceramics closeup images. File f2 is a JPEG image.\",\n          \"evidence_unit_id\": null\n        }\n      ],\n      \"coverage\": \"The requirement for two distinct JPEG ceramics closeup images is partially met by providing two JPEG files (f1 and f2).\"\n    },\n    {\n      \"requirement_id\": \"r2\",\n      \"candidates\": [\n        {\n          \"relation\": \"unrelated\",\n          \"file_id\": \"f3\",\n          \"reason\": \"The requirement asks for a PDF care guide. File f3 is a markdown file outlining a future guide and explicitly states the final PDF care guide is missing.\",\n          \"evidence_unit_id\": \"ev1_9c7993c94a13618353574524\"\n        }\n      ],\n      \"coverage\": \"No evidence found for a delivered PDF care guide. File f3 is a markdown outline and does not meet the PDF requirement.\"\n    }\n  ]\n}",
+          "finish_reason": "stop",
+          "index": 0
+        }
+      ],
+      "usage": {
+        "completion_tokens": 353,
+        "prompt_tokens": 1314,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "total_tokens": 1667
+      }
+    },
+    "completion_response_count": 1,
+    "elapsed_seconds": 3.582230709027499,
+    "model_metadata": {
+      "association_guard_version": "approved-format-union-v1",
+      "elapsed_seconds": 3.581,
+      "input_sha256": "3bb7438753d45f1f3b98a4e40d4aa196b88b80088480b1a6c81b00fabeee704a",
+      "input_tokens": 1314,
+      "model": "google/gemma-4-E2B-it",
+      "output_sha256": "6053f7b02cc897e4e0a3b5904043b652cb668ac45b5d179d373e274fad5ef07e",
+      "output_tokens": 353,
+      "prompt_version": "handoffready-v11",
+      "seed": 20261013,
+      "source_catalog_version": "source-occurrence-v1",
+      "supporting_association_count": 2,
+      "temperature": 0,
+      "typed_rejection_count": 0,
+      "unrelated_association_count": 1,
+      "vision_used": false
+    },
+    "stage": "associate",
+    "structured_call_count": 1,
+    "structured_pre_guard": {
+      "proposals": [
+        {
+          "candidates": [
+            {
+              "file_id": "f1",
+              "reason": "The requirement asks for two distinct JPEG ceramics closeup images. File f1 is a JPEG image.",
+              "relation": "supports"
+            },
+            {
+              "file_id": "f2",
+              "reason": "The requirement asks for two distinct JPEG ceramics closeup images. File f2 is a JPEG image.",
+              "relation": "supports"
+            }
+          ],
+          "coverage": "The requirement for two distinct JPEG ceramics closeup images is partially met by providing two JPEG files (f1 and f2).",
+          "requirement_id": "r1"
+        },
+        {
+          "candidates": [
+            {
+              "evidence_unit_id": "ev1_9c7993c94a13618353574524",
+              "file_id": "f3",
+              "reason": "The requirement asks for a PDF care guide. File f3 is a markdown file outlining a future guide and explicitly states the final PDF care guide is missing.",
+              "relation": "unrelated"
+            }
+          ],
+          "coverage": "No evidence found for a delivered PDF care guide. File f3 is a markdown outline and does not meet the PDF requirement.",
+          "requirement_id": "r2"
+        }
+      ]
+    },
+    "synthetic_data_only": true
+  },
+  "failure": null,
+  "guarded_predictions": [
+    {
+      "candidate_count": 2,
+      "candidates": [
+        {
+          "file_id": "f1",
+          "quote": null,
+          "quote_valid": null,
+          "reason": "Filename/metadata suggestion; no visual inspection. The requirement asks for two distinct JPEG ceramics closeup images. File f1 is a JPEG image."
+        },
+        {
+          "file_id": "f2",
+          "quote": null,
+          "quote_valid": null,
+          "reason": "Filename/metadata suggestion; no visual inspection. The requirement asks for two distinct JPEG ceramics closeup images. File f2 is a JPEG image."
+        }
+      ],
+      "coverage": "The requirement for two distinct JPEG ceramics closeup images is partially met by providing two JPEG files (f1 and f2).",
+      "file_ids": [
+        "f1",
+        "f2"
+      ],
+      "requirement_id": "r1",
+      "unrelated_candidate_count": 0
+    },
+    {
+      "candidate_count": 0,
+      "candidates": [],
+      "coverage": "No evidence found for a delivered PDF care guide. File f3 is a markdown outline and does not meet the PDF requirement.",
+      "file_ids": [],
+      "requirement_id": "r2",
+      "unrelated_candidate_count": 0
+    }
+  ],
+  "latency_seconds": 3.5822918340563774,
+  "raw_predictions": [
+    {
+      "candidate_count": 2,
+      "candidates": [
+        {
+          "file_id": "f1",
+          "quote_valid": null,
+          "reason": "The requirement asks for two distinct JPEG ceramics closeup images. File f1 is a JPEG image.",
+          "relation": "supports"
+        },
+        {
+          "file_id": "f2",
+          "quote_valid": null,
+          "reason": "The requirement asks for two distinct JPEG ceramics closeup images. File f2 is a JPEG image.",
+          "relation": "supports"
+        }
+      ],
+      "coverage": "The requirement for two distinct JPEG ceramics closeup images is partially met by providing two JPEG files (f1 and f2).",
+      "file_ids": [
+        "f1",
+        "f2"
+      ],
+      "requirement_id": "r1",
+      "unrelated_candidate_count": 0
+    },
+    {
+      "candidate_count": 1,
+      "candidates": [
+        {
+          "evidence_unit_id": "ev1_9c7993c94a13618353574524",
+          "file_id": "f3",
+          "quote": "# Future guide",
+          "quote_valid": true,
+          "reason": "The requirement asks for a PDF care guide. File f3 is a markdown file outlining a future guide and explicitly states the final PDF care guide is missing.",
+          "relation": "unrelated",
+          "source_span": {
+            "catalog_version": "source-occurrence-v1",
+            "end_cp": 14,
+            "evidence_unit_id": "ev1_9c7993c94a13618353574524",
+            "quote": "# Future guide",
+            "source_text_sha256": "0030a164a052352ad7464af4b2d5806ad5df1d5718f64ebf8d7fdd278bab74dd",
+            "source_unit_id": "f3",
+            "start_cp": 0
+          }
+        }
+      ],
+      "coverage": "No evidence found for a delivered PDF care guide. File f3 is a markdown outline and does not meet the PDF requirement.",
+      "file_ids": [],
+      "requirement_id": "r2",
+      "unrelated_candidate_count": 1
+    }
+  ]
+}

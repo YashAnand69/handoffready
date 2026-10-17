@@ -1,0 +1,124 @@
+{
+  "created_at_utc": "2026-10-14T19:08:04.949255+00:00",
+  "scope": "Local upgraded working source on Apple Silicon macOS. Regression tests use declared doubles. Separate actual model/browser receipts are linked, not implied by unit tests. Not remote CI, physical-device or customer certification.",
+  "base_commit": "f1ee8226934244ef81a117444098e59743110a0f",
+  "checks": [
+    {
+      "check": "python_tests",
+      "command": [
+        "python",
+        "-m",
+        "pytest",
+        "tests",
+        "scripts/test_evaluate_v4_adapter.py",
+        "-q"
+      ],
+      "exit_code": 0,
+      "output": "........................................................................ [ 30%]\n........................................................................ [ 60%]\n........................................................................ [ 90%]\n.......................                                                  [100%]\n=============================== warnings summary ===============================\n.venv/lib/python3.12/site-packages/fastapi/testclient.py:1\n  <repository>/.venv/lib/python3.12/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.\n    from starlette.testclient import TestClient as TestClient  # noqa\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n239 passed, 1 warning in 4.97s\n"
+    },
+    {
+      "check": "python_static_correctness",
+      "command": [
+        "ruff",
+        "check",
+        "backend",
+        "tests",
+        "scripts",
+        "--select",
+        "F,E9"
+      ],
+      "exit_code": 0,
+      "output": "All checks passed!\n"
+    },
+    {
+      "check": "whitespace",
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exit_code": 0,
+      "output": ""
+    },
+    {
+      "check": "interface_tests",
+      "result": "54 passed across 4 files",
+      "exit_code": 0,
+      "provenance": "Observed earlier this final integration session; no later UI changes."
+    },
+    {
+      "check": "typescript_and_production_build",
+      "result": "tsc and Vite production build passed; Node 24.19",
+      "exit_code": 0
+    },
+    {
+      "check": "interface_format",
+      "result": "All matched files use Prettier style",
+      "exit_code": 0
+    },
+    {
+      "check": "npm_audit",
+      "result": "0 vulnerabilities reported",
+      "exit_code": 0
+    }
+  ],
+  "source_sha256": {
+    "backend/handoffready/__init__.py": "85b4c96ab59d9d7dcb886cb35ad2d03956a3778943ce535fee1e651b2f9c5218",
+    "backend/handoffready/api.py": "17e0b39b652dab718233355fc2a35fab348fd53c3367f89fce54110837e31c0e",
+    "backend/handoffready/checks.py": "136b0af91ab9ecd18df7eee9d78f16d508434276f9b8c54dff3017a2392c73b9",
+    "backend/handoffready/evidence.py": "12b141f123b259f641b655ef5ac3099a80768bfda440910365531e7b927c0963",
+    "backend/handoffready/exports.py": "4c3a0413e798fdcfa004743a6159d42364bbf7c0c36cefaf435db9795acd13de",
+    "backend/handoffready/inspect.py": "643be1430e7a28eb49ed308131115d10140444bb60bce07ad095a4f2a01d7191",
+    "backend/handoffready/model.py": "f0ea34b95590209df6e130872b60226c2794ce6a87d736ade1a25d32aba5239f",
+    "backend/handoffready/parser_worker.py": "bff137376f21912d5136bd6507d7f84a8e30724397a12dbda6f8fbcbb7684b43",
+    "backend/handoffready/policy.py": "b3641785391fbe5a2a5663dcbdeb5e8d9a07519c8c8b3d63c75575c059f3b7b9",
+    "backend/handoffready/schemas.py": "d3bcfbf05a155d5bbab4e2a692d6ccbe7da052e96d240bb86fe7a40c7a6bc5d7",
+    "backend/handoffready/store.py": "f34d24c487e1a277e0a92441699d62139bc8142bf41fa2f7ea24442a145913a9",
+    "backend/handoffready/summary.py": "648db11aaae6e00cf0c126ea68bc5ddfb3117c895998658a7f79a51b5d02a4df",
+    "frontend/src/App.test.tsx": "6619e352c2c5c038518207df822d883b82493fa5a8e8c829fa8742d18c0dac47",
+    "frontend/src/App.tsx": "2fa923dfde4d455a89df9a3a17a422d939ead8479db9b48128fc0f59ffca3a43",
+    "frontend/src/FinalAudit.test.tsx": "ef2b0e76210657511a294396a1471cd7b17577797832e55efd44aef00227de10",
+    "frontend/src/ReviewAudit.test.tsx": "fc385d13cb089c7c8c1019c4e2bd54274829cf91cf122915dbcfcfc0c53bddf7",
+    "frontend/src/UpgradeAudit.test.tsx": "e675e6afd9042e0ff7cd341b19707496e9fd2eb36a17e0c4025cd4aa63eeec69",
+    "frontend/src/api.ts": "e350c63540f5d26a1f3e315844bbbc47c18d5f02487095e0b1675f04f25ba249",
+    "frontend/src/components/AttentionOverview.tsx": "6d3b030740bb117fddb3084aefd0c7326617b3e0ed4a90f879392326e465f408",
+    "frontend/src/components/AuditHistory.tsx": "0b684b34ee6714ea332485ed3a864e1bd38d0d9519c493e9abd9408a35d121ad",
+    "frontend/src/components/Brief.tsx": "317d8f12df1f7c2da5eb05576fc47957029078cebea40ee9abe59325d60ccde5",
+    "frontend/src/components/Checklist.tsx": "94bc3c6968a4f0246fffd6277f73dfe719919244481579822cbf4538fa822390",
+    "frontend/src/components/EvidenceGraphic.tsx": "fbe7af03da8844c96e7e150601201c00dc5c77b35322fd517a1bea5da6849e03",
+    "frontend/src/components/Files.tsx": "83b18c16088259f07fecca744cae8548cb57d3f1e5c5fa8427063c596dd9fb86",
+    "frontend/src/components/Handoff.tsx": "5d0ca733b0f625b73391d8da15136e2d4100b7c1cc860b57ee92c450136a2a28",
+    "frontend/src/components/Review.tsx": "d2a35fc135097abe253c1b25e4f017066958b023b917d1e815b1a3df9af1e1f6",
+    "frontend/src/components/SourceEvidence.tsx": "278fe639f63569f699c3779fc81a2a55f74d40d0eca4f9f5b7a554188f1f724e",
+    "frontend/src/main.tsx": "575c9833bc5993d6a7b8db0587b8ecc202809448fd71842c5a4331bec6ee7977",
+    "frontend/src/presentation.ts": "a0089defaeb4d61547c0c84e27e2e144646f63a9aeb924875f25da86fb75853d",
+    "frontend/src/style.css": "137ebe9fde354e4e893aa540f81e1b1df99881eb22173b829adfc4694e85b61c",
+    "frontend/src/types.ts": "e34c1e333f634c9da9d796617eb8c25b3a3e893a9059a6a55fbca8968959e334",
+    "scripts/assemble_demo.py": "a6f43e8c2a4bf27a5a15bf0835ebb3d3ead7b0c907f7a17d77523529de2914e6",
+    "scripts/benchmark_model.py": "7a3a6eb27b6e08a0b8ba3267c3522de55dbff0b74619f1865f5a4ccec4274d6a",
+    "scripts/create_fixtures.py": "23a489c2bb32346ab60870b6756d7d65509348f4951682be36d72ba70532df28",
+    "scripts/evaluate_model.py": "26bf484f70332e937da937ed380787f8a97d758c1ad0d02021e9a86869213464",
+    "scripts/evaluate_model_v2.py": "26230fa7cea175c1f399760c955b438e96e7497ed4d97a150bdfaa50590f4a0a",
+    "scripts/evaluate_model_v3.py": "4eb6eaac23e494aefd5bfb64f42796a7fd18a86e6464740fa3329caaa527e4c2",
+    "scripts/evaluate_model_v4.py": "833c07b6cf85d8965ac04f9bf62322b00e03ff9b50602abb23dd74a2210c44cb",
+    "scripts/evaluate_v4_adapter.py": "c14b6197d40b9aa5a59ad8a8eaae8522714a7feadc570c8733bb9c7ceada9566",
+    "scripts/prepare_demo_page.py": "b6902ea29cd27c27a7e0a035053151b44c22eeae90376e1c20112e4793c2b502",
+    "scripts/prepare_model.py": "330f11785a8388d389ee3a28403728adff72fb37ddc379a2a1e7acad8cd4110d",
+    "scripts/prepare_upgrade_replay.py": "354fb15776762c84600818c756e9e6624d91f2ea6454ad37e10a2ee7fce43b28",
+    "scripts/run.py": "e834ff8cf5243fa78a69c33c717dc37d240b311855cebaf1dc17be4c6d25a7ef",
+    "scripts/start.py": "bcac8921047dd7a0040d8a1b54fa5392d792262b945ab87882e0b39d31e7fd89",
+    "scripts/test_evaluate_v4_adapter.py": "3a42a9b1a19dcf27693c657152c9294dcd676325537e24944a99184aa6b33225",
+    "scripts/verify_workflow.py": "f574b868aeef2bf2744783896a2073d5495d70fc09b115ce6e24e4b2c09a7bd0"
+  },
+  "workflow_receipts": [
+    "workflow-verification-upgrade.json",
+    "upgrade-browser-workflow.json",
+    "workflow-verification-clean-manual-final.json"
+  ],
+  "remaining_limits": [
+    "Native A4/Letter pagination not verified",
+    "No genuine freelancer trial",
+    "Known semantic guide relevance error and extraction format omissions retained"
+  ],
+  "publication": "No upgraded public release or DEV update performed."
+}
