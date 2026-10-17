@@ -12,6 +12,8 @@ The [17 October submission candidate](docs/RELEASE-OCT17.md) includes the redesi
 
 ![Current local delivery desk](docs/current-demo/captures/01-dashboard.png)
 
+[Download the source and built interface](https://github.com/YashAnand69/handoffready/releases/tag/v0.2.0). The archive still needs Python dependencies and optional model setup.
+
 The public page plays an edited sequence of actual current UI captures. It runs no hosted inference and takes no uploads. The materials and operator decisions are synthetic. A genuine freelancer trial remains pending. The explorer preserves an explicitly dated earlier recording of the same review contracts; its older screen captures are not the final interface. See [current submission status](docs/SUBMISSION-STATUS-CURRENT.md).
 
 ![Actual exported synthetic client record](docs/current-demo/captures/10-exported-record.png)
@@ -98,3 +100,5 @@ The historical [earlier upgrade checkpoint](docs/upgrade-release-checks.json) pa
 Read [CONTRIBUTING.md](CONTRIBUTING.md) before changing the app. The [documentation index](docs/README.md) distinguishes current upgrade evidence from the historical release and original plans.
 
 The human role is product direction, genuine source material, workflow review and final delivery decisions. AI assistance in implementation and documentation is disclosed. Customer outcomes, revenue and contest placement have not been established.
+
+Recorded-explorer provenance checks require the recorded base commit in Git history. Run the full verification suite from a full repository clone; a source ZIP can run the app but does not contain Git history for rebuilding that historical evidence.

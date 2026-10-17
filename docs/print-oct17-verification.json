@@ -1,0 +1,25 @@
+{
+  "created_at_utc": "2026-10-17T10:50:37.044000+00:00",
+  "kind": "optional-html-print-renderer-readiness",
+  "state": "blocked_before_authoring",
+  "source": "outputs/current-demo/records/after.html",
+  "source_sha256": "c489911e92a4584e82acb4055c4e5214aad80f3433f24f361347d2af1e02bcf4",
+  "attempt": "Import WeasyPrint from isolated .runtime/pdf-tools using existing project Python",
+  "exit_code": 1,
+  "blocker": "WeasyPrint native dependency missing: cannot load library libgobject-2.0-0; macOS dynamic loader and ctypes.find_library could not locate it.",
+  "planned_paper_sizes": [
+    "A4",
+    "Letter"
+  ],
+  "pdfs_created": 0,
+  "artifact_start_marker_run": false,
+  "reason_marker_not_run": "Native renderer import failed during read-only dependency check before any PDF authoring command.",
+  "actions_taken": [
+    "No OS package installation attempted",
+    "No app source, immutable HTML, archive or release changed"
+  ],
+  "limitations": [
+    "A4/Letter renderer output remains unverified",
+    "No native-browser or physical print certification"
+  ]
+}

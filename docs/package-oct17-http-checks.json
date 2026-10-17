@@ -1,0 +1,23 @@
+{
+  "package_home_http_status": 200,
+  "package_home_exact_bytes": true,
+  "package_home_sha256": "e8c445c0c01e8f3f21312bdabc2e0798ad13181b916c1706d1c78005caea40f3",
+  "bundle_comparison": [
+    {
+      "path": "/assets/index-CQ2_4ht5.js",
+      "sha256": "e1bd9fae01f4ba5e546c66199cebb4aa1f21ae83e387d6404049dacaaca1a70b",
+      "bytes": 291875,
+      "package_http_match": true,
+      "current_8879_http_match": true
+    },
+    {
+      "path": "/assets/index-lYz1HB1U.css",
+      "sha256": "987706856d1e0ed557e0b0a4d8fb5b32555774eb94a7b6493ea9e44a9f9484b0",
+      "bytes": 29594,
+      "package_http_match": true,
+      "current_8879_http_match": true
+    }
+  ],
+  "current_running_url": "http://127.0.0.1:8879/",
+  "scope": "New package code process and temporary API store, using already-installed dependencies. No browser or fresh-machine setup claim."
+}

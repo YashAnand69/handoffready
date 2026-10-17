@@ -1,0 +1,114 @@
+{
+  "date": "2026-10-17",
+  "mode": "Anonymous HTTPS requests without owner credentials; browser playback inspected separately",
+  "checks": [
+    {
+      "path": "",
+      "status": 200,
+      "bytes": 5783,
+      "sha256": "dc4c8fec400dcf5bf1586031bc07286e15ca79e8f9ed8e08dd15299f3dc93396",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "path": "video/",
+      "status": 200,
+      "bytes": 5752,
+      "sha256": "8976065ff0eb7181b4f305eb63165efedbe33b83bdc470487b838dcfe4ce81b1",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "path": "explore/",
+      "status": 200,
+      "bytes": 6435,
+      "sha256": "1e0c76850fe736e353f88aa2655c9fb72e034d2600bd98174d6493c1556ac649",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "path": "records/before.html",
+      "status": 200,
+      "bytes": 11338,
+      "sha256": "8cc477316b48785b5e3245f1e5c32108ee45915f02ecba87ee990270ecc9969e",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "path": "records/after.html",
+      "status": 200,
+      "bytes": 11055,
+      "sha256": "c489911e92a4584e82acb4055c4e5214aad80f3433f24f361347d2af1e02bcf4",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "path": "walkthrough.vtt",
+      "status": 200,
+      "bytes": 1490,
+      "sha256": "b521fa3f034929542ada53130cd57b5739ec47550cf81b6b9375dea1d404733b",
+      "content_type": "text/vtt; charset=utf-8"
+    },
+    {
+      "path": "walkthrough.transcript.md",
+      "status": 200,
+      "bytes": 1514,
+      "sha256": "981dbf02b7226f90dc97dab2cc728ff07318d0b59b9f547c16058510c42f20bd",
+      "content_type": "text/markdown; charset=utf-8"
+    },
+    {
+      "path": "release.json",
+      "status": 200,
+      "bytes": 466,
+      "sha256": "ba545205b7ffc75f296c579cd42ceeb5cffab6cb0ac321a53fc722be7c37efcd",
+      "content_type": "application/json; charset=utf-8"
+    },
+    {
+      "path": "explore/data.json",
+      "status": 200,
+      "bytes": 7517,
+      "sha256": "81bcdfefc5b90b340bc5f3a76a0cc54d35f5df9da47f722771b46f151fef0088",
+      "content_type": "application/json; charset=utf-8"
+    },
+    {
+      "path": "records/after.json",
+      "status": 200,
+      "bytes": 11192,
+      "sha256": "7cdb9a8b7f02f4d176ef6f2cae8ce3a5d6424f7f8633237d41e9e97d0508b183",
+      "content_type": "application/json; charset=utf-8"
+    },
+    {
+      "path": "walkthrough.mp4",
+      "status": 200,
+      "bytes": 2537022,
+      "sha256": "2848fdc4d6ab06ee1468ebaaddc6caf69f8ac45a18a20fd04cf87edb45653ce9",
+      "content_type": "video/mp4"
+    }
+  ],
+  "browser": {
+    "title": "HandoffReady \u2014 current-interface walkthrough",
+    "video_duration": 90,
+    "dimensions": [
+      1920,
+      1200
+    ],
+    "chapter_seek_seconds": 80,
+    "observed_playing_time": 82.438559,
+    "paused": false,
+    "seekable": [
+      0,
+      90
+    ],
+    "media_error": null,
+    "explorer": "Five checkpoints loaded; exact recorded before/after metadata visible"
+  },
+  "not_validated": [
+    "physical mobile",
+    "screen reader",
+    "native A4/Letter print",
+    "genuine freelancer trial"
+  ],
+  "initial_pages_commit": "faf38a2b07828f2d2c9c89a7d6ba584a80aeea58",
+  "followup_label_commit": "68d1c9887d7537994be2a007a544e1bd3303774e",
+  "explorer_viewport": {
+    "width": 390,
+    "scroll_width": 375,
+    "horizontal_overflow": false,
+    "physical_device": false
+  }
+}

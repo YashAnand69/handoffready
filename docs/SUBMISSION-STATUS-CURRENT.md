@@ -1,39 +1,40 @@
 # HandoffReady — current submission status
 
-Checked 17 October 2026, Asia/Kolkata. Final release preparation is in progress; see `RELEASE-OCT17.md`. This page supersedes conflicting current-status sentences in older preparation documents. Historical receipts, model reports and source revisions remain historical.
+17 October 2026, Asia/Kolkata. This page supersedes conflicting status in older planning/checkpoint documents. Historical receipts retain their dates and scope.
 
-## Verified publication state
+## Completed release preparation
 
-Read-only signed-in DEV dashboard inspection on 17 October shows **HandoffReady: check the handoff before sending it to the client**, article **6228689**, marked **Draft**. Soundwalk Atlas is the separate published Week 1 post. HandoffReady has not been published through this task. Earlier README/index assertions that its earlier entry was already published were incorrect and are corrected.
+- Current application source is public on `main`. Application candidate: `8b72c3001c950394855e8d2ab67ed91b03e1a626`; CI history fix: `d0b603fa9fc41fcac2da035b3d64c19b68b6b263`; release documentation: `0234d770c5495adfd6e063297661cbc3e34411ae`.
+- [Release v0.2.0](https://github.com/YashAnand69/handoffready/releases/tag/v0.2.0) contains a source-and-built-interface archive, checksum receipt and the current video. It excludes private project data, credentials, weights and installed dependencies. Dependencies and optional local model setup remain required.
+- [Current public walkthrough](https://yashanand69.github.io/handoffready/) is 90 seconds, captioned, with chapters and transcript. It is edited from actual current UI captures and uses an agent-operated synthetic packet.
+- [Recorded explorer](https://yashanand69.github.io/handoffready/explore/) preserves an explicitly dated earlier run and actual hash-checked records. The older interface is labelled. [Current exported record](https://yashanand69.github.io/handoffready/records/after.html) comes from the 17 October demonstration.
+- Anonymous HTTPS checks returned 200 for all 11 verified public assets/paths, including the exact encoded MP4 bytes. Browser playback showed 90 seconds, 1920×1200, successful chapter seeking and no media error. Explorer after-correction controls displayed retained findings. This is not physical-device validation.
+- `release-oct17-checks.json`: 250 backend and 74 interface tests, type/build/format/focused Ruff, manual and actual-model synthetic smoke workflows passed. Remote [run 39025893074](https://github.com/YashAnand69/handoffready/actions/runs/39025893074) passed. Its initial shallow-checkout failure was reproduced and repaired without weakening provenance checks; see `remote-ci-oct17.json`.
+- `package-oct17-verification.json`: the actual released ZIP matched its receipt, extracted safely, completed the seven-stage manual workflow and served the same built bundles as the running app. It used installed dependencies, not a fresh machine.
+- `DEV-ENTRY-FINAL-OCT17.md` is the final article. The final text, actual current app cover, required tags and truthful AI disclosure are saved in existing DEV draft **6228689**. No second entry created.
 
-Do not create a second Week 2 article. The final text is `DEV-ENTRY-FINAL-OCT17.md`; the final concise article and current app cover were saved to the existing DEV draft during this release push. Publication remains pending final action. No preview token is recorded here. A public API read returned 403; the signed-in dashboard supplied the authoritative visible status.
+## Publication action
 
-The user explicitly requested submission tonight in the17 October two-hour release instruction, superseding the earlier hold. Week 2 rules/eligibility were previously confirmed by the user; no eligibility was independently certified. Final release preparation and article review precede publishing the existing draft.
+The user requested submission on 17 October, superseding the earlier hold. The finished entry is prepared for **Overall and Best Use of Gemma**. Final action-time confirmation of the contest entry agreement was requested through the user-input tool; Publish has not been clicked while that confirmation is pending. The user previously confirmed Week 2 rules and eligibility; no independent eligibility certification is made.
 
-## Product and evidence
+The signed-in dashboard and rendered preview identify the existing article as unpublished. Its secret preview token is intentionally omitted from source. After publication, record the actual public URL, timestamp, article ID and final verification here. Do not treat a draft or local package as a submitted entry.
 
-| Item | Current state | Remaining work |
-|---|---|---|
-| Canonical source | Codex `handoffready` working copy; extensive local upgrades | Freeze reviewed release identity before publishing source/media |
-| Automated checks | `final-upgrade-verification.json`, 15 October: 250 Python/ 74 UI, build/type/format/Ruff passed | New17 October checks are recorded in `release-oct17-checks.json`; remote run39025893074 succeeded |
-| Current package | `../outputs/HandoffReady-final-upgrade-oct15.zip` | This 15 October archive predates the 17 October documentation audit; don't relabel its hash or contents |
-| Model evidence | Frozen V4 report; 15/21 mandatory extraction; association19/ 19 guarded versus13/ 19 text baseline | Explain task distinctions and remaining welcome-guide error; do not claim full-pipeline accuracy |
-| Real freelancer | Trial not performed; participant guide prepared | Human participation, observed usefulness, consent for any public quote |
-| Demo | Public historical135-second video; local historical64-second upgrade video; recorded explorer | New90-second current UI video assembled and decoded; public playback verification in progress |
-| Public source and assets | Historical public source/demo differ from local candidate | Synchronize after authorized release; verify access without owner session |
-| Article | Local rewrite prepared; saved DEV article remains older draft | Final article and current cover saved to existing draft; final public link checks before publishing |
-| Accessibility/print | Prior viewport checks; physical device/screen reader/native A4/Letter unverified | Complete what can be tested and explicitly retain remaining limits |
+## Remaining evidence limits
 
-## Ready-to-submit gates
+- Genuine freelancer trial, willingness to pay, revenue and measured savings: not established. The prepared trial guide is not feedback.
+- Model evidence remains the frozen V4 experiment: 15/21 mandatory extraction obligations; association 19/ 19 after format guards versus 13/ 19 filename-plus-text baseline with approved requirements supplied separately. The welcome-only guide mistake persists in the actual 17 October run and is rejected by the reviewer. Do not claim full-pipeline accuracy.
+- Fresh-machine setup, physical-device operation, actual screen-reader testing and native A4/Letter printing remain unverified. The PDF-rendering check is recorded separately if completed; it cannot certify a physical printer or browser renderer.
+- No hosted inference service is claimed. The public demonstration is recorded; the full stack runs locally on the validated Apple Silicon setup.
 
-- [ ] One coherent final-version demonstration shows actual behavior, partial correction and remaining gaps.
-- [ ] Published source, demo and article refer to the same reviewed candidate; all evidence links and images resolve publicly.
-- [ ] Article clearly explains the intended exported-file task, why local/open inference matters and what remains unvalidated.
-- [ ] Model measurements distinguish approved-requirement association from requirement extraction and real client outcomes.
-- [ ] Existing draft 6228689 is the intended single entry; no duplicate created.
-- [x] User explicitly requested submission on 17 October, lifting the prior hold.
-- [ ] Resulting public post, tags, video and source verified after publication; actual URL/time/revision recorded.
+## Submission gates
 
-A real-user trial strengthens the entry but is not mandatory for valid submission. A hosted inference service is unnecessary when a qualifying video is provided. Neither missing item justifies fabricating evidence or allowing the deadline to pass silently.
+- [x] Current demonstration shows actual behavior, partial correction and remaining gaps.
+- [x] Public source, current video, exported records and final article describe the same application behavior.
+- [x] Article explains exported-file task, local/open inference benefit and limitations.
+- [x] Model measurements distinguish extraction, approved-requirement association and customer outcomes.
+- [x] Existing draft 6228689 is the single intended Week 2 entry.
+- [x] User explicitly requested submission on 17 October.
+- [ ] Final action-time confirmation received and Publish clicked.
+- [ ] Resulting public article and challenge tags/media verified after publication.
 
-Official deadline rechecked through the [challenge page](https://dev.to/challenges/hacktoberfest-week2-2026-10-12): **18 October 2026 at 23:59 PDT / 19 October at 12:29 IST**. Writing is weighted most heavily; the sponsor publishes no numerical judging weights. This document is preparation only.
+Official [Week 2 page](https://dev.to/challenges/hacktoberfest-week2-2026-10-12): deadline **18 October 2026 at 23:59 PDT / 19 October 2026 at 12:29 IST**. Writing is weighted most heavily; no numerical judging weights are published. A genuine trial is a valuable optional addition, not a validity requirement. No win or defect-free guarantee is made.
