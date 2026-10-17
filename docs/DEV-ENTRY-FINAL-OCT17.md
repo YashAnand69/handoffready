@@ -25,9 +25,11 @@ The potential paid service is a repeatable check before each delivery, with a re
 
 ## Demo
 
-[Watch the walkthrough and inspect the saved evidence](https://yashanand69.github.io/handoffready/).
+[Watch the current 90-second walkthrough](https://yashanand69.github.io/handoffready/) · [Inspect the recorded findings](https://yashanand69.github.io/handoffready/explore/) · [Read the exported client record](https://yashanand69.github.io/handoffready/records/after.html)
 
-The public walkthrough is a recording of a local workflow. Its explorer displays captured records; it does not run Gemma in your browser. The materials and decisions are agent-operated synthetic examples.
+[![Actual current HandoffReady interface: an agent-operated synthetic review](https://yashanand69.github.io/handoffready/walkthrough.poster.png)](https://yashanand69.github.io/handoffready/)
+
+The silent video is an edited sequence of actual interface captures from the 17 October local workflow, rather than continuous footage of inference or its waiting time. Actual local extraction and matching succeeded in that session. The separate explorer preserves an explicitly dated earlier recording of the same review contracts. Neither public page runs Gemma in your browser. Materials and decisions are agent-operated synthetic examples.
 
 Here is the consequential part of the journey:
 
@@ -52,19 +54,23 @@ React and TypeScript provide the review desk. FastAPI, SQLite and bounded file i
 
 The key design decision is to keep three judgments separate: **Gemma's suggestion, an inspected file fact and the reviewer's assessment**. Marking a requirement satisfied cannot erase a failed technical check. Changing the brief, approved scope or packet invalidates earlier reviews. A failed file replacement preserves the previous original.
 
+The [17 October verification](https://github.com/YashAnand69/handoffready/blob/d0b603fa9fc41fcac2da035b3d64c19b68b6b263/docs/release-oct17-checks.json) passed 250 backend and 74 interface tests, the production build and static checks. The [remote verification workflow](https://github.com/YashAnand69/handoffready/actions/runs/39025893074) also passed. Separate actual-model smoke calls succeeded; those calls do not measure accuracy.
+
 The interface follows that repeat-review loop: saved projects summarize outstanding attention, evidence can be searched, and “Save and next” advances after the decision is saved. Client records separate private review notes from wording deliberately shared with the client.
 
 ### Why use a model for this?
 
 Ordinary checks can establish properties such as dimensions, format and identical bytes. They do not readily connect a paraphrased brief to a relevant guide with an unexpected filename. Gemma proposes that connection and extracts a draft checklist from prose.
 
-I compared association approaches on ten authored synthetic packets containing 27 files. With approved requirements supplied separately, a locked filename-plus-inspected-text baseline found **13 of 19 keyed supporting file pairs**. Gemma found all 19, plus two incorrect format substitutions. The inspected-format guard removed those two substitutions from the same captured outputs.
+An evaluation compared association approaches on ten authored synthetic packets containing 27 files. With approved requirements supplied separately, a locked filename-plus-inspected-text baseline found **13 of 19 keyed supporting file pairs**. Gemma found all 19, plus two incorrect format substitutions. The inspected-format guard removed those two substitutions from the same captured outputs.
+
+One concrete gain: Gemma connected `distribution.txt`, which says to place an announcement near a stall entrance and on the community board, to the flyer-placement guide requirement. The filename-plus-text baseline missed that pair.
 
 That narrow gain is six additional support pairs on this set. It is not general accuracy or proof that the automatically extracted workflow is complete.
 
 Extraction was weaker: **15 of 21 mandatory obligations met the predefined coverage rules**; six proposals missed required format details. The actual app also suggested that the welcome-only guide supported contact-email instructions. A real quotation did not make that association useful. The demonstration preserves that mistake, which is why scope confirmation and review are central to the product.
 
-[Methods, raw-result identity and limitations](https://github.com/YashAnand69/handoffready/blob/handoffready/local-release/docs/MODEL-EVIDENCE-UPGRADE.md) distinguish model calls, synthetic workflow checks and automated tests. None is presented as customer evidence.
+[Methods, raw-result identity and limitations](https://github.com/YashAnand69/handoffready/blob/d0b603fa9fc41fcac2da035b3d64c19b68b6b263/docs/MODEL-EVIDENCE-UPGRADE.md) distinguish model calls, synthetic workflow checks and automated tests. None is presented as customer evidence.
 
 ### The human role
 

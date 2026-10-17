@@ -6,7 +6,7 @@ Checked 17 October 2026, Asia/Kolkata. Final release preparation is in progress;
 
 Read-only signed-in DEV dashboard inspection on 17 October shows **HandoffReady: check the handoff before sending it to the client**, article **6228689**, marked **Draft**. Soundwalk Atlas is the separate published Week 1 post. HandoffReady has not been published through this task. Earlier README/index assertions that its earlier entry was already published were incorrect and are corrected.
 
-Do not create a second Week 2 article. The active local text is `DEV-ENTRY-UPGRADE-DRAFT.md`; it has not been saved over the existing DEV draft. No preview token is recorded here. A public API read returned 403; the signed-in dashboard supplied the authoritative visible status.
+Do not create a second Week 2 article. The final text is `DEV-ENTRY-FINAL-OCT17.md`; the final concise article and current app cover were saved to the existing DEV draft during this release push. Publication remains pending final action. No preview token is recorded here. A public API read returned 403; the signed-in dashboard supplied the authoritative visible status.
 
 The user explicitly requested submission tonight in the17 October two-hour release instruction, superseding the earlier hold. Week 2 rules/eligibility were previously confirmed by the user; no eligibility was independently certified. Final release preparation and article review precede publishing the existing draft.
 
@@ -15,13 +15,13 @@ The user explicitly requested submission tonight in the17 October two-hour relea
 | Item | Current state | Remaining work |
 |---|---|---|
 | Canonical source | Codex `handoffready` working copy; extensive local upgrades | Freeze reviewed release identity before publishing source/media |
-| Automated checks | `final-upgrade-verification.json`, 15 October: 250 Python/ 74 UI, build/type/format/Ruff passed | These checks are historical observations, not a new 17 October execution |
+| Automated checks | `final-upgrade-verification.json`, 15 October: 250 Python/ 74 UI, build/type/format/Ruff passed | New17 October checks are recorded in `release-oct17-checks.json`; remote run39025893074 succeeded |
 | Current package | `../outputs/HandoffReady-final-upgrade-oct15.zip` | This 15 October archive predates the 17 October documentation audit; don't relabel its hash or contents |
 | Model evidence | Frozen V4 report; 15/21 mandatory extraction; association19/ 19 guarded versus13/ 19 text baseline | Explain task distinctions and remaining welcome-guide error; do not claim full-pipeline accuracy |
 | Real freelancer | Trial not performed; participant guide prepared | Human participation, observed usefulness, consent for any public quote |
-| Demo | Public historical135-second video; local historical64-second upgrade video; recorded explorer | Record final interface and verify finished playback; label recorded/static and synthetic modes |
+| Demo | Public historical135-second video; local historical64-second upgrade video; recorded explorer | New90-second current UI video assembled and decoded; public playback verification in progress |
 | Public source and assets | Historical public source/demo differ from local candidate | Synchronize after authorized release; verify access without owner session |
-| Article | Local rewrite prepared; saved DEV article remains older draft | Reconcile actual media/permalinks, author review and final preview before publishing |
+| Article | Local rewrite prepared; saved DEV article remains older draft | Final article and current cover saved to existing draft; final public link checks before publishing |
 | Accessibility/print | Prior viewport checks; physical device/screen reader/native A4/Letter unverified | Complete what can be tested and explicitly retain remaining limits |
 
 ## Ready-to-submit gates
