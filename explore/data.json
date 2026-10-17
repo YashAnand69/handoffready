@@ -1,0 +1,160 @@
+{
+  "version": "recorded-checkpoints-v1",
+  "recorded_at": "2026-10-14T18:47:27.714818+00:00",
+  "sample_id": "synthetic-studio-north-upgrade",
+  "actor": "agent-operated synthetic demo",
+  "prompt_version": "handoffready-v11",
+  "catalog_version": "source-occurrence-v1",
+  "source": {
+    "base_commit": "f1ee8226934244ef81a117444098e59743110a0f",
+    "label": "base commit + local module hashes",
+    "module_sha256": {
+      "backend/handoffready/checks.py": "136b0af91ab9ecd18df7eee9d78f16d508434276f9b8c54dff3017a2392c73b9",
+      "backend/handoffready/model.py": "f0ea34b95590209df6e130872b60226c2794ce6a87d736ade1a25d32aba5239f",
+      "backend/handoffready/summary.py": "648db11aaae6e00cf0c126ea68bc5ddfb3117c895998658a7f79a51b5d02a4df",
+      "backend/handoffready/schemas.py": "d3bcfbf05a155d5bbab4e2a692d6ccbe7da052e96d240bb86fe7a40c7a6bc5d7",
+      "backend/handoffready/evidence.py": "12b141f123b259f641b655ef5ac3099a80768bfda440910365531e7b927c0963"
+    }
+  },
+  "checkpoints": [
+    {
+      "id": "brief",
+      "title": "Scope from actual source",
+      "summary": "Local Gemma proposed three quoted requirements from the original synthetic brief; the operator explicitly confirmed them.",
+      "facts": [
+        "Deliver a transparent PNG logo and an SVG logo.",
+        "Deliver exactly three distinct 1080 × 1080 PNG launch images.",
+        "Provide a guide explaining how to update the website contact email."
+      ],
+      "findings": [
+        {
+          "title": "Quoted source",
+          "status": "note",
+          "detail": "Exact occurrence IDs locate source text. Meaning, format and scope still need human review."
+        }
+      ]
+    },
+    {
+      "id": "review",
+      "title": "A satisfied click cannot erase a failed check",
+      "summary": "The original logo was opaque and the launch packet contained duplicate bytes.",
+      "facts": [
+        "Three current reviews; two failed technical checks.",
+        "The operator marked the logo satisfied to demonstrate the retained failure.",
+        "Gemma wrongly associated a welcome-only guide with contact-email instructions; it also described duplicate launch files as distinct."
+      ],
+      "findings": [
+        {
+          "title": "Opaque PNG",
+          "status": "fail",
+          "detail": "Nonopaque pixels: false."
+        },
+        {
+          "title": "Distinct file bytes",
+          "status": "fail",
+          "detail": "Three names, only two different launch-image contents."
+        },
+        {
+          "title": "Guide meaning",
+          "status": "note",
+          "detail": "Actual Gemma made a wrong association; operator recorded needs work."
+        }
+      ],
+      "screenshot": "captures/upgrade-handoff.jpg"
+    },
+    {
+      "id": "correct",
+      "title": "Replacement invalidates old review",
+      "summary": "An actual transparent PNG replaced the opaque original. All three mapping reviews became stale.",
+      "facts": [
+        "Replacement inspected: nonopaque pixels true.",
+        "Current reviewed items dropped from three to zero.",
+        "The earlier saved record remained available."
+      ],
+      "findings": [
+        {
+          "title": "Review currency",
+          "status": "unknown",
+          "detail": "Fresh review required after the packet changed."
+        }
+      ],
+      "screenshot": "captures/upgrade-stale.jpg"
+    },
+    {
+      "id": "rereview",
+      "title": "Re-review fixes only the corrected work",
+      "summary": "After explicit fresh reviews, the logo passes narrow file checks; launch-image and guide problems remain.",
+      "facts": [
+        "Three current reviews; one technical failure.",
+        "Duplicate launch artwork and insufficient guide are still marked needs work."
+      ],
+      "findings": [
+        {
+          "title": "Logo checks",
+          "status": "pass",
+          "detail": "Required PNG/SVG files present; PNG contains nonopaque pixels. Proper visual quality remains human judgment."
+        },
+        {
+          "title": "Remaining delivery",
+          "status": "fail",
+          "detail": "The packet still has only two distinct launch-image contents."
+        }
+      ]
+    },
+    {
+      "id": "snapshots",
+      "title": "Two records, no silent rewrite",
+      "summary": "The first downloaded record was fetched again after correction and compared byte for byte.",
+      "facts": [
+        "Earlier record: two failed technical checks.",
+        "Later record: one failed technical check.",
+        "Both remain drafts with visible outstanding work.",
+        "Downloads preserve the renderer used when captured; later presentation refinements do not rewrite them.",
+        "Downloads retain the exact earlier recorded renderer. Wording may differ from the latest local app; the listed source hashes cover the named backend modules, not every application source file.",
+        "The original API capture hash is preserved verbatim in capture-provenance.json. A compatibility fix for unchanged legacy checklist saves came after this capture; no model, evidence-grounding or deterministic-check code changed. The unchanged source subset shown here excludes that later API revision."
+      ],
+      "findings": [
+        {
+          "title": "Historical record",
+          "status": "pass",
+          "detail": "Original JSON download is byte-identical after replacement and fresh review."
+        }
+      ]
+    }
+  ],
+  "snapshots": {
+    "before": {
+      "id": "4322580f354a4a4ab5e243e5de919b46",
+      "created_at": "2026-10-14T18:39:24.142709+00:00",
+      "source_revision": 13,
+      "status": "draft_with_gaps",
+      "snapshot_hash": "3ad8d945628c725b96f00fb8fd010190c9e098767f422d9208d593603043683e",
+      "summary": "3 current reviews; 2 failed technical check(s); 3 item(s) needing attention."
+    },
+    "after": {
+      "id": "1a26f2fca9da40638e9110511959b6e9",
+      "created_at": "2026-10-14T18:47:27.696343+00:00",
+      "source_revision": 18,
+      "status": "draft_with_gaps",
+      "snapshot_hash": "66770738bbe4883ca3bf59845265e6bee4f34808a8f23f6f0c0050ee4a504025",
+      "summary": "3 current reviews; 1 failed technical check(s); 2 item(s) needing attention."
+    }
+  },
+  "comparison": {
+    "summary": "Correction changes the new delivery record; the old record is preserved. Remaining problems are not erased.",
+    "old_snapshot_unchanged": true,
+    "originals_notice": "Send the original files alongside this record. This document identifies supporting files; it does not contain their original bytes.",
+    "unchanged_artifact": "records/before-verified-again.json"
+  },
+  "assets": {
+    "records/before.json": "4045b18b015ab10cfe4ee48bbab7acdd87fd5ae347dd0a25ce39604534083846",
+    "records/before-verified-again.json": "4045b18b015ab10cfe4ee48bbab7acdd87fd5ae347dd0a25ce39604534083846",
+    "records/after.json": "d600388b4a06da3b0710391e09280e12e3ea8d0293dd50f07e9c7dc88426eee8",
+    "records/after.html": "8f80a82f0a9954259edecac5d566ef597fa23a81eb4cce5104dd9db2200389aa",
+    "records/before.md": "3ab5f986b99cb3097eb2d693a59512c5350a0c737128a7843b87eec13615e500",
+    "records/after.md": "03514e822acb7ebfa9271622de6d8e01f351fc4cf51ef5ce052121250cba6d88",
+    "records/before.html": "c877568b2c73a78f00d58186eff2e47f67066235c20008079044f5140d155617",
+    "captures/upgrade-handoff.jpg": "ba71f388c0563eac623ff85fab41b7ca6b4af1d5430a62a64c930e201ba1d151",
+    "captures/upgrade-stale.jpg": "e7d0d0a25d037ff335534d2b6015a06ab9bb5449268c58166996aebe698f6659"
+  }
+}

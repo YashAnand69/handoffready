@@ -1,0 +1,34 @@
+{
+  "kind": "validated-static-recorded-checkpoints",
+  "disclosure": "Synthetic packet; agent-operated recorded run; no browser inference",
+  "recorded_at": "2026-10-14T18:47:27.714818+00:00",
+  "sample_id": "synthetic-studio-north-upgrade",
+  "prompt_version": "handoffready-v11",
+  "source": {
+    "base_commit": "f1ee8226934244ef81a117444098e59743110a0f",
+    "label": "base commit + local module hashes",
+    "module_sha256": {
+      "backend/handoffready/checks.py": "136b0af91ab9ecd18df7eee9d78f16d508434276f9b8c54dff3017a2392c73b9",
+      "backend/handoffready/model.py": "f0ea34b95590209df6e130872b60226c2794ce6a87d736ade1a25d32aba5239f",
+      "backend/handoffready/summary.py": "648db11aaae6e00cf0c126ea68bc5ddfb3117c895998658a7f79a51b5d02a4df",
+      "backend/handoffready/schemas.py": "d3bcfbf05a155d5bbab4e2a692d6ccbe7da052e96d240bb86fe7a40c7a6bc5d7",
+      "backend/handoffready/evidence.py": "12b141f123b259f641b655ef5ac3099a80768bfda440910365531e7b927c0963"
+    }
+  },
+  "old_snapshot_unchanged": true,
+  "file_sha256": {
+    "index.html": "649ab2d5f9df056deea6a8cc12f40a9d6ffe6fa6ca3e171916f44840585b0997",
+    "replay.css": "1f1551db7e977340d4eea065ae4bb946411fc846369370cb103248db5af4bd6e",
+    "replay.js": "e8461ec4e54b1068dd888a58668a0fab3b7000a9a92d3318294fb807c224b3d1",
+    "data.json": "81bcdfefc5b90b340bc5f3a76a0cc54d35f5df9da47f722771b46f151fef0088",
+    "records/before.json": "4045b18b015ab10cfe4ee48bbab7acdd87fd5ae347dd0a25ce39604534083846",
+    "records/before-verified-again.json": "4045b18b015ab10cfe4ee48bbab7acdd87fd5ae347dd0a25ce39604534083846",
+    "records/after.json": "d600388b4a06da3b0710391e09280e12e3ea8d0293dd50f07e9c7dc88426eee8",
+    "records/after.html": "8f80a82f0a9954259edecac5d566ef597fa23a81eb4cce5104dd9db2200389aa",
+    "records/before.md": "3ab5f986b99cb3097eb2d693a59512c5350a0c737128a7843b87eec13615e500",
+    "records/after.md": "03514e822acb7ebfa9271622de6d8e01f351fc4cf51ef5ce052121250cba6d88",
+    "records/before.html": "c877568b2c73a78f00d58186eff2e47f67066235c20008079044f5140d155617",
+    "captures/upgrade-handoff.jpg": "ba71f388c0563eac623ff85fab41b7ca6b4af1d5430a62a64c930e201ba1d151",
+    "captures/upgrade-stale.jpg": "e7d0d0a25d037ff335534d2b6015a06ab9bb5449268c58166996aebe698f6659"
+  }
+}

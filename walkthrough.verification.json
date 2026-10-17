@@ -1,148 +1,87 @@
 {
-  "verified_at": "2026-10-14T07:34:02.313447+00:00",
-  "title": "HandoffReady · actual local workflow",
+  "verified_at": "2026-10-17T10:35:08.433744+00:00",
+  "title": "HandoffReady — current local delivery review, 17 October 2026",
   "recording_type": "captured_screens_walkthrough",
   "disclosure": "Actual app captures · edited walkthrough · agent-operated synthetic demo",
   "silent": true,
-  "manifest_sha256": "c1154298f7a2a4db731a1b225fa1e99fae834c69d8f77ec69434aeabba1e3964",
+  "continuous_recording": false,
+  "model_inference_recording": false,
+  "manifest_sha256": "5cf45da3d499c102c8c9b9e1cff7a9219b018477ccb838049e0911bdceb3ae09",
   "video": "walkthrough.mp4",
-  "video_sha256": "08aa4b54636b4d4120303dcba12dd1d280ba69225e909c880c95593950caeccb",
-  "bytes": 1879019,
+  "video_sha256": "2848fdc4d6ab06ee1468ebaaddc6caf69f8ac45a18a20fd04cf87edb45653ce9",
+  "bytes": 2537022,
   "poster": "walkthrough.poster.png",
   "source_capture_bytes_preserved": true,
   "captures": [
     {
-      "image": "frames/01-home.png",
-      "sha256": "d4800829bdd7ff59d701bc4f7c4f10a0b4055bf9d5694aef29fd624d525f3e7c",
-      "caption": "A private delivery desk for web and design freelancers. This packet is synthetic.",
+      "image": "captures/01-dashboard.png",
+      "sha256": "f5d32208a15a5da3fdc108d14e0da244c6d33d14bd39806b341256fee19ab907",
+      "caption": "Check outgoing files against the brief before sending them to a client. This packet and operator actions are synthetic.",
       "frames": 144,
       "duration_seconds": 6.0
     },
     {
-      "image": "frames/02-brief.png",
-      "sha256": "1dcf52f6a795c47629aadbcf5f4981b240c1c695ede772182f0036aa9919a1e5",
-      "caption": "Start with the agreed brief: a transparent logo, three distinct launch images and useful contact-email instructions.",
-      "frames": 168,
-      "duration_seconds": 7.0
-    },
-    {
-      "image": "frames/03-local-inference.png",
-      "sha256": "d1638d5c959df009a5ebcf8859ddb65b63bf2b3836c1a534b92f4a87984c8e9a",
-      "caption": "Actual local Gemma inference proposes a checklist. The recording uses captured screens, not canned responses.",
-      "frames": 96,
-      "duration_seconds": 4.0
-    },
-    {
-      "image": "frames/04-checklist.png",
-      "sha256": "e3d0642db4d7d471314910c3dbe3fe364fb81ea19ec333188fd07654b6d8c733",
-      "caption": "Review exact source quotations, formats and quantities before explicitly confirming the checklist.",
+      "image": "captures/02-brief.png",
+      "sha256": "ac269c7e0cf602c1148c595f61bce1f8164d8edaf894fdc51439bb2d34a8df1d",
+      "caption": "Three promises: logo formats, three distinct launch images, and a guide to updating the website contact email.",
       "frames": 192,
       "duration_seconds": 8.0
     },
     {
-      "image": "frames/05-files.png",
-      "sha256": "d9592594f85dda8e354a8c03b9a8c01473f2434167d7ab2441f89946d0246a20",
-      "caption": "Inspect real file bytes. Supported checks establish narrow facts, not aesthetic quality.",
-      "frames": 144,
-      "duration_seconds": 6.0
-    },
-    {
-      "image": "frames/06-duplicate.png",
-      "sha256": "d9592594f85dda8e354a8c03b9a8c01473f2434167d7ab2441f89946d0246a20",
-      "caption": "Three launch filenames contain only two distinct byte sequences. Renaming cannot create a third design.",
-      "frames": 192,
-      "duration_seconds": 8.0
-    },
-    {
-      "image": "frames/07-matching.png",
-      "sha256": "38d094109bd3068eac0d9d1f6e2f421f4133bce72517b95b6e33a71dde6bc7af",
-      "caption": "Gemma runs locally again to propose associations. It never selects files or approves delivery automatically.",
-      "frames": 96,
-      "duration_seconds": 4.0
-    },
-    {
-      "image": "frames/08-suggestions.png",
-      "sha256": "dd9c6e78a9174ba53e449350790b4697fc2ebd7cdf412ae8e3f76ff8a0052518",
-      "caption": "Suggestions remain unverified. Select and inspect the actual files before making an assessment.",
-      "frames": 192,
-      "duration_seconds": 8.0
-    },
-    {
-      "image": "frames/09-failure-preserved.png",
-      "sha256": "2e3a6b84e1e2d30059ba4497991a2b23d8300f52f4fefd4c34dba931884b69b9",
-      "caption": "Safeguard test: even a satisfied assessment cannot erase the opaque PNG’s failed transparency check.",
-      "frames": 216,
-      "duration_seconds": 9.0
-    },
-    {
-      "image": "frames/10-count-failure.png",
-      "sha256": "da76f2c0c365b25395671bc292a7108bfc5809e17d983e53713e3dd5f620b74a",
-      "caption": "The actual byte count fails: two distinct files, not the three requested. Dimensions can pass independently.",
-      "frames": 192,
-      "duration_seconds": 8.0
-    },
-    {
-      "image": "frames/11-guide-review.png",
-      "sha256": "d141bab4a3b6c4512009bdeece8e62b335022aa6f276415eabc62c285f31404d",
-      "caption": "The guide contains only a welcome note. Operator review marks needs work; the manual check stays unknown.",
+      "image": "captures/03-checklist.png",
+      "sha256": "86c0631a51cb35cf00b78a71a94420a91dc311399016bdcf54fe2283d822c6f9",
+      "caption": "Gemma proposes the checklist. Review every source quote, required format and quantity before confirming.",
       "frames": 240,
       "duration_seconds": 10.0
     },
     {
-      "image": "frames/12-handoff-gaps.png",
-      "sha256": "913826b04f7a9c2384ae3f1270418e5ac8aba3abb5024282e0535d5defd662dc",
-      "caption": "The client manifest keeps failed and unresolved work visible. Raw source and private notes stay out.",
-      "frames": 168,
-      "duration_seconds": 7.0
-    },
-    {
-      "image": "frames/13-saved-export.png",
-      "sha256": "806fa90f0add990613ed0cce551c23cf8fcfe028c7b5177dad69ca1aec42797d",
-      "caption": "Save and download an immutable JSON snapshot. Original delivery files must be sent separately.",
-      "frames": 144,
-      "duration_seconds": 6.0
-    },
-    {
-      "image": "frames/14-replacement.png",
-      "sha256": "6130a2e5939df7fc2c894cab39436da5ef554ac4e33f70795b66a07eeb6a8fd8",
-      "caption": "Replace the opaque logo with actual transparent PNG bytes. A filename change alone would not fix it.",
-      "frames": 168,
-      "duration_seconds": 7.0
-    },
-    {
-      "image": "frames/15-stale-reviews.png",
-      "sha256": "d68b19d97d5317f522a5df8d5178045c41a45e8e2a49e13572ca4ca7d4b04fdd",
-      "caption": "Changing the packet makes previous assessments stale. Explicitly review the current files again.",
+      "image": "captures/04-files.png",
+      "sha256": "a131209afc88a4aa0035e5bc93c20da48e053b1cc0531fc30ecdeaa36dd1b316",
+      "caption": "The duplicate filter finds two files with identical bytes. Different filenames do not make distinct artwork.",
       "frames": 192,
       "duration_seconds": 8.0
     },
     {
-      "image": "frames/16-corrected-checks.png",
-      "sha256": "86fbb2e8bc0093865de36160633cfc97f81428f054bfcf2b668f155772d3c571",
-      "caption": "The new PNG passes the narrow alpha check after a fresh review. Final appearance still needs judgment.",
-      "frames": 192,
-      "duration_seconds": 8.0
+      "image": "captures/05-findings.png",
+      "sha256": "53302618348701a3711136a13bce3f2b9be16a9006bb5c30a619e532414c4af8",
+      "caption": "The selected PNG fails the narrow transparency check. Recording an assessment cannot erase that finding.",
+      "frames": 240,
+      "duration_seconds": 10.0
     },
     {
-      "image": "frames/17-corrected-preview.png",
-      "sha256": "f75dc6b30b10f3c8674565ca7fbd262f9b69bade798880e581b560e77530dad1",
-      "caption": "The corrected logo passes; the duplicate launch image and incomplete guide still need work.",
-      "frames": 168,
-      "duration_seconds": 7.0
+      "image": "captures/06-review.png",
+      "sha256": "74c4982edd5eacbe8f7fde45a46107d2963691b3c91f5f0ef6f879ed68a3998d",
+      "caption": "Gemma linked a welcome-only guide. The operator inspects its text and records Needs work: the promised instructions are missing.",
+      "frames": 288,
+      "duration_seconds": 12.0
     },
     {
-      "image": "frames/18-immutable-history.png",
-      "sha256": "c4a424b254170bb9444076aba310a8a0e7830bdd1b2439021595ba7261eb03c6",
-      "caption": "Earlier exports stay unchanged. A second download matched the original snapshot byte-for-byte.",
-      "frames": 144,
-      "duration_seconds": 6.0
+      "image": "captures/07-client-record.png",
+      "sha256": "7aace0d9c029de09caa0f528543c6a4ef25af4ec60582f5010025385d663b9f9",
+      "caption": "Save a snapshot of this delivery. Shared requirement titles and client notes still need a confidentiality review.",
+      "frames": 120,
+      "duration_seconds": 5.0
     },
     {
-      "image": "frames/19-final-snapshots.png",
-      "sha256": "4c1242dec280401ad9fe0a30d42d808ca8ec5fa18a6a12ee13b69d587d0a9185",
-      "caption": "Both snapshots remain available with their version context. Local AI assists; review controls the handoff.",
-      "frames": 192,
-      "duration_seconds": 8.0
+      "image": "captures/08-stale.png",
+      "sha256": "28de1e22590977ca467ce9519b10b496542969c87fc3b87f238e3c80e1d4fad0",
+      "caption": "Replacing a file makes all three earlier reviews stale. Recheck the evidence before confirming a new delivery.",
+      "frames": 240,
+      "duration_seconds": 10.0
+    },
+    {
+      "image": "captures/09-corrected.png",
+      "sha256": "60c8b20c38e6dea0f1b37ff410d2ca75a3c03715c812eb47a7e88e043368e3b6",
+      "caption": "After fresh review, two items still need attention and one technical check still fails. The new draft retains those gaps.",
+      "frames": 264,
+      "duration_seconds": 11.0
+    },
+    {
+      "image": "captures/10-exported-record.png",
+      "sha256": "df991d7f009757f2f7d80345ab614a0ddc078e304bdaa94f3f896260c7e29326",
+      "caption": "The exported record retains outstanding work. Send the original files alongside it; this is not a claim of client acceptance.",
+      "frames": 240,
+      "duration_seconds": 10.0
     }
   ],
   "metadata": {
@@ -151,18 +90,18 @@
     "pix_fmt": "yuv420p(progressive)",
     "fps": 24.0,
     "source_size": [
-      1000,
+      1920,
       1200
     ],
     "size": [
-      1000,
+      1920,
       1200
     ],
     "rotate": 0,
-    "duration": 135.0
+    "duration": 90.0
   },
-  "decoded_frames": 3240,
-  "duration_seconds": 135.0,
-  "expected_duration_seconds": 135.0,
-  "expected_frames": 3240
+  "decoded_frames": 2160,
+  "duration_seconds": 90.0,
+  "expected_duration_seconds": 90.0,
+  "expected_frames": 2160
 }

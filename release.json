@@ -1,0 +1,9 @@
+{
+  "release_date": "2026-10-17",
+  "application_source": "8b72c3001c950394855e8d2ab67ed91b03e1a626",
+  "current_video_seconds": 90,
+  "current_video_sha256": "2848fdc4d6ab06ee1468ebaaddc6caf69f8ac45a18a20fd04cf87edb45653ce9",
+  "mode": "Recorded edited actual UI, synthetic agent-operated workflow. No hosted model.",
+  "explorer": "Preserved earlier recording; actual records hash-checked; older UI labelled.",
+  "recorded_trial": "No freelancer trial claimed."
+}

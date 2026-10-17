@@ -1,0 +1,107 @@
+{
+  "verified_at": "2026-10-17T10:35:08.433744+00:00",
+  "title": "HandoffReady — current local delivery review, 17 October 2026",
+  "recording_type": "captured_screens_walkthrough",
+  "disclosure": "Actual app captures · edited walkthrough · agent-operated synthetic demo",
+  "silent": true,
+  "continuous_recording": false,
+  "model_inference_recording": false,
+  "manifest_sha256": "5cf45da3d499c102c8c9b9e1cff7a9219b018477ccb838049e0911bdceb3ae09",
+  "video": "walkthrough.mp4",
+  "video_sha256": "2848fdc4d6ab06ee1468ebaaddc6caf69f8ac45a18a20fd04cf87edb45653ce9",
+  "bytes": 2537022,
+  "poster": "walkthrough.poster.png",
+  "source_capture_bytes_preserved": true,
+  "captures": [
+    {
+      "image": "captures/01-dashboard.png",
+      "sha256": "f5d32208a15a5da3fdc108d14e0da244c6d33d14bd39806b341256fee19ab907",
+      "caption": "Check outgoing files against the brief before sending them to a client. This packet and operator actions are synthetic.",
+      "frames": 144,
+      "duration_seconds": 6.0
+    },
+    {
+      "image": "captures/02-brief.png",
+      "sha256": "ac269c7e0cf602c1148c595f61bce1f8164d8edaf894fdc51439bb2d34a8df1d",
+      "caption": "Three promises: logo formats, three distinct launch images, and a guide to updating the website contact email.",
+      "frames": 192,
+      "duration_seconds": 8.0
+    },
+    {
+      "image": "captures/03-checklist.png",
+      "sha256": "86c0631a51cb35cf00b78a71a94420a91dc311399016bdcf54fe2283d822c6f9",
+      "caption": "Gemma proposes the checklist. Review every source quote, required format and quantity before confirming.",
+      "frames": 240,
+      "duration_seconds": 10.0
+    },
+    {
+      "image": "captures/04-files.png",
+      "sha256": "a131209afc88a4aa0035e5bc93c20da48e053b1cc0531fc30ecdeaa36dd1b316",
+      "caption": "The duplicate filter finds two files with identical bytes. Different filenames do not make distinct artwork.",
+      "frames": 192,
+      "duration_seconds": 8.0
+    },
+    {
+      "image": "captures/05-findings.png",
+      "sha256": "53302618348701a3711136a13bce3f2b9be16a9006bb5c30a619e532414c4af8",
+      "caption": "The selected PNG fails the narrow transparency check. Recording an assessment cannot erase that finding.",
+      "frames": 240,
+      "duration_seconds": 10.0
+    },
+    {
+      "image": "captures/06-review.png",
+      "sha256": "74c4982edd5eacbe8f7fde45a46107d2963691b3c91f5f0ef6f879ed68a3998d",
+      "caption": "Gemma linked a welcome-only guide. The operator inspects its text and records Needs work: the promised instructions are missing.",
+      "frames": 288,
+      "duration_seconds": 12.0
+    },
+    {
+      "image": "captures/07-client-record.png",
+      "sha256": "7aace0d9c029de09caa0f528543c6a4ef25af4ec60582f5010025385d663b9f9",
+      "caption": "Save a snapshot of this delivery. Shared requirement titles and client notes still need a confidentiality review.",
+      "frames": 120,
+      "duration_seconds": 5.0
+    },
+    {
+      "image": "captures/08-stale.png",
+      "sha256": "28de1e22590977ca467ce9519b10b496542969c87fc3b87f238e3c80e1d4fad0",
+      "caption": "Replacing a file makes all three earlier reviews stale. Recheck the evidence before confirming a new delivery.",
+      "frames": 240,
+      "duration_seconds": 10.0
+    },
+    {
+      "image": "captures/09-corrected.png",
+      "sha256": "60c8b20c38e6dea0f1b37ff410d2ca75a3c03715c812eb47a7e88e043368e3b6",
+      "caption": "After fresh review, two items still need attention and one technical check still fails. The new draft retains those gaps.",
+      "frames": 264,
+      "duration_seconds": 11.0
+    },
+    {
+      "image": "captures/10-exported-record.png",
+      "sha256": "df991d7f009757f2f7d80345ab614a0ddc078e304bdaa94f3f896260c7e29326",
+      "caption": "The exported record retains outstanding work. Send the original files alongside it; this is not a claim of client acceptance.",
+      "frames": 240,
+      "duration_seconds": 10.0
+    }
+  ],
+  "metadata": {
+    "ffmpeg_version": "7.1 built with Apple clang version 13.1.6 (clang-1316.0.21.2.5)",
+    "codec": "h264",
+    "pix_fmt": "yuv420p(progressive)",
+    "fps": 24.0,
+    "source_size": [
+      1920,
+      1200
+    ],
+    "size": [
+      1920,
+      1200
+    ],
+    "rotate": 0,
+    "duration": 90.0
+  },
+  "decoded_frames": 2160,
+  "duration_seconds": 90.0,
+  "expected_duration_seconds": 90.0,
+  "expected_frames": 2160
+}
