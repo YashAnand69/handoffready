@@ -233,12 +233,12 @@
       byId("walkthrough").hidden = true;
       status.classList.add("error");
       status.textContent =
-        "The recorded checkpoint data could not be loaded. Read the synthetic records through the links below or watch the earlier video.";
+        "The recorded checkpoint data could not be loaded. Read the synthetic records through the links below or watch the current walkthrough.";
       const links = text("p", "");
       for (const [label, path] of [
         ["Earlier record", "records/before.html"],
         ["Record after correction", "records/after.html"],
-        ["Earlier video", "https://yashanand69.github.io/handoffready/"],
+        ["Current walkthrough", "https://yashanand69.github.io/handoffready/"],
       ]) {
         const link = text("a", label);
         link.href = path;
