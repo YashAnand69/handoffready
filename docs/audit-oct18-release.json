@@ -1,0 +1,27 @@
+{
+  "verified_at_utc": "2026-10-18T15:58:41.195597+00:00",
+  "release": "https://github.com/YashAnand69/handoffready/releases/tag/v0.2.1",
+  "source_commit": "97592fd5dffbb904cc785eaddfb1645a6a6fe3af",
+  "is_draft": false,
+  "bytes": 3642373,
+  "sha256": "949c07b0690e634a8a896074e90cba9303823cc2988774474dea0fc207841c86",
+  "github_asset_digest_matches": true,
+  "extracted_zip_tests": {
+    "process_ownership_regressions": 4,
+    "manual_workflow_stages": 7,
+    "passed": true,
+    "uses_existing_isolated_dependencies": true
+  },
+  "remote_ci": "https://github.com/YashAnand69/handoffready/actions/runs/39142499845",
+  "remote_conclusion": "success",
+  "older_release": "v0.2.0 retained with superseded warning; assets not rewritten",
+  "anonymous_download_verified": false,
+  "anonymous_download_limitation": "URLError: <urlopen error [Errno 54] Connection reset by peer>",
+  "browser_download_sha_verified": true,
+  "browser_download_bytes": 3642373,
+  "dev_audit_note_verified": true,
+  "dev_entry_url": "https://dev.to/yashanand69/handoffready-the-folder-looks-finished-does-it-fulfill-the-brief-3igh",
+  "dev_note_screenshot": "outputs/audit-oct18/dev-audit-update.png",
+  "release_screenshot": "outputs/audit-oct18/release-v0.2.1.png",
+  "final_verified_at_utc": "2026-10-18T16:00:27.090004+00:00"
+}

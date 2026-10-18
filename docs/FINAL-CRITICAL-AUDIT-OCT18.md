@@ -22,7 +22,7 @@ The user requested independent parallel review. Three subagents began product/wr
 - Browser sample used actual extraction/matching, explicit agent-operated review decisions, and the corrected navigation. Downloaded JSON stayed `draft_with_gaps`; private sentinel was absent.
 - The public demo, recorded explorer and exported record links responded successfully in the preceding same-day check. The final article was also anonymously retrievable through the web tool during the rules audit. Existing article/recording retains its 17 October evidence date; it is not a claim to show these later code fixes.
 
-See `audit-oct18-checks.json`, `audit-oct18-model-workflow.json`, `audit-oct18-manual-workflow.json` and `audit-oct18-product.md` for evidence. Fresh dependency installation here is not a new physical computer trial.
+See `audit-oct18-checks.json`, `audit-oct18-model-workflow.json`, `audit-oct18-manual-workflow.json` and `audit-oct18-product.md` for evidence. Fresh dependency installation here is not a new physical computer trial. Remote [CI run 39142499845](https://github.com/YashAnand69/handoffready/actions/runs/39142499845) passed on source `97592fd5dffbb904cc785eaddfb1645a6a6fe3af`, including all 254/75 tests and static/build checks. The public 90-second 1920×1200 video played from the 42-second chapter through 87.97 seconds with no media error. The restarted local app retained all three reviews and the saved draft record.
 
 ## What can still cost us a win
 
@@ -43,6 +43,10 @@ The [specific rules](https://dev.to/page/hacktoberfest-week2-2026-10-12-contest-
 The [challenge page](https://dev.to/challenges/hacktoberfest-week2-2026-10-12) weights writing most heavily; it does not publish numerical weights. First-user evidence is optional bonus evidence. A running hosted inference service is not mandatory. Neither AI assistance nor an honestly incomplete model result automatically invalidates an entry.
 
 Deadline: **18 October 2026, 23:59 PDT / 19 October 2026, 12:29 IST**. The official FAQ requires README disclosure of commits after that deadline. This audit and repair occurred before it. No new agreement was accepted during this audit.
+
+## Published patch identity
+
+[Release v0.2.1](https://github.com/YashAnand69/handoffready/releases/tag/v0.2.1) is public at source `97592fd5dffbb904cc785eaddfb1645a6a6fe3af`. Its built-interface/source ZIP passed the extracted-package checks and downloaded through the browser with the expected SHA-256. Standalone anonymous HTTP download attempts encountered connection resets; that separate route is not certified. The existing DEV entry now contains a dated audit note linking the fixes and passing CI, with the original recording date preserved. Historical v0.2.0 assets remain unchanged with a superseded warning.
 
 ## Recommendation
 

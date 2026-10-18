@@ -58,6 +58,8 @@ The [17 October verification](https://github.com/YashAnand69/handoffready/blob/d
 
 The interface follows that repeat-review loop: saved projects summarize outstanding attention, evidence can be searched, and “Save and next” advances after the decision is saved. Client records separate private review notes from wording deliberately shared with the client.
 
+**18 October audit update:** [v0.2.1](https://github.com/YashAnand69/handoffready/releases/tag/v0.2.1) fixes two defects found during final review: a second launcher could interfere with another process’s data folder, and “Save and next” could revisit reviewed items before an unreviewed one. The launcher now refuses shared-folder starts; navigation finishes pending reviews while preserving every gap. [Remote verification](https://github.com/YashAnand69/handoffready/actions/runs/39142499845) passes 254 backend and 75 interface tests. The video above remains the dated 17 October recording.
+
 ### Why use a model for this?
 
 Ordinary checks can establish properties such as dimensions, format and identical bytes. They do not readily connect a paraphrased brief to a relevant guide with an unexpected filename. Gemma proposes that connection and extracts a draft checklist from prose.

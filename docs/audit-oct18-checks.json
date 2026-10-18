@@ -57,7 +57,8 @@
     "failed_technical_checks": 2,
     "private_note_sentinel_absent": true,
     "console_errors": 0,
-    "screenshot": "outputs/audit-oct18/draft-record.png"
+    "screenshot": "outputs/audit-oct18/draft-record.png",
+    "after_owner_restart": "Local model available; three current reviews and saved draft export persisted"
   },
   "limitations": [
     "No genuine freelancer trial, buyer demand, payment or savings evidence",
@@ -66,5 +67,27 @@
     "Dependency advisories and tests do not establish absence of all vulnerabilities",
     "Public walkthrough remains the explicitly dated 17 October recording; UI styling and workflow contracts unchanged",
     "Subagents returned preliminary product/rules findings and a concrete Store reproduction; all three then stopped at usage limits. Parent completed verification and fixes."
-  ]
+  ],
+  "remote_ci": {
+    "source_commit": "97592fd5dffbb904cc785eaddfb1645a6a6fe3af",
+    "status": "completed",
+    "conclusion": "success",
+    "url": "https://github.com/YashAnand69/handoffready/actions/runs/39142499845",
+    "log_verified": [
+      "254 backend tests passed",
+      "75 interface tests passed",
+      "format, Ruff, build and npm audit passed"
+    ]
+  },
+  "public_video": {
+    "duration_seconds": 90,
+    "dimensions": [
+      1920,
+      1200
+    ],
+    "chapter_seek_seconds": 42,
+    "playback_observed_from": 42.034307,
+    "playback_observed_to": 87.966164,
+    "error": null
+  }
 }
