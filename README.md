@@ -103,6 +103,6 @@ The historical [earlier upgrade checkpoint](docs/upgrade-release-checks.json) pa
 
 Read [CONTRIBUTING.md](CONTRIBUTING.md) before changing the app. The [documentation index](docs/README.md) distinguishes current upgrade evidence from the historical release and original plans.
 
-The human role is product direction, genuine source material, workflow review and final delivery decisions. AI assistance in implementation and documentation is disclosed. Customer outcomes, revenue and contest placement have not been established.
+Human product direction selected the audience, free/local constraints and full delivery workflow. AI agents implemented and evaluated the application and operated the synthetic demonstration. End-user approval and client-facing wording remain explicit reviewer decisions. Customer outcomes, revenue and contest placement have not been established.
 
 Recorded-explorer provenance checks require the recorded base commit in Git history. Run the full verification suite from a full repository clone; a source ZIP can run the app but does not contain Git history for rebuilding that historical evidence.

@@ -1,5 +1,7 @@
 # Final entry preparation — 17 October 2026
 
+> Article text superseded by [18 October published revision](DEV-ENTRY-FINAL-OCT18.md). This file preserves the previous editorial version.
+
 Parent integration owns publication. The user has now explicitly requested submission tonight; this supersedes the earlier publication hold. This document does not itself certify release readiness. Update the existing DEV draft **6228689**, rather than creating a second Week 2 entry.
 
 Copy only between ARTICLE START and ARTICLE END. Before publishing, the parent must verify that the public walkthrough below shows the current candidate, replace/add its actual video embed, add one current readable screenshot if available, and link the final source revision and evidence from the release page. Do not publish internal preparation notes. The body deliberately does not claim a customer trial or fresh-machine/accessibility/print validation. Its demo description is gated on the actual final recording/explorer matching that sequence.

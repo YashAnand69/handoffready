@@ -1,6 +1,6 @@
 # HandoffReady — current submission status
 
-17 October 2026, Asia/Kolkata. This page supersedes conflicting status in older planning/checkpoint documents. Historical receipts retain their dates and scope.
+Updated 18 October 2026, Asia/Kolkata. This page supersedes conflicting status in older planning/checkpoint documents. Historical receipts retain their dates and scope.
 
 ## Completed release preparation
 
@@ -34,6 +34,12 @@ Reddit suggested r/webdesign as a better community. A targeted request was submi
 The [final critical audit](FINAL-CRITICAL-AUDIT-OCT18.md) found two concrete defects and fixed them: concurrent documented launches sharing one data folder could interfere with recovery/staged uploads; Save and next could revisit saved needs-work items before an unreviewed item. The supported launcher now owns a per-folder OS lock before recovery, and review navigation finishes stale/unreviewed items before opening the draft record. Explicit remaining failures are preserved.
 
 Current local checks pass **254 backend tests and 75 interface tests**, Node 24 production build, formatting and focused Ruff. Actual Gemma smoke and seven-stage manual workflow passed. Python and npm scans reported no known dependency advisories. The browser-saved record retains three attention items and two technical failures, with no private-note sentinel. See `audit-oct18-checks.json`. These are synthetic technical results; freelancer validation remains absent. [v0.2.1](https://github.com/YashAnand69/handoffready/releases/tag/v0.2.1) is the published patch release; its browser-downloaded ZIP matches the expected SHA-256 and remote CI passed. The existing DEV entry includes a dated audit note. See `audit-oct18-release.json`; the dated 17 October walkthrough is preserved without presenting it as footage of later fixes.
+
+## Winner-informed article revision — 18 October
+
+The existing published entry was revised through its editor and verified on its public page. [Current article source](DEV-ENTRY-FINAL-OCT18.md) supersedes the 17 October text. The human product-direction role is prominent and distinct from agent implementation and synthetic operation. Four supported use cases explain measured file facts versus reviewer judgment. The prospective buyer/service hypothesis, missing customer validation, exact model-result scope and dated recording remain explicit.
+
+The [editorial comparison](WINNER-INFORMED-EDITORIAL-OCT18.md) covers all 17 announced Week 1 winners using the earlier deep/breadth reads and current source checks; it does not infer judge scorecards. A separate editorial reviewer identified two wording corrections, both applied before saving. Title, canonical URL, cover, required tags, Week 2 association, Overall/Gemma categories and truthful AI disclosure were preserved. No second submission created. See [publication receipt](dev-editorial-oct18.json); screenshot proof is local at `outputs/audit-oct18/dev-human-role-published.png`. This documentation edit does not represent a new application test run or genuine user evidence.
 
 ## Remaining evidence limits
 
