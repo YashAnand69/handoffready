@@ -1,0 +1,70 @@
+{
+  "verified_at_utc": "2026-10-18T15:52:46.910682+00:00",
+  "source_parent": "c66b0dc1d09e1b5556d3c37f9c957d9bb46e260d",
+  "application_changes": {
+    "backend/handoffready/store.py": "3196999851d69e138e572dccd0da30aea12f446346d0e26c7caddd2af73d49fc",
+    "scripts/run.py": "a9ae0ba32bffcd8a22baabaebd8f6c93ca4aaebe4986008b592ffed4f5b84b96",
+    "tests/test_single_instance.py": "eaedb68abe633fe0cb6d20ef55eb1bef86179aa098224888fcabba470ee36081",
+    "frontend/src/App.tsx": "1d8a91725e515e33844647cb3c1e9aa45a7e96e7c658326ed875aa63c6f0d9ff",
+    "frontend/src/AppExperience.test.tsx": "364cf6089f00871f31b6b30953b79b9bb367dbe6bf9feea0c5643966bdce2a34"
+  },
+  "tests": {
+    "backend": {
+      "passed": 254,
+      "environment": "New isolated Python 3.12 virtual environment; locked dependencies installed",
+      "warning": "Starlette test-client HTTPX deprecation remains"
+    },
+    "frontend": {
+      "passed": 75,
+      "test_files": 8
+    },
+    "focused_process_regressions": {
+      "passed": 4,
+      "covered": [
+        "second process refuses same folder before recovery or staged-upload cleanup",
+        "owner remains running and saved job unchanged",
+        "clean and abrupt owner exits allow genuine restart recovery",
+        "separate directories can be owned simultaneously",
+        "lock mode 0600 and no symlink traversal"
+      ]
+    },
+    "focused_review_regression": "Needs-work decisions do not trap Save and next before unreviewed items; preview retains gaps"
+  },
+  "checks": {
+    "ruff_F_E9": "passed, ruff 0.17.0",
+    "frontend_format": "passed",
+    "production_typescript_and_vite_build": "passed, Node 24.19.0",
+    "npm_audit_known_vulnerabilities": 0,
+    "python_locked_dependencies_audit_known_vulnerabilities": 0,
+    "diff_whitespace": "passed"
+  },
+  "smoke": {
+    "manual": "audit-oct18-manual-workflow.json, seven stages passed",
+    "actual_model": "audit-oct18-model-workflow.json, extraction and matching succeeded; seven stages passed",
+    "not_customer_validation": true
+  },
+  "browser": {
+    "packet": "new agent-operated Studio North synthetic sample in isolated data directory",
+    "actual_model_extraction": "three source-grounded checklist items returned",
+    "actual_model_matching": "succeeded; welcome guide remains semantically inadequate and marked needs work",
+    "pre_patch_reproduction": "Save and next from reviewed launch images returned to reviewed logo while guide remained unreviewed",
+    "post_patch_navigation": "saving reviewed logo advanced to guide; saving guide opened handoff",
+    "saved_snapshot_id": "87c3a51d8a1941f692e904c968fbded2",
+    "downloaded_json_sha256": "b361303e85ac9c1b51542274bc5be70e50d7896e90c829e11cb20f23933ebf27",
+    "status": "draft_with_gaps",
+    "current_reviews": 3,
+    "items_needing_attention": 3,
+    "failed_technical_checks": 2,
+    "private_note_sentinel_absent": true,
+    "console_errors": 0,
+    "screenshot": "outputs/audit-oct18/draft-record.png"
+  },
+  "limitations": [
+    "No genuine freelancer trial, buyer demand, payment or savings evidence",
+    "No fresh-machine installation, physical mobile, screen reader, or native browser print certification",
+    "OS lock protects documented server entry points, not arbitrary direct embedding of create_app",
+    "Dependency advisories and tests do not establish absence of all vulnerabilities",
+    "Public walkthrough remains the explicitly dated 17 October recording; UI styling and workflow contracts unchanged",
+    "Subagents returned preliminary product/rules findings and a concrete Store reproduction; all three then stopped at usage limits. Parent completed verification and fixes."
+  ]
+}

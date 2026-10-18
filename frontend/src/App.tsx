@@ -877,10 +877,11 @@ export default function App() {
                         "Your review was saved for this version of the brief and packet.",
                       );
                       if (advance && updated) {
-                        const nextId =
-                          updated.attention_summary?.attention_requirement_ids.find(
-                            (id) => id !== requirement_id,
-                          );
+                        const nextId = updated.attention_summary?.rows.find(
+                          (row) =>
+                            row.requirement_id !== requirement_id &&
+                            row.review_currency !== "current",
+                        )?.requirement_id;
                         if (nextId) setSelected(nextId);
                         else setStep(4);
                       }

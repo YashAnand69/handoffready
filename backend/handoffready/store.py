@@ -47,6 +47,27 @@ class StoreError(Exception):
         self.code, self.message, self.status = code, message, status
 
 
+@contextmanager
+def exclusive_directory(directory):
+    """Keep supported server processes from recovering another live store."""
+    import fcntl
+
+    directory = Path(directory)
+    directory.mkdir(parents=True, exist_ok=True, mode=0o700)
+    descriptor = os.open(directory / ".instance.lock", os.O_RDWR | os.O_CREAT | os.O_NOFOLLOW, 0o600)
+    try:
+        os.fchmod(descriptor, 0o600)
+        try:
+            fcntl.flock(descriptor, fcntl.LOCK_EX | fcntl.LOCK_NB)
+        except BlockingIOError as error:
+            raise StoreError("data_directory_in_use", "This data folder is already open in another HandoffReady process. Use that app or choose a different --data-dir.") from error
+        yield directory
+    finally:
+        # Keep the lock file in place: unlinking it could let another process
+        # acquire a different inode while the current owner is still running.
+        os.close(descriptor)
+
+
 class Store:
     def __init__(self, directory):
         self.directory = Path(directory)

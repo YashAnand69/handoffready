@@ -29,6 +29,12 @@ The original recruitment post shows **58 views and zero comments** after refresh
 
 Reddit suggested r/webdesign as a better community. A targeted request was submitted after checking its visible community/composer guidance, then removed by Reddit's filters. It is not an active recruitment success. One moderation inquiry was submitted (form cleared; independent delivery unverified). No repost or attempt to bypass filters. See `trial/FEEDBACK-CHECK-OCT18.json` and `trial/WEBDESIGN-REQUEST-OCT18.md`. No product changes or customer-evidence claims were warranted by the observed responses.
 
+## Critical audit and patch — 18 October
+
+The [final critical audit](FINAL-CRITICAL-AUDIT-OCT18.md) found two concrete defects and fixed them: concurrent documented launches sharing one data folder could interfere with recovery/staged uploads; Save and next could revisit saved needs-work items before an unreviewed item. The supported launcher now owns a per-folder OS lock before recovery, and review navigation finishes stale/unreviewed items before opening the draft record. Explicit remaining failures are preserved.
+
+Current local checks pass **254 backend tests and 75 interface tests**, Node 24 production build, formatting and focused Ruff. Actual Gemma smoke and seven-stage manual workflow passed. Python and npm scans reported no known dependency advisories. The browser-saved record retains three attention items and two technical failures, with no private-note sentinel. See `audit-oct18-checks.json`. These are synthetic technical results; freelancer validation remains absent. v0.2.1 is the patch release; the dated 17 October walkthrough is preserved without presenting it as footage of later fixes.
+
 ## Remaining evidence limits
 
 - Genuine freelancer trial, willingness to pay, revenue and measured savings: not established. The prepared trial guide is not feedback.

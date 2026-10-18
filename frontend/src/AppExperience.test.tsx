@@ -207,6 +207,58 @@ it("advances only after both saving and authoritative project refresh finish", a
     4,
   ]);
 });
+it("finishes unreviewed items before revisiting saved needs-work decisions", async () => {
+  await open();
+  const original = mock.api.getMockImplementation()!;
+  project.attention_summary!.rows[0].human_disposition = "needs_work";
+  project.attention_summary!.attention_requirement_ids = ["r0", "r1", "r2"];
+  mock.api.mockImplementation(
+    async (path: string, method?: string, ...rest: unknown[]) => {
+      if (path.startsWith("/projects/desk/decisions/") && method === "PUT") {
+        const id = path.split("/").at(-1)!;
+        const row = project.attention_summary!.rows.find(
+          (entry) => entry.requirement_id === id,
+        )!;
+        row.review_currency = "current";
+        row.human_disposition = "needs_work";
+        project.revision += 1;
+        project.attention_summary!.source_revision = project.revision;
+        return {};
+      }
+      if (path === "/projects/desk/handoff-preview")
+        return {
+          project_name: project.name,
+          input_hash: project.input_hash,
+          source_revision: project.revision,
+          status: "draft_with_gaps",
+          scope_notice: "Synthetic test record",
+          gaps: [{ requirement_id: "r0", message: "Still needs work" }],
+          requirements: [],
+        };
+      return original(path, method, ...rest);
+    },
+  );
+  changeReview();
+  fireEvent.change(screen.getByLabelText("Your assessment"), {
+    target: { value: "needs_work" },
+  });
+  fireEvent.click(screen.getByRole("button", { name: "Save and next item →" }));
+  await screen.findByRole("heading", { name: "Website", level: 2 });
+  fireEvent.change(screen.getByLabelText("Your assessment"), {
+    target: { value: "needs_work" },
+  });
+  fireEvent.click(screen.getByRole("button", { name: "Save and next item →" }));
+  await screen.findByRole("heading", {
+    name: "A clear record of this delivery.",
+  });
+  await screen.findByText(/still require attention or clarification/);
+  expect(project.attention_summary!.attention_requirement_ids).toEqual([
+    "r0",
+    "r1",
+    "r2",
+  ]);
+  expect(project.attention_summary!.status).toBe("draft_with_gaps");
+});
 it("retains notes, selection and current item when saving fails", async () => {
   await open();
   const original = mock.api.getMockImplementation()!;

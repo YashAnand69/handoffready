@@ -6,13 +6,15 @@ The useful loop is **brief → confirmed scope → imperfect packet → correcti
 
 ## Current status
 
+The [18 October critical audit](docs/FINAL-CRITICAL-AUDIT-OCT18.md) found and fixed two concrete problems: a second documented server launch could recover another live process's data folder, and Save and next could cycle between already-reviewed items needing work. The supported launcher now refuses a second owner of the same folder, and the review queue finishes unreviewed items before opening the draft handoff. Current verification passes **254 backend and 75 interface tests**; [audit evidence](docs/audit-oct18-checks.json) records the scope and remaining limitations.
+
 The [17 October submission candidate](docs/RELEASE-OCT17.md) includes the redesigned delivery desk, guided resume, saved-review summaries, searchable evidence and safer replacement recovery. [Current checks](docs/release-oct17-checks.json) passed **250 backend and 74 interface tests**, type checking, production build, formatting and focused static checks. Actual local Gemma extraction/matching and manual workflows also passed synthetic smoke checks. These are not customer trials or general AI accuracy results.
 
 [Watch the current 90-second walkthrough](https://yashanand69.github.io/handoffready/) · [Inspect recorded findings](https://yashanand69.github.io/handoffready/explore/) · [Read the synthetic client record](https://yashanand69.github.io/handoffready/records/after.html)
 
 ![Current local delivery desk](docs/current-demo/captures/01-dashboard.png)
 
-[Download the source and built interface](https://github.com/YashAnand69/handoffready/releases/tag/v0.2.0). The archive still needs Python dependencies and optional model setup.
+[Download the source and built interface](https://github.com/YashAnand69/handoffready/releases/tag/v0.2.1). The archive still needs Python dependencies and optional model setup. The older v0.2.0 archive predates the two audit fixes.
 
 The public page plays an edited sequence of actual current UI captures. It runs no hosted inference and takes no uploads. The materials and operator decisions are synthetic. A genuine freelancer trial remains pending. The explorer preserves an explicitly dated earlier recording of the same review contracts; its older screen captures are not the final interface. See [current submission status](docs/SUBMISSION-STATUS-CURRENT.md).
 
@@ -64,6 +66,8 @@ The Mac **Start HandoffReady.command** launcher uses the installed model and def
 ```
 
 Both services remain loopback-only. The launcher checks occupied ports and does not replace their owners. Use one backend process per data directory; multiple workers are unsupported.
+
+Start the server through `scripts/start.py` or `scripts/run.py`: they acquire an OS lock on the data folder before recovery or cleanup. Changing ports does not permit sharing a folder. A second launcher exits with an explanation; stopping or crashing the owner releases its lock. Directly embedding `create_app()` bypasses this launcher guard and is unsupported for concurrent shared storage.
 
 ## Privacy and supported scope
 
