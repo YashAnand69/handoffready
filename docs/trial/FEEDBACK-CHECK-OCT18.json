@@ -1,0 +1,43 @@
+{
+  "checked_at_utc": "2026-10-18T10:30:19.728910+00:00",
+  "reddit_original": {
+    "url": "https://www.reddit.com/r/alphaandbetausers/comments/1x8de9u/webdesign_freelancers_looking_for_13_volunteers/",
+    "views": 58,
+    "comments": 0,
+    "feedback_received": 0,
+    "removed_notice_visible": false
+  },
+  "reddit_inbox": {
+    "notification": "Reddit suggested r/webdesign as a better community; not a tester response",
+    "chat": "Welcome to chat; no conversations shown",
+    "private_message_archive": "No messages found"
+  },
+  "dev": {
+    "url": "https://dev.to/yashanand69/handoffready-the-folder-looks-finished-does-it-fulfill-the-brief-3igh",
+    "comments": 0,
+    "week2_banner_present": true,
+    "no_article_edit_needed": true
+  },
+  "github": {
+    "open_issues": 0,
+    "latest_ci": "success",
+    "run": "https://github.com/YashAnand69/handoffready/actions/runs/39046363873",
+    "head": "46a99feaa52a031d4f14390a4c3cd9b8072db425"
+  },
+  "public_assets": {
+    "root": 200,
+    "explorer": 200,
+    "after_record": 200
+  },
+  "followup": {
+    "url": "https://www.reddit.com/r/webdesign/comments/1x8zwd4/webdesign_freelancers_would_this_client_delivery/",
+    "status": "removed_by_reddit_filters",
+    "community_rules_checked": "Community and composer showed no specific rules; no AI prohibition visible. This is not moderator permission.",
+    "moderation_inquiry": "One Send action completed and compose fields cleared, no error shown; independent delivery unverified. No approval or reply.",
+    "no_repost": true
+  },
+  "completed_freelancer_trials": 0,
+  "confirmed_defects_from_feedback": 0,
+  "code_changes": 0,
+  "article_claims_changed": false
+}
