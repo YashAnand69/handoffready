@@ -232,7 +232,11 @@ describe("Final independent usability audit", () => {
         }) as HTMLButtonElement
       ).disabled,
     ).toBe(true);
-    expect(screen.getByText(/does not contain the original/)).toBeTruthy();
+    expect(
+      screen.getByText(
+        /The manifest explains the delivery\. It does not contain the original/,
+      ),
+    ).toBeTruthy();
   });
   it("removes an individual check without losing its requirement and resets acknowledgement", async () => {
     project.baseline.requirements[0].checks.push({

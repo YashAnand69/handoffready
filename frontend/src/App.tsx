@@ -1,4 +1,5 @@
 import FirstRunGuide from "./components/FirstRunGuide";
+import AppGuide from "./components/AppGuide";
 import AttentionOverview from "./components/AttentionOverview";
 import { nextAction } from "./workflow";
 import { useEntranceMotion } from "./useEntranceMotion";
@@ -371,6 +372,7 @@ export default function App() {
         </div>
       </header>
       <main id="workspace" className={project ? "desk-project" : "desk-home"}>
+        <AppGuide />
         {project && (
           <div className="page-top workspace-top">
             <div>

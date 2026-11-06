@@ -2153,3 +2153,67 @@ h2:focus:not(:focus-visible) {
 .intake-preview ul {
   margin: 4px 0 12px;
 }
+
+.app-guide {
+  margin: 0 0 28px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: #f0f3e9;
+}
+.app-guide > summary {
+  padding: 17px 22px;
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--green);
+}
+.app-guide summary:focus-visible {
+  outline: 2px solid #396c4a;
+  outline-offset: 3px;
+  border-radius: 8px;
+}
+.app-guide-content {
+  padding: 10px 24px 26px;
+  max-width: 88ch;
+}
+.app-guide-content h2 {
+  margin-top: 0;
+}
+.app-guide-example {
+  padding: 16px 18px;
+  background: #fffef9;
+  border-left: 3px solid #829a70;
+}
+.app-guide-steps {
+  padding-left: 24px;
+  list-style: none;
+  counter-reset: none;
+}
+.app-guide-steps li {
+  margin: 24px 0;
+  padding-left: 16px;
+  border-left: 1px solid #bac8ad;
+}
+.app-guide-steps h3 {
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+.app-guide-content > details {
+  padding: 14px 0;
+  border-top: 1px solid var(--line);
+}
+.app-guide-content > details > summary {
+  cursor: pointer;
+  font-weight: 600;
+}
+.app-guide-content > a {
+  display: inline-block;
+  margin-top: 18px;
+}
+@media (max-width: 600px) {
+  .app-guide-content {
+    padding: 8px 18px 22px;
+  }
+  .app-guide-steps {
+    padding-left: 0;
+  }
+}
