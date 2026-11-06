@@ -1,5 +1,9 @@
 # HandoffReady Delivery Room — event build
 
+[Public project showcase](https://handoffready-delivery-room.vercel.app) · [Publication and hosting scope](docs/switch/PUBLICATION-20261106.md)
+
+The public website explains the project and shows current synthetic interface captures. The working delivery desk remains local; the Vercel site does not run its API, accept uploads or expose the owner's data/agent. The new narrated demo and event submission remain pending.
+
 This branch extends the original HandoffReady review desk with a Switch coordination layer for a small web/design team. The intended journey is **packet → evidence-backed question → teammate correction → fresh local review → deliberately shared record**.
 
 **Work in progress, 6 November 2026:** the real owner-operated Discord/Switch loop passed: attachment intake → contextual question/reply → corrected packet → stale prior review → fresh local judgment → frozen record returned to the main channel. The downloaded record matched all 2,033 bytes, and the owner recorded the destination confirmation. This is an assisted synthetic owner rehearsal, not a colleague trial or authenticated transport certification.
