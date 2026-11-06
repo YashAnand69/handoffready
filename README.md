@@ -1,16 +1,28 @@
-# HandoffReady
+# HandoffReady Delivery Room — event build
+
+This branch extends the original HandoffReady review desk with a Switch coordination layer for a small web/design team. The intended journey is **packet → evidence-backed question → teammate correction → fresh local review → deliberately shared record**.
+
+**Work in progress, 6 November 2026:** the real owner-operated Discord/Switch loop passed: attachment intake → contextual question/reply → corrected packet → stale prior review → fresh local judgment → frozen record returned to the main channel. The downloaded record matched all 2,033 bytes, and the owner recorded the destination confirmation. This is an assisted synthetic owner rehearsal, not a colleague trial or authenticated transport certification.
+
+The [6 November audit repair and interface checkpoint](docs/switch/AUDIT-POLISH-CHECKPOINT-20261106.md) passes **537 backend tests and 146 interface tests**, production build and formatting. The [preserved six-family synthetic protocol](docs/switch/FRESH-PACKET-RESULTS.md) passed its 69 declared first-run assertions at its recorded source snapshot; it is not a new accuracy result for every later edit. A [25-minute trial guide and material generator](docs/switch/TRIAL-GUIDE.md) are prepared. Second-person access/trial, clean connected setup, final source packaging and the new video/release gates remain open. See the [Stage 4 return evidence](docs/switch/STAGE-4-IMPLEMENTATION.md) and [recovery runbook](docs/switch/STAGE-5-RECOVERY.md). This is not a completed contest submission.
+
+Read the [implementation checkpoint](docs/switch/STAGE-1-IMPLEMENTATION.md), [Discord trial setup](docs/switch/DISCORD-TRIAL-SETUP.md) and [comparable-project lessons](docs/switch/COMPARABLE-LESSONS.md). Inherited work starts below; its older dates, releases and demo links describe the original project, not the new integration.
+
+**Connected-mode privacy:** this desk stores review evidence locally. Files/messages shared in Discord and context used by the Switch-managed agent may also be processed by the selected chat/AI providers (currently Antigravity). Local storage is not an end-to-end local-only claim for the connected workflow. The optional local model is separate from the room agent; manual review does not require it. Keep Console/the host available for room assistance.
+
+## Original HandoffReady foundation
 
 **Check the handoff before sending it to the client.** HandoffReady is a local delivery review desk for web and design freelancers. Connect an agreed brief to the actual outgoing files, find narrow technical problems, record your judgment, and prepare a clear client delivery record.
 
 The useful loop is **brief → confirmed scope → imperfect packet → correction → fresh review → new record**. The previous record stays unchanged. Gemma suggests scope and evidence; it never approves delivery.
 
-## Current status
+## October foundation status · historical
 
 The [18 October critical audit](docs/FINAL-CRITICAL-AUDIT-OCT18.md) found and fixed two concrete problems: a second documented server launch could recover another live process's data folder, and Save and next could cycle between already-reviewed items needing work. The supported launcher now refuses a second owner of the same folder, and the review queue finishes unreviewed items before opening the draft handoff. Current verification passes **254 backend and 75 interface tests**; [audit evidence](docs/audit-oct18-checks.json) records the scope and remaining limitations.
 
 The [17 October submission candidate](docs/RELEASE-OCT17.md) includes the redesigned delivery desk, guided resume, saved-review summaries, searchable evidence and safer replacement recovery. [Current checks](docs/release-oct17-checks.json) passed **250 backend and 74 interface tests**, type checking, production build, formatting and focused static checks. Actual local Gemma extraction/matching and manual workflows also passed synthetic smoke checks. These are not customer trials or general AI accuracy results.
 
-[Watch the current 90-second walkthrough](https://yashanand69.github.io/handoffready/) · [Inspect recorded findings](https://yashanand69.github.io/handoffready/explore/) · [Read the synthetic client record](https://yashanand69.github.io/handoffready/records/after.html)
+[Watch the October 90-second walkthrough](https://yashanand69.github.io/handoffready/) · [Inspect recorded findings](https://yashanand69.github.io/handoffready/explore/) · [Read the synthetic client record](https://yashanand69.github.io/handoffready/records/after.html)
 
 ![Current local delivery desk](docs/current-demo/captures/01-dashboard.png)
 
@@ -75,7 +87,7 @@ Data defaults to `~/Library/Application Support/HandoffReady`, with owner-only p
 
 Client records omit raw briefs, source quotes, raw file text, model explanations and private review notes. **Titles, check descriptions and deliberate client notes are shared**: review their wording before sending. Records identify selected supporting originals, not every uploaded file, and do not embed original bytes.
 
-Private API reads require a session token; writes check Origin and revision. Parsing uses bounded subprocesses. These are local controls, not a hardened operating-system sandbox or protection from same-user malware. No remote AI API, account, payment service or telemetry is required.
+Private API reads require a session token; writes check Origin and revision. Parsing uses bounded subprocesses. These are local controls, not a hardened operating-system sandbox or protection from same-user malware. The standalone manual desk needs no remote AI API, account, payment service or telemetry. The connected Delivery Room additionally uses Switch, a chat account and a configured agent provider as disclosed above.
 
 | Supported boundary | Limit |
 | --- | --- |

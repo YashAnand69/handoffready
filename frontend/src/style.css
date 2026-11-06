@@ -13,6 +13,8 @@
   --copper: #976044;
   --serif: Georgia, "Times New Roman", serif;
   --shadow: 0 8px 28px #27382d07, 0 1px 2px #27382d05;
+  --shadow-raised: 0 12px 30px #27382d0d, 0 2px 5px #27382d08;
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
 }
 * {
   box-sizing: border-box;
@@ -61,24 +63,22 @@ button {
 button:hover:enabled {
   background: #eaf0e5;
   border-color: #a8baa8;
-  transform: translateY(-1px);
-}
-button:active:enabled {
-  transform: translateY(0);
 }
 button:disabled {
   opacity: 0.48;
   cursor: not-allowed;
 }
 button.primary,
-a.primary {
+a.primary,
+a.primary-link {
   background: var(--green);
   color: #fffef9;
   border-color: var(--green);
   box-shadow: 0 3px 8px #24453212;
 }
 button.primary:hover:enabled,
-a.primary:hover {
+a.primary:hover,
+a.primary-link:hover {
   background: var(--forest-dark);
   border-color: var(--forest-dark);
 }
@@ -279,9 +279,6 @@ main {
   padding: 28px;
   box-shadow: var(--shadow);
   min-width: 0;
-}
-.workspace-step {
-  animation: desk-enter 200ms ease-out both;
 }
 .welcome-grid {
   display: grid;
@@ -583,7 +580,8 @@ input[type="file"]::file-selector-button {
   min-height: 44px;
   cursor: pointer;
 }
-.checkbox {
+.checkbox,
+.checkline {
   display: flex;
   align-items: flex-start;
   gap: 10px;
@@ -974,28 +972,6 @@ blockquote small {
 .queue-facts {
   font-size: 11px;
   line-height: 1.5;
-}
-.queue-search,
-.queue-filters {
-  margin-bottom: 12px;
-}
-.queue-search input {
-  font-size: 12px;
-  padding: 9px;
-}
-.queue-filters {
-  display: flex;
-  gap: 5px;
-  flex-wrap: wrap;
-}
-.queue-filters button {
-  font-size: 11px;
-  padding: 8px;
-  flex: 1;
-}
-.queue-filters button[aria-pressed="true"] {
-  border-color: var(--green);
-  background: #eaf0e2;
 }
 .decision-card {
   padding: 25px;
@@ -1492,16 +1468,6 @@ h2:focus {
 h2:focus:not(:focus-visible) {
   outline: none;
 }
-@keyframes desk-enter {
-  from {
-    opacity: 0.45;
-    transform: translateY(6px);
-  }
-  to {
-    opacity: 1;
-    transform: none;
-  }
-}
 /* Search and filtering preserve draft forms while reducing packet noise. */
 .review-queue-tools {
   padding-bottom: 10px;
@@ -1632,14 +1598,6 @@ h2:focus:not(:focus-visible) {
 }
 .file-details .metadata {
   padding-bottom: 8px;
-}
-@media (min-width: 1001px) {
-  .dashboard-hero .hero-copy {
-    animation: desk-enter 220ms ease-out both;
-  }
-  .dashboard-hero .hero-visual {
-    animation: desk-enter 220ms 50ms ease-out both;
-  }
 }
 @media (max-width: 1100px) {
   .review-desk {
@@ -1824,30 +1782,19 @@ h2:focus:not(:focus-visible) {
     grid-template-columns: 1fr;
     gap: 16px;
   }
+  /* Review always includes tools: stack them without relying on :has support. */
   .queue {
     position: static;
     max-height: none;
-    padding: 12px;
-    display: flex;
-    overflow-x: auto;
-    gap: 7px;
-  }
-  .queue .eyebrow {
-    display: none;
+    padding: 14px;
+    display: block;
+    overflow: visible;
   }
   .queue > button {
-    min-width: 170px;
-    width: 170px;
-    flex-shrink: 0;
-    margin: 0;
-  }
-  .queue:has(.queue-search),
-  .queue:has(.queue-filters) {
-    display: block;
-  }
-  .queue:has(.queue-search) > button,
-  .queue:has(.queue-filters) > button {
     width: 100%;
+    min-width: 0;
+  }
+  .review-queue-tools {
     min-width: 0;
   }
   .evidence {
@@ -1933,17 +1880,6 @@ h2:focus:not(:focus-visible) {
   }
 }
 @media (max-width: 700px) {
-  .queue:has(.review-queue-tools) {
-    display: block;
-    overflow: visible;
-  }
-  .queue:has(.review-queue-tools) > button {
-    width: 100%;
-    min-width: 0;
-  }
-  .queue:has(.review-queue-tools) .eyebrow {
-    display: block;
-  }
   .review-queue-filters button {
     flex: 1;
   }
@@ -1964,30 +1900,97 @@ h2:focus:not(:focus-visible) {
     width: 100%;
   }
 }
+/* Surface detail and feedback keep the desk calm while making actions clear. */
+.card {
+  background: linear-gradient(145deg, #fffefb, var(--paper) 65%);
+  transition:
+    border-color 180ms ease,
+    box-shadow 180ms ease;
+}
+.card:focus-within {
+  border-color: #b5c5aa;
+  box-shadow: var(--shadow-raised);
+}
+.workspace-step > .card + .card {
+  margin-top: 24px;
+}
+.delivery-context {
+  margin-bottom: 24px;
+}
+.record-row {
+  margin-top: 24px;
+  padding-top: 22px;
+  border-top: 1px solid var(--line);
+  overflow-wrap: anywhere;
+}
+.record-row > h3 {
+  margin-top: 0;
+}
+.record-row > .source-identity {
+  display: block;
+  padding: 10px 12px;
+  border: 1px solid #e1e5d9;
+  border-radius: 7px;
+  background: #f7f8f2;
+  font-size: 11px;
+}
+.checkline {
+  cursor: pointer;
+  overflow-wrap: anywhere;
+}
+.checkline:focus-within {
+  border-radius: 5px;
+  outline: 2px solid #396c4a;
+  outline-offset: 3px;
+}
+.source-evidence > details > summary,
+:is(.file-details, .first-run-guide) > summary {
+  border-radius: 5px;
+  transition: color 160ms ease;
+}
+.source-evidence > details > summary:hover,
+:is(.file-details, .first-run-guide) > summary:hover {
+  color: var(--green);
+}
+:is(.source-evidence, .file-details) > details[open] > summary,
+.file-details[open] > summary {
+  border-bottom: 1px solid var(--line);
+}
+@media (hover: hover) and (pointer: fine) {
+  .file-choice:not(:has(input:disabled)):hover {
+    border-color: #adbf9f;
+  }
+  .queue > button:hover:enabled {
+    background: #f1f4eb;
+  }
+  .queue > button[aria-pressed="true"]:hover:enabled {
+    background: #e4ecd9;
+  }
+}
 /* Motion reinforces hierarchy without delaying controls or changing layout. */
 @media (prefers-reduced-motion: no-preference) {
   .hero-copy h1 {
-    animation: headline-arrive 650ms cubic-bezier(0.2, 0.7, 0.2, 1) both;
+    animation: headline-arrive 420ms var(--ease-out) both;
   }
   .hero-visual .evidence-path {
     animation: evidence-trace 950ms ease-out both;
   }
   .hero-visual .evidence-signal {
-    animation: signal-arrive 700ms 200ms ease-out both;
+    animation: signal-arrive 500ms 80ms ease-out both;
     transform-box: fill-box;
     transform-origin: center;
-  }
-  .status {
-    animation: desk-enter 220ms ease-out;
   }
   .hero-actions a,
   .project-card,
   .workflow-principles article,
   .hero-visual::before {
     transition:
-      transform 220ms ease,
+      transform 220ms var(--ease-out),
       box-shadow 220ms ease,
       border-color 220ms ease;
+  }
+  button:hover:enabled {
+    transform: translateY(-1px);
   }
   button:active:enabled,
   .hero-actions a:active {
@@ -2002,21 +2005,21 @@ h2:focus:not(:focus-visible) {
       box-shadow: 0 6px 18px #24453217;
     }
     .project-card:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 8px 24px #2445320d;
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-raised);
     }
     .workflow-principles article:hover {
-      transform: translateY(-3px);
+      transform: translateY(-2px);
     }
     .hero-visual:hover::before {
-      transform: rotate(4deg) scale(1.025);
+      transform: rotate(2deg) scale(1.012);
     }
   }
 }
 @keyframes headline-arrive {
   from {
-    opacity: 0.5;
-    transform: translateY(12px);
+    opacity: 0.88;
+    transform: translateY(8px);
   }
   to {
     opacity: 1;
@@ -2051,6 +2054,12 @@ h2:focus:not(:focus-visible) {
     animation: none !important;
     transition: none !important;
     scroll-behavior: auto !important;
+  }
+  button:hover:enabled,
+  button:active:enabled,
+  .hero-actions a:hover,
+  .hero-actions a:active {
+    transform: none !important;
   }
 }
 
@@ -2090,4 +2099,57 @@ h2:focus:not(:focus-visible) {
     grid-template-columns: 1fr;
     gap: 14px;
   }
+}
+
+.delivery-intake fieldset {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 16px;
+  margin-top: 20px;
+  min-width: 0;
+}
+.room-service-notice {
+  margin: 20px 0;
+  padding: 16px 20px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #f8faf3;
+}
+.room-service-notice p {
+  margin: 6px 0 0;
+}
+.delivery-intake legend {
+  font-weight: 600;
+  padding: 0 8px;
+}
+.intake-receipt {
+  border-bottom: 1px solid var(--line);
+  overflow-wrap: anywhere;
+}
+.intake-receipt:last-child {
+  border-bottom: 0;
+}
+.intake-receipt small {
+  display: block;
+  font-weight: 400;
+  color: var(--muted);
+  margin-top: 4px;
+}
+.intake-receipt code {
+  font-size: 11px;
+  word-break: break-all;
+}
+.intake-preview {
+  margin-top: 24px;
+  padding: 20px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #f8faf3;
+}
+.intake-preview > div {
+  margin: 10px 0;
+  overflow-wrap: anywhere;
+}
+.intake-preview ul {
+  margin: 4px 0 12px;
 }

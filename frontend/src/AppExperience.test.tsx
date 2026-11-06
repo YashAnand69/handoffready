@@ -9,6 +9,7 @@ import {
   waitFor,
 } from "@testing-library/react";
 import App from "./App";
+import { nextAction } from "./workflow";
 import type { Project } from "./types";
 const mock = vi.hoisted(() => ({
   api: vi.fn(),
@@ -363,4 +364,85 @@ it("shows saved review context without claiming the originals are verified", asy
     ),
   ).toBeTruthy();
   expect(screen.queryByText(/Updated/)).toBeNull();
+});
+
+it.each([0, 1])(
+  "prioritizes a project-wide delivery hold over an empty attention list (pending receipts %s)",
+  (pending) => {
+    project.attention_summary!.status = "reviewed";
+    project.attention_summary!.attention_requirement_ids = [];
+    project.delivery_hold = {
+      blocked: true,
+      pending_context_count: 1,
+      pending_receipt_count: pending,
+      messages: ["Local review needed"],
+      context_epochs: { job: 3 },
+    };
+    const action = nextAction(project);
+    expect(action.step).toBe(pending ? 2 : 3);
+    expect(action.label).not.toBe("Prepare the client record");
+  },
+);
+it("does not let an older mutation refresh overwrite a newer polled project revision", async () => {
+  project.jobs = [
+    {
+      id: "job",
+      kind: "match",
+      state: "running",
+      stage: "matching",
+      error: null,
+    },
+  ];
+  const old = structuredClone(project);
+  const newer = {
+    ...structuredClone(project),
+    name: "Newer authoritative title",
+    revision: 5,
+    jobs: [
+      {
+        id: "job",
+        kind: "match",
+        state: "succeeded",
+        stage: "complete",
+        error: null,
+      },
+    ],
+  };
+  let reads = 0,
+    release!: (value: Project) => void;
+  const original = mock.api.getMockImplementation()!;
+  mock.api.mockImplementation(
+    async (path: string, method = "GET", ...args: unknown[]) => {
+      if (path === "/projects/desk" && method === "GET") {
+        reads++;
+        if (reads === 2)
+          return new Promise<Project>((resolve) => {
+            release = resolve;
+          });
+        return reads > 2 ? newer : old;
+      }
+      if (path === "/projects/desk/jobs/job/cancel") return {};
+      if (path === "/projects/desk/job-status")
+        return { revision: 5, jobs: newer.jobs };
+      return original(path, method, ...args);
+    },
+  );
+  await open();
+  fireEvent.click(screen.getByRole("button", { name: "Cancel" }));
+  await waitFor(() => expect(reads).toBe(2));
+  await screen.findByRole(
+    "heading",
+    { name: "Newer authoritative title", level: 1 },
+    { timeout: 3000 },
+  );
+  await act(async () => release(old));
+  expect(
+    screen.getByRole("heading", {
+      name: "Newer authoritative title",
+      level: 1,
+    }),
+  ).toBeTruthy();
+  expect(
+    screen.queryByRole("heading", { name: "Delivery desk", level: 1 }),
+  ).toBeNull();
 });

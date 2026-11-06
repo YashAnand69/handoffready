@@ -26,10 +26,19 @@ def digest(value):
     return hashlib.sha256(canonical(value).encode()).hexdigest()
 
 
-def input_hash(project):
+def source_hash(project):
     return digest({"brief": project["brief"]["sha256"] if project["brief"] else None, "baseline": project["baseline"]["hash"], "files": sorted([
         {"id": f["id"], "name": f["name"], "sha256": f["sha256"], "type": f["type"], "inspection": f["inspection"], "metadata": f["metadata"], "text_hash": hashlib.sha256(f["text"].encode()).hexdigest()}
         for f in project["files"]], key=lambda f: f["id"]), "inspector": INSPECTION_REVISION})
+
+
+def input_hash(project):
+    basis = project.get("delivery_context_basis", [])
+    original = source_hash(project)
+    if not basis:
+        return original
+    accepted = sorted(basis, key=lambda row: row["question_id"])
+    return digest({"domain": "handoffready-delivery-context-v1", "source_hash": original, "accepted_context": accepted})
 
 
 def invalidate(project):
@@ -78,6 +87,12 @@ class Store:
         self.lock = threading.RLock()
         self.database = self.directory / "handoff.sqlite3"
         with self.connection() as db:
+            # Refuse unsupported integration data before startup recovery writes.
+            if db.execute("SELECT 1 FROM sqlite_master WHERE type='table' AND name='delivery_schema'").fetchone():
+                from .delivery import SCHEMA_VERSION as delivery_schema_version
+                versions = db.execute("SELECT version FROM delivery_schema").fetchall()
+                if len(versions) != 1 or versions[0][0] not in {1, 2, 3, delivery_schema_version}:
+                    raise StoreError("delivery_schema_unsupported", "This delivery schema needs a compatible application version.")
             db.execute("PRAGMA journal_mode=WAL")
             db.execute("CREATE TABLE IF NOT EXISTS projects (id TEXT PRIMARY KEY, body TEXT NOT NULL)")
             db.execute("CREATE TABLE IF NOT EXISTS exports (id TEXT PRIMARY KEY, project_id TEXT NOT NULL, json TEXT NOT NULL, md TEXT NOT NULL, html TEXT NOT NULL)")
@@ -91,6 +106,7 @@ class Store:
                         job.update(state="interrupted", stage="interrupted after restart", error="Restart interrupted this job. Retry explicitly.")
                         changed = True
                 changed = self._reconcile_originals(project) or changed
+                changed = self._sync_delivery_context(project, db) or changed
                 if changed:
                     project["revision"] += 1
                     project["updated_at"] = now()
@@ -99,6 +115,13 @@ class Store:
             for path in self.files.iterdir():
                 if path.name not in registered:
                     path.unlink(missing_ok=True)
+
+    @staticmethod
+    def _sync_delivery_context(project, db):
+        if not db.execute("SELECT 1 FROM sqlite_master WHERE type='table' AND name='delivery_questions'").fetchone():
+            return False
+        from .delivery_context import sync_source_context
+        return sync_source_context(project, db)
 
     def _original_error(self, file):
         """Verify recorded identity without loading an unbounded original into memory."""
@@ -181,6 +204,7 @@ class Store:
                 raise StoreError("revision_conflict", "The project changed. Refresh before saving.")
             before = canonical(project)
             callback(project, db)
+            self._sync_delivery_context(project, db)
             if canonical(project) != before:
                 project["revision"] += 1
                 project["updated_at"] = now()
@@ -194,6 +218,9 @@ class Store:
             project = self.get(project_id, db)
             if project["revision"] != revision:
                 raise StoreError("revision_conflict", "The project changed. Refresh before deleting.")
+            # Enforce retention in this write transaction, independent of config.
+            if db.execute("SELECT 1 FROM sqlite_master WHERE type='table' AND name='delivery_jobs'").fetchone() and db.execute("SELECT 1 FROM delivery_jobs WHERE project_id=?", (project_id,)).fetchone():
+                raise StoreError("delivery_project_bound", "This handoff is linked to a delivery room. Its packet receipts must be retained; room archival is not supported yet.")
             db.execute("DELETE FROM exports WHERE project_id=?", (project_id,))
             db.execute("DELETE FROM projects WHERE id=?", (project_id,))
             paths = [self.files / file["_path"] for file in project["files"]]

@@ -112,6 +112,13 @@ export interface CheckResult {
   expected?: unknown;
   actual?: unknown;
 }
+export interface DeliveryHold {
+  pending_context_count: number;
+  pending_receipt_count: number;
+  blocked: boolean;
+  messages: string[];
+  context_epochs: Record<string, number>;
+}
 export interface Project {
   id: string;
   name: string;
@@ -138,8 +145,10 @@ export interface Project {
   checks?: CheckResult[];
   check_results?: CheckResult[];
   attention_summary?: AttentionSummary;
+  delivery_hold?: DeliveryHold;
 }
 export interface Capabilities {
+  delivery?: { enabled: boolean };
   model?: Record<string, unknown>;
   model_ready?: boolean;
   limits?: Record<string, unknown>;

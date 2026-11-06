@@ -14,11 +14,13 @@ export default function AttentionOverview({
   disabled,
   review,
   compact = false,
+  exportHeld = false,
 }: {
   summary: AttentionSummary;
   disabled: boolean;
   review?: (id: string) => void;
   compact?: boolean;
+  exportHeld?: boolean;
 }) {
   return (
     <section
@@ -38,11 +40,13 @@ export default function AttentionOverview({
         </span>
       </div>
       <p className="fine">
-        {summary.status === "reviewed"
-          ? "Current human reviews and available narrow checks. This is not client acceptance or a guarantee of quality."
-          : summary.status === "reviewed_with_exceptions"
-            ? "Reviewer exclusions are disclosed separately. Underlying findings remain visible; this is not verified client approval."
-            : "Saved evidence has outstanding work, review, or clarification. Exporting a draft preserves those gaps."}
+        {exportHeld
+          ? "Room work is unresolved. Resolve pending context and confirm received attachments before creating a new delivery record."
+          : summary.status === "reviewed"
+            ? "Current human reviews and available narrow checks. This is not client acceptance or a guarantee of quality."
+            : summary.status === "reviewed_with_exceptions"
+              ? "Reviewer exclusions are disclosed separately. Underlying findings remain visible; this is not verified client approval."
+              : "Saved evidence has outstanding work, review, or clarification. Exporting a draft preserves those gaps."}
       </p>
       <dl className="attention-counts">
         <div>

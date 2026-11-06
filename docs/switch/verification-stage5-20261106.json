@@ -1,0 +1,65 @@
+{
+  "recorded_at": "2026-11-06T01:34:39.893869+05:30",
+  "candidate": "uncommitted working tree",
+  "stage4_live_gate": "passed_operator_confirmed",
+  "stage4_runtime_source_unchanged": {
+    "backend/handoffready/store.py": true,
+    "backend/handoffready/api.py": true,
+    "backend/handoffready/delivery.py": true,
+    "backend/handoffready/delivery_api.py": true,
+    "backend/handoffready/delivery_share.py": true,
+    "backend/handoffready/delivery_share_api.py": true,
+    "scripts/delivery_tools.py": true,
+    "frontend/src/App.tsx": true,
+    "frontend/src/components/DeliveryShare.tsx": true,
+    "frontend/src/DeliveryShare.test.tsx": true,
+    "tests/test_delivery_share.py": true,
+    "tests/test_delivery_share_tools.py": true,
+    "tests/test_delivery_packets.py": true
+  },
+  "stage5_gate": "open_independent_review_and_fresh_packet_protocol_pending",
+  "checks": {
+    "new_process_recovery_tests": {
+      "passed": 8,
+      "failed": 0,
+      "duration_seconds": 2.31
+    },
+    "full_backend": {
+      "passed": 531,
+      "failed": 0,
+      "duration_seconds": 72.16,
+      "command": "PYTHONPATH=backend .venv/bin/python -m pytest -q",
+      "warning": "Existing Starlette/httpx deprecation"
+    },
+    "frontend": "Unchanged in this checkpoint; Stage4 evidence116passing tests/build/format retained, not repeated",
+    "trial_kit": "Manifest bytes/hashes, image sizes, packet archive contents, participant-key separation, guide copy, repeat generation and overwrite refusal passed",
+    "diff_whitespace": "passed",
+    "actual_owner_restart": "Offline service backed up under exclusive ownership, restarted with unchanged profile; saved revision13/two-file packet/one export/operator-confirmed history preserved"
+  },
+  "first_new_test_run": {
+    "passed": 4,
+    "failed": 2,
+    "cause": "New test assertion used material.export_id, which the scoped material contract does not expose; assertion corrected to retained share export ID. No product fix claimed."
+  },
+  "external_evidence": {
+    "actual_return": "execution/stage4-owner-verified-return.json",
+    "trial_kit_preparation": "execution/stage6-trial-kit-preparation.json",
+    "actual_owner_service_restart": "execution/stage5-owner-restart.json",
+    "moderator_trial_kit": "execution/HandoffReady-moderator-trial-kit.zip"
+  },
+  "limitations": [
+    "Automated isolated local/process failure tests; not power-loss/disk/network-filesystem certification",
+    "No actual Discord send retried or live owner data fault-injected",
+    "No fresh independent final review; existing delegated reviewers remain quota-limited",
+    "Six-family fresh packet protocol remains unexecuted",
+    "No external participant trial or second-person access verification",
+    "Prepared synthetic kit is assistant-authored; no held-out/model accuracy or customer benefit claim",
+    "No deployment, commit, push or event submission"
+  ],
+  "source_sha256": {
+    "tests/test_delivery_share_recovery.py": "122691eb6a807d892af54a53129f5f9328b5d41eb58bd9806d27075d9fdebed2",
+    "scripts/prepare_delivery_trial.py": "2409bde15fc20c20261a581e68b7523e41dc3e70ff610da9efabb5d9575216d3",
+    "docs/switch/TRIAL-GUIDE.md": "4ee52477253397915a8d570b7d6f9b3a89286a4e5a49f2c010dc7ff0b2f30e58",
+    "docs/switch/STAGE-5-RECOVERY.md": "147923ea1fe5d3d18ae8182fae22a0034868dee352d880a89ed669ac0133681e"
+  }
+}

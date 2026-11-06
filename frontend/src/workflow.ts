@@ -16,6 +16,18 @@ export function nextAction(project: Project) {
       label: "Confirm your checklist",
       detail: "Review the requirements and the checks you want to use.",
     };
+  if (project.delivery_hold?.blocked) {
+    const intake = project.delivery_hold.pending_receipt_count > 0;
+    return {
+      step: intake ? 2 : 3,
+      label: intake
+        ? "Confirm the complete room packet"
+        : "Review the room context",
+      detail: intake
+        ? "New room attachments need local packet confirmation before a record can be prepared."
+        : "Resolve pending room questions and check current evidence before preparing a record.",
+    };
+  }
   if (
     project.attention_summary &&
     ["reviewed", "reviewed_with_exceptions"].includes(

@@ -73,6 +73,7 @@ def main():
     parser.add_argument("--data-dir", help="Private persistent app directory; default is the user application-data directory")
     parser.add_argument("--port", type=int, default=8877, help="Local app port (default 8877)")
     parser.add_argument("--model-port", type=int, default=18081, help="Local model port (default 18081)")
+    parser.add_argument("--delivery-config", help="Absolute path to owner-private delivery binding JSON; enables scoped delivery integration")
     args = parser.parse_args()
     if not all(1024 <= port <= 65535 for port in (args.port, args.model_port)) or args.port == args.model_port:
         parser.error("Choose different app/model ports between 1024 and 65535")
@@ -105,6 +106,13 @@ def main():
                     raise SystemExit("Model did not become ready within 120 seconds.")
             print("Verified installed local model is ready.", flush=True)
         environment = dict(os.environ)
+        if args.delivery_config:
+            from handoffready.delivery_api import DeliveryConfig
+            try:
+                DeliveryConfig.load_file(args.delivery_config)
+            except ValueError as error:
+                raise SystemExit(str(error)) from None
+            environment["HANDOFFREADY_DELIVERY_CONFIG"] = args.delivery_config
         if args.data_dir:
             environment["HANDOFFREADY_DATA"] = str(Path(args.data_dir).expanduser().resolve())
         app_process = subprocess.Popen([sys.executable, str(ROOT / "scripts/run.py")], cwd=ROOT, env=environment)

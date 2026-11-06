@@ -1,0 +1,105 @@
+{
+  "recorded_at_utc": "2026-11-04T09:45:09.255738+00:00",
+  "baseline_commit": "a0406304cafa5842fd9c9c991fe79fd7f29dcf4a",
+  "branch": "feat/switch-delivery-room",
+  "candidate": "uncommitted working-tree snapshot",
+  "checks": {
+    "backend_pytest": {
+      "passed": 416,
+      "failed": 0,
+      "warning": "Existing Starlette/httpx deprecation",
+      "scope": "Fresh full backend suite after excluded-receipt snapshot and abandoned preparation recovery;416passed in50.69s."
+    },
+    "frontend_vitest": {
+      "passed": 85,
+      "failed": 0,
+      "scope": "Fresh full85-test interface suite after connected-mode privacy/model-optional wording; two regressions cover connected vs standalone disclosure."
+    },
+    "frontend_build": "passed",
+    "frontend_format": "passed",
+    "npm_audit": {
+      "vulnerabilities_reported": 0,
+      "scope": "Earlier unchanged frontend-dependency checkpoint; no new packages added and no fresh audit claimed"
+    },
+    "diff_whitespace": "passed"
+  },
+  "evidence_limits": [
+    "Automated synthetic tests/browser rehearsals and owner smoke tests are not a colleague trial",
+    "Dedicated Antigravity session downloaded exact109-byte Discord probe; paused on an open --help command approval, no completed staged receipt yet",
+    "Isolated synthetic browser intake/replacement and late-arrival exclusion passed; original owner project was not confirmed by this rehearsal",
+    "Independent Stage2 static review reproduced scratch leak; fix re-reviewed and5backend/8UI tests run independently; no full security certification or reviewer live transport check",
+    "Contextual correction/current human review, immutable share intent/send reconciliation and second-person trial remain unfinished",
+    "No contest submission or outcome claim"
+  ],
+  "source_sha256": {
+    "backend/handoffready/api.py": "7ffc6151d66555c24f224e268d409545f43f532ddc50de8907efb99a6cc53838",
+    "backend/handoffready/delivery.py": "412ad052b40f2bd69d57c6e51826cccb9e20b3f4711b25a18a5fc3899aa1bc79",
+    "backend/handoffready/delivery_api.py": "6852bb87cc0aa9e4770fc111f854a181bb89c3775f52603f7be989ae4530564a",
+    "scripts/run.py": "951b5773cb90c26c20e1c0ada21a731637ff027a27d82d20f03ea038e530421a",
+    "scripts/start.py": "8763b9671486c6654fba0d845da6d7698bb6eac22e91472f679a57e0605c5139",
+    "scripts/delivery_tools.py": "5a17b3828eff3b8db2a2d62da2f6fd5ea99d350a6c386371febf65abf86d43aa",
+    "frontend/src/App.tsx": "8d6377553efaa4e24d7e3d518fa6f84f84743d01637584926fd27ee836e18eb4",
+    "frontend/src/types.ts": "1f1d9a52ae22b41c97a4e08f6757825e795ebb3c190f31d52e8bc97979c29d48",
+    "frontend/src/style.css": "1d03a2f84aa7f5e36831daf73c02246b3efdf275aac7834fd8ee1123f0341548",
+    "frontend/src/components/DeliveryIntake.tsx": "f9ddf8023a5a5fb0ed324a1869a49d944cc1ef84ab992ddbebb93fe1694aaac7",
+    "frontend/src/DeliveryIntake.test.tsx": "52a67a4ca179da55126e80202597b7b841b5b28bfc533ab61849183036800921",
+    "tests/test_delivery.py": "64e5544410dd33de427bc11026eded3129bd5a17a8e3fc6c6e646de7e8c3e80c",
+    "tests/test_delivery_api.py": "434aaec8e70cfea3b64488275adecc2b88d6beaa0562545622ec796c054d2a82",
+    "tests/test_delivery_intake_api.py": "4d689d36f27112a02a34fd2c4641cf0f0cd6ad146c37e899efe2abb6102be43e",
+    "tests/test_delivery_packets.py": "2dcc82e9311c1f5050fe821c3809ec9d3411fc9043f109a78fd6414cab556c70",
+    "tests/test_delivery_roundtrip.py": "4ebbfba527ebbb24f7f628f2ef377f7a321f18636cf1ce78492aae24a8e9b6e5",
+    "tests/test_delivery_scenarios.py": "b738e28785ed5c643fae51fbca1ee09ecb895196e2cc55bf3728de91f452283b",
+    "tests/test_delivery_stage_tools.py": "4f291222b1cc949f1e00c5ceee6ac08e97b93de8301bbeb90a8d72859c9abd13",
+    "tests/test_delivery_tools.py": "1fac9b71c45ab31202d7d21543323db3f52fbce8ad7880ab972ce1ae3a35cf3c",
+    "frontend/src/App.test.tsx": "227983a66f4ad9ff23d5758c5b43becd352045287123a0b61644c58cb035936e",
+    "frontend/src/components/Files.tsx": "ab5f50f4037e26ee1af8a9ac1a3ef6fa58b3155abb9785772fb9e97d54c76ca7"
+  },
+  "checkpoint_updated_at_utc": "2026-11-04T22:45:47.066510+00:00",
+  "live_owner_smoke_test": {
+    "discord_message_route": "verified in native Discord",
+    "attachment_return_bytes": 109,
+    "returned_sha256": "b084027bd24430e099ed2b55db7c916379e10110b7b2677c6ea2ab3ffc9fb75f",
+    "comparison": "exact original and downloaded return bytes equal",
+    "receipt_location": "execution/discord-roundtrip-receipt.json outside repository",
+    "verified_at_utc": "2026-11-04T10:47:09.775990+00:00"
+  },
+  "fingerprints_updated_at_utc": "2026-11-04T22:45:47.066510+00:00",
+  "provider_setup": {
+    "antigravity_acp_version": "1.1.1",
+    "official_launcher_sign_in": "succeeded",
+    "switch_ui_readiness": "Installed / Signed in and Ready",
+    "inference": "Verified in restored handoffready-yash / Antigravity / Running; Console TOOL_SPIKE completed",
+    "codex_spike": "usage limit before tool execution",
+    "antigravity_protocol_initialization": "verified protocol1; HTTP MCP advertised; no inference requested",
+    "review_agent": "Earlier Antigravity REVIEW.md produced and evaluated; separate resumed Codex Stage2 reviewer reproduced/followed up scratch recovery issue",
+    "delivery_room_membership": "Verified native Console Configuration:2agents/1person; restored handoffready-yash plus switch-buddy-admin",
+    "actual_tool_bridge": "Approved delivery_status CLI executed in Switch-managed Antigravity direct chat; returned scope_review/local_reviewer/local_human_review_required; not native custom MCP",
+    "current_probe": "ACP initialize responded protocol1 without authentication/session/inference request; separate Console sign-in probes failed; no fresh authenticated inference claim"
+  },
+  "stage": "Stage2 implementation and synthetic browser check; dedicated-agent Discord intake gate still open",
+  "stage2_live_checks": {
+    "schema_version": 2,
+    "original_project_and_revision_preserved": true,
+    "parent_cli_staging_and_identical_retry": "passed;1pending synthetic fixture,0committed files,0human assessments",
+    "isolated_http_confirmation_and_replay": "passed;2files,one committed revision,no human assessments",
+    "browser": "Passed on isolated synthetic copy: late arrival named in exclusions, explicit confirmation, refreshed one-file packet, zero human assessments",
+    "external_receipts": [
+      "execution/stage2-live-http-rehearsal.json",
+      "execution/stage2-activation-verification.json",
+      "execution/stage2-browser-rehearsal.json",
+      "execution/stage2-browser-confirmed.jpg",
+      "execution/stage2-discord-pending-approval.json"
+    ],
+    "dedicated_discord_probe": "Exact downloaded bytes/hash verified; command approval still open, stage not completed",
+    "latest_privacy_copy_visual": "Not verified: browser.user became unavailable; full interface regression/build passed"
+  },
+  "independent_stage2_review": {
+    "finding": "Hard process exit left unaccounted preparation copies",
+    "resolution": "Recognized scratch recovery under Store-shared preparation lock; unknown contents retained/refused",
+    "independent_checks": {
+      "backend_passed": 5,
+      "ui_passed": 8
+    },
+    "followup": "No additional high-confidence blocking finding in bounded review; no live browser/Discord verification by reviewer"
+  }
+}

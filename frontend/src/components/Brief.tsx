@@ -79,8 +79,15 @@ export default function Brief({
       <div className="actions">
         <button
           className="primary"
-          disabled={disabled || !text.trim() || Array.from(text).length > 20000}
-          onClick={() => save(text, label)}
+          disabled={
+            disabled ||
+            !text.trim() ||
+            !label.trim() ||
+            Array.from(text).length > 20000
+          }
+          onClick={() => {
+            if (!disabled && text.trim() && label.trim()) save(text, label);
+          }}
         >
           Save brief & continue →
         </button>

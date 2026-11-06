@@ -1,0 +1,72 @@
+{
+  "recorded_at_utc": "2026-11-05T10:07:26.817310+00:00",
+  "baseline_commit": "a0406304cafa5842fd9c9c991fe79fd7f29dcf4a",
+  "branch": "feat/switch-delivery-room",
+  "candidate": "uncommitted working-tree snapshot",
+  "checks": {
+    "backend_pytest": {
+      "passed": 483,
+      "failed": 0,
+      "duration_seconds": 59.82,
+      "warning": "Existing Starlette/httpx deprecation"
+    },
+    "frontend_vitest": {
+      "passed": 105,
+      "failed": 0
+    },
+    "frontend_build": "passed",
+    "frontend_format": "passed",
+    "diff_whitespace": "passed",
+    "new_dependencies": false
+  },
+  "external_evidence": {
+    "stage2_owner_confirmation": "execution/stage2-owner-confirmed-packet.json",
+    "stage3_migration": "execution/stage3-migration-rehearsal.json",
+    "stage3_real_http_cli": "execution/stage3-cli-http-rehearsal.json",
+    "stage3_automated_browser": "execution/stage3-browser-rehearsal.json",
+    "stage3_activation": "execution/stage3-activation.json",
+    "stage3_owner_checklist": "execution/stage3-owner-checklist-confirmed.json",
+    "stage3_owner_reply": "execution/stage3-owner-reply-receipt.json",
+    "stage3_local_context_review": "execution/stage3-owner-context-reviewed.json",
+    "stage3_initial_draft_review": "execution/stage3-owner-initial-review.json",
+    "stage3_selected_review": "execution/stage3-owner-selected-review.json",
+    "stage3_correction_receipt": "execution/stage3-discord-correction-receipt.json",
+    "stage3_changed_packet": "execution/stage3-owner-correction-confirmed.json",
+    "stage3_fresh_review": "execution/stage3-owner-fresh-review.json"
+  },
+  "evidence_limits": [
+    "Actual Stage2 owner Discord attachment-to-packet smoke passed; not a colleague trial",
+    "Stage3 module/API/tool/UI tests and separate HTTP/browser rehearsal are synthetic automated checks",
+    "Actual live owner checklist confirmed at revision5; zero human delivery assessments",
+    "Immutable sharing/send reconciliation, second-person access, genuine trial and final demo remain unfinished",
+    "Scoped delegates completed bounded work/review, hit account quota during integration; parent finished remaining integration; no full independent security certification",
+    "No commits, pushes, contest submissions, customer feedback or outcome claim",
+    "Actual Switch-managed agent question and owner-adopted assistant-drafted Discord answer stored with original question hash/source reference; explicitly an owner smoke test, not independent feedback",
+    "Browser control became unavailable during local-review handoff; no live owner-card preparation or screenshot claimed",
+    "Owner accepted context at revision6 with exact covered/used reply; hold cleared and review hash changed; zero delivery assessments at that checkpoint; actual corrected packet and fresh review remain open",
+    "Owner first saved an empty-selection Unresolved review; after explicit guidance selected the probe and saved Satisfied at revision10. This is an assisted owner smoke, not unassisted trial or general usability success. Correction fixture is prepared but not uploaded/imported.",
+    "Stage3 actual corrected two-file packet at revision11 staled old review and superseded prior context; owner selected both and freshly reviewed at revision12. Full sharing/recovery/external trial gates remain open."
+  ],
+  "source_sha256": {
+    "backend/handoffready/api.py": "6e3689aeaf1e429fcb6465d10dab4f2c528bbc479fbe85dadf40842c80ba53f6",
+    "backend/handoffready/store.py": "8afa0a6218725853958ab35174aad55c8c1d69b7cfca7e3fa32e878f84a315a7",
+    "backend/handoffready/delivery.py": "c74b26a1d8a5493e40df1acde723e19e1d10e293f26c44b8edd0ae92ca8aafc0",
+    "backend/handoffready/delivery_api.py": "bd53e2ce0e4ace3cc9f2de58093e4e7a8252f7506b65f371fb8f004342820195",
+    "backend/handoffready/delivery_context.py": "c0428987ae8338b9a9fb99c6c27385e92af0f09b0204259ba364b1d9784ddc2e",
+    "scripts/delivery_tools.py": "77fbc7aeaff19c66a8ee7ecc1996aece7aeb4ac7375d69def0e7858e4dd53584",
+    "frontend/src/App.tsx": "93aa25a8326b33b76ffcc5099ad662620d308a7988a01b265e5bc07c88a08d68",
+    "frontend/src/types.ts": "713eb2fb00d453c38906b381809d0921d9c8f1132f6f18abe9dcd8fe223e98a7",
+    "frontend/src/components/Handoff.tsx": "95700c1948db20de75f3aaa5fe51bc86fde6b1e70a80ba3241277aec3639eebc",
+    "frontend/src/components/AttentionOverview.tsx": "7f7b4e50acbd13e26be799919ddef67a90c2f2391a7b26ed0bced5d218435e1a",
+    "frontend/src/components/DeliveryContext.tsx": "06f10b06b48083f804f39e27912dfb98ec0c0a4f767d083dcb52d7bd029b64b2",
+    "frontend/src/delivery-context.css": "f79fe0a5e19e56157fd4f888e420a416007c615a5d8780327d4fd4f83eb5f4e2",
+    "tests/test_delivery_context.py": "e88c8cb0b68612c3667d2fe6ac5c70adb8954a88b7fe5986450542f001805fdc",
+    "tests/test_delivery_context_api.py": "4fabb5f599d01e48a4e51b9877b4b6d08fd8a5c42354ce70e5f2e529505ec77d",
+    "tests/test_delivery_context_tools.py": "3552547f6dcfa6581b39e26bab20136f0592be2cbe3f1622a00df6875f3801af",
+    "tests/test_delivery_packets.py": "f1986c3cb6a084b8eeda2898813fccab06771ae4d7c9958d0ec1a0997496cfa5",
+    "frontend/src/DeliveryContext.test.tsx": "d5f45cbd2111626a53fdf727a26c5d5dede554f75f0bf688917db95bfbb7a219",
+    "frontend/src/App.test.tsx": "86e24d1977be6c3ad9745d8884df81110cae53d35e02d2327b6de6071eaa3f6a",
+    "frontend/src/components/Review.tsx": "349f9c46f6d0a7fc4de40e2d72c228ea8e4ddb6d2963312b4151eab3e844d359"
+  },
+  "stage3_owner_loop_gate": "passed at revision12; assisted synthetic owner rehearsal"
+}

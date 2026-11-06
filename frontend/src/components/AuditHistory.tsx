@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { api } from "../api";
 import { readable } from "../presentation";
 interface History {
@@ -6,7 +6,7 @@ interface History {
     baseline?: { state: string; requirements: { title: string }[] };
     source?: { label: string; text: string };
     reason?: string;
-    created_at?: string;
+    recorded_at?: string;
   }[];
   proposal_history: unknown[];
   decision_history: {
@@ -21,15 +21,27 @@ export default function AuditHistory({ projectId }: { projectId: string }) {
   const [history, setHistory] = useState<History | null>(null),
     [error, setError] = useState(""),
     [loading, setLoading] = useState(false);
+  const request = useRef<AbortController | null>(null);
+  useEffect(() => () => request.current?.abort(), [projectId]);
   async function load() {
+    request.current?.abort();
+    const controller = new AbortController();
+    request.current = controller;
     setLoading(true);
     setError("");
     try {
-      setHistory(await api<History>(`/projects/${projectId}/audit-history`));
+      const value = await api<History>(
+        `/projects/${projectId}/audit-history`,
+        "GET",
+        undefined,
+        undefined,
+        controller.signal,
+      );
+      if (!controller.signal.aborted) setHistory(value);
     } catch (e) {
-      setError((e as Error).message);
+      if (!controller.signal.aborted) setError((e as Error).message);
     } finally {
-      setLoading(false);
+      if (!controller.signal.aborted) setLoading(false);
     }
   }
   return (

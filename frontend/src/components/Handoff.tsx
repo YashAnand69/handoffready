@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import AttentionOverview, { deliveryLabel } from "./AttentionOverview";
-import type { Project, AttentionSummary } from "../types";
+import type { Project, AttentionSummary, DeliveryHold } from "../types";
 import { readable, findingValue, bytes } from "../presentation";
 import { api } from "../api";
 interface ClientPreview {
@@ -8,6 +8,7 @@ interface ClientPreview {
   schema_version?: number;
   source_revision?: number;
   attention_summary?: AttentionSummary;
+  delivery_hold?: DeliveryHold;
   files?: {
     id: string;
     name: string;
@@ -43,9 +44,11 @@ export default function Handoff({
   exportNow,
   downloadFile,
   review,
+  recordBlocked = false,
 }: {
   project: Project;
   disabled: boolean;
+  recordBlocked?: boolean;
   exportNow: (ack: boolean, previewRevision?: number) => void;
   downloadFile: (id: string, format: string) => void;
   review?: (id: string) => void;
@@ -80,6 +83,7 @@ export default function Handoff({
       current = false;
     };
   }, [project.id, project.input_hash, project.revision, retry]);
+  const blocked = recordBlocked || preview?.delivery_hold?.blocked === true;
   return (
     <section className="card">
       <p className="eyebrow">05 / THE CLIENT DELIVERY RECORD</p>
@@ -94,6 +98,13 @@ export default function Handoff({
         The manifest explains the delivery. It does not contain the original
         files; send those files alongside it.
       </p>
+      {blocked && (
+        <p className="warning" role="status">
+          Delivery is on hold. Resolve pending room context and confirm the
+          complete packet before preparing a new record. Saved exports remain
+          available unchanged.
+        </p>
+      )}
       {previewError && (
         <div className="alert warning" role="alert">
           <p>{previewError}</p>
@@ -121,6 +132,7 @@ export default function Handoff({
           </div>
           {preview.attention_summary && (
             <AttentionOverview
+              exportHeld={blocked}
               summary={preview.attention_summary}
               disabled={disabled}
               review={review}
@@ -230,7 +242,7 @@ export default function Handoff({
           type="checkbox"
           checked={ack}
           onChange={(e) => setAck(e.target.checked)}
-          disabled={disabled || !preview}
+          disabled={disabled || blocked || !preview}
         />
         I reviewed this preview and understand that any unresolved, manual or
         failed checks will remain in the export.
@@ -245,6 +257,7 @@ export default function Handoff({
         className="primary"
         disabled={
           disabled ||
+          blocked ||
           !ack ||
           !preview ||
           preview.input_hash !== project.input_hash ||
@@ -253,7 +266,7 @@ export default function Handoff({
           project.baseline.state !== "approved"
         }
         onClick={() => {
-          if (preview) exportNow(ack, preview.source_revision);
+          if (preview && !blocked) exportNow(ack, preview.source_revision);
         }}
       >
         Prepare handoff snapshot →

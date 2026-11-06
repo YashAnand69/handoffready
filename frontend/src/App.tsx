@@ -7,6 +7,9 @@ import AuditHistory from "./components/AuditHistory";
 import Brief from "./components/Brief";
 import Checklist from "./components/Checklist";
 import Files from "./components/Files";
+import DeliveryIntake from "./components/DeliveryIntake";
+import DeliveryContext from "./components/DeliveryContext";
+import DeliveryShare from "./components/DeliveryShare";
 import Review from "./components/Review";
 import Handoff from "./components/Handoff";
 import { useEffect, useState, useRef, useCallback } from "react";
@@ -36,6 +39,10 @@ export default function App() {
     [connectionRetry, setConnectionRetry] = useState(0),
     [connecting, setConnecting] = useState(false);
   useEntranceMotion(project?.id || "home");
+  const [intakeBusy, setIntakeBusy] = useState(false);
+  const [contextBusy, setContextBusy] = useState(false);
+  const [shareBusy, setShareBusy] = useState(false);
+  const roomBusy = intakeBusy || contextBusy || shareBusy;
   const [fileDrafts, setFileDrafts] = useState<Record<string, boolean>>({});
   const onRenameDirty = useCallback(
     (id: string, value: boolean) =>
@@ -51,8 +58,11 @@ export default function App() {
   const hasUnsaved = dirty || Object.values(fileDrafts).some(Boolean);
   const taskLock = useRef(false);
   const allowLeave = () =>
-    !hasUnsaved ||
-    confirm("You have unsaved edits. Discard those edits and leave this step?");
+    !roomBusy &&
+    (!hasUnsaved ||
+      confirm(
+        "You have unsaved edits. Discard those edits and leave this step?",
+      ));
   const goReview = (id: string) => {
     const current =
       project?.baseline.requirements.find((r) => r.id === selected)?.id ||
@@ -76,14 +86,14 @@ export default function App() {
   };
   useEffect(() => {
     const warn = (e: BeforeUnloadEvent) => {
-      if (hasUnsaved) {
+      if (hasUnsaved || roomBusy) {
         e.preventDefault();
         e.returnValue = "";
       }
     };
     window.addEventListener("beforeunload", warn);
     return () => window.removeEventListener("beforeunload", warn);
-  }, [hasUnsaved]);
+  }, [hasUnsaved, roomBusy]);
   const previousLocation = useRef({ projectId: "", step: 0 });
   useEffect(() => {
     const id = project?.id || "";
@@ -105,13 +115,25 @@ export default function App() {
       heading.focus({ preventScroll: true });
     }
   }, [step, project?.id]);
-  const refresh = async (id = project?.id) => {
-    if (id) {
-      const p = await api<Project>(`/projects/${id}`);
+  const refresh = async (id = project?.id, activate = false) => {
+    if (!id) return null;
+    const startedFrom = visibleProjectId.current;
+    const p = await api<Project>(`/projects/${id}`);
+    if (activate) {
+      if (visibleProjectId.current !== startedFrom) return null;
+      visibleProjectId.current = id;
       setProject(p);
       return p;
     }
-    return null;
+    if (
+      visibleProjectId.current !== id ||
+      p.revision < (visibleProjectRevision.current || 0)
+    )
+      return null;
+    setProject((previous) =>
+      previous?.id === id && p.revision >= previous.revision ? p : previous,
+    );
+    return p;
   };
   const loadProjects = async () =>
     setProjects(await api<ProjectOverview[]>("/projects"));
@@ -159,6 +181,8 @@ export default function App() {
   const activeJobIds = JSON.stringify(activeJobs.map((job) => job.id).sort());
   const visibleProjectId = useRef(project?.id);
   visibleProjectId.current = project?.id;
+  const visibleProjectRevision = useRef(project?.revision);
+  visibleProjectRevision.current = project?.revision;
   useEffect(() => {
     if (!project || !activeJobs.length) return;
     let disposed = false;
@@ -232,7 +256,7 @@ export default function App() {
     }
   }, [project?.id, project?.jobs]);
   async function task(fn: () => Promise<unknown>) {
-    if (taskLock.current) return;
+    if (taskLock.current || roomBusy) return;
     taskLock.current = true;
     setBusy(true);
     setError("");
@@ -324,9 +348,10 @@ export default function App() {
       <header>
         <button
           className="brand"
-          disabled={busy}
+          disabled={busy || roomBusy}
           onClick={() => {
             if (allowLeave()) {
+              visibleProjectId.current = undefined;
               setProject(null);
               void task(loadProjects);
               setDirty(false);
@@ -341,7 +366,7 @@ export default function App() {
         <div className="header-right">
           <span className="privacy-dot">On this computer</span>
           <span className={`badge ${ready ? "good" : "neutral"}`}>
-            {ready ? "Local model available" : "Model needs setup"}
+            {ready ? "Local model available" : "Local model optional"}
           </span>
         </div>
       </header>
@@ -358,9 +383,10 @@ export default function App() {
             </div>
             <button
               className="quiet"
-              disabled={busy}
+              disabled={busy || roomBusy}
               onClick={() => {
                 if (allowLeave()) {
+                  visibleProjectId.current = undefined;
                   setProject(null);
                   void task(loadProjects);
                   setDirty(false);
@@ -400,6 +426,21 @@ export default function App() {
             {status}
           </p>
         )}
+        {cap?.delivery?.enabled && (
+          <aside
+            className="room-service-notice"
+            aria-label="Room coordination and privacy"
+          >
+            <strong>Room coordination is configured.</strong>
+            <p>
+              Review evidence is stored on this computer. Files and messages
+              shared in the room may also be handled by your chat and AI
+              providers. Keep Switch Console open and this computer awake for
+              room assistance. Manual review works without the optional local
+              model.
+            </p>
+          </aside>
+        )}
         {!project ? (
           <>
             <section className="dashboard-hero">
@@ -434,10 +475,15 @@ export default function App() {
                 <p className="eyebrow">FROM PROMISE TO PACKET</p>
                 <EvidenceGraphic />
                 <div className="orbit-note">
-                  <span className="privacy-dot">Stays on your computer</span>
+                  <span className="privacy-dot">
+                    {cap?.delivery?.enabled
+                      ? "Local review desk"
+                      : "Stays on your computer"}
+                  </span>
                   <p>
-                    Local AI suggests. File checks inspect. You decide what is
-                    ready.
+                    {cap?.delivery?.enabled
+                      ? "Coordinate in your room. Inspect the evidence here. You decide what is ready."
+                      : "Local AI suggests. File checks inspect. You decide what is ready."}
                   </p>
                 </div>
               </div>
@@ -454,6 +500,7 @@ export default function App() {
                 <form
                   onSubmit={(e) => {
                     e.preventDefault();
+                    if (!connected || !name.trim()) return;
                     task(async () => {
                       const p = await api<Project>("/projects", "POST", {
                         name: name.trim(),
@@ -507,10 +554,10 @@ export default function App() {
                         key={p.id}
                         className="project-link project-card"
                         aria-label={p.name + " ↗"}
-                        disabled={busy}
+                        disabled={busy || roomBusy}
                         onClick={() =>
                           task(async () => {
-                            const loaded = await refresh(p.id);
+                            const loaded = await refresh(p.id, true);
                             if (loaded) {
                               const action = nextAction(loaded);
                               setStep(action.step);
@@ -538,7 +585,10 @@ export default function App() {
                                       : "complete"}
                               </small>
                               <small>
-                                {p.saved_review.file_count} files
+                                {p.saved_review.file_count}{" "}
+                                {p.saved_review.file_count === 1
+                                  ? "file"
+                                  : "files"}
                                 {p.saved_review.stale_review_count > 0 &&
                                   ` · ${p.saved_review.stale_review_count} stale ${p.saved_review.stale_review_count === 1 ? "review" : "reviews"}`}
                                 {p.updated_at &&
@@ -614,7 +664,7 @@ export default function App() {
                 </div>
                 <button
                   className="next-action-link"
-                  disabled={busy || !!activeJobs.length}
+                  disabled={busy || roomBusy || !!activeJobs.length}
                   onClick={() => {
                     if (suggested.step === 3 && suggested.id) {
                       goReview(suggested.id);
@@ -635,8 +685,9 @@ export default function App() {
             )}
             {project.attention_summary && step !== 4 && (
               <AttentionOverview
+                exportHeld={project.delivery_hold?.blocked === true}
                 summary={project.attention_summary}
-                disabled={busy || !!activeJobs.length}
+                disabled={busy || roomBusy || !!activeJobs.length}
                 review={goReview}
                 compact
               />
@@ -645,7 +696,7 @@ export default function App() {
               {steps.map((s, i) => (
                 <button
                   key={s}
-                  disabled={busy}
+                  disabled={busy || roomBusy}
                   aria-current={step === i ? "step" : undefined}
                   onClick={() => {
                     if (i === step) return;
@@ -662,15 +713,36 @@ export default function App() {
               ))}
             </nav>
             <div className="workspace-summary">
-              <span>{requirements.length} checklist items</span>
-              <span>{project.files.length} files in packet</span>
-              <span>{currentDecisions.length} current mapping reviews</span>
+              <span>{`${requirements.length} checklist item${requirements.length === 1 ? "" : "s"}`}</span>
+              <span>{`${project.files.length} file${project.files.length === 1 ? "" : "s"} in packet`}</span>
+              <span>{`${currentDecisions.length} current mapping review${currentDecisions.length === 1 ? "" : "s"}`}</span>
               <span className="muted">
                 {project.baseline.state === "approved"
                   ? "Checklist confirmed"
                   : "Checklist needs confirmation"}
               </span>
             </div>
+            <DeliveryContext
+              key={project.id}
+              project={project}
+              disabled={busy || intakeBusy || shareBusy || !!activeJobs.length}
+              hasUnsaved={hasUnsaved}
+              onBusy={setContextBusy}
+              onCommitted={async () => {
+                if (visibleProjectId.current === project.id) {
+                  await refresh(project.id);
+                  await loadProjects();
+                }
+              }}
+              onChecklist={() => {
+                if (step === 1) return;
+                if (allowLeave()) {
+                  setStep(1);
+                  setDirty(false);
+                  setError("");
+                }
+              }}
+            />
             {!!activeJobs.length && (
               <section className="job-bar" aria-label="Local analysis">
                 {activeJobs.map((j) => (
@@ -717,7 +789,7 @@ export default function App() {
                 <Brief
                   key={project.id}
                   project={project}
-                  disabled={busy || !!activeJobs.length}
+                  disabled={busy || roomBusy || !!activeJobs.length}
                   ready={ready}
                   save={(text, label) =>
                     task(async () => {
@@ -747,7 +819,7 @@ export default function App() {
                 <Checklist
                   key={project.id + project.baseline.hash}
                   project={project}
-                  disabled={busy || !!activeJobs.length}
+                  disabled={busy || roomBusy || !!activeJobs.length}
                   ready={ready}
                   onDirty={() => setDirty(true)}
                   extract={() => {
@@ -786,66 +858,84 @@ export default function App() {
                 />
               )}
               {step === 2 && (
-                <Files
-                  project={project}
-                  disabled={busy || !!activeJobs.length}
-                  onRenameDirty={onRenameDirty}
-                  upload={(files) =>
-                    task(async () => {
-                      const form = new FormData();
-                      files.forEach((f) => form.append("files", f));
-                      await mutate(`/projects/${project.id}/files`, form);
-                      setStatus(
-                        "Files received and inspected. Review any blocked files before matching.",
-                      );
-                    })
-                  }
-                  replace={(id, file) =>
-                    task(async () => {
-                      const form = new FormData();
-                      form.append("files", file);
-                      await mutate(
-                        `/projects/${project.id}/files/${id}/replacement`,
-                        form,
-                      );
-                      setStatus(
-                        "Replacement inspected. Existing mapping reviews now need a fresh review.",
-                      );
-                    })
-                  }
-                  rename={(id, name) =>
-                    task(() =>
-                      mutate(
-                        `/projects/${project.id}/files/${id}`,
-                        { display_name: name },
-                        "PATCH",
-                      ),
-                    )
-                  }
-                  remove={(id) =>
-                    task(() =>
-                      mutate(
-                        `/projects/${project.id}/files/${id}`,
-                        undefined,
-                        "DELETE",
-                      ),
-                    )
-                  }
-                  match={() => {
-                    if (allowLeave())
+                <>
+                  {cap?.delivery?.enabled && (
+                    <DeliveryIntake
+                      key={project.id}
+                      project={project}
+                      disabled={
+                        busy || contextBusy || shareBusy || !!activeJobs.length
+                      }
+                      onBusy={setIntakeBusy}
+                      onCommitted={async () => {
+                        if (visibleProjectId.current === project.id) {
+                          await refresh(project.id);
+                          await loadProjects();
+                        }
+                      }}
+                    />
+                  )}
+                  <Files
+                    project={project}
+                    disabled={busy || roomBusy || !!activeJobs.length}
+                    onRenameDirty={onRenameDirty}
+                    upload={(files) =>
                       task(async () => {
-                        await run("match");
-                        setStep(3);
-                      });
-                  }}
-                  ready={ready}
-                  next={() => {
-                    if (allowLeave()) {
-                      setStep(3);
-                      setDirty(false);
+                        const form = new FormData();
+                        files.forEach((f) => form.append("files", f));
+                        await mutate(`/projects/${project.id}/files`, form);
+                        setStatus(
+                          "Files received and inspected. Review any blocked files before matching.",
+                        );
+                      })
                     }
-                  }}
-                />
+                    replace={(id, file) =>
+                      task(async () => {
+                        const form = new FormData();
+                        form.append("files", file);
+                        await mutate(
+                          `/projects/${project.id}/files/${id}/replacement`,
+                          form,
+                        );
+                        setStatus(
+                          "Replacement inspected. Existing mapping reviews now need a fresh review.",
+                        );
+                      })
+                    }
+                    rename={(id, name) =>
+                      task(() =>
+                        mutate(
+                          `/projects/${project.id}/files/${id}`,
+                          { display_name: name },
+                          "PATCH",
+                        ),
+                      )
+                    }
+                    remove={(id) =>
+                      task(() =>
+                        mutate(
+                          `/projects/${project.id}/files/${id}`,
+                          undefined,
+                          "DELETE",
+                        ),
+                      )
+                    }
+                    match={() => {
+                      if (allowLeave())
+                        task(async () => {
+                          await run("match");
+                          setStep(3);
+                        });
+                    }}
+                    ready={ready}
+                    next={() => {
+                      if (allowLeave()) {
+                        setStep(3);
+                        setDirty(false);
+                      }
+                    }}
+                  />
+                </>
               )}
               {step === 3 && (
                 <Review
@@ -864,7 +954,7 @@ export default function App() {
                       setDirty(false);
                     }
                   }}
-                  disabled={busy || !!activeJobs.length}
+                  disabled={busy || roomBusy || !!activeJobs.length}
                   save={(d, advance = false) =>
                     task(async () => {
                       const { requirement_id, ...payload } = d;
@@ -874,7 +964,17 @@ export default function App() {
                         "PUT",
                       );
                       setStatus(
-                        "Your review was saved for this version of the brief and packet.",
+                        [
+                          "Your review was saved for this version of the brief and packet.",
+                          !d.file_ids.length
+                            ? "No file evidence was selected."
+                            : "",
+                          d.human_disposition === "unresolved"
+                            ? "The assessment remains Unresolved; delivery stays a draft."
+                            : "",
+                        ]
+                          .filter(Boolean)
+                          .join(" "),
                       );
                       if (advance && updated) {
                         const nextId = updated.attention_summary?.rows.find(
@@ -896,45 +996,74 @@ export default function App() {
                 />
               )}
               {step === 4 && (
-                <Handoff
-                  project={project}
-                  disabled={busy || !!activeJobs.length}
-                  review={goReview}
-                  exportNow={(ack, previewRevision) =>
-                    task(async () => {
-                      const out = await api<{
-                        id?: string;
-                        export_id?: string;
-                        export?: { id: string };
-                      }>(
-                        `/projects/${project.id}/exports`,
-                        "POST",
-                        {
-                          acknowledge_unresolved: ack,
-                          preview_revision: previewRevision,
-                          input_hash: project.input_hash,
-                        },
-                        project.revision,
-                      );
-                      await refresh();
-                      setStatus(
-                        "Snapshot saved. Choose a format below to download it.",
-                      );
-                      if (!out.id && !out.export_id && !out.export?.id)
-                        throw new Error(
-                          "Export did not return a snapshot identifier.",
+                <>
+                  <Handoff
+                    project={project}
+                    disabled={busy || roomBusy || !!activeJobs.length}
+                    review={goReview}
+                    recordBlocked={project.delivery_hold?.blocked === true}
+                    exportNow={(ack, previewRevision) =>
+                      task(async () => {
+                        if (project.delivery_hold?.blocked)
+                          throw new Error(
+                            "Resolve the delivery hold before preparing a new record.",
+                          );
+                        const out = await api<{
+                          id?: string;
+                          export_id?: string;
+                          export?: { id: string };
+                        }>(
+                          `/projects/${project.id}/exports`,
+                          "POST",
+                          {
+                            acknowledge_unresolved: ack,
+                            preview_revision: previewRevision,
+                            input_hash: project.input_hash,
+                          },
+                          project.revision,
                         );
-                    })
-                  }
-                  downloadFile={(id, format) =>
-                    task(() =>
-                      download(
-                        `/projects/${project.id}/exports/${id}/${format}`,
-                        `handoff-${id.slice(0, 8)}.${format === "html" ? "html" : format}`,
-                      ),
-                    )
-                  }
-                />
+                        await refresh();
+                        setStatus(
+                          "Snapshot saved. Choose a format below to download it.",
+                        );
+                        if (!out.id && !out.export_id && !out.export?.id)
+                          throw new Error(
+                            "Export did not return a snapshot identifier.",
+                          );
+                      })
+                    }
+                    downloadFile={(id, format) =>
+                      task(() =>
+                        download(
+                          `/projects/${project.id}/exports/${id}/${format}`,
+                          `handoff-${id.slice(0, 8)}.${format === "html" ? "html" : format}`,
+                        ),
+                      )
+                    }
+                  />
+                  {(cap?.delivery?.enabled ||
+                    Object.keys(project.delivery_hold?.context_epochs || {})
+                      .length > 0) && (
+                    <DeliveryShare
+                      key={project.id}
+                      project={project}
+                      disabled={
+                        busy ||
+                        intakeBusy ||
+                        contextBusy ||
+                        hasUnsaved ||
+                        !!activeJobs.length
+                      }
+                      onBusy={setShareBusy}
+                      onCommitted={async () => {
+                        if (visibleProjectId.current === project.id) {
+                          await refresh(project.id);
+                          await loadProjects();
+                        }
+                      }}
+                    />
+                  )}
+                </>
               )}
             </div>
             <details className="project-tools">
@@ -949,7 +1078,7 @@ export default function App() {
               <AuditHistory key={project.id} projectId={project.id} />
               <button
                 className="danger"
-                disabled={busy}
+                disabled={busy || roomBusy}
                 onClick={() => {
                   if (
                     confirm(
@@ -964,6 +1093,7 @@ export default function App() {
                         project.revision,
                       );
                       clearDrafts(project.id);
+                      visibleProjectId.current = undefined;
                       setProject(null);
                       await loadProjects();
                     });
@@ -975,7 +1105,11 @@ export default function App() {
           </>
         )}
         <footer>
-          <span>Private by design. Clear by evidence.</span>
+          <span>
+            {cap?.delivery?.enabled
+              ? "Local review. Connected room coordination."
+              : "Private by design. Clear by evidence."}
+          </span>
           <span>
             Open model suggestions · Supported file checks · Your decision
           </span>

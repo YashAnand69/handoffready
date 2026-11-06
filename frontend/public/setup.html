@@ -3,7 +3,7 @@
   <meta charset="utf-8" /><meta
     name="viewport"
     content="width=device-width,initial-scale=1"
-  /><title>HandoffReady · local setup</title
+  /><title>HandoffReady · local and room setup</title
   ><style>
     body {
       font: 16px/1.7 system-ui;
@@ -36,35 +36,67 @@
   </style>
   <main>
     <a href="/">← Return to the delivery desk</a>
-    <h1>Your local delivery desk</h1>
+    <h1>Your review desk and connected room</h1>
     <p>
-      The interface, database, file inspectors and AI run on your computer.
-      Normal use has no remote inference bill. Initial dependency/model setup
-      downloads software and about2.84GB of model weights; internet and enough
-      local disk are required.
+      The review interface, database and file inspectors run on your computer.
+      Manual review works without a model. Optional Gemma inference also runs
+      locally after installation. Room assistance through Switch uses your
+      configured chat and AI providers; it is a separate connected workflow.
     </p>
-    <h2>On the prepared Mac</h2>
+    <div class="note">
+      <b>Delivery Room candidate · 6 November 2026</b>
+      <p>
+        The verified Discord/Switch loop was an assisted synthetic owner
+        rehearsal, not a colleague trial. The current candidate is not a new
+        published release. The older public video and release describe the
+        inherited standalone desk.
+      </p>
+    </div>
+    <h2>The inherited standalone launcher</h2>
     <p>
       Open the source folder and double-click <b>Start HandoffReady.command</b>.
       Keep that window open while using the app. It starts the installed local
-      model and app; it does not purchase or install anything.
+      model and app; it does not purchase or install anything. It does not
+      configure a Switch room. For a prepared connected desk, use its existing
+      supported launcher and private profile instead of starting another copy.
     </p>
     <pre>.venv/bin/python scripts/start.py --with-model</pre>
     <p>
-      If port8877 is occupied, use the existing app or stop the instance that
-      owns it. The launcher will not replace another service.
+      The standalone default is http://127.0.0.1:8877/. If that port is
+      occupied, use the existing app or stop its owner deliberately. The
+      launcher will not replace another service. The last verified owner room
+      desk used port 8896; that is recorded evidence, not proof that it is
+      currently online.
     </p>
-    <h2>Fresh source setup</h2>
+    <h2>Fresh source setup · manual review first</h2>
     <p>
-      Use Python3.12, Node22.12+ or24+, Apple command-line build tools, and
-      about8GB free disk. The verified model installer targets an Apple Silicon
-      Mac. Other model platforms have not been validated.
+      Use Python 3.12 and Node 22.12+ or 24+. Node 24 was used for the recorded
+      build checks. The validated host is an Apple Silicon Mac; other host
+      platforms have not been validated. Source setup downloads dependencies. A
+      fresh installation of the connected candidate remains a release gate.
     </p>
     <pre>
 python3.12 -m venv .venv
 .venv/bin/python -m pip install -r requirements-backend.lock
 npm ci --prefix frontend
 npm run build --prefix frontend
+.venv/bin/python scripts/start.py</pre
+    >
+    <p>
+      Without the model, add an explained checklist, inspect files, review
+      mappings and prepare a record. Optional local-model buttons remain
+      unavailable until their verified service is ready. Pending room questions
+      or attachments still block new records; earlier saved downloads remain.
+    </p>
+    <h2>Optional local Gemma</h2>
+    <p>
+      Model setup needs internet, about 2.84 GB of weights, approximately 8 GB
+      free disk for build/model artifacts, Apple command-line build tools and
+      CMake. Model/runtime licenses are separate from this project's MIT
+      license. Install only when you want local model suggestions; room
+      assistance does not require this model.
+    </p>
+    <pre>
 .venv/bin/python -m pip install --target .runtime/build-tools cmake==4.1.2
 .venv/bin/python scripts/prepare_model.py
 .venv/bin/python scripts/start.py --with-model</pre
@@ -72,14 +104,66 @@ npm run build --prefix frontend
     <p>
       The installer verifies pinned model/runtime hashes and creates an
       owner-only local credential. It does not accept agreements or upload
-      delivery files.
+      delivery files. It is not a Switch/provider installer.
     </p>
-    <h2>Manual mode</h2>
-    <pre>.venv/bin/python scripts/start.py</pre>
+    <h2>Connected Discord room through Switch</h2>
     <p>
-      Without the model, you can add an explained checklist, inspect files,
-      review mappings and export the handoff. AI buttons stay unavailable until
-      the verified service is ready.
+      The recorded owner setup used Switch Console 0.40.1, native server 0.31.0
+      and a Switch-managed Antigravity agent with a bounded command bridge.
+      Native custom MCP integration remains unverified. These are tested
+      checkpoint versions, not a claim about the latest available releases.
+    </p>
+    <ol>
+      <li>
+        Read the source checkout's
+        <code>docs/switch/RELEASE-READINESS-20261106.md</code>,
+        <code>docs/switch/DISCORD-TRIAL-SETUP.md</code> and
+        <code>docs/switch/TRIAL-GUIDE.md</code>. The repository documentation
+        index links these current records. They are not served by this local
+        setup page, and the older public release does not include this
+        candidate.
+      </li>
+      <li>
+        The account owner configures the dedicated Discord bot/room and provider
+        through the supported Switch setup. Keep credentials out of chat,
+        screenshots and source. Verify the owner route and any second person's
+        own-account permissions separately. Do not enable bypass or automatic
+        approvals to make a demo run.
+      </li>
+      <li>
+        Prepare separate private server binding and version-4 client profiles,
+        fixed destination, incoming/outgoing folders and one project/job
+        binding. Files must be owner-private at absolute paths. A new trial
+        needs its own isolated room/configuration/data; creating another project
+        does not rebind an existing conversation.
+      </li>
+      <li>
+        Start the app with its explicit private delivery profile and dedicated
+        data folder. Use its actual chosen address; keep that launcher, Switch
+        Console and the configured provider available. One server process owns a
+        data folder. A local app restart does not prove the provider
+        reconnected.
+      </li>
+    </ol>
+    <pre>
+.venv/bin/python scripts/start.py --delivery-config /absolute/private/server.json --data-dir /absolute/private/data --port 8896</pre
+    >
+    <p>
+      This command is a template, not the existing owner's profile. Create the
+      profiles explicitly using the source documentation. The room agent may
+      stage files, propose questions and issue an already-authorized frozen
+      record once. The local reviewer confirms packets, checks unverified
+      conversation sources, makes assessments and authorizes public content and
+      destination. Verify the actual downloaded return before calling it
+      operator-confirmed. Unknown sends are never automatically resent.
+    </p>
+    <h2>Availability and cost</h2>
+    <p>
+      Local manual review needs no remote model service. Connected assistance
+      requires internet and your selected chat/AI accounts, availability and
+      usage allowance. Their terms, quotas and possible charges are separate;
+      this app does not promise free or unlimited connected inference. No
+      provider purchase or account change is performed by these instructions.
     </p>
     <h2>What this release handles</h2>
     <p>
@@ -99,12 +183,21 @@ npm run build --prefix frontend
         are shared.
       </p>
     </div>
-    <h2>Private local storage</h2>
+    <h2>Local storage and provider processing</h2>
     <p>
       Projects normally live in your local application-data folder, outside the
-      source repository. App storage is not encrypted. Use non-confidential
-      examples for demonstrations. Read README.md and the review/evaluation
-      records in docs/ for complete boundaries and setup details.
+      source repository. App storage is not encrypted. Files/messages shared in
+      Discord and context supplied to the room agent may also be processed by
+      your chat and AI providers. Local storage is not a claim that the complete
+      connected workflow stays on this computer. Use authorized non-confidential
+      examples. Do not expose the local desk publicly or give its private
+      profile to a participant; another device's localhost address will not open
+      this computer's desk. Read README.md and the source documentation index
+      for complete boundaries and evidence.
+    </p>
+    <p>
+      <a href="/quick-start.html">Standalone review walkthrough</a> ·
+      <a href="/">Return to the delivery desk</a>
     </p>
   </main>
 </html>

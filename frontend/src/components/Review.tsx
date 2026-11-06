@@ -625,6 +625,14 @@ function DecisionEditor({
             placeholder="Only what you intend the client to read."
           />
         </label>
+        {(!ids.length || disposition === "unresolved") && (
+          <p className="note" role="status">
+            {!ids.length &&
+              "No file evidence is selected for this requirement. "}
+            {disposition === "unresolved" &&
+              "Your assessment is Unresolved. Saving records this draft judgment; it does not mark delivery ready."}
+          </p>
+        )}
         <div className="review-save-actions actions">
           <button
             className="primary"

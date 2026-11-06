@@ -1,8 +1,18 @@
 # Documentation index
 
-This index separates the **current local upgrade** from the **historical v0.1.0 release** and the **original plans**. A proposed feature in an older plan is not an implemented capability. Old test counts, screenshots and model results describe their recorded checkpoint, not the current source.
+This index separates the **current Switch Delivery Room candidate** from the **October standalone HandoffReady foundation**, its historical releases and original plans. Old test counts, publication dates, screenshots and model results describe their recorded checkpoint. The older public release/video is not the new integration build.
 
-## Start here
+## Current Delivery Room candidate · 6 November 2026
+
+- [Release-readiness audit](switch/RELEASE-READINESS-20261106.md): setup/documentation findings, source-packaging check, verified owner result and remaining release gates.
+- [Current evidence ledger](switch/BUILD-LEDGER.md), [Stage 4 owner-confirmed return](switch/STAGE-4-IMPLEMENTATION.md) and [Stage 5 recovery/runbook](switch/STAGE-5-RECOVERY.md): read through their final dated updates. Earlier pending paragraphs retain historical checkpoints.
+- [Latest audit repair and interface checkpoint](switch/AUDIT-POLISH-CHECKPOINT-20261106.md): 537 backend and 146 interface tests, build and formatting pass. Includes per-claim audit dispositions and final visual checks. Tests do not establish customer benefit or transport authentication.
+- [Discord setup and route history](switch/DISCORD-TRIAL-SETUP.md), [Stage 4 contract](switch/STAGE-4-CONTRACT.md) and [trial guide](switch/TRIAL-GUIDE.md): configured provider/CLI boundaries, human decisions, source privacy and second-account access requirements. Use current updates alongside early setup history.
+- [Three-minute recording script](switch/DEMO-RECORDING-SCRIPT.md) and [held submission draft](switch/SUBMISSION-DRAFT-HOLD.md): prepared for Yash to record and review; nothing published or submitted.
+
+The real Discord/Switch packet → question/reply → correction → fresh local review → returned frozen record passed as an **assisted synthetic owner rehearsal**. The owner explicitly confirmed the actual downloaded record's destination/2,033-byte match. It is not an external colleague trial, authenticated transport certification or customer-impact result. The independent return review and authored fresh-packet protocol are recorded at their dated snapshots. Clean connected setup, external trial and final release gates remain open. Connected mode uses chat/AI providers; optional local Gemma is separate. Nothing in this index publishes or submits the candidate.
+
+## October foundation and upgrade evidence · historical
 
 - [Current submission status](SUBMISSION-STATUS-CURRENT.md): authoritative preparation status and remaining gates.
 - [Integrated upgrade checkpoint](FINAL-UPGRADE-CHECKPOINT.md) and [15 October checks](final-upgrade-verification.json): 250 Python / 74 frontend tests.
@@ -38,7 +48,7 @@ The public [v0.1.0 release](https://github.com/YashAnand69/handoffready/releases
 
 ## Submission materials
 
-[Submission checklist](SUBMISSION-CHECKLIST.md), [publication review](PUBLICATION-REVIEW.md), [DEV draft](DEV-SUBMISSION-DRAFT.md) and [entry text](DEV-ENTRY.md) are preparation materials. **Read-only DEV dashboard verification on 17 October confirmed HandoffReady article 6228689 remains a draft. Earlier publication claims were incorrect. The user has instructed publication to stay on hold.** Their historical text must be reconciled with fresh upgrade evidence before any later publication. Synthetic evaluation and agent-operated demos must not be described as customer use.
+[Submission checklist](SUBMISSION-CHECKLIST.md), [publication review](PUBLICATION-REVIEW.md), [DEV draft](DEV-SUBMISSION-DRAFT.md) and [entry text](DEV-ENTRY.md) preserve the October preparation history. An earlier 17 October inspection found the draft on hold; [the later authoritative October status](SUBMISSION-STATUS-CURRENT.md) records owner-authorized publication that evening and subsequent updates. The old hold paragraph is superseded, not a current instruction or evidence of a new Delivery Room submission. The October entry, category association and release do not submit this Switch event candidate. Synthetic evaluations and agent-operated demos must not be described as customer use.
 
 ## Original research and planning
 

@@ -1,0 +1,223 @@
+{
+  "artifact_root": "/Users/yashanand/Documents/Codex/2026-11-06/evaluation-artifacts/handoffready-fresh-packets-20261106",
+  "candidate_identity": "Exact source fingerprints; working tree candidate is not claimed as a commit.",
+  "cases": [
+    {
+      "checks": 10,
+      "execution_error": null,
+      "export_hashes": {
+        "html": "f75f7cd55a258cc7c2bbedee3340830e70233b9e071526012f4a4b971da34339",
+        "json": "5f839edac7cda3d67ab0aaf456e7bdb06cab83e6d6d3d8088a06822111d641ef",
+        "md": "1bc6ba4cc8a28b6fa76222ea968d48dff63330c56892f4d089a6c321c7cdeb7b"
+      },
+      "family": "complete assets",
+      "files": [
+        {
+          "bytes": 75,
+          "name": "art.png",
+          "path": "inputs/complete-assets/files/art.png",
+          "sha256": "b011e4c1fdc81353924eb294124feff9721b2b70779358d6263c92d831d5980f"
+        },
+        {
+          "bytes": 60,
+          "name": "guide.txt",
+          "path": "inputs/complete-assets/files/guide.txt",
+          "sha256": "ceb42e2e60e7781eea2600c1d13ce94fa9eb699348eeae2ed54f41b0c4effac9"
+        }
+      ],
+      "id": "complete-assets",
+      "passed": true,
+      "replacement_files": [],
+      "second_export_hashes": null,
+      "unexpected_failures": [],
+      "workflow_outcome": "Narrow facts pass, scripted synthetic review saved, local record created."
+    },
+    {
+      "checks": 15,
+      "execution_error": null,
+      "export_hashes": null,
+      "family": "exact duplicates and wrong dimensions",
+      "files": [
+        {
+          "bytes": 75,
+          "name": "banner-a.png",
+          "path": "inputs/duplicate-wrong-size/files/banner-a.png",
+          "sha256": "3f83408eae103321bafc553d5c9bd1bfc780c7adef8982e0981a08dd1705501a"
+        },
+        {
+          "bytes": 75,
+          "name": "banner-b.png",
+          "path": "inputs/duplicate-wrong-size/files/banner-b.png",
+          "sha256": "3f83408eae103321bafc553d5c9bd1bfc780c7adef8982e0981a08dd1705501a"
+        },
+        {
+          "bytes": 60,
+          "name": "guide.txt",
+          "path": "inputs/duplicate-wrong-size/files/guide.txt",
+          "sha256": "ceb42e2e60e7781eea2600c1d13ce94fa9eb699348eeae2ed54f41b0c4effac9"
+        }
+      ],
+      "id": "duplicate-wrong-size",
+      "passed": true,
+      "replacement_files": [],
+      "second_export_hashes": null,
+      "unexpected_failures": [],
+      "workflow_outcome": "Technical findings preserved despite synthetic satisfied disposition; explicit draft export."
+    },
+    {
+      "checks": 11,
+      "execution_error": null,
+      "export_hashes": null,
+      "family": "irrelevant same-name guide",
+      "files": [
+        {
+          "bytes": 75,
+          "name": "art.png",
+          "path": "inputs/irrelevant-same-name/files/art.png",
+          "sha256": "b011e4c1fdc81353924eb294124feff9721b2b70779358d6263c92d831d5980f"
+        },
+        {
+          "bytes": 53,
+          "name": "guide.txt",
+          "path": "inputs/irrelevant-same-name/files/guide.txt",
+          "sha256": "ccbcacd3d33867a5159c5f745efe70d077bfaebbae2d0c69348da91f77235bd2"
+        }
+      ],
+      "id": "irrelevant-same-name",
+      "passed": true,
+      "replacement_files": [],
+      "second_export_hashes": null,
+      "unexpected_failures": [],
+      "workflow_outcome": "Technical findings preserved despite synthetic satisfied disposition; explicit draft export."
+    },
+    {
+      "checks": 9,
+      "execution_error": null,
+      "export_hashes": null,
+      "family": "ambiguous scope and manual uncertainty",
+      "files": [
+        {
+          "bytes": 62,
+          "name": "guide.txt",
+          "path": "inputs/ambiguous-manual/files/guide.txt",
+          "sha256": "268804038ade96d52cc75b9404e3dca671c8e1f5540158fd973cba51281c948a"
+        }
+      ],
+      "id": "ambiguous-manual",
+      "passed": true,
+      "replacement_files": [],
+      "second_export_hashes": null,
+      "unexpected_failures": [],
+      "workflow_outcome": "Manual uncertainty remains unknown and unresolved; unverified reply does not clear hold."
+    },
+    {
+      "checks": 9,
+      "execution_error": null,
+      "export_hashes": null,
+      "family": "malformed and unsupported input",
+      "files": [
+        {
+          "bytes": 30,
+          "name": "broken.png",
+          "path": "inputs/malformed-unsupported/files/broken.png",
+          "sha256": "5ae181ffe2abd6d463fccb84c2bd8f44e4be145a2acc73c1a7f17408375c852b"
+        },
+        {
+          "bytes": 35,
+          "name": "archive.bin",
+          "path": "inputs/malformed-unsupported/files/archive.bin",
+          "sha256": "29d72ea8e75b9cdd88ba09f74f4d27e815d0f5e8b691c4f2cc927060b2452a7b"
+        }
+      ],
+      "id": "malformed-unsupported",
+      "passed": true,
+      "replacement_files": [],
+      "second_export_hashes": null,
+      "unexpected_failures": [],
+      "workflow_outcome": "Expected safe refusal; packet remains pending, not completed."
+    },
+    {
+      "checks": 15,
+      "execution_error": null,
+      "export_hashes": {
+        "html": "49ef347f92bc674c1c2d3d6aaa9dd28499f11ab1a2ec0adfd56d64a530f8d63f",
+        "json": "1d49e318aba259326378b6d9d309f8586a0dcea1836352bba3cb9c327f3437c8",
+        "md": "e3c6fd9f2835f1781f7bb20fa10ccb5373adaa193d1e5e338cadcc5fa3b01d45"
+      },
+      "family": "revised packet after review and immutable export",
+      "files": [
+        {
+          "bytes": 60,
+          "name": "guide.txt",
+          "path": "inputs/corrected-packet/files/guide.txt",
+          "sha256": "ceb42e2e60e7781eea2600c1d13ce94fa9eb699348eeae2ed54f41b0c4effac9"
+        }
+      ],
+      "id": "corrected-packet",
+      "passed": true,
+      "replacement_files": [
+        {
+          "bytes": 77,
+          "name": "guide.txt",
+          "path": "inputs/corrected-packet/replacement_files/guide.txt",
+          "sha256": "91700d3bc892beabd4a413d0010737982f52ab1ee5c4c88a2d8ee238abcc8567"
+        }
+      ],
+      "second_export_hashes": {
+        "html": "b78daf9a39006dc5414a05e1b4c5af9a8187cf24ac9d0505f6eb0e620c3044cf",
+        "json": "21e158612cd69b2229d1f2f19bf4d500383cf632a60648828c54e8bee9210b06",
+        "md": "c0561501479d498c825f71f8bd7cb1161dc913fa4949e3fd61cceb71e27a8f73"
+      },
+      "unexpected_failures": [],
+      "workflow_outcome": "Two packet compositions and two records; correction stales old reviews and preserves old downloads."
+    }
+  ],
+  "dependencies": {
+    "fastapi": "0.143.0",
+    "httpx": "0.28.1",
+    "pillow": "12.3.0",
+    "psutil": "7.2.2",
+    "pydantic": "2.14.1",
+    "pypdf": "6.20.1",
+    "starlette": "1.8.0"
+  },
+  "finished_at": "2026-11-05T21:24:58Z",
+  "first_results_sha256": "c07250d2993efb7f9806653046f99aa048bac38aa8fdd4482738abdf36d76fd3",
+  "frozen_at": "2026-11-05T21:24:52Z",
+  "frozen_manifest_sha256": "80af92141e04bc2d1bd0911faa01d6d3289fe2af18806a5167aca2a8d913640a",
+  "git_base_head": "a0406304cafa5842fd9c9c991fe79fd7f29dcf4a",
+  "not_run": [
+    "model extraction",
+    "model evidence association",
+    "live Switch transport",
+    "independent human review",
+    "usability or timing study"
+  ],
+  "notice": "Assistant-authored fresh synthetic regression; not independently held-out, human judgment, model accuracy or live Switch evidence.",
+  "passed_checks": 69,
+  "passed_families": 6,
+  "python": "3.12.13",
+  "source_fingerprint": "aebf0cdf613ee5dd24f9c3123ad1056d5816aa6b637b174914bbd5b6eea5d453",
+  "source_sha256": {
+    "backend/handoffready/__init__.py": "85b4c96ab59d9d7dcb886cb35ad2d03956a3778943ce535fee1e651b2f9c5218",
+    "backend/handoffready/api.py": "6e3689aeaf1e429fcb6465d10dab4f2c528bbc479fbe85dadf40842c80ba53f6",
+    "backend/handoffready/checks.py": "136b0af91ab9ecd18df7eee9d78f16d508434276f9b8c54dff3017a2392c73b9",
+    "backend/handoffready/delivery.py": "0cd23448e940b2545616f27b4217e23b53472b8c74aa3591c492c300ed6f40a0",
+    "backend/handoffready/delivery_api.py": "2df2cd4962a04ff43b80790633f6940155a74cf73bb5efe7a0cfd0d8ac842871",
+    "backend/handoffready/delivery_context.py": "c0428987ae8338b9a9fb99c6c27385e92af0f09b0204259ba364b1d9784ddc2e",
+    "backend/handoffready/delivery_share.py": "fcb49ad822ba4c63befd2b1375811887fdb1222373929fa4ede72ff0bc8b1a52",
+    "backend/handoffready/delivery_share_api.py": "603e39919d7908063f70da37acc0b74dd9debf51ea54035fa7716a4cd7a01506",
+    "backend/handoffready/evidence.py": "12b141f123b259f641b655ef5ac3099a80768bfda440910365531e7b927c0963",
+    "backend/handoffready/exports.py": "4c3a0413e798fdcfa004743a6159d42364bbf7c0c36cefaf435db9795acd13de",
+    "backend/handoffready/inspect.py": "643be1430e7a28eb49ed308131115d10140444bb60bce07ad095a4f2a01d7191",
+    "backend/handoffready/model.py": "f0ea34b95590209df6e130872b60226c2794ce6a87d736ade1a25d32aba5239f",
+    "backend/handoffready/parser_worker.py": "bff137376f21912d5136bd6507d7f84a8e30724397a12dbda6f8fbcbb7684b43",
+    "backend/handoffready/policy.py": "b3641785391fbe5a2a5663dcbdeb5e8d9a07519c8c8b3d63c75575c059f3b7b9",
+    "backend/handoffready/schemas.py": "d3bcfbf05a155d5bbab4e2a692d6ccbe7da052e96d240bb86fe7a40c7a6bc5d7",
+    "backend/handoffready/store.py": "785ec659e313d63be41af1f1bd962d47c07d5c439ec9b374b349eea87de22b52",
+    "backend/handoffready/summary.py": "648db11aaae6e00cf0c126ea68bc5ddfb3117c895998658a7f79a51b5d02a4df",
+    "scripts/evaluate_switch_workflow.py": "750aa9e81950be1ee764dc424f757b0cfd548378fc0a110a7483aecaa5f37c53"
+  },
+  "started_at": "2026-11-05T21:24:56Z",
+  "total_checks": 69
+}

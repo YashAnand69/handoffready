@@ -98,8 +98,8 @@ export default function Files({
       <h2>Bring what you plan to deliver.</h2>
       <p className="muted">
         Up to 30 files, 50 MiB per packet, 10 MiB per file. Supported: PNG,
-        JPEG, SVG metadata, readable PDF, text and Markdown. Files remain on
-        this computer.
+        JPEG, SVG metadata, readable PDF, text and Markdown. This desk stores
+        inspected copies on this computer.
       </p>
       <details className="packet-intake">
         <summary>File limits and supported contents</summary>
@@ -328,6 +328,7 @@ function FileCard({
             className="quiet"
             disabled={disabled}
             aria-label={`Rename ${f.name}`}
+            aria-expanded={editing}
             onClick={() => setEditing(!editing)}
           >
             Rename
@@ -348,11 +349,24 @@ function FileCard({
             Remove
           </button>
         </div>
+        {!editing && name !== f.name && (
+          <p className="note" role="status">
+            Unsaved filename edit. Reopen Rename to save it, or{" "}
+            <button
+              className="quiet"
+              disabled={disabled}
+              onClick={() => setName(f.name)}
+            >
+              Discard filename edit
+            </button>
+            .
+          </p>
+        )}
         {editing && (
           <form
             onSubmit={(e) => {
               e.preventDefault();
-              rename(name);
+              if (!disabled && name.trim() && name !== f.name) rename(name);
             }}
           >
             <label>
@@ -413,6 +427,7 @@ export function ImageEvidence({
     <div className="image-evidence">
       <button
         className="quiet"
+        aria-expanded={shown}
         onClick={() => {
           setShown(!shown);
           setError("");

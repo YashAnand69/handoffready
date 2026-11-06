@@ -1,0 +1,58 @@
+{
+  "recorded_at_utc": "2026-11-05T14:55:09.491182+00:00",
+  "baseline_commit": "a0406304cafa5842fd9c9c991fe79fd7f29dcf4a",
+  "branch": "feat/switch-delivery-room",
+  "candidate": "uncommitted working-tree snapshot",
+  "schema_version": 4,
+  "checks": {
+    "backend_pytest": {
+      "passed": 523,
+      "failed": 0,
+      "duration_seconds": 70.44,
+      "warning": "Existing Starlette/httpx deprecation"
+    },
+    "frontend_vitest": {
+      "passed": 116,
+      "failed": 0
+    },
+    "frontend_build": "passed",
+    "frontend_format": "passed",
+    "diff_whitespace": "passed",
+    "new_dependencies": false
+  },
+  "external_evidence": {
+    "stage3_gate": "execution/stage3-owner-fresh-review.json",
+    "stage4_http_cli": "execution/stage4-cli-http-rehearsal.json",
+    "stage4_browser": "execution/stage4-browser-authorization.jpg",
+    "stage4_actual_activation": "execution/stage4-activation.json",
+    "stage4_owner_preview": "execution/stage4-owner-share-preview.jpg",
+    "stage4_owner_authorization": "execution/stage4-owner-authorization.json",
+    "stage4_actual_return_observation": "execution/stage4-actual-return-observed.json",
+    "stage4_verification_form": "execution/stage4-return-ready-to-verify.jpg",
+    "stage4_owner_verified_return": "execution/stage4-owner-verified-return.json"
+  },
+  "evidence_limits": [
+    "HTTP/CLI/browser rehearsal was automated on a separate copy; no actual room send or human destination check",
+    "Actual live activation preserved revision12 and prior data; zero intents at activation",
+    "Owner assisted synthetic Stage3 loop passed; fixtures/reasons were assistant-prepared, not independent feedback",
+    "Stage4 actual assisted owner return passed: main-channel attachment observed, downloaded bytes match, explicit operator destination/byte confirmation saved. Not authenticated transport confirmation.",
+    "No fresh full independent Stage4 code review, security certification or external user trial",
+    "No commits/pushes/contest submission/outcome claim"
+  ],
+  "source_sha256": {
+    "backend/handoffready/store.py": "785ec659e313d63be41af1f1bd962d47c07d5c439ec9b374b349eea87de22b52",
+    "backend/handoffready/api.py": "6e3689aeaf1e429fcb6465d10dab4f2c528bbc479fbe85dadf40842c80ba53f6",
+    "backend/handoffready/delivery.py": "0cd23448e940b2545616f27b4217e23b53472b8c74aa3591c492c300ed6f40a0",
+    "backend/handoffready/delivery_api.py": "2df2cd4962a04ff43b80790633f6940155a74cf73bb5efe7a0cfd0d8ac842871",
+    "backend/handoffready/delivery_share.py": "619efdcc8423155f1d270e6c23aefb122afbba0b74a6c125ffeba9ee20c715e7",
+    "backend/handoffready/delivery_share_api.py": "603e39919d7908063f70da37acc0b74dd9debf51ea54035fa7716a4cd7a01506",
+    "scripts/delivery_tools.py": "a56c0b5e897056610cd91b898bf3e7cbf0d4ea9e57d8bbb92ef04815b0cd6406",
+    "frontend/src/App.tsx": "7443b81abac9fee35d8aaf4038c081df91d2518de854690fdb016d542967266d",
+    "frontend/src/components/DeliveryShare.tsx": "d5ef3ee1cdd77ddd715eef9654c365991bc1747e065acfc4bd8c34ed5b01bc8b",
+    "frontend/src/DeliveryShare.test.tsx": "e9079ec3eef186dd82ecc8aac76cd6185a67017d3a6920cc49ddd3042de5d578",
+    "tests/test_delivery_share.py": "2c53ea94a0380ae76d0f85295c48b4af1d8e9046dd1a9d5ee09090cf98b82357",
+    "tests/test_delivery_share_tools.py": "8380084722142a37a8b58e04ff3c48f76ed60be209151e39d5ed888eff9cf43e",
+    "tests/test_delivery_packets.py": "28ac505cf37ddbd8ca5003237771907feb77d7314c6d6d6383a2f625dc8b5c07"
+  },
+  "live_stage4_gate": "passed_operator_confirmed"
+}

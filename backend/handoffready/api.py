@@ -81,7 +81,10 @@ def inspect_bounded(path, name, deadline):
                     process.kill()
                 except ProcessLookupError:
                     pass
-                process.wait(timeout=2)
+                try:
+                    process.wait(timeout=2)
+                except (OSError, subprocess.SubprocessError):
+                    reason = "File inspection worker could not complete safely."
         if reason:
             return {"type": "unknown", "inspection": "blocked", "metadata": {}, "text": "", "error": reason}
         try:
@@ -123,7 +126,7 @@ def validate_requirements(requirements, brief):
                 raise StoreError("manual_source", "Human additions require an explanatory note and no invented source quotation.", 422)
             requirement["source_span"] = None
         else:
-            quote = requirement["quote"]
+            quote = requirement.get("quote")
             if not brief or requirement["source_id"] != brief["id"] or not quote:
                 raise StoreError("invalid_source_quote", "Model suggestions need exact evidence from the current brief.", 422)
             try:
@@ -145,19 +148,36 @@ def preserve_proposals(project):
         project["proposal_history"] = history[-20:]
 
 
-def create_app(data_dir=None, model_adapter=None, port=8877):
+def create_app(data_dir=None, model_adapter=None, port=8877, delivery_config=None):
     directory = data_dir or os.environ.get("HANDOFFREADY_DATA", str(Path.home() / "Library/Application Support/HandoffReady"))
     store = Store(directory)
     app = FastAPI(title="HandoffReady local API", docs_url=None, redoc_url=None)
     app.state.store = store
     app.state.token = secrets.token_urlsafe(32)
     app.state.model_lock = threading.Lock()
+    from .delivery_api import DeliveryConfig, STAGE_PATH, STAGE_REQUEST_BYTES, install_delivery_routes
+    configured_delivery = DeliveryConfig.parse(delivery_config) if delivery_config is not None else None
     allowed_hosts = {f"127.0.0.1:{port}", f"localhost:{port}"}
     allowed_origins = {f"http://127.0.0.1:{port}", f"http://localhost:{port}", "http://127.0.0.1:5174"}
     app.add_middleware(CORSMiddleware, allow_origins=list(allowed_origins), allow_methods=["GET", "POST", "PUT", "PATCH", "DELETE"], allow_headers=["Content-Type", "X-Handoff-Token", "If-Match"])
 
     def response(data, status=200):
         return JSONResponse({"data": data, "meta": {"schema_version": "v1"}}, status_code=status)
+
+    install_delivery_routes(app, configured_delivery, response, inspect_bounded)
+
+    from .delivery_context import context_hold
+
+    def describe_project(project):
+        # Read the current row and workflow holds under the same local lock.
+        with store.lock, store.connection() as db:
+            current = store.get(project["id"], db)
+            result = envelope(current)
+            hold = context_hold(db, project["id"])
+            result["delivery_hold"] = hold
+            if hold["blocked"]:
+                result["attention_summary"]["status"] = "draft_with_gaps"
+            return result
 
     @app.exception_handler(StoreError)
     async def domain_error(request, error):
@@ -179,7 +199,9 @@ def create_app(data_dir=None, model_adapter=None, port=8877):
         path = request.url.path
         if path.startswith("/api/"):
             if path != "/api/v1/bootstrap" and request.method != "OPTIONS":
-                if not secrets.compare_digest(request.headers.get("x-handoff-token", "").encode("utf-8"), app.state.token.encode("utf-8")):
+                local_session = secrets.compare_digest(request.headers.get("x-handoff-token", "").encode("utf-8"), app.state.token.encode("utf-8"))
+                scoped_delivery = configured_delivery is not None and configured_delivery.permits(request)
+                if not local_session and not scoped_delivery:
                     return JSONResponse({"error": {"code": "token_required", "message": "Reload the local app to establish a session."}}, status_code=403)
             if request.method not in {"GET", "HEAD", "OPTIONS"}:
                 if request.headers.get("origin") not in allowed_origins:
@@ -189,6 +211,8 @@ def create_app(data_dir=None, model_adapter=None, port=8877):
                 except ValueError:
                     length = LIMITS["request_bytes"] + 1
                 request_limit = LIMITS["request_bytes"] if request.headers.get("content-type", "").startswith("multipart/form-data") else 256 * 1024
+                if configured_delivery is not None and request.method == "POST" and STAGE_PATH.fullmatch(path):
+                    request_limit = STAGE_REQUEST_BYTES
                 if length > request_limit:
                     return JSONResponse({"error": {"code": "request_limit", "message": "Request exceeds the upload budget."}}, status_code=413)
                 received = 0
@@ -209,7 +233,15 @@ def create_app(data_dir=None, model_adapter=None, port=8877):
                     await asyncio.to_thread(store.reconcile_originals, segments[4])
                 except StoreError as error:
                     return JSONResponse({"error": {"code": error.code, "message": error.message}}, status_code=error.status)
-            result = await call_next(request)
+            try:
+                result = await call_next(request)
+            except Exception:
+                # A receive failure may be wrapped by Starlette's task group.
+                # Only our measured body-limit breach becomes a safe 413;
+                # unrelated application failures keep their original behavior.
+                if not getattr(request.state, "body_limit_hit", False):
+                    raise
+                result = JSONResponse({"error": {"code": "request_limit", "message": "Request exceeds the upload budget."}}, status_code=413)
             if getattr(request.state, "body_limit_hit", False):
                 result = JSONResponse({"error": {"code": "request_limit", "message": "Request exceeds the upload budget."}}, status_code=413)
             result.headers["Cache-Control"] = "no-store"
@@ -245,7 +277,7 @@ def create_app(data_dir=None, model_adapter=None, port=8877):
             model = adapter().ready()
         except Exception:
             model = {"ready": False, "message": "Local model is unavailable."}
-        return response({"limits": LIMITS, "supported_types": ["png", "jpeg", "svg", "pdf", "text", "markdown"], "model": model, "runtime": "local", "inspection_mode": "bounded_synchronous", "encrypted_at_rest": False})
+        return response({"limits": LIMITS, "supported_types": ["png", "jpeg", "svg", "pdf", "text", "markdown"], "model": model, "runtime": "local", "inspection_mode": "bounded_synchronous", "delivery": {"enabled": configured_delivery is not None}, "encrypted_at_rest": False})
 
     @app.get("/api/v1/projects")
     def projects():
@@ -253,9 +285,14 @@ def create_app(data_dir=None, model_adapter=None, port=8877):
         result = []
         for project in store.list():
             summary = build_summary(project)
+            with store.lock, store.connection() as db:
+                hold = context_hold(db, project["id"])
+            if hold["blocked"]:
+                summary["status"] = "draft_with_gaps"
             result.append({
                 **{key: project[key] for key in ("id", "name", "revision", "created_at")},
                 "updated_at": project.get("updated_at"),
+                "delivery_hold": hold,
                 "saved_review": {
                     "status": summary["status"],
                     "baseline_approved": summary["baseline_approved"],
@@ -272,11 +309,11 @@ def create_app(data_dir=None, model_adapter=None, port=8877):
     def create(payload: CreateProject):
         if not payload.name.strip():
             raise StoreError("empty_name", "Give the project a name.", 422)
-        return response(envelope(store.create(payload.name, LIMITS["projects"])), 201)
+        return response(describe_project(store.create(payload.name, LIMITS["projects"])), 201)
 
     @app.get("/api/v1/projects/{project_id}")
     def get_project(project_id):
-        return response(envelope(store.get(project_id)))
+        return response(describe_project(store.get(project_id)))
 
     @app.get("/api/v1/projects/{project_id}/audit-history")
     def audit_history(project_id):
@@ -296,7 +333,7 @@ def create_app(data_dir=None, model_adapter=None, port=8877):
             project["brief"] = {"id": uid(), "text": text, "label": payload.source_label, "sha256": hashlib.sha256(text.encode()).hexdigest()}
             project["baseline"] = {"id": uid(), "state": "draft", "hash": digest([]), "requirements": []}
             invalidate(project)
-        return response(envelope(store.mutate(project_id, revision(request), update)))
+        return response(describe_project(store.mutate(project_id, revision(request), update)))
 
     @app.put("/api/v1/projects/{project_id}/baseline")
     def put_baseline(project_id, payload: BaselineInput, request: Request):
@@ -325,7 +362,7 @@ def create_app(data_dir=None, model_adapter=None, port=8877):
             preserve_proposals(project)
             project["baseline"] = {"id": uid(), "state": "draft", "hash": digest(requirements), "requirements": requirements}
             invalidate(project)
-        return response(envelope(store.mutate(project_id, revision(request), update)))
+        return response(describe_project(store.mutate(project_id, revision(request), update)))
 
     @app.post("/api/v1/projects/{project_id}/baseline/approve")
     def approve(project_id, payload: ApproveInput, request: Request):
@@ -336,7 +373,7 @@ def create_app(data_dir=None, model_adapter=None, port=8877):
                 raise StoreError("baseline_review_required", "Review every current requirement before approving.")
             validate_requirements(baseline["requirements"], project["brief"])
             baseline["state"] = "approved"
-        return response(envelope(store.mutate(project_id, revision(request), update)))
+        return response(describe_project(store.mutate(project_id, revision(request), update)))
 
     async def upload(project_id, request, replacement=None):
         expected_revision = revision(request)
@@ -403,7 +440,7 @@ def create_app(data_dir=None, model_adapter=None, port=8877):
                     (store.files / old["_path"]).unlink(missing_ok=True)
                 except OSError:
                     pass  # Startup orphan cleanup handles leftovers without unregistering valid new bytes.
-            return response(envelope(updated), 201)
+            return response(describe_project(updated), 201)
         except Exception:
             if not committed:
                 for file in staged:
@@ -452,7 +489,7 @@ def create_app(data_dir=None, model_adapter=None, port=8877):
             raise StoreError("revision_conflict", "Project changed. Refresh before renaming.")
         name = clean_name(payload.display_name)
         if name == original["name"]:
-            return response(envelope(store.mutate(project_id, expected_revision, lambda project, db: None)))
+            return response(describe_project(store.mutate(project_id, expected_revision, lambda project, db: None)))
         inspection = inspect_bounded(store.files / original["_path"], name, time.monotonic() + 120)
         def update(project, db):
             file = next((f for f in project["files"] if f["id"] == file_id), None)
@@ -462,7 +499,7 @@ def create_app(data_dir=None, model_adapter=None, port=8877):
             file["name"] = name
             file.update({key: inspection.get(key, default) for key, default in (("type", "unknown"), ("inspection", "blocked"), ("metadata", {}), ("text", ""), ("error", None))})
             invalidate(project)
-        return response(envelope(store.mutate(project_id, expected_revision, update)))
+        return response(describe_project(store.mutate(project_id, expected_revision, update)))
 
     @app.delete("/api/v1/projects/{project_id}/files/{file_id}")
     def remove_file(project_id, file_id, request: Request):
@@ -480,7 +517,7 @@ def create_app(data_dir=None, model_adapter=None, port=8877):
                 (store.files / file["_path"]).unlink(missing_ok=True)
             except OSError:
                 pass
-        return response(envelope(updated))
+        return response(describe_project(updated))
 
     @app.get("/api/v1/projects/{project_id}/job-status")
     def job_status(project_id):
@@ -526,7 +563,7 @@ def create_app(data_dir=None, model_adapter=None, port=8877):
                 project["decision_history"] = project["decision_history"][-200:]
             project["decisions"] = [d for d in project["decisions"] if d["requirement_id"] != requirement_id]
             project["decisions"].append({"requirement_id": requirement_id, **payload.model_dump()})
-        return response(envelope(store.mutate(project_id, revision(request), update)))
+        return response(describe_project(store.mutate(project_id, revision(request), update)))
 
     def run_job(project_id, job_id):
         try:
@@ -646,11 +683,11 @@ def create_app(data_dir=None, model_adapter=None, port=8877):
         project = store.mutate(project_id, revision(request), update)
         worker = threading.Thread(target=run_job, args=(project_id, job_id), daemon=True)
         worker.start()
-        return response({"job": next(j for j in envelope(project)["jobs"] if j["id"] == job_id), "revision": project["revision"]}, 202)
+        return response({"job": next(j for j in describe_project(project)["jobs"] if j["id"] == job_id), "revision": project["revision"]}, 202)
 
     @app.get("/api/v1/projects/{project_id}/jobs/{job_id}")
     def get_job(project_id, job_id):
-        project = envelope(store.get(project_id))
+        project = describe_project(store.get(project_id))
         job = next((j for j in project["jobs"] if j["id"] == job_id), None)
         if not job:
             raise StoreError("job_not_found", "Job not found.", 404)
@@ -664,12 +701,14 @@ def create_app(data_dir=None, model_adapter=None, port=8877):
                 raise StoreError("job_not_found", "Job not found.", 404)
             if job["state"] in {"queued", "running"}:
                 job.update(state="cancelled", stage="cancelled", error="Application result cancelled; model server may still finish its request.")
-        return response(envelope(store.mutate(project_id, revision(request), update)))
+        return response(describe_project(store.mutate(project_id, revision(request), update)))
 
     @app.post("/api/v1/projects/{project_id}/exports")
     def export(project_id, payload: ExportInput, request: Request):
         summary = {}
         def update(project, db):
+            if context_hold(db, project_id)["blocked"]:
+                raise StoreError("delivery_hold", "Resolve delivery context and confirm the complete packet before creating a new delivery record.")
             if payload.input_hash != input_hash(project):
                 raise StoreError("stale_input", "Inputs changed. Preview the current packet before exporting.")
             if payload.preview_revision is not None and payload.preview_revision != project["revision"]:
@@ -687,10 +726,16 @@ def create_app(data_dir=None, model_adapter=None, port=8877):
 
     @app.get("/api/v1/projects/{project_id}/handoff-preview")
     def handoff_preview(project_id):
-        project = store.get(project_id)
-        value = projection(project, True)
-        value["id"], value["created_at"] = None, None
-        return response(value)
+        with store.lock, store.connection() as db:
+            project = store.get(project_id, db)
+            value = projection(project, True)
+            hold = context_hold(db, project_id)
+            value["delivery_hold"] = hold
+            if hold["blocked"]:
+                value["status"] = value["attention_summary"]["status"] = "draft_with_gaps"
+                value["gaps"].extend({"requirement_id": "delivery_workflow", "message": message} for message in hold["messages"])
+            value["id"], value["created_at"] = None, None
+            return response(value)
 
     @app.get("/api/v1/projects/{project_id}/exports/{export_id}/{format}")
     def download(project_id, export_id, format):
